@@ -20,6 +20,8 @@
 		EFA432CC2A5C4FD500D158EE /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = EFA432CB2A5C4FD500D158EE /* FirebaseAnalytics */; };
 		EFA432CE2A5C4FD500D158EE /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = EFA432CD2A5C4FD500D158EE /* FirebaseAuth */; };
 		EFA432D02A5C4FD500D158EE /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = EFA432CF2A5C4FD500D158EE /* FirebaseFirestore */; };
+		EFA432D22A5C50ED00D158EE /* SampleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFA432D12A5C50ED00D158EE /* SampleModel.swift */; };
+		EFA432D42A5C50F900D158EE /* SampleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFA432D32A5C50F900D158EE /* SampleViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +61,8 @@
 		EF81A9D42A5B8C0300C6F417 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EF81A9D72A5B8C0300C6F417 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		EFA432C82A5C4F9900D158EE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		EFA432D12A5C50ED00D158EE /* SampleModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SampleModel.swift; path = ../../../MC3/ChuckchuDrivenDevelopment/ChuckchuDrivenDevelopment/SampleModel.swift; sourceTree = "<group>"; };
+		EFA432D32A5C50F900D158EE /* SampleViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SampleViewModel.swift; path = ../../../MC3/ChuckchuDrivenDevelopment/ChuckchuDrivenDevelopment/SampleViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +110,8 @@
 				EFA432C82A5C4F9900D158EE /* GoogleService-Info.plist */,
 				EF81A9B62A5B8A1400C6F417 /* ChuckchuDrivenDevelopmentApp.swift */,
 				EF81A9BD2A5B8A1400C6F417 /* ContentView.swift */,
+				EFA432D12A5C50ED00D158EE /* SampleModel.swift */,
+				EFA432D32A5C50F900D158EE /* SampleViewModel.swift */,
 				EF81A9BF2A5B8A1500C6F417 /* Assets.xcassets */,
 				EF81A9C12A5B8A1500C6F417 /* ChuckchuDrivenDevelopment.entitlements */,
 				EF81A9C22A5B8A1500C6F417 /* Preview Content */,
@@ -252,6 +258,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				EF81A9B72A5B8A1400C6F417 /* ChuckchuDrivenDevelopmentApp.swift in Sources */,
+				EFA432D22A5C50ED00D158EE /* SampleModel.swift in Sources */,
+				EFA432D42A5C50F900D158EE /* SampleViewModel.swift in Sources */,
 				EF81A9BE2A5B8A1400C6F417 /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

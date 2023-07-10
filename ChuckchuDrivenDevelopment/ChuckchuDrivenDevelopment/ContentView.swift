@@ -10,9 +10,20 @@ import SwiftUI
 
 struct ContentView: View {
 
+    @EnvironmentObject var sampleViewModel: SampleViewModel
+    
     var body: some View {
         VStack {
-            Text("Initial View")
+            ForEach(sampleViewModel.samples, id:\.self) { sample in
+                HStack {
+                    Text(sample.name)
+                        .font(.system(size: 20))
+                    Text(sample.text)
+                }
+            }
+        }
+        .task {
+            await sampleViewModel.fetchSamples()
         }
     }
 
@@ -24,5 +35,6 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+            .environmentObject(SampleViewModel())
     }
 }

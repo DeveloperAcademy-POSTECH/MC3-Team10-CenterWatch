@@ -1,0 +1,561 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		EF81A9B72A5B8A1400C6F417 /* ChuckchuDrivenDevelopmentApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF81A9B62A5B8A1400C6F417 /* ChuckchuDrivenDevelopmentApp.swift */; };
+		EF81A9B92A5B8A1400C6F417 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF81A9B82A5B8A1400C6F417 /* Persistence.swift */; };
+		EF81A9BC2A5B8A1400C6F417 /* ChuckchuDrivenDevelopment.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EF81A9BA2A5B8A1400C6F417 /* ChuckchuDrivenDevelopment.xcdatamodeld */; };
+		EF81A9BE2A5B8A1400C6F417 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF81A9BD2A5B8A1400C6F417 /* ContentView.swift */; };
+		EF81A9C02A5B8A1500C6F417 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF81A9BF2A5B8A1500C6F417 /* Assets.xcassets */; };
+		EF81A9C42A5B8A1500C6F417 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF81A9C32A5B8A1500C6F417 /* Preview Assets.xcassets */; };
+		EF81A9D12A5B8C0200C6F417 /* CDDWatchAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF81A9D02A5B8C0200C6F417 /* CDDWatchAppApp.swift */; };
+		EF81A9D32A5B8C0200C6F417 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF81A9D22A5B8C0200C6F417 /* ContentView.swift */; };
+		EF81A9D52A5B8C0300C6F417 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF81A9D42A5B8C0300C6F417 /* Assets.xcassets */; };
+		EF81A9D82A5B8C0300C6F417 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF81A9D72A5B8C0300C6F417 /* Preview Assets.xcassets */; };
+		EF81A9DB2A5B8C0300C6F417 /* CDDWatchApp Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = EF81A9CE2A5B8C0200C6F417 /* CDDWatchApp Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		EF81A9D92A5B8C0300C6F417 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EF81A9AB2A5B8A1400C6F417 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EF81A9CD2A5B8C0200C6F417;
+			remoteInfo = "CDDWatchApp Watch App";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		EF81A9DF2A5B8C0300C6F417 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				EF81A9DB2A5B8C0300C6F417 /* CDDWatchApp Watch App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		EF81A9B32A5B8A1400C6F417 /* ChuckchuDrivenDevelopment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChuckchuDrivenDevelopment.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EF81A9B62A5B8A1400C6F417 /* ChuckchuDrivenDevelopmentApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChuckchuDrivenDevelopmentApp.swift; sourceTree = "<group>"; };
+		EF81A9B82A5B8A1400C6F417 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		EF81A9BB2A5B8A1400C6F417 /* ChuckchuDrivenDevelopment.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ChuckchuDrivenDevelopment.xcdatamodel; sourceTree = "<group>"; };
+		EF81A9BD2A5B8A1400C6F417 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		EF81A9BF2A5B8A1500C6F417 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EF81A9C12A5B8A1500C6F417 /* ChuckchuDrivenDevelopment.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ChuckchuDrivenDevelopment.entitlements; sourceTree = "<group>"; };
+		EF81A9C32A5B8A1500C6F417 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		EF81A9CE2A5B8C0200C6F417 /* CDDWatchApp Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CDDWatchApp Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EF81A9D02A5B8C0200C6F417 /* CDDWatchAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDDWatchAppApp.swift; sourceTree = "<group>"; };
+		EF81A9D22A5B8C0200C6F417 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		EF81A9D42A5B8C0300C6F417 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EF81A9D72A5B8C0300C6F417 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EF81A9B02A5B8A1400C6F417 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EF81A9CB2A5B8C0200C6F417 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		EF81A9AA2A5B8A1400C6F417 = {
+			isa = PBXGroup;
+			children = (
+				EF81A9B52A5B8A1400C6F417 /* ChuckchuDrivenDevelopment */,
+				EF81A9CF2A5B8C0200C6F417 /* CDDWatchApp Watch App */,
+				EF81A9B42A5B8A1400C6F417 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		EF81A9B42A5B8A1400C6F417 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EF81A9B32A5B8A1400C6F417 /* ChuckchuDrivenDevelopment.app */,
+				EF81A9CE2A5B8C0200C6F417 /* CDDWatchApp Watch App.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EF81A9B52A5B8A1400C6F417 /* ChuckchuDrivenDevelopment */ = {
+			isa = PBXGroup;
+			children = (
+				EF81A9B62A5B8A1400C6F417 /* ChuckchuDrivenDevelopmentApp.swift */,
+				EF81A9B82A5B8A1400C6F417 /* Persistence.swift */,
+				EF81A9BD2A5B8A1400C6F417 /* ContentView.swift */,
+				EF81A9BF2A5B8A1500C6F417 /* Assets.xcassets */,
+				EF81A9C12A5B8A1500C6F417 /* ChuckchuDrivenDevelopment.entitlements */,
+				EF81A9BA2A5B8A1400C6F417 /* ChuckchuDrivenDevelopment.xcdatamodeld */,
+				EF81A9C22A5B8A1500C6F417 /* Preview Content */,
+			);
+			path = ChuckchuDrivenDevelopment;
+			sourceTree = "<group>";
+		};
+		EF81A9C22A5B8A1500C6F417 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				EF81A9C32A5B8A1500C6F417 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		EF81A9CF2A5B8C0200C6F417 /* CDDWatchApp Watch App */ = {
+			isa = PBXGroup;
+			children = (
+				EF81A9D02A5B8C0200C6F417 /* CDDWatchAppApp.swift */,
+				EF81A9D22A5B8C0200C6F417 /* ContentView.swift */,
+				EF81A9D42A5B8C0300C6F417 /* Assets.xcassets */,
+				EF81A9D62A5B8C0300C6F417 /* Preview Content */,
+			);
+			path = "CDDWatchApp Watch App";
+			sourceTree = "<group>";
+		};
+		EF81A9D62A5B8C0300C6F417 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				EF81A9D72A5B8C0300C6F417 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EF81A9B22A5B8A1400C6F417 /* ChuckchuDrivenDevelopment */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EF81A9C72A5B8A1500C6F417 /* Build configuration list for PBXNativeTarget "ChuckchuDrivenDevelopment" */;
+			buildPhases = (
+				EF81A9AF2A5B8A1400C6F417 /* Sources */,
+				EF81A9B02A5B8A1400C6F417 /* Frameworks */,
+				EF81A9B12A5B8A1400C6F417 /* Resources */,
+				EF81A9DF2A5B8C0300C6F417 /* Embed Watch Content */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EF81A9DA2A5B8C0300C6F417 /* PBXTargetDependency */,
+			);
+			name = ChuckchuDrivenDevelopment;
+			productName = ChuckchuDrivenDevelopment;
+			productReference = EF81A9B32A5B8A1400C6F417 /* ChuckchuDrivenDevelopment.app */;
+			productType = "com.apple.product-type.application";
+		};
+		EF81A9CD2A5B8C0200C6F417 /* CDDWatchApp Watch App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EF81A9DC2A5B8C0300C6F417 /* Build configuration list for PBXNativeTarget "CDDWatchApp Watch App" */;
+			buildPhases = (
+				EF81A9CA2A5B8C0200C6F417 /* Sources */,
+				EF81A9CB2A5B8C0200C6F417 /* Frameworks */,
+				EF81A9CC2A5B8C0200C6F417 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "CDDWatchApp Watch App";
+			productName = "CDDWatchApp Watch App";
+			productReference = EF81A9CE2A5B8C0200C6F417 /* CDDWatchApp Watch App.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EF81A9AB2A5B8A1400C6F417 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1430;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					EF81A9B22A5B8A1400C6F417 = {
+						CreatedOnToolsVersion = 14.3;
+					};
+					EF81A9CD2A5B8C0200C6F417 = {
+						CreatedOnToolsVersion = 14.3;
+					};
+				};
+			};
+			buildConfigurationList = EF81A9AE2A5B8A1400C6F417 /* Build configuration list for PBXProject "ChuckchuDrivenDevelopment" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = EF81A9AA2A5B8A1400C6F417;
+			productRefGroup = EF81A9B42A5B8A1400C6F417 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EF81A9B22A5B8A1400C6F417 /* ChuckchuDrivenDevelopment */,
+				EF81A9CD2A5B8C0200C6F417 /* CDDWatchApp Watch App */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EF81A9B12A5B8A1400C6F417 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EF81A9C42A5B8A1500C6F417 /* Preview Assets.xcassets in Resources */,
+				EF81A9C02A5B8A1500C6F417 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EF81A9CC2A5B8C0200C6F417 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EF81A9D82A5B8C0300C6F417 /* Preview Assets.xcassets in Resources */,
+				EF81A9D52A5B8C0300C6F417 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EF81A9AF2A5B8A1400C6F417 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EF81A9B72A5B8A1400C6F417 /* ChuckchuDrivenDevelopmentApp.swift in Sources */,
+				EF81A9BC2A5B8A1400C6F417 /* ChuckchuDrivenDevelopment.xcdatamodeld in Sources */,
+				EF81A9BE2A5B8A1400C6F417 /* ContentView.swift in Sources */,
+				EF81A9B92A5B8A1400C6F417 /* Persistence.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EF81A9CA2A5B8C0200C6F417 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EF81A9D32A5B8C0200C6F417 /* ContentView.swift in Sources */,
+				EF81A9D12A5B8C0200C6F417 /* CDDWatchAppApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EF81A9DA2A5B8C0300C6F417 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EF81A9CD2A5B8C0200C6F417 /* CDDWatchApp Watch App */;
+			targetProxy = EF81A9D92A5B8C0300C6F417 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		EF81A9C52A5B8A1500C6F417 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		EF81A9C62A5B8A1500C6F417 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		EF81A9C82A5B8A1500C6F417 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = ChuckchuDrivenDevelopment/ChuckchuDrivenDevelopment.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"ChuckchuDrivenDevelopment/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = liannechoi.ChuckchuDrivenDevelopment;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		EF81A9C92A5B8A1500C6F417 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = ChuckchuDrivenDevelopment/ChuckchuDrivenDevelopment.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"ChuckchuDrivenDevelopment/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = liannechoi.ChuckchuDrivenDevelopment;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		EF81A9DD2A5B8C0300C6F417 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"CDDWatchApp Watch App/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = CDDWatchApp;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = liannechoi.ChuckchuDrivenDevelopment;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = liannechoi.ChuckchuDrivenDevelopment.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 9.4;
+			};
+			name = Debug;
+		};
+		EF81A9DE2A5B8C0300C6F417 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"CDDWatchApp Watch App/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = CDDWatchApp;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = liannechoi.ChuckchuDrivenDevelopment;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = liannechoi.ChuckchuDrivenDevelopment.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 9.4;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EF81A9AE2A5B8A1400C6F417 /* Build configuration list for PBXProject "ChuckchuDrivenDevelopment" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EF81A9C52A5B8A1500C6F417 /* Debug */,
+				EF81A9C62A5B8A1500C6F417 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EF81A9C72A5B8A1500C6F417 /* Build configuration list for PBXNativeTarget "ChuckchuDrivenDevelopment" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EF81A9C82A5B8A1500C6F417 /* Debug */,
+				EF81A9C92A5B8A1500C6F417 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EF81A9DC2A5B8C0300C6F417 /* Build configuration list for PBXNativeTarget "CDDWatchApp Watch App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EF81A9DD2A5B8C0300C6F417 /* Debug */,
+				EF81A9DE2A5B8C0300C6F417 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		EF81A9BA2A5B8A1400C6F417 /* ChuckchuDrivenDevelopment.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				EF81A9BB2A5B8A1400C6F417 /* ChuckchuDrivenDevelopment.xcdatamodel */,
+			);
+			currentVersion = EF81A9BB2A5B8A1400C6F417 /* ChuckchuDrivenDevelopment.xcdatamodel */;
+			path = ChuckchuDrivenDevelopment.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = EF81A9AB2A5B8A1400C6F417 /* Project object */;
+}

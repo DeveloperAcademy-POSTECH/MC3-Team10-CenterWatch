@@ -29,7 +29,6 @@ struct ChuckchuDrivenDevelopmentApp: App {
     WindowGroup {
       NavigationView {
         ContentView()
-              .environmentObject(SampleViewModel())
       }
     }
   }

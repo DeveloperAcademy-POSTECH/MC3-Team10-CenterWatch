@@ -16,12 +16,16 @@
 		EF81A9D52A5B8C0300C6F417 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF81A9D42A5B8C0300C6F417 /* Assets.xcassets */; };
 		EF81A9D82A5B8C0300C6F417 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF81A9D72A5B8C0300C6F417 /* Preview Assets.xcassets */; };
 		EF81A9DB2A5B8C0300C6F417 /* CDDWatchApp Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = EF81A9CE2A5B8C0200C6F417 /* CDDWatchApp Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		EF9626152A5D203700779FD6 /* SampleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF9626142A5D203700779FD6 /* SampleModel.swift */; };
-		EF9626172A5D207100779FD6 /* SampleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF9626162A5D207100779FD6 /* SampleViewModel.swift */; };
 		EFA432C92A5C4F9900D158EE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EFA432C82A5C4F9900D158EE /* GoogleService-Info.plist */; };
 		EFA432CC2A5C4FD500D158EE /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = EFA432CB2A5C4FD500D158EE /* FirebaseAnalytics */; };
 		EFA432CE2A5C4FD500D158EE /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = EFA432CD2A5C4FD500D158EE /* FirebaseAuth */; };
 		EFA432D02A5C4FD500D158EE /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = EFA432CF2A5C4FD500D158EE /* FirebaseFirestore */; };
+		EFECCBA62A612F540093BB67 /* Member.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFECCBA52A612F540093BB67 /* Member.swift */; };
+		EFECCBA82A612F610093BB67 /* Poke.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFECCBA72A612F610093BB67 /* Poke.swift */; };
+		EFECCBAA2A612F720093BB67 /* GroupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFECCBA92A612F720093BB67 /* GroupViewModel.swift */; };
+		EFECCBAC2A612F810093BB67 /* MemberViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFECCBAB2A612F810093BB67 /* MemberViewModel.swift */; };
+		EFECCBAE2A612F8A0093BB67 /* PokeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFECCBAD2A612F8A0093BB67 /* PokeViewModel.swift */; };
+		EFECCBB02A61302A0093BB67 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFECCBAF2A61302A0093BB67 /* Group.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,9 +64,13 @@
 		EF81A9D22A5B8C0200C6F417 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		EF81A9D42A5B8C0300C6F417 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EF81A9D72A5B8C0300C6F417 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		EF9626142A5D203700779FD6 /* SampleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleModel.swift; sourceTree = "<group>"; };
-		EF9626162A5D207100779FD6 /* SampleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleViewModel.swift; sourceTree = "<group>"; };
 		EFA432C82A5C4F9900D158EE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		EFECCBA52A612F540093BB67 /* Member.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Member.swift; sourceTree = "<group>"; };
+		EFECCBA72A612F610093BB67 /* Poke.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Poke.swift; sourceTree = "<group>"; };
+		EFECCBA92A612F720093BB67 /* GroupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupViewModel.swift; sourceTree = "<group>"; };
+		EFECCBAB2A612F810093BB67 /* MemberViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberViewModel.swift; sourceTree = "<group>"; };
+		EFECCBAD2A612F8A0093BB67 /* PokeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokeViewModel.swift; sourceTree = "<group>"; };
+		EFECCBAF2A61302A0093BB67 /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,7 +170,9 @@
 		EFECCB9E2A612E200093BB67 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				EF9626162A5D207100779FD6 /* SampleViewModel.swift */,
+				EFECCBA92A612F720093BB67 /* GroupViewModel.swift */,
+				EFECCBAB2A612F810093BB67 /* MemberViewModel.swift */,
+				EFECCBAD2A612F8A0093BB67 /* PokeViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -170,7 +180,9 @@
 		EFECCB9F2A612E280093BB67 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				EF9626142A5D203700779FD6 /* SampleModel.swift */,
+				EFECCBAF2A61302A0093BB67 /* Group.swift */,
+				EFECCBA52A612F540093BB67 /* Member.swift */,
+				EFECCBA72A612F610093BB67 /* Poke.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -322,9 +334,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				EF81A9B72A5B8A1400C6F417 /* ChuckchuDrivenDevelopmentApp.swift in Sources */,
-				EF9626152A5D203700779FD6 /* SampleModel.swift in Sources */,
+				EFECCBAA2A612F720093BB67 /* GroupViewModel.swift in Sources */,
+				EFECCBB02A61302A0093BB67 /* Group.swift in Sources */,
+				EFECCBAE2A612F8A0093BB67 /* PokeViewModel.swift in Sources */,
 				EF81A9BE2A5B8A1400C6F417 /* ContentView.swift in Sources */,
-				EF9626172A5D207100779FD6 /* SampleViewModel.swift in Sources */,
+				EFECCBAC2A612F810093BB67 /* MemberViewModel.swift in Sources */,
+				EFECCBA82A612F610093BB67 /* Poke.swift in Sources */,
+				EFECCBA62A612F540093BB67 /* Member.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

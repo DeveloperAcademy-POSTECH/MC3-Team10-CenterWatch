@@ -16,10 +16,12 @@
 		EF81A9D52A5B8C0300C6F417 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF81A9D42A5B8C0300C6F417 /* Assets.xcassets */; };
 		EF81A9D82A5B8C0300C6F417 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF81A9D72A5B8C0300C6F417 /* Preview Assets.xcassets */; };
 		EF81A9DB2A5B8C0300C6F417 /* CDDWatchApp Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = EF81A9CE2A5B8C0200C6F417 /* CDDWatchApp Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		EFA432C92A5C4F9900D158EE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EFA432C82A5C4F9900D158EE /* GoogleService-Info.plist */; };
+		EF9946CD2A65404100CE3B79 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF9946CC2A65404100CE3B79 /* AppDelegate.swift */; };
+		EF9946D02A65411A00CE3B79 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = EF9946CF2A65411A00CE3B79 /* FirebaseMessaging */; };
 		EFA432CC2A5C4FD500D158EE /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = EFA432CB2A5C4FD500D158EE /* FirebaseAnalytics */; };
 		EFA432CE2A5C4FD500D158EE /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = EFA432CD2A5C4FD500D158EE /* FirebaseAuth */; };
 		EFA432D02A5C4FD500D158EE /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = EFA432CF2A5C4FD500D158EE /* FirebaseFirestore */; };
+		EFEA286F2A65952000FC4965 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EFEA286E2A65952000FC4965 /* GoogleService-Info.plist */; };
 		EFECCBA62A612F540093BB67 /* Member.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFECCBA52A612F540093BB67 /* Member.swift */; };
 		EFECCBA82A612F610093BB67 /* Poke.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFECCBA72A612F610093BB67 /* Poke.swift */; };
 		EFECCBAA2A612F720093BB67 /* GroupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFECCBA92A612F720093BB67 /* GroupViewModel.swift */; };
@@ -64,7 +66,11 @@
 		EF81A9D22A5B8C0200C6F417 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		EF81A9D42A5B8C0300C6F417 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EF81A9D72A5B8C0300C6F417 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		EFA432C82A5C4F9900D158EE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		EF9946CB2A65401000CE3B79 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		EF9946CC2A65404100CE3B79 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		EFEA286C2A65921A00FC4965 /* CDDWatchApp Watch App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "CDDWatchApp Watch App.entitlements"; sourceTree = "<group>"; };
+		EFEA286D2A65922200FC4965 /* CDDWatchApp-Watch-App-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "CDDWatchApp-Watch-App-Info.plist"; sourceTree = SOURCE_ROOT; };
+		EFEA286E2A65952000FC4965 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		EFECCBA52A612F540093BB67 /* Member.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Member.swift; sourceTree = "<group>"; };
 		EFECCBA72A612F610093BB67 /* Poke.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Poke.swift; sourceTree = "<group>"; };
 		EFECCBA92A612F720093BB67 /* GroupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupViewModel.swift; sourceTree = "<group>"; };
@@ -78,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EF9946D02A65411A00CE3B79 /* FirebaseMessaging in Frameworks */,
 				EFA432CC2A5C4FD500D158EE /* FirebaseAnalytics in Frameworks */,
 				EFA432CE2A5C4FD500D158EE /* FirebaseAuth in Frameworks */,
 				EFA432D02A5C4FD500D158EE /* FirebaseFirestore in Frameworks */,
@@ -100,6 +107,7 @@
 				EF81A9B52A5B8A1400C6F417 /* ChuckchuDrivenDevelopment */,
 				EF81A9CF2A5B8C0200C6F417 /* CDDWatchApp Watch App */,
 				EF81A9B42A5B8A1400C6F417 /* Products */,
+				EF9946CE2A65411A00CE3B79 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -115,9 +123,11 @@
 		EF81A9B52A5B8A1400C6F417 /* ChuckchuDrivenDevelopment */ = {
 			isa = PBXGroup;
 			children = (
-				EFA432C82A5C4F9900D158EE /* GoogleService-Info.plist */,
+				EFEA286E2A65952000FC4965 /* GoogleService-Info.plist */,
+				EF9946CB2A65401000CE3B79 /* Info.plist */,
 				EF81A9C12A5B8A1500C6F417 /* ChuckchuDrivenDevelopment.entitlements */,
 				EF81A9B62A5B8A1400C6F417 /* ChuckchuDrivenDevelopmentApp.swift */,
+				EF9946CC2A65404100CE3B79 /* AppDelegate.swift */,
 				EF81A9BD2A5B8A1400C6F417 /* ContentView.swift */,
 				EFECCB9F2A612E280093BB67 /* Models */,
 				EFECCB9E2A612E200093BB67 /* ViewModels */,
@@ -139,6 +149,8 @@
 		EF81A9CF2A5B8C0200C6F417 /* CDDWatchApp Watch App */ = {
 			isa = PBXGroup;
 			children = (
+				EFEA286D2A65922200FC4965 /* CDDWatchApp-Watch-App-Info.plist */,
+				EFEA286C2A65921A00FC4965 /* CDDWatchApp Watch App.entitlements */,
 				EF81A9D02A5B8C0200C6F417 /* CDDWatchAppApp.swift */,
 				EF81A9D22A5B8C0200C6F417 /* ContentView.swift */,
 				EF81A9D42A5B8C0300C6F417 /* Assets.xcassets */,
@@ -153,6 +165,13 @@
 				EF81A9D72A5B8C0300C6F417 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		EF9946CE2A65411A00CE3B79 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		EFECCB9D2A612E0D0093BB67 /* Views */ = {
@@ -244,6 +263,7 @@
 				EFA432CB2A5C4FD500D158EE /* FirebaseAnalytics */,
 				EFA432CD2A5C4FD500D158EE /* FirebaseAuth */,
 				EFA432CF2A5C4FD500D158EE /* FirebaseFirestore */,
+				EF9946CF2A65411A00CE3B79 /* FirebaseMessaging */,
 			);
 			productName = ChuckchuDrivenDevelopment;
 			productReference = EF81A9B32A5B8A1400C6F417 /* ChuckchuDrivenDevelopment.app */;
@@ -313,7 +333,7 @@
 			files = (
 				EF81A9C42A5B8A1500C6F417 /* Preview Assets.xcassets in Resources */,
 				EF81A9C02A5B8A1500C6F417 /* Assets.xcassets in Resources */,
-				EFA432C92A5C4F9900D158EE /* GoogleService-Info.plist in Resources */,
+				EFEA286F2A65952000FC4965 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -336,6 +356,7 @@
 				EF81A9B72A5B8A1400C6F417 /* ChuckchuDrivenDevelopmentApp.swift in Sources */,
 				EFECCBAA2A612F720093BB67 /* GroupViewModel.swift in Sources */,
 				EFECCBB02A61302A0093BB67 /* Group.swift in Sources */,
+				EF9946CD2A65404100CE3B79 /* AppDelegate.swift in Sources */,
 				EFECCBAE2A612F8A0093BB67 /* PokeViewModel.swift in Sources */,
 				EF81A9BE2A5B8A1400C6F417 /* ContentView.swift in Sources */,
 				EFECCBAC2A612F810093BB67 /* MemberViewModel.swift in Sources */,
@@ -483,8 +504,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ChuckchuDrivenDevelopment/Preview Content\"";
+				DEVELOPMENT_TEAM = 34U36L8239;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ChuckchuDrivenDevelopment/Info.plist;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -500,7 +523,7 @@
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = liannechoi.ChuckchuDrivenDevelopment;
+				PRODUCT_BUNDLE_IDENTIFIER = com.liannechoi.ChuckchuDrivenDevelopment;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
@@ -522,8 +545,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ChuckchuDrivenDevelopment/Preview Content\"";
+				DEVELOPMENT_TEAM = 34U36L8239;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ChuckchuDrivenDevelopment/Info.plist;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -539,7 +564,7 @@
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = liannechoi.ChuckchuDrivenDevelopment;
+				PRODUCT_BUNDLE_IDENTIFIER = com.liannechoi.ChuckchuDrivenDevelopment;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
@@ -556,20 +581,23 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "CDDWatchApp Watch App/CDDWatchApp Watch App.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"CDDWatchApp Watch App/Preview Content\"";
+				DEVELOPMENT_TEAM = 34U36L8239;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "CDDWatchApp-Watch-App-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = CDDWatchApp;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = liannechoi.ChuckchuDrivenDevelopment;
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.liannechoi.ChuckchuDrivenDevelopment;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = liannechoi.ChuckchuDrivenDevelopment.watchkitapp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.liannechoi.ChuckchuDrivenDevelopment.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -585,20 +613,23 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "CDDWatchApp Watch App/CDDWatchApp Watch App.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"CDDWatchApp Watch App/Preview Content\"";
+				DEVELOPMENT_TEAM = 34U36L8239;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "CDDWatchApp-Watch-App-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = CDDWatchApp;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = liannechoi.ChuckchuDrivenDevelopment;
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.liannechoi.ChuckchuDrivenDevelopment;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = liannechoi.ChuckchuDrivenDevelopment.watchkitapp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.liannechoi.ChuckchuDrivenDevelopment.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -654,6 +685,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		EF9946CF2A65411A00CE3B79 /* FirebaseMessaging */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EFA432CA2A5C4FD500D158EE /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseMessaging;
+		};
 		EFA432CB2A5C4FD500D158EE /* FirebaseAnalytics */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = EFA432CA2A5C4FD500D158EE /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;

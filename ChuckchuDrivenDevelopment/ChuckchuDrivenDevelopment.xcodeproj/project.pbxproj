@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DEDBC6972A65152400AB3867 /* AlarmSettingModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDBC6962A65152400AB3867 /* AlarmSettingModalView.swift */; };
+		DEDBC6992A65236C00AB3867 /* SelectNotificationDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDBC6982A65236C00AB3867 /* SelectNotificationDay.swift */; };
 		EF81A9B72A5B8A1400C6F417 /* ChuckchuDrivenDevelopmentApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF81A9B62A5B8A1400C6F417 /* ChuckchuDrivenDevelopmentApp.swift */; };
 		EF81A9BE2A5B8A1400C6F417 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF81A9BD2A5B8A1400C6F417 /* ContentView.swift */; };
 		EF81A9C02A5B8A1500C6F417 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF81A9BF2A5B8A1500C6F417 /* Assets.xcassets */; };
@@ -25,7 +27,7 @@
 		EFECCBAA2A612F720093BB67 /* GroupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFECCBA92A612F720093BB67 /* GroupViewModel.swift */; };
 		EFECCBAC2A612F810093BB67 /* MemberViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFECCBAB2A612F810093BB67 /* MemberViewModel.swift */; };
 		EFECCBAE2A612F8A0093BB67 /* PokeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFECCBAD2A612F8A0093BB67 /* PokeViewModel.swift */; };
-		EFECCBB02A61302A0093BB67 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFECCBAF2A61302A0093BB67 /* Group.swift */; };
+		EFECCBB02A61302A0093BB67 /* MemberGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFECCBAF2A61302A0093BB67 /* MemberGroup.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		DEDBC6962A65152400AB3867 /* AlarmSettingModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmSettingModalView.swift; sourceTree = "<group>"; };
+		DEDBC6982A65236C00AB3867 /* SelectNotificationDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectNotificationDay.swift; sourceTree = "<group>"; };
 		EF81A9B32A5B8A1400C6F417 /* ChuckchuDrivenDevelopment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChuckchuDrivenDevelopment.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF81A9B62A5B8A1400C6F417 /* ChuckchuDrivenDevelopmentApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChuckchuDrivenDevelopmentApp.swift; sourceTree = "<group>"; };
 		EF81A9BD2A5B8A1400C6F417 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -64,13 +68,13 @@
 		EF81A9D22A5B8C0200C6F417 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		EF81A9D42A5B8C0300C6F417 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EF81A9D72A5B8C0300C6F417 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		EFA432C82A5C4F9900D158EE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		EFA432C82A5C4F9900D158EE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		EFECCBA52A612F540093BB67 /* Member.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Member.swift; sourceTree = "<group>"; };
 		EFECCBA72A612F610093BB67 /* Poke.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Poke.swift; sourceTree = "<group>"; };
 		EFECCBA92A612F720093BB67 /* GroupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupViewModel.swift; sourceTree = "<group>"; };
 		EFECCBAB2A612F810093BB67 /* MemberViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberViewModel.swift; sourceTree = "<group>"; };
 		EFECCBAD2A612F8A0093BB67 /* PokeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokeViewModel.swift; sourceTree = "<group>"; };
-		EFECCBAF2A61302A0093BB67 /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
+		EFECCBAF2A61302A0093BB67 /* MemberGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberGroup.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +98,55 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DEDBC6902A65144900AB3867 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DEDBC6952A65146A00AB3867 /* Alex */,
+				DEDBC6942A65146600AB3867 /* Guardy */,
+				DEDBC6932A65146000AB3867 /* Lianne */,
+				DEDBC6922A65145C00AB3867 /* TheoNa */,
+				DEDBC6912A65145700AB3867 /* TheoPark */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		DEDBC6912A65145700AB3867 /* TheoPark */ = {
+			isa = PBXGroup;
+			children = (
+				DEDBC6962A65152400AB3867 /* AlarmSettingModalView.swift */,
+				DEDBC6982A65236C00AB3867 /* SelectNotificationDay.swift */,
+			);
+			path = TheoPark;
+			sourceTree = "<group>";
+		};
+		DEDBC6922A65145C00AB3867 /* TheoNa */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = TheoNa;
+			sourceTree = "<group>";
+		};
+		DEDBC6932A65146000AB3867 /* Lianne */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Lianne;
+			sourceTree = "<group>";
+		};
+		DEDBC6942A65146600AB3867 /* Guardy */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Guardy;
+			sourceTree = "<group>";
+		};
+		DEDBC6952A65146A00AB3867 /* Alex */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Alex;
+			sourceTree = "<group>";
+		};
 		EF81A9AA2A5B8A1400C6F417 = {
 			isa = PBXGroup;
 			children = (
@@ -115,13 +168,13 @@
 		EF81A9B52A5B8A1400C6F417 /* ChuckchuDrivenDevelopment */ = {
 			isa = PBXGroup;
 			children = (
+				DEDBC6902A65144900AB3867 /* Views */,
 				EFA432C82A5C4F9900D158EE /* GoogleService-Info.plist */,
 				EF81A9C12A5B8A1500C6F417 /* ChuckchuDrivenDevelopment.entitlements */,
 				EF81A9B62A5B8A1400C6F417 /* ChuckchuDrivenDevelopmentApp.swift */,
 				EF81A9BD2A5B8A1400C6F417 /* ContentView.swift */,
 				EFECCB9F2A612E280093BB67 /* Models */,
 				EFECCB9E2A612E200093BB67 /* ViewModels */,
-				EFECCB9D2A612E0D0093BB67 /* Views */,
 				EF81A9BF2A5B8A1500C6F417 /* Assets.xcassets */,
 				EF81A9C22A5B8A1500C6F417 /* Preview Content */,
 			);
@@ -155,18 +208,6 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		EFECCB9D2A612E0D0093BB67 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				EFECCBA12A612E550093BB67 /* Alex */,
-				EFECCBA02A612E440093BB67 /* Guardy */,
-				EFECCBA42A612ECA0093BB67 /* Lianne */,
-				EFECCBA32A612E6E0093BB67 /* TheoNa */,
-				EFECCBA22A612E5C0093BB67 /* TheoPark */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
 		EFECCB9E2A612E200093BB67 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
@@ -180,46 +221,11 @@
 		EFECCB9F2A612E280093BB67 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				EFECCBAF2A61302A0093BB67 /* Group.swift */,
+				EFECCBAF2A61302A0093BB67 /* MemberGroup.swift */,
 				EFECCBA52A612F540093BB67 /* Member.swift */,
 				EFECCBA72A612F610093BB67 /* Poke.swift */,
 			);
 			path = Models;
-			sourceTree = "<group>";
-		};
-		EFECCBA02A612E440093BB67 /* Guardy */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Guardy;
-			sourceTree = "<group>";
-		};
-		EFECCBA12A612E550093BB67 /* Alex */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Alex;
-			sourceTree = "<group>";
-		};
-		EFECCBA22A612E5C0093BB67 /* TheoPark */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = TheoPark;
-			sourceTree = "<group>";
-		};
-		EFECCBA32A612E6E0093BB67 /* TheoNa */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = TheoNa;
-			sourceTree = "<group>";
-		};
-		EFECCBA42A612ECA0093BB67 /* Lianne */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Lianne;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -333,9 +339,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DEDBC6972A65152400AB3867 /* AlarmSettingModalView.swift in Sources */,
 				EF81A9B72A5B8A1400C6F417 /* ChuckchuDrivenDevelopmentApp.swift in Sources */,
 				EFECCBAA2A612F720093BB67 /* GroupViewModel.swift in Sources */,
-				EFECCBB02A61302A0093BB67 /* Group.swift in Sources */,
+				DEDBC6992A65236C00AB3867 /* SelectNotificationDay.swift in Sources */,
+				EFECCBB02A61302A0093BB67 /* MemberGroup.swift in Sources */,
 				EFECCBAE2A612F8A0093BB67 /* PokeViewModel.swift in Sources */,
 				EF81A9BE2A5B8A1400C6F417 /* ContentView.swift in Sources */,
 				EFECCBAC2A612F810093BB67 /* MemberViewModel.swift in Sources */,

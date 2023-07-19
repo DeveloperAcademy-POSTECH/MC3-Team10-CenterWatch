@@ -26,6 +26,11 @@
 		EFEA286F2A65952000FC4965 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EFEA286E2A65952000FC4965 /* GoogleService-Info.plist */; };
 		EFEA28712A67B62700FC4965 /* PushNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFEA28702A67B62700FC4965 /* PushNotificationManager.swift */; };
 		EFEA28742A67BDBF00FC4965 /* NotificationTestingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFEA28732A67BDBF00FC4965 /* NotificationTestingView.swift */; };
+		EFEA28932A67CFCE00FC4965 /* PokeUserTestNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFEA28902A67CFCE00FC4965 /* PokeUserTestNameView.swift */; };
+		EFEA28942A67CFCE00FC4965 /* PokeUserTestListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFEA28912A67CFCE00FC4965 /* PokeUserTestListView.swift */; };
+		EFEA28952A67CFCE00FC4965 /* PokeUserTestHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFEA28922A67CFCE00FC4965 /* PokeUserTestHomeView.swift */; };
+		EFEA28992A67D00500FC4965 /* GuardyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFEA28982A67D00500FC4965 /* GuardyView.swift */; };
+		EFEA289B2A67D00F00FC4965 /* TheoNaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFEA289A2A67D00F00FC4965 /* TheoNaView.swift */; };
 		EFECCBA62A612F540093BB67 /* Member.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFECCBA52A612F540093BB67 /* Member.swift */; };
 		EFECCBA82A612F610093BB67 /* Poke.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFECCBA72A612F610093BB67 /* Poke.swift */; };
 		EFECCBAA2A612F720093BB67 /* GroupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFECCBA92A612F720093BB67 /* GroupViewModel.swift */; };
@@ -72,7 +77,6 @@
 		EF81A9D22A5B8C0200C6F417 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		EF81A9D42A5B8C0300C6F417 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EF81A9D72A5B8C0300C6F417 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-
 		EF9946CB2A65401000CE3B79 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		EF9946CC2A65404100CE3B79 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EFEA286C2A65921A00FC4965 /* CDDWatchApp Watch App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "CDDWatchApp Watch App.entitlements"; sourceTree = "<group>"; };
@@ -80,6 +84,11 @@
 		EFEA286E2A65952000FC4965 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		EFEA28702A67B62700FC4965 /* PushNotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushNotificationManager.swift; sourceTree = "<group>"; };
 		EFEA28732A67BDBF00FC4965 /* NotificationTestingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationTestingView.swift; sourceTree = "<group>"; };
+		EFEA28902A67CFCE00FC4965 /* PokeUserTestNameView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokeUserTestNameView.swift; sourceTree = "<group>"; };
+		EFEA28912A67CFCE00FC4965 /* PokeUserTestListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokeUserTestListView.swift; sourceTree = "<group>"; };
+		EFEA28922A67CFCE00FC4965 /* PokeUserTestHomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokeUserTestHomeView.swift; sourceTree = "<group>"; };
+		EFEA28982A67D00500FC4965 /* GuardyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuardyView.swift; sourceTree = "<group>"; };
+		EFEA289A2A67D00F00FC4965 /* TheoNaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheoNaView.swift; sourceTree = "<group>"; };
 		EFECCBA52A612F540093BB67 /* Member.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Member.swift; sourceTree = "<group>"; };
 		EFECCBA72A612F610093BB67 /* Poke.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Poke.swift; sourceTree = "<group>"; };
 		EFECCBA92A612F720093BB67 /* GroupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupViewModel.swift; sourceTree = "<group>"; };
@@ -113,10 +122,9 @@
 		DEDBC6902A65144900AB3867 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				DEDBC6952A65146A00AB3867 /* Alex */,
-				DEDBC6942A65146600AB3867 /* Guardy */,
-				DEDBC6932A65146000AB3867 /* Lianne */,
-				DEDBC6922A65145C00AB3867 /* TheoNa */,
+				EFEA28972A67CFF800FC4965 /* Guardy */,
+				EFEA28962A67CFEF00FC4965 /* TheoNa */,
+				EFEA288F2A67CFCE00FC4965 /* Alex */,
 				DEDBC6912A65145700AB3867 /* TheoPark */,
 			);
 			path = Views;
@@ -129,34 +137,6 @@
 				DEDBC6982A65236C00AB3867 /* SelectNotificationDay.swift */,
 			);
 			path = TheoPark;
-			sourceTree = "<group>";
-		};
-		DEDBC6922A65145C00AB3867 /* TheoNa */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = TheoNa;
-			sourceTree = "<group>";
-		};
-		DEDBC6932A65146000AB3867 /* Lianne */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Lianne;
-			sourceTree = "<group>";
-		};
-		DEDBC6942A65146600AB3867 /* Guardy */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Guardy;
-			sourceTree = "<group>";
-		};
-		DEDBC6952A65146A00AB3867 /* Alex */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Alex;
 			sourceTree = "<group>";
 		};
 		EF81A9AA2A5B8A1400C6F417 = {
@@ -181,7 +161,6 @@
 		EF81A9B52A5B8A1400C6F417 /* ChuckchuDrivenDevelopment */ = {
 			isa = PBXGroup;
 			children = (
-
 				EFEA286E2A65952000FC4965 /* GoogleService-Info.plist */,
 				EF9946CB2A65401000CE3B79 /* Info.plist */,
 				DEDBC6902A65144900AB3867 /* Views */,
@@ -227,7 +206,6 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-
 		EF9946CE2A65411A00CE3B79 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -244,19 +222,32 @@
 			path = PushNotification;
 			sourceTree = "<group>";
 		};
-		EFECCB9D2A612E0D0093BB67 /* Views */ = {
+		EFEA288F2A67CFCE00FC4965 /* Alex */ = {
 			isa = PBXGroup;
 			children = (
-				EFECCBA12A612E550093BB67 /* Alex */,
-				EFECCBA02A612E440093BB67 /* Guardy */,
-				EFECCBA42A612ECA0093BB67 /* Lianne */,
-				EFECCBA32A612E6E0093BB67 /* TheoNa */,
-				EFECCBA22A612E5C0093BB67 /* TheoPark */,
+				EFEA28902A67CFCE00FC4965 /* PokeUserTestNameView.swift */,
+				EFEA28912A67CFCE00FC4965 /* PokeUserTestListView.swift */,
+				EFEA28922A67CFCE00FC4965 /* PokeUserTestHomeView.swift */,
 			);
-			path = Views;
+			path = Alex;
 			sourceTree = "<group>";
 		};
-
+		EFEA28962A67CFEF00FC4965 /* TheoNa */ = {
+			isa = PBXGroup;
+			children = (
+				EFEA289A2A67D00F00FC4965 /* TheoNaView.swift */,
+			);
+			path = TheoNa;
+			sourceTree = "<group>";
+		};
+		EFEA28972A67CFF800FC4965 /* Guardy */ = {
+			isa = PBXGroup;
+			children = (
+				EFEA28982A67D00500FC4965 /* GuardyView.swift */,
+			);
+			path = Guardy;
+			sourceTree = "<group>";
+		};
 		EFECCB9E2A612E200093BB67 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
@@ -393,13 +384,18 @@
 				EF81A9B72A5B8A1400C6F417 /* ChuckchuDrivenDevelopmentApp.swift in Sources */,
 				EFECCBAA2A612F720093BB67 /* GroupViewModel.swift in Sources */,
 				EFEA28712A67B62700FC4965 /* PushNotificationManager.swift in Sources */,
-				EFECCBB02A61302A0093BB67 /* Group.swift in Sources */,
+				EFEA28952A67CFCE00FC4965 /* PokeUserTestHomeView.swift in Sources */,
+				EFECCBB02A61302A0093BB67 /* MemberGroup.swift in Sources */,
 				EF9946CD2A65404100CE3B79 /* AppDelegate.swift in Sources */,
 				DEDBC6992A65236C00AB3867 /* SelectNotificationDay.swift in Sources */,
 				EFECCBB02A61302A0093BB67 /* MemberGroup.swift in Sources */,
 				EFECCBAE2A612F8A0093BB67 /* PokeViewModel.swift in Sources */,
+				EFEA289B2A67D00F00FC4965 /* TheoNaView.swift in Sources */,
+				EFEA28932A67CFCE00FC4965 /* PokeUserTestNameView.swift in Sources */,
+				EFEA28942A67CFCE00FC4965 /* PokeUserTestListView.swift in Sources */,
 				EFEA28742A67BDBF00FC4965 /* NotificationTestingView.swift in Sources */,
 				EF81A9BE2A5B8A1400C6F417 /* ContentView.swift in Sources */,
+				EFEA28992A67D00500FC4965 /* GuardyView.swift in Sources */,
 				EFECCBAC2A612F810093BB67 /* MemberViewModel.swift in Sources */,
 				EFECCBA82A612F610093BB67 /* Poke.swift in Sources */,
 				EFECCBA62A612F540093BB67 /* Member.swift in Sources */,

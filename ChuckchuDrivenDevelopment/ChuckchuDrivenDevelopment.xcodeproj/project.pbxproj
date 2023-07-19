@@ -26,9 +26,11 @@
 		EFEA286F2A65952000FC4965 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EFEA286E2A65952000FC4965 /* GoogleService-Info.plist */; };
 		EFEA28712A67B62700FC4965 /* PushNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFEA28702A67B62700FC4965 /* PushNotificationManager.swift */; };
 		EFEA28742A67BDBF00FC4965 /* NotificationTestingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFEA28732A67BDBF00FC4965 /* NotificationTestingView.swift */; };
-		EFEA287F2A67CD3300FC4965 /* PokeUserTestHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFEA287C2A67CD3200FC4965 /* PokeUserTestHomeView.swift */; };
-		EFEA28802A67CD3300FC4965 /* PokeUserTestListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFEA287D2A67CD3200FC4965 /* PokeUserTestListView.swift */; };
-		EFEA28812A67CD3300FC4965 /* PokeUserTestNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFEA287E2A67CD3200FC4965 /* PokeUserTestNameView.swift */; };
+		EFEA28862A67CDCC00FC4965 /* PokeUserTestNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFEA28832A67CDCC00FC4965 /* PokeUserTestNameView.swift */; };
+		EFEA28872A67CDCC00FC4965 /* PokeUserTestListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFEA28842A67CDCC00FC4965 /* PokeUserTestListView.swift */; };
+		EFEA28882A67CDCC00FC4965 /* PokeUserTestHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFEA28852A67CDCC00FC4965 /* PokeUserTestHomeView.swift */; };
+		EFEA288C2A67CE2600FC4965 /* GuardyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFEA288B2A67CE2600FC4965 /* GuardyView.swift */; };
+		EFEA288E2A67CE3200FC4965 /* TheoNaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFEA288D2A67CE3200FC4965 /* TheoNaView.swift */; };
 		EFECCBA62A612F540093BB67 /* Member.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFECCBA52A612F540093BB67 /* Member.swift */; };
 		EFECCBA82A612F610093BB67 /* Poke.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFECCBA72A612F610093BB67 /* Poke.swift */; };
 		EFECCBAA2A612F720093BB67 /* GroupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFECCBA92A612F720093BB67 /* GroupViewModel.swift */; };
@@ -82,9 +84,11 @@
 		EFEA286E2A65952000FC4965 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		EFEA28702A67B62700FC4965 /* PushNotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushNotificationManager.swift; sourceTree = "<group>"; };
 		EFEA28732A67BDBF00FC4965 /* NotificationTestingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationTestingView.swift; sourceTree = "<group>"; };
-		EFEA287C2A67CD3200FC4965 /* PokeUserTestHomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PokeUserTestHomeView.swift; path = ChuckchuDrivenDevelopment/Views/PokeUserTestHomeView.swift; sourceTree = SOURCE_ROOT; };
-		EFEA287D2A67CD3200FC4965 /* PokeUserTestListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PokeUserTestListView.swift; path = ChuckchuDrivenDevelopment/Views/PokeUserTestListView.swift; sourceTree = SOURCE_ROOT; };
-		EFEA287E2A67CD3200FC4965 /* PokeUserTestNameView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PokeUserTestNameView.swift; path = ChuckchuDrivenDevelopment/Views/PokeUserTestNameView.swift; sourceTree = SOURCE_ROOT; };
+		EFEA28832A67CDCC00FC4965 /* PokeUserTestNameView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokeUserTestNameView.swift; sourceTree = "<group>"; };
+		EFEA28842A67CDCC00FC4965 /* PokeUserTestListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokeUserTestListView.swift; sourceTree = "<group>"; };
+		EFEA28852A67CDCC00FC4965 /* PokeUserTestHomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokeUserTestHomeView.swift; sourceTree = "<group>"; };
+		EFEA288B2A67CE2600FC4965 /* GuardyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuardyView.swift; sourceTree = "<group>"; };
+		EFEA288D2A67CE3200FC4965 /* TheoNaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheoNaView.swift; sourceTree = "<group>"; };
 		EFECCBA52A612F540093BB67 /* Member.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Member.swift; sourceTree = "<group>"; };
 		EFECCBA72A612F610093BB67 /* Poke.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Poke.swift; sourceTree = "<group>"; };
 		EFECCBA92A612F720093BB67 /* GroupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupViewModel.swift; sourceTree = "<group>"; };
@@ -118,10 +122,9 @@
 		DEDBC6902A65144900AB3867 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				EFEA287B2A67CCED00FC4965 /* Alex */,
-				DEDBC6942A65146600AB3867 /* Guardy */,
-				DEDBC6932A65146000AB3867 /* Lianne */,
-				DEDBC6922A65145C00AB3867 /* TheoNa */,
+				EFEA28892A67CE1D00FC4965 /* Guardy */,
+				EFEA288A2A67CE1D00FC4965 /* TheoNa */,
+				EFEA28822A67CDCC00FC4965 /* Alex */,
 				DEDBC6912A65145700AB3867 /* TheoPark */,
 			);
 			path = Views;
@@ -134,27 +137,6 @@
 				DEDBC6982A65236C00AB3867 /* SelectNotificationDay.swift */,
 			);
 			path = TheoPark;
-			sourceTree = "<group>";
-		};
-		DEDBC6922A65145C00AB3867 /* TheoNa */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = TheoNa;
-			sourceTree = "<group>";
-		};
-		DEDBC6932A65146000AB3867 /* Lianne */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Lianne;
-			sourceTree = "<group>";
-		};
-		DEDBC6942A65146600AB3867 /* Guardy */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Guardy;
 			sourceTree = "<group>";
 		};
 		EF81A9AA2A5B8A1400C6F417 = {
@@ -240,14 +222,30 @@
 			path = PushNotification;
 			sourceTree = "<group>";
 		};
-		EFEA287B2A67CCED00FC4965 /* Alex */ = {
+		EFEA28822A67CDCC00FC4965 /* Alex */ = {
 			isa = PBXGroup;
 			children = (
-				EFEA287C2A67CD3200FC4965 /* PokeUserTestHomeView.swift */,
-				EFEA287D2A67CD3200FC4965 /* PokeUserTestListView.swift */,
-				EFEA287E2A67CD3200FC4965 /* PokeUserTestNameView.swift */,
+				EFEA28832A67CDCC00FC4965 /* PokeUserTestNameView.swift */,
+				EFEA28842A67CDCC00FC4965 /* PokeUserTestListView.swift */,
+				EFEA28852A67CDCC00FC4965 /* PokeUserTestHomeView.swift */,
 			);
 			path = Alex;
+			sourceTree = "<group>";
+		};
+		EFEA28892A67CE1D00FC4965 /* Guardy */ = {
+			isa = PBXGroup;
+			children = (
+				EFEA288B2A67CE2600FC4965 /* GuardyView.swift */,
+			);
+			path = Guardy;
+			sourceTree = "<group>";
+		};
+		EFEA288A2A67CE1D00FC4965 /* TheoNa */ = {
+			isa = PBXGroup;
+			children = (
+				EFEA288D2A67CE3200FC4965 /* TheoNaView.swift */,
+			);
+			path = TheoNa;
 			sourceTree = "<group>";
 		};
 		EFECCB9E2A612E200093BB67 /* ViewModels */ = {
@@ -386,16 +384,18 @@
 				EF81A9B72A5B8A1400C6F417 /* ChuckchuDrivenDevelopmentApp.swift in Sources */,
 				EFECCBAA2A612F720093BB67 /* GroupViewModel.swift in Sources */,
 				EFEA28712A67B62700FC4965 /* PushNotificationManager.swift in Sources */,
+				EFEA28882A67CDCC00FC4965 /* PokeUserTestHomeView.swift in Sources */,
 				EFECCBB02A61302A0093BB67 /* MemberGroup.swift in Sources */,
 				EF9946CD2A65404100CE3B79 /* AppDelegate.swift in Sources */,
 				DEDBC6992A65236C00AB3867 /* SelectNotificationDay.swift in Sources */,
-				EFEA28812A67CD3300FC4965 /* PokeUserTestNameView.swift in Sources */,
-				EFEA287F2A67CD3300FC4965 /* PokeUserTestHomeView.swift in Sources */,
 				EFECCBB02A61302A0093BB67 /* MemberGroup.swift in Sources */,
 				EFECCBAE2A612F8A0093BB67 /* PokeViewModel.swift in Sources */,
-				EFEA28802A67CD3300FC4965 /* PokeUserTestListView.swift in Sources */,
+				EFEA288E2A67CE3200FC4965 /* TheoNaView.swift in Sources */,
+				EFEA28862A67CDCC00FC4965 /* PokeUserTestNameView.swift in Sources */,
+				EFEA28872A67CDCC00FC4965 /* PokeUserTestListView.swift in Sources */,
 				EFEA28742A67BDBF00FC4965 /* NotificationTestingView.swift in Sources */,
 				EF81A9BE2A5B8A1400C6F417 /* ContentView.swift in Sources */,
+				EFEA288C2A67CE2600FC4965 /* GuardyView.swift in Sources */,
 				EFECCBAC2A612F810093BB67 /* MemberViewModel.swift in Sources */,
 				EFECCBA82A612F610093BB67 /* Poke.swift in Sources */,
 				EFECCBA62A612F540093BB67 /* Member.swift in Sources */,

@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		DEDBC6972A65152400AB3867 /* AlarmSettingModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDBC6962A65152400AB3867 /* AlarmSettingModalView.swift */; };
+		DEDBC6972A65152400AB3867 /* NotificationSettingModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDBC6962A65152400AB3867 /* NotificationSettingModalView.swift */; };
 		DEDBC6992A65236C00AB3867 /* SelectNotificationDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDBC6982A65236C00AB3867 /* SelectNotificationDay.swift */; };
 		EF81A9B72A5B8A1400C6F417 /* ChuckchuDrivenDevelopmentApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF81A9B62A5B8A1400C6F417 /* ChuckchuDrivenDevelopmentApp.swift */; };
 		EF81A9BE2A5B8A1400C6F417 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF81A9BD2A5B8A1400C6F417 /* ContentView.swift */; };
@@ -55,7 +55,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		DEDBC6962A65152400AB3867 /* AlarmSettingModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmSettingModalView.swift; sourceTree = "<group>"; };
+		DEDBC6962A65152400AB3867 /* NotificationSettingModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationSettingModalView.swift; sourceTree = "<group>"; };
 		DEDBC6982A65236C00AB3867 /* SelectNotificationDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectNotificationDay.swift; sourceTree = "<group>"; };
 		EF81A9B32A5B8A1400C6F417 /* ChuckchuDrivenDevelopment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChuckchuDrivenDevelopment.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF81A9B62A5B8A1400C6F417 /* ChuckchuDrivenDevelopmentApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChuckchuDrivenDevelopmentApp.swift; sourceTree = "<group>"; };
@@ -113,7 +113,7 @@
 		DEDBC6912A65145700AB3867 /* TheoPark */ = {
 			isa = PBXGroup;
 			children = (
-				DEDBC6962A65152400AB3867 /* AlarmSettingModalView.swift */,
+				DEDBC6962A65152400AB3867 /* NotificationSettingModalView.swift */,
 				DEDBC6982A65236C00AB3867 /* SelectNotificationDay.swift */,
 			);
 			path = TheoPark;
@@ -339,7 +339,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DEDBC6972A65152400AB3867 /* AlarmSettingModalView.swift in Sources */,
+				DEDBC6972A65152400AB3867 /* NotificationSettingModalView.swift in Sources */,
 				EF81A9B72A5B8A1400C6F417 /* ChuckchuDrivenDevelopmentApp.swift in Sources */,
 				EFECCBAA2A612F720093BB67 /* GroupViewModel.swift in Sources */,
 				DEDBC6992A65236C00AB3867 /* SelectNotificationDay.swift in Sources */,

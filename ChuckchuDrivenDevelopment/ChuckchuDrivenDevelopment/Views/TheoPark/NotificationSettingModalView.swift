@@ -7,16 +7,16 @@
 
 import SwiftUI
 
-struct AlarmSettingModalView: View {
-    @State private var showAlarmSettingModal: Bool = false
+struct NotificationSettingModalView: View {
+    @State private var showNotificationSettingModal: Bool = false
     
     var body: some View {
         Button {
-            self.showAlarmSettingModal = true
+            self.showNotificationSettingModal = true
         } label: {
             Text("알림 설정")
         }
-        .sheet(isPresented: self.$showAlarmSettingModal) {
+        .sheet(isPresented: self.$showNotificationSettingModal) {
             ModalView()
         }
 

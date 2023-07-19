@@ -9,8 +9,8 @@ import SwiftUI
 
 struct NotificationTestingView: View {
     
-    private let projectServerKey = ""
-    private let testingDeviceToken = ""
+    private let projectServerKey = "AAAARzVcvuo:APA91bHOZaHjaflKLZejoKIZfpnoaungCtIPLIzLE-U8yIAGbNmlbbiJd_oPYP8nJKhspOfaYxsHL8TpvTo1sxQuEN71DvVA336Gr2k_3gyjqeUajFXlnA9jDXCttIbA4ny8q5PmALcC"
+    private let testingDeviceToken = "eM8OQvkNr0CIp06Wkq19v3:APA91bG-sSNglYgcJBzwy3512FAaHY181bdls6sy8uQkrsICVSt7IXl1QayMW2evw5EEMJKP8a2wcffPmHRh263ZSLmNxKO5bTKIty_D8dMQjiRgaSUCJq3eYgTlJ1dlzuHUsrdB7B2R"
     
     
     var body: some View {

@@ -22,6 +22,8 @@
 		EFA432CE2A5C4FD500D158EE /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = EFA432CD2A5C4FD500D158EE /* FirebaseAuth */; };
 		EFA432D02A5C4FD500D158EE /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = EFA432CF2A5C4FD500D158EE /* FirebaseFirestore */; };
 		EFEA286F2A65952000FC4965 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EFEA286E2A65952000FC4965 /* GoogleService-Info.plist */; };
+		EFEA28712A67B62700FC4965 /* PushNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFEA28702A67B62700FC4965 /* PushNotificationManager.swift */; };
+		EFEA28742A67BDBF00FC4965 /* NotificationTestingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFEA28732A67BDBF00FC4965 /* NotificationTestingView.swift */; };
 		EFECCBA62A612F540093BB67 /* Member.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFECCBA52A612F540093BB67 /* Member.swift */; };
 		EFECCBA82A612F610093BB67 /* Poke.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFECCBA72A612F610093BB67 /* Poke.swift */; };
 		EFECCBAA2A612F720093BB67 /* GroupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFECCBA92A612F720093BB67 /* GroupViewModel.swift */; };
@@ -71,6 +73,8 @@
 		EFEA286C2A65921A00FC4965 /* CDDWatchApp Watch App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "CDDWatchApp Watch App.entitlements"; sourceTree = "<group>"; };
 		EFEA286D2A65922200FC4965 /* CDDWatchApp-Watch-App-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "CDDWatchApp-Watch-App-Info.plist"; sourceTree = SOURCE_ROOT; };
 		EFEA286E2A65952000FC4965 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		EFEA28702A67B62700FC4965 /* PushNotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushNotificationManager.swift; sourceTree = "<group>"; };
+		EFEA28732A67BDBF00FC4965 /* NotificationTestingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationTestingView.swift; sourceTree = "<group>"; };
 		EFECCBA52A612F540093BB67 /* Member.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Member.swift; sourceTree = "<group>"; };
 		EFECCBA72A612F610093BB67 /* Poke.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Poke.swift; sourceTree = "<group>"; };
 		EFECCBA92A612F720093BB67 /* GroupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupViewModel.swift; sourceTree = "<group>"; };
@@ -129,6 +133,7 @@
 				EF81A9B62A5B8A1400C6F417 /* ChuckchuDrivenDevelopmentApp.swift */,
 				EF9946CC2A65404100CE3B79 /* AppDelegate.swift */,
 				EF81A9BD2A5B8A1400C6F417 /* ContentView.swift */,
+				EFEA28722A67BDA600FC4965 /* PushNotification */,
 				EFECCB9F2A612E280093BB67 /* Models */,
 				EFECCB9E2A612E200093BB67 /* ViewModels */,
 				EFECCB9D2A612E0D0093BB67 /* Views */,
@@ -172,6 +177,15 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EFEA28722A67BDA600FC4965 /* PushNotification */ = {
+			isa = PBXGroup;
+			children = (
+				EFEA28702A67B62700FC4965 /* PushNotificationManager.swift */,
+				EFEA28732A67BDBF00FC4965 /* NotificationTestingView.swift */,
+			);
+			path = PushNotification;
 			sourceTree = "<group>";
 		};
 		EFECCB9D2A612E0D0093BB67 /* Views */ = {
@@ -355,9 +369,11 @@
 			files = (
 				EF81A9B72A5B8A1400C6F417 /* ChuckchuDrivenDevelopmentApp.swift in Sources */,
 				EFECCBAA2A612F720093BB67 /* GroupViewModel.swift in Sources */,
+				EFEA28712A67B62700FC4965 /* PushNotificationManager.swift in Sources */,
 				EFECCBB02A61302A0093BB67 /* Group.swift in Sources */,
 				EF9946CD2A65404100CE3B79 /* AppDelegate.swift in Sources */,
 				EFECCBAE2A612F8A0093BB67 /* PokeViewModel.swift in Sources */,
+				EFEA28742A67BDBF00FC4965 /* NotificationTestingView.swift in Sources */,
 				EF81A9BE2A5B8A1400C6F417 /* ContentView.swift in Sources */,
 				EFECCBAC2A612F810093BB67 /* MemberViewModel.swift in Sources */,
 				EFECCBA82A612F610093BB67 /* Poke.swift in Sources */,

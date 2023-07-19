@@ -9,14 +9,13 @@ import SwiftUI
 
 
 struct ContentView: View {
-
+    
     var body: some View {
         VStack {
             Text("시계는 와치")
         }
     }
-
-
+    
 }
 
 
@@ -26,3 +25,4 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
+

@@ -15,7 +15,7 @@ import Foundation
 
 class GroupViewModel: ObservableObject {
     let database = Firestore.firestore()
-    @Published var groups: [Group] = []
+    @Published var groups: [MemberGroup] = []
 }
 
 
@@ -34,7 +34,7 @@ extension GroupViewModel {
             for document in querySnapshot.documents {
                 let documentData = document.data()
                 let id: String = documentData["id"] as? String ?? ""
-                let group: Group = Group(id: id)
+                let group: MemberGroup = MemberGroup(id: id)
 
                 self.groups.append(group)
             }
@@ -48,7 +48,7 @@ extension GroupViewModel {
     // MARK: - Create Group (Method)
     /// Firestore에 새로운 Group의 문서를 생성합니다.
     /// 사용법: 그룹 생성 뷰에서 초대 코드를 생성함과 동시에 이 함수를 호출해 서버에도 새 그룹을 만들어줍니다.
-    func createGroup(group: Group) async {
+    func createGroup(group: MemberGroup) async {
         do {
             try await database.collection("Group")
                 .document(group.id)

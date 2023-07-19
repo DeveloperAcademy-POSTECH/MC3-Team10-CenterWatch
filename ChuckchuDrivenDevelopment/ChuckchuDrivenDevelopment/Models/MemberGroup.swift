@@ -9,7 +9,7 @@ import Foundation
 
 // MARK: - 그룹 정보 (struct)
 /// 생성된 그룹의 정보는 아래의 형태로 저장됩니다.
-struct Group: Identifiable, Codable, Hashable {
+struct MemberGroup: Identifiable, Codable, Hashable {
     let id: String // 그룹의 고유 id 값
     
     

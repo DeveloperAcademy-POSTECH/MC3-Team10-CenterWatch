@@ -28,7 +28,7 @@ extension MemberViewModel {
     @MainActor
     func fetchMembers(groupID: String) async -> QuerySnapshot? {
         do {
-            let querySnapshot = try await database.collection("Group")
+            let querySnapshot = try await database.collection("MemberGroup")
                 .document(groupID)
                 .collection("Member")
                 .getDocuments()
@@ -37,7 +37,8 @@ extension MemberViewModel {
                 let documentData = document.data()
                 let id: String = documentData["id"] as? String ?? ""
                 let username: String = documentData["username"] as? String ?? ""
-                let member: Member = Member(id: id, username: username)
+                let deviceToken: String = documentData["deviceToken"] as? String ?? ""
+                let member: Member = Member(id: id, username: username, deviceToken: deviceToken)
 
                 self.members.append(member)
             }
@@ -53,7 +54,7 @@ extension MemberViewModel {
     /// 사용법: 회원가입 뷰에서 가입과 동시에 이 함수를 호출해 서버에 새 유저의 정보를 생성해줍니다.
     func createMember(groupID: String, with member: Member) async {
         do {
-            try await database.collection("Group")
+            try await database.collection("MemberGroup")
                 .document(groupID)
                 .collection("Member")
                 .document(member.id)

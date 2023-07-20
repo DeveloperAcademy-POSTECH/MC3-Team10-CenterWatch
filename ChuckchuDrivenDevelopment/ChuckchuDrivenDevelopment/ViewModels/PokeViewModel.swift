@@ -28,7 +28,7 @@ extension PokeViewModel {
     @MainActor
     func fetchPoke(groupID: String) async -> QuerySnapshot? {
         do {
-            let querySnapshot = try await database.collection("Group")
+            let querySnapshot = try await database.collection("MemberGroup")
                 .document(groupID)
                 .collection("Poke")
                 .getDocuments()
@@ -56,7 +56,7 @@ extension PokeViewModel {
     /// 사용법: 찌르기를 누를 때 관련된 이 함수를 호출하여 찌르기를 서버에 기록하고, 관련된 정보를 저장해줍니다.
     func createPoke(groupID: String, with poke: Poke) async {
         do {
-            try await database.collection("Group")
+            try await database.collection("MemberGroup")
                 .document(groupID)
                 .collection("Poke")
                 .document(poke.id)

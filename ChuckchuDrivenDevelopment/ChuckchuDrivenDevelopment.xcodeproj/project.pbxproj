@@ -33,7 +33,7 @@
 		EFEA289B2A67D00F00FC4965 /* TheoNaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFEA289A2A67D00F00FC4965 /* TheoNaView.swift */; };
 		EFECCBA62A612F540093BB67 /* Member.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFECCBA52A612F540093BB67 /* Member.swift */; };
 		EFECCBA82A612F610093BB67 /* Poke.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFECCBA72A612F610093BB67 /* Poke.swift */; };
-		EFECCBAA2A612F720093BB67 /* GroupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFECCBA92A612F720093BB67 /* GroupViewModel.swift */; };
+		EFECCBAA2A612F720093BB67 /* MemberGroupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFECCBA92A612F720093BB67 /* MemberGroupViewModel.swift */; };
 		EFECCBAC2A612F810093BB67 /* MemberViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFECCBAB2A612F810093BB67 /* MemberViewModel.swift */; };
 		EFECCBAE2A612F8A0093BB67 /* PokeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFECCBAD2A612F8A0093BB67 /* PokeViewModel.swift */; };
 		EFECCBB02A61302A0093BB67 /* MemberGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFECCBAF2A61302A0093BB67 /* MemberGroup.swift */; };
@@ -91,7 +91,7 @@
 		EFEA289A2A67D00F00FC4965 /* TheoNaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheoNaView.swift; sourceTree = "<group>"; };
 		EFECCBA52A612F540093BB67 /* Member.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Member.swift; sourceTree = "<group>"; };
 		EFECCBA72A612F610093BB67 /* Poke.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Poke.swift; sourceTree = "<group>"; };
-		EFECCBA92A612F720093BB67 /* GroupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupViewModel.swift; sourceTree = "<group>"; };
+		EFECCBA92A612F720093BB67 /* MemberGroupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberGroupViewModel.swift; sourceTree = "<group>"; };
 		EFECCBAB2A612F810093BB67 /* MemberViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberViewModel.swift; sourceTree = "<group>"; };
 		EFECCBAD2A612F8A0093BB67 /* PokeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokeViewModel.swift; sourceTree = "<group>"; };
 		EFECCBAF2A61302A0093BB67 /* MemberGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberGroup.swift; sourceTree = "<group>"; };
@@ -163,7 +163,6 @@
 			children = (
 				EFEA286E2A65952000FC4965 /* GoogleService-Info.plist */,
 				EF9946CB2A65401000CE3B79 /* Info.plist */,
-				DEDBC6902A65144900AB3867 /* Views */,
 				EF81A9C12A5B8A1500C6F417 /* ChuckchuDrivenDevelopment.entitlements */,
 				EF81A9B62A5B8A1400C6F417 /* ChuckchuDrivenDevelopmentApp.swift */,
 				EF9946CC2A65404100CE3B79 /* AppDelegate.swift */,
@@ -171,8 +170,9 @@
 				EFEA28722A67BDA600FC4965 /* PushNotification */,
 				EFECCB9F2A612E280093BB67 /* Models */,
 				EFECCB9E2A612E200093BB67 /* ViewModels */,
-				EF81A9BF2A5B8A1500C6F417 /* Assets.xcassets */,
+				DEDBC6902A65144900AB3867 /* Views */,
 				EF81A9C22A5B8A1500C6F417 /* Preview Content */,
+				EF81A9BF2A5B8A1500C6F417 /* Assets.xcassets */,
 			);
 			path = ChuckchuDrivenDevelopment;
 			sourceTree = "<group>";
@@ -251,7 +251,7 @@
 		EFECCB9E2A612E200093BB67 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				EFECCBA92A612F720093BB67 /* GroupViewModel.swift */,
+				EFECCBA92A612F720093BB67 /* MemberGroupViewModel.swift */,
 				EFECCBAB2A612F810093BB67 /* MemberViewModel.swift */,
 				EFECCBAD2A612F8A0093BB67 /* PokeViewModel.swift */,
 			);
@@ -382,7 +382,7 @@
 			files = (
 				DEDBC6972A65152400AB3867 /* NotificationSettingModalView.swift in Sources */,
 				EF81A9B72A5B8A1400C6F417 /* ChuckchuDrivenDevelopmentApp.swift in Sources */,
-				EFECCBAA2A612F720093BB67 /* GroupViewModel.swift in Sources */,
+				EFECCBAA2A612F720093BB67 /* MemberGroupViewModel.swift in Sources */,
 				EFEA28712A67B62700FC4965 /* PushNotificationManager.swift in Sources */,
 				EFEA28952A67CFCE00FC4965 /* PokeUserTestHomeView.swift in Sources */,
 				EFECCBB02A61302A0093BB67 /* MemberGroup.swift in Sources */,

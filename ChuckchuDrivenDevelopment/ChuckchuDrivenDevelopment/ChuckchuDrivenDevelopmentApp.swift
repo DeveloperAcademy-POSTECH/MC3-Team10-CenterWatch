@@ -20,7 +20,10 @@ struct ChuckchuDrivenDevelopmentApp: App {
   var body: some Scene {
     WindowGroup {
       NavigationView {
-          NotificationTestingView()
+          ContentView()
+              .environmentObject(MemberGroupViewModel())
+              .environmentObject(MemberViewModel())
+              .environmentObject(PokeViewModel())
       }
     }
   }

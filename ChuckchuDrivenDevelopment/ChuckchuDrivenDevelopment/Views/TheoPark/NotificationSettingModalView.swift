@@ -95,21 +95,21 @@ struct ModalView: View {
     }
 }
 
-struct NotificationSettingModalView: View {
-    @State private var showNotificationSettingModal: Bool = false
-    
-    var body: some View {
-        Button {
-            self.showNotificationSettingModal = true
-        } label: {
-            Text("알림 설정")
-        }
-        .sheet(isPresented: self.$showNotificationSettingModal) {
-            ModalView()
-        }
-        
-    }
-}
+//struct NotificationSettingModalView: View {
+//    @State private var showNotificationSettingModal: Bool = false
+//
+//    var body: some View {
+//        Button {
+//            self.showNotificationSettingModal = true
+//        } label: {
+//            Text("알림 설정")
+//        }
+//        .sheet(isPresented: self.$showNotificationSettingModal) {
+//            ModalView()
+//        }
+//
+//    }
+//}
 
 struct AlarmSettingModalView_Previews: PreviewProvider {
     static var previews: some View {

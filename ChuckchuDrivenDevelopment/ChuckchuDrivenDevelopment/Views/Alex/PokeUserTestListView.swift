@@ -9,12 +9,24 @@ import SwiftUI
 
 struct PokeUserTestListView: View {
     @EnvironmentObject var memberViewModel: MemberViewModel
+    @EnvironmentObject var pokeViewModel: PokeViewModel
    
     // FIXME: pushNotificationManager를 여기서까지 선언해야 하는가..
     @ObservedObject public var pushNotificationManager: PushNotificationManager = PushNotificationManager(
             currentUserDeviceToken: UserDefaults.standard.string(
                 forKey: "userDeviceToken")
         )
+    
+    // FIXME: 현재 로그인된 유저정보를 불러오는 임시 방편 / 추후에 방식 또는 위치 변경이 필요
+    var currentMember: Member {
+        var currentMember: Member = Member(id: "", username: "", deviceToken: "")
+        for member in memberViewModel.members {
+            if member.deviceToken == pushNotificationManager.currentUserDeviceToken {
+                currentMember = member
+            }
+        }
+        return currentMember
+    }
     
     
     var body: some View {
@@ -35,6 +47,11 @@ struct PokeUserTestListView: View {
                     Button {
                         Task {
                             let _: Void = await pushNotificationManager.sendNotification(userDeviceToken: member.deviceToken)
+                            
+                            // Poke 데이터를 만들어주고, createPoke()로 서버에 새 찌르기 객체 반영
+                            let newPoke = Poke(id: UUID().uuidString, date: Date.now, fromID: currentMember.id, fromUsername: currentMember.username, toID: member.id, toUsername: member.username, reaction: "")
+                            await pokeViewModel.createPoke(groupID: "4nnzFVSIKurIoNg5RvWI", with: newPoke)
+                            
                         }
                     } label: {
                         Text("찌르기")

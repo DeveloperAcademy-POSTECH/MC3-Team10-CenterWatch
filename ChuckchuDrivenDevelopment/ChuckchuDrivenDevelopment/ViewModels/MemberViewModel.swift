@@ -8,6 +8,7 @@
 import Firebase
 import FirebaseFirestore
 import Foundation
+import SwiftUI
 
 /*
 MemberViewModel: 서버(Firestore)와 뷰가 Member 정보를 주고 받도록 연결
@@ -16,7 +17,9 @@ MemberViewModel: 서버(Firestore)와 뷰가 Member 정보를 주고 받도록 �
 class MemberViewModel: ObservableObject {
     let database = Firestore.firestore()
     @Published var members: [Member] = []
+   
 }
+
 
 
 
@@ -67,3 +70,5 @@ extension MemberViewModel {
     
     // updateMember, removeMember 메서드 추가 예정
 }
+
+

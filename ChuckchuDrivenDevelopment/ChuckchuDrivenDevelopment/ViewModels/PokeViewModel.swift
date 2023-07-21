@@ -38,9 +38,11 @@ extension PokeViewModel {
                 let id: String = documentData["id"] as? String ?? ""
                 let date: Date = documentData["date"] as? Date ?? Date()
                 let fromID: String = documentData["fromID"] as? String ?? ""
+                let fromUsername: String = documentData["fromUsername"] as? String ?? ""
                 let toID: String = documentData["toID"] as? String ?? ""
+                let toUsername: String = documentData["toUsername"] as? String ?? ""
                 let reaction: String = documentData["reaction"] as? String ?? ""
-                let poke: Poke = Poke(id: id, date: date, fromID: fromID, toID: toID, reaction: reaction)
+                let poke: Poke = Poke(id: id, date: date, fromID: fromID, fromUsername: fromUsername, toID: toID, toUsername: toUsername, reaction: reaction)
 
                 self.pokes.append(poke)
             }
@@ -49,7 +51,7 @@ extension PokeViewModel {
         }
         return nil
     }
-    
+   
     
     // MARK: - Create Poke (Method)
     /// Firestore에 새로운 Poke의 문서를 생성합니다.

@@ -34,14 +34,12 @@ class AppDelegate: NSObject, UIApplicationDelegate {
                 completionHandler: { _, _ in }
             )
             
-            /// 알림 소리 추가
-            let types: UIUserNotificationType = [UIUserNotificationType.alert, UIUserNotificationType.badge, UIUserNotificationType.sound]; application.registerUserNotificationSettings(UIUserNotificationSettings(types: types, categories: nil))
-            
         } else {
             let settings: UIUserNotificationSettings =
             UIUserNotificationSettings(types: [.alert, .badge, .sound], categories: nil)
             application.registerUserNotificationSettings(settings)
         }
+        
         
         application.registerForRemoteNotifications()
         
@@ -83,8 +81,10 @@ extension AppDelegate: MessagingDelegate {
     }
 
 
-    
-    // TODO: - 추후 didReceive 메소드를 추가로 구현하여 Push Notification을 탭했을 때의 액션을 추가
+    func didReceiveRemoteNotification() {
+        // TODO: - 추후 didReceive 메소드를 추가로 구현하여 Push Notification을 탭했을 때의 액션을 추가
+    }
+
 }
 
 
@@ -113,3 +113,6 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
         completionHandler()
     }
 }
+
+
+

@@ -15,6 +15,7 @@ struct ContentView: View {
             currentUserDeviceToken: UserDefaults.standard.string(
                 forKey: "userDeviceToken")
         )
+  
  
     var body: some View {
         VStack {
@@ -33,6 +34,7 @@ struct ContentView: View {
         .task {
             await memberViewModel.fetchMembers(groupID: "4nnzFVSIKurIoNg5RvWI")
         }
+
     }
     
 }

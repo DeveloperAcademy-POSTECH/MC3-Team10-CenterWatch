@@ -10,7 +10,7 @@ import SwiftUI
 struct SelectNotificationDay: View {
     
     @Binding var selectedDays: [SelectedDay]
-    
+
     var body: some View {
         HStack {
             Group {
@@ -23,7 +23,7 @@ struct SelectNotificationDay: View {
                         } label: {
                             Circle()
                                 .frame(width: 40, height: 40)
-                                .foregroundColor(selectedDays[i].selected ? Color.accentColor : Color.white)
+                                .foregroundColor(selectedDays[i].selected ? .blue : Color.white)
                                 .overlay() {
                                     Text(selectedDays[i].day).font(.callout)
                                         .foregroundColor(selectedDays[i].selected ? Color.white : Color.black)

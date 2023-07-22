@@ -11,7 +11,7 @@ import SwiftUI
 struct ContentView: View {
     @EnvironmentObject var memberViewModel: MemberViewModel
    
-    @ObservedObject public var pushNotificationManager: PushNotificationManager = PushNotificationManager(
+    @ObservedObject public var pushNotificationManager: PokeNotificationManager = PokeNotificationManager(
             currentUserDeviceToken: UserDefaults.standard.string(
                 forKey: "userDeviceToken")
         )

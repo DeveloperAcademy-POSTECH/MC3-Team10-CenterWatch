@@ -12,7 +12,7 @@ struct PokeUserTestListView: View {
     @EnvironmentObject var pokeViewModel: PokeViewModel
    
     // FIXME: pushNotificationManager를 여기서까지 선언해야 하는가..
-    @ObservedObject public var pushNotificationManager: PushNotificationManager = PushNotificationManager(
+    @ObservedObject public var pushNotificationManager: PokeNotificationManager = PokeNotificationManager(
             currentUserDeviceToken: UserDefaults.standard.string(
                 forKey: "userDeviceToken")
         )
@@ -46,7 +46,7 @@ struct PokeUserTestListView: View {
                     
                     Button {
                         Task {
-                            let _: Void = await pushNotificationManager.sendNotification(userDeviceToken: member.deviceToken)
+                            let _: Void = await pushNotificationManager.sendPokeNotification(toUserDeviceToken: member.deviceToken, currentMemberUsername: currentMember.username)
                             
                             // Poke 데이터를 만들어주고, createPoke()로 서버에 새 찌르기 객체 반영
                             let newPoke = Poke(id: UUID().uuidString, date: Date.now, fromID: currentMember.id, fromUsername: currentMember.username, toID: member.id, toUsername: member.username, reaction: "")

@@ -23,8 +23,11 @@
 		EFA432CC2A5C4FD500D158EE /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = EFA432CB2A5C4FD500D158EE /* FirebaseAnalytics */; };
 		EFA432CE2A5C4FD500D158EE /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = EFA432CD2A5C4FD500D158EE /* FirebaseAuth */; };
 		EFA432D02A5C4FD500D158EE /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = EFA432CF2A5C4FD500D158EE /* FirebaseFirestore */; };
+		EFB939E92A6A66B10083C08D /* LocalNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB939E82A6A66B10083C08D /* LocalNotificationManager.swift */; };
+		EFB939EB2A6C2FD50083C08D /* CustomHourPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB939EA2A6C2FD50083C08D /* CustomHourPicker.swift */; };
+		EFB939ED2A6C46B00083C08D /* LocalNotificationTestingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB939EC2A6C46B00083C08D /* LocalNotificationTestingView.swift */; };
 		EFEA286F2A65952000FC4965 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EFEA286E2A65952000FC4965 /* GoogleService-Info.plist */; };
-		EFEA28712A67B62700FC4965 /* PushNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFEA28702A67B62700FC4965 /* PushNotificationManager.swift */; };
+		EFEA28712A67B62700FC4965 /* PokeNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFEA28702A67B62700FC4965 /* PokeNotificationManager.swift */; };
 		EFEA28932A67CFCE00FC4965 /* PokeUserTestNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFEA28902A67CFCE00FC4965 /* PokeUserTestNameView.swift */; };
 		EFEA28942A67CFCE00FC4965 /* PokeUserTestListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFEA28912A67CFCE00FC4965 /* PokeUserTestListView.swift */; };
 		EFEA28952A67CFCE00FC4965 /* PokeUserTestHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFEA28922A67CFCE00FC4965 /* PokeUserTestHomeView.swift */; };
@@ -78,10 +81,13 @@
 		EF81A9D72A5B8C0300C6F417 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		EF9946CB2A65401000CE3B79 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		EF9946CC2A65404100CE3B79 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		EFB939E82A6A66B10083C08D /* LocalNotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotificationManager.swift; sourceTree = "<group>"; };
+		EFB939EA2A6C2FD50083C08D /* CustomHourPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomHourPicker.swift; sourceTree = "<group>"; };
+		EFB939EC2A6C46B00083C08D /* LocalNotificationTestingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotificationTestingView.swift; sourceTree = "<group>"; };
 		EFEA286C2A65921A00FC4965 /* CDDWatchApp Watch App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "CDDWatchApp Watch App.entitlements"; sourceTree = "<group>"; };
 		EFEA286D2A65922200FC4965 /* CDDWatchApp-Watch-App-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "CDDWatchApp-Watch-App-Info.plist"; sourceTree = SOURCE_ROOT; };
 		EFEA286E2A65952000FC4965 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		EFEA28702A67B62700FC4965 /* PushNotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushNotificationManager.swift; sourceTree = "<group>"; };
+		EFEA28702A67B62700FC4965 /* PokeNotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokeNotificationManager.swift; sourceTree = "<group>"; };
 		EFEA28902A67CFCE00FC4965 /* PokeUserTestNameView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokeUserTestNameView.swift; sourceTree = "<group>"; };
 		EFEA28912A67CFCE00FC4965 /* PokeUserTestListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokeUserTestListView.swift; sourceTree = "<group>"; };
 		EFEA28922A67CFCE00FC4965 /* PokeUserTestHomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokeUserTestHomeView.swift; sourceTree = "<group>"; };
@@ -133,6 +139,7 @@
 			children = (
 				DEDBC6962A65152400AB3867 /* NotificationSettingModalView.swift */,
 				DEDBC6982A65236C00AB3867 /* SelectNotificationDay.swift */,
+				EFB939EA2A6C2FD50083C08D /* CustomHourPicker.swift */,
 			);
 			path = TheoPark;
 			sourceTree = "<group>";
@@ -214,7 +221,9 @@
 		EFEA28722A67BDA600FC4965 /* PushNotification */ = {
 			isa = PBXGroup;
 			children = (
-				EFEA28702A67B62700FC4965 /* PushNotificationManager.swift */,
+				EFEA28702A67B62700FC4965 /* PokeNotificationManager.swift */,
+				EFB939E82A6A66B10083C08D /* LocalNotificationManager.swift */,
+				EFB939EC2A6C46B00083C08D /* LocalNotificationTestingView.swift */,
 			);
 			path = PushNotification;
 			sourceTree = "<group>";
@@ -378,9 +387,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				DEDBC6972A65152400AB3867 /* NotificationSettingModalView.swift in Sources */,
+				EFB939E92A6A66B10083C08D /* LocalNotificationManager.swift in Sources */,
 				EF81A9B72A5B8A1400C6F417 /* ChuckchuDrivenDevelopmentApp.swift in Sources */,
 				EFECCBAA2A612F720093BB67 /* MemberGroupViewModel.swift in Sources */,
-				EFEA28712A67B62700FC4965 /* PushNotificationManager.swift in Sources */,
+				EFEA28712A67B62700FC4965 /* PokeNotificationManager.swift in Sources */,
 				EFEA28952A67CFCE00FC4965 /* PokeUserTestHomeView.swift in Sources */,
 				EFECCBB02A61302A0093BB67 /* MemberGroup.swift in Sources */,
 				EF9946CD2A65404100CE3B79 /* AppDelegate.swift in Sources */,
@@ -391,7 +401,9 @@
 				EFEA28932A67CFCE00FC4965 /* PokeUserTestNameView.swift in Sources */,
 				EFEA28942A67CFCE00FC4965 /* PokeUserTestListView.swift in Sources */,
 				EF81A9BE2A5B8A1400C6F417 /* ContentView.swift in Sources */,
+				EFB939ED2A6C46B00083C08D /* LocalNotificationTestingView.swift in Sources */,
 				EFEA28992A67D00500FC4965 /* GuardyView.swift in Sources */,
+				EFB939EB2A6C2FD50083C08D /* CustomHourPicker.swift in Sources */,
 				EFECCBAC2A612F810093BB67 /* MemberViewModel.swift in Sources */,
 				EFECCBA82A612F610093BB67 /* Poke.swift in Sources */,
 				EFECCBA62A612F540093BB67 /* Member.swift in Sources */,

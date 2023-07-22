@@ -11,7 +11,7 @@ import FirebaseMessaging
 
 
 class AppDelegate: NSObject, UIApplicationDelegate {
-    @ObservedObject var pushNotificationManager: PushNotificationManager = PushNotificationManager(
+    @ObservedObject var pokeNotificationManager: PokeNotificationManager = PokeNotificationManager(
             currentUserDeviceToken: UserDefaults.standard.string(forKey: "userDeviceToken")
         )
     
@@ -77,7 +77,7 @@ extension AppDelegate: MessagingDelegate {
         /// 현재 fcm 토큰 UserDefaults에 저장
         guard let fcmToken else { return }
         UserDefaults.standard.set(fcmToken, forKey: "userDeviceToken")
-        pushNotificationManager.setCurrentUserDeviceToken(token: fcmToken)
+        pokeNotificationManager.setCurrentUserDeviceToken(token: fcmToken)
     }
 
 

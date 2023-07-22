@@ -10,7 +10,7 @@ import SwiftUI
 struct PokeUserTestNameView: View {
     @EnvironmentObject var memberViewModel: MemberViewModel
     // FIXME: pushNotificationManager를 여기서까지 선언해야 하는가..
-    @ObservedObject public var pushNotificationManager: PushNotificationManager = PushNotificationManager(
+    @ObservedObject public var pushNotificationManager: PokeNotificationManager = PokeNotificationManager(
             currentUserDeviceToken: UserDefaults.standard.string(
                 forKey: "userDeviceToken")
         )

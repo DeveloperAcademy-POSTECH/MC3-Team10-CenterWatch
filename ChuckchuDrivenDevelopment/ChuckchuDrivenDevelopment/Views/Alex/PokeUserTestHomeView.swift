@@ -19,15 +19,19 @@ struct PokeUserTestHomeView: View {
             Spacer()
             Spacer()
             Spacer()
-            NavigationLink(destination: PokeUserTestListView()){
-                Text("찌르기")
-                    .foregroundColor(Color.white)
-                    .frame(maxWidth: 96, maxHeight: 60)
-                    .padding(EdgeInsets(top: 0, leading: 26, bottom: 0, trailing: 26))
-                    .buttonStyle(.borderedProminent)
-                    .background(RoundedRectangle(cornerRadius: 16).fill(Color.black))
-            }
-            .padding(.bottom, 8)
+            
+            // FIXME: - 찌르기 관련 코드 임시 주석 처리
+            /*
+             NavigationLink(destination: PokeUserTestListView()){
+                 Text("찌르기")
+                     .foregroundColor(Color.white)
+                     .frame(maxWidth: 96, maxHeight: 60)
+                     .padding(EdgeInsets(top: 0, leading: 26, bottom: 0, trailing: 26))
+                     .buttonStyle(.borderedProminent)
+                     .background(RoundedRectangle(cornerRadius: 16).fill(Color.black))
+             }
+             .padding(.bottom, 8)
+             */
             
             Button {
                 self.showNotificationSettingModal = true
@@ -45,6 +49,9 @@ struct PokeUserTestHomeView: View {
         }
         .navigationBarBackButtonHidden()
         .padding(.bottom, 72)
+        .onAppear {
+            UIApplication.shared.applicationIconBadgeNumber = 0
+        }
         
     }
 }

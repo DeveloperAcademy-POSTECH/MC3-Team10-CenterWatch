@@ -15,6 +15,8 @@ class AppDelegate: NSObject, UIApplicationDelegate {
             currentUserDeviceToken: UserDefaults.standard.string(forKey: "userDeviceToken")
         )
     
+    @ObservedObject var localNotificationManager: LocalNotificationManager = LocalNotificationManager()
+    
 
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
@@ -80,7 +82,6 @@ extension AppDelegate: MessagingDelegate {
         pokeNotificationManager.setCurrentUserDeviceToken(token: fcmToken)
     }
 
-
     func didReceiveRemoteNotification() {
         // TODO: - 추후 didReceive 메소드를 추가로 구현하여 Push Notification을 탭했을 때의 액션을 추가
     }
@@ -91,28 +92,56 @@ extension AppDelegate: MessagingDelegate {
 
 // MARK: - 알람 처리 메소드 구현
 extension AppDelegate: UNUserNotificationCenterDelegate {
+    
     func userNotificationCenter(
         _ center: UNUserNotificationCenter,
         willPresent notification: UNNotification,
         withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void
     ) {
-        /// 앱이 포어그라운드에서 실행될 때 도착한 알람 처리
+        /// Foreground Mode: 앱이 포어그라운드에서 실행될 때 도착한 알람 처리
         let userInfo = notification.request.content.userInfo
-        
-        print(#function, "+++ willPresent: userInfo: ", userInfo)
-        
+
         completionHandler([.banner, .sound, .badge])
+        
+        let frequency = UserDefaults.standard.integer(forKey: "notificationFrequency")
+   
+        /// 대기 중인 알림이 없을 시, 인터벌 알림 요청
+        center.getPendingNotificationRequests { notifications in
+             if notifications.isEmpty {
+                let frequency = UserDefaults.standard.integer(forKey: "notificationFrequency")
+                self.localNotificationManager.requestIntervalTrigger(frequency: MinuteInterval(rawValue: frequency) ?? .hour)
+            }
+        }
     }
     
-    /// 전달 알림에 대한 사용자 응답을 처리하도록 대리인에 요청
-    func userNotificationCenter(_ center: UNUserNotificationCenter,
-                                didReceive response: UNNotificationResponse,
-                                withCompletionHandler completionHandler: @escaping () -> Void) {
+    
+    /// Background Mode: 전달 알림에 대한 사용자 응답을 처리하도록 대리인에 요청
+    func userNotificationCenter(
+        _ center: UNUserNotificationCenter,
+        didReceive response: UNNotificationResponse,
+        withCompletionHandler completionHandler: @escaping () -> Void
+    ) {
         let userInfo = response.notification.request.content.userInfo
-        print(#function, "+++ didReceive: userInfo: ", userInfo)
+        
         completionHandler()
+        
+        let frequency = UserDefaults.standard.integer(forKey: "notificationFrequency")
+        print("UserDefaults data --> ", frequency)
+        
+        /// 발송된 알림은 리스트에서 전체 삭제
+        center.removeAllDeliveredNotifications()
+        center.removeAllPendingNotificationRequests()
+        
+        /// 대기 중인 알림이 없을 시, 인터벌 알림 요청
+        center.getPendingNotificationRequests { notifications in
+            print("pending notifications --> ", notifications)
+            if notifications.isEmpty {
+                let frequency = UserDefaults.standard.integer(forKey: "notificationFrequency")
+                self.localNotificationManager.requestIntervalTrigger(frequency: MinuteInterval(rawValue: frequency) ?? .hour)
+                
+                print("(예약된 알림이 없다!) UserDefaults data --> ", frequency)
+            }
+        }
     }
 }
-
-
 

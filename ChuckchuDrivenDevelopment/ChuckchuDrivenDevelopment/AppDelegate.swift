@@ -58,7 +58,7 @@ extension AppDelegate: MessagingDelegate {
     /// 메시지 토큰 등록 완료
     func application(_ application: UIApplication,
                      didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
-        print(#function, "+++ didRegister Success", deviceToken)
+        // print(#function, "+++ didRegister Success", deviceToken)
         // Messaging.messaging().apnsToken = deviceToken
         Messaging.messaging().setAPNSToken(deviceToken, type: .unknown)
     }
@@ -66,19 +66,19 @@ extension AppDelegate: MessagingDelegate {
     /// 메시지 토큰 등록 실패
     func application(_ application: UIApplication,
                      didFailToRegisterForRemoteNotificationsWithError error: Error) {
-        print(#function, "DEBUG: +++ register error: \(error.localizedDescription)")
+        // print(#function, "DEBUG: +++ register error: \(error.localizedDescription)")
     }
     
     /// 메시지 FCM Device Token 등록 성공
     func messaging(_ messaging: Messaging,
                    didReceiveRegistrationToken fcmToken: String?) {
-        print(#function, "Messaging")
+        // print(#function, "Messaging")
         let deviceToken: [String: String] = ["token" : fcmToken ?? ""]
-        print(#function, "+++ Device Test Token", deviceToken)
+        // print(#function, "+++ Device Test Token", deviceToken)
         
         /// 현재 fcm 토큰 UserDefaults에 저장
         guard let fcmToken else { return }
-        UserDefaults.standard.set(fcmToken, forKey: "userDeviceToken")
+        // UserDefaults.standard.set(fcmToken, forKey: "userDeviceToken")
         pokeNotificationManager.setCurrentUserDeviceToken(token: fcmToken)
     }
 
@@ -102,16 +102,7 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
         let userInfo = notification.request.content.userInfo
 
         completionHandler([.banner, .sound, .badge])
-        
-        let frequency = UserDefaults.standard.integer(forKey: "notificationFrequency")
-   
-        /// 대기 중인 알림이 없을 시, 인터벌 알림 요청
-        center.getPendingNotificationRequests { notifications in
-             if notifications.isEmpty {
-                let frequency = UserDefaults.standard.integer(forKey: "notificationFrequency")
-                self.localNotificationManager.requestIntervalTrigger(frequency: MinuteInterval(rawValue: frequency) ?? .hour)
-            }
-        }
+       
     }
     
     
@@ -124,24 +115,6 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
         let userInfo = response.notification.request.content.userInfo
         
         completionHandler()
-        
-        let frequency = UserDefaults.standard.integer(forKey: "notificationFrequency")
-        print("UserDefaults data --> ", frequency)
-        
-        /// 발송된 알림은 리스트에서 전체 삭제
-        center.removeAllDeliveredNotifications()
-        center.removeAllPendingNotificationRequests()
-        
-        /// 대기 중인 알림이 없을 시, 인터벌 알림 요청
-        center.getPendingNotificationRequests { notifications in
-            print("pending notifications --> ", notifications)
-            if notifications.isEmpty {
-                let frequency = UserDefaults.standard.integer(forKey: "notificationFrequency")
-                self.localNotificationManager.requestIntervalTrigger(frequency: MinuteInterval(rawValue: frequency) ?? .hour)
-                
-                print("(예약된 알림이 없다!) UserDefaults data --> ", frequency)
-            }
-        }
     }
 }
 

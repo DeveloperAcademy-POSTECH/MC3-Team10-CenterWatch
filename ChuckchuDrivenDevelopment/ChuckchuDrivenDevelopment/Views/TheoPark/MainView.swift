@@ -60,6 +60,8 @@ struct MainView: View {
                     Text("알림 주기")
                         .bold()
                         .foregroundColor(.white)
+                        .frame(height: 60)
+                        .padding(.leading, 18)
                     
                     Spacer()
                     
@@ -69,68 +71,68 @@ struct MainView: View {
                         }
                     }
                     .pickerStyle(MenuPickerStyle())
+                    .padding(.trailing, 10)
                 }
-                .padding()
+                .background(Color.init(hue: 0, saturation: 0, brightness: 0.12))
+                .cornerRadius(20)
+                .padding(EdgeInsets(top: 16, leading: 16, bottom: 0, trailing: 16))
                 
-                Divider()
-                    .background(Color.white)
-                    .opacity(0.3)
-                    .padding(.leading)
                 
                 VStack {
                     HStack {
-                        Text("요일")
+                        Text("시작 시간")
                             .bold()
                             .foregroundColor(.white)
-                            .padding(.leading)
-                            .padding(.top)
                         
                         Spacer()
+                        
+                        DatePicker("", selection: $settings.startTime, displayedComponents: [.hourAndMinute])
+                            .foregroundColor(.white)
                     }
+                    .padding(EdgeInsets(top: 12, leading: 16, bottom: 4, trailing: 16))
                     
-                    SelectNotificationDay(selectedDays: $settings.selectedDays)
-                        .padding()
+                    Divider()
+                        .background(Color.white).opacity(0.3)
+                        .padding(.leading)
+                    
+                    HStack {
+                        Text("종료 시간")
+                            .bold()
+                            .foregroundColor(.white)
+                        
+                        Spacer()
+                        
+                        DatePicker("", selection: $settings.endTime, displayedComponents: [.hourAndMinute])
+                            .foregroundColor(.white)
+                    }
+                    .padding(EdgeInsets(top: 4, leading: 16, bottom: 4, trailing: 16))
+                    
+                    Divider()
+                        .background(Color.white).opacity(0.3)
+                        .padding(.leading)
+                    
+                    VStack {
+                        HStack {
+                            Text("요일")
+                                .bold()
+                                .foregroundColor(.white)
+                                .padding(.leading)
+                                .padding(.top, 8)
+                            
+                            Spacer()
+                        }
+                        
+                        SelectNotificationDay(selectedDays: $settings.selectedDays)
+                            .padding(EdgeInsets(top: 4, leading: 6, bottom: 16, trailing: 0))
+                    }
                 }
-                
-                Divider()
-                    .background(Color.white).opacity(0.3)
-                    .padding(.leading)
-                
-                HStack {
-                    Text("시작 시간")
-                        .bold()
-                        .foregroundColor(.white)
-                    
-                    Spacer()
-                    
-                    DatePicker("", selection: $settings.startTime, displayedComponents: [.hourAndMinute])
-                        .foregroundColor(.white)
-                }
-                .padding()
-                
-                Divider()
-                    .background(Color.white).opacity(0.3)
-                    .padding(.leading)
-                
-                HStack {
-                    Text("종료 시간")
-                        .bold()
-                        .foregroundColor(.white)
-                    
-                    Spacer()
-                    
-                    DatePicker("", selection: $settings.endTime, displayedComponents: [.hourAndMinute])
-                        .foregroundColor(.white)
-                }
-                .padding()
+                .background(Color.init(hue: 0, saturation: 0, brightness: 0.12))
+                .cornerRadius(20)
+                .padding(EdgeInsets(top: 8, leading: 16, bottom: 0, trailing: 16))
             }
-            
-            
-            
-            
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-//        .background(Color.init(hue: 0, saturation: 0, brightness: 0.12))
+        .background(Color.init(hue: 0, saturation: 0, brightness: 0.08))
     }
 }
 

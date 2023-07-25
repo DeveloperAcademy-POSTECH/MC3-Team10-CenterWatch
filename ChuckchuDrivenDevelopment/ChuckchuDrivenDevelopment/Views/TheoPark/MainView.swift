@@ -50,6 +50,8 @@ struct MainView: View {
     
     var body: some View {
         VStack {
+            Spacer()
+            
             CharacterAnimation()
                 .shadow(color: .blue.opacity(0.2), radius: 40)
             
@@ -92,7 +94,7 @@ struct MainView: View {
                     .padding(EdgeInsets(top: 12, leading: 16, bottom: 4, trailing: 16))
                     
                     Divider()
-                        .background(Color.white).opacity(0.3)
+                        .background(Color.white).opacity(0.1)
                         .padding(.leading)
                     
                     HStack {
@@ -108,7 +110,7 @@ struct MainView: View {
                     .padding(EdgeInsets(top: 4, leading: 16, bottom: 4, trailing: 16))
                     
                     Divider()
-                        .background(Color.white).opacity(0.3)
+                        .background(Color.white).opacity(0.1)
                         .padding(.leading)
                     
                     VStack {
@@ -130,6 +132,8 @@ struct MainView: View {
                 .cornerRadius(20)
                 .padding(EdgeInsets(top: 8, leading: 16, bottom: 0, trailing: 16))
             }
+            
+            Spacer()
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color.init(hue: 0, saturation: 0, brightness: 0.08))

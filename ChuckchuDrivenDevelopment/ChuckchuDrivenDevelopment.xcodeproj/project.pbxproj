@@ -11,6 +11,7 @@
 		17202EFD2A6ED90300E3223B /* CharacterFrames.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17202EFC2A6ED90300E3223B /* CharacterFrames.xcassets */; };
 		DEDBC6972A65152400AB3867 /* NotificationSettingModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDBC6962A65152400AB3867 /* NotificationSettingModalView.swift */; };
 		DEDBC6992A65236C00AB3867 /* SelectNotificationDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDBC6982A65236C00AB3867 /* SelectNotificationDay.swift */; };
+		DEFEF6972A6FA15900FF0F8B /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEFEF6962A6FA15900FF0F8B /* MainView.swift */; };
 		EF81A9B72A5B8A1400C6F417 /* ChuckchuDrivenDevelopmentApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF81A9B62A5B8A1400C6F417 /* ChuckchuDrivenDevelopmentApp.swift */; };
 		EF81A9BE2A5B8A1400C6F417 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF81A9BD2A5B8A1400C6F417 /* ContentView.swift */; };
 		EF81A9C02A5B8A1500C6F417 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF81A9BF2A5B8A1500C6F417 /* Assets.xcassets */; };
@@ -69,6 +70,7 @@
 		17202EFC2A6ED90300E3223B /* CharacterFrames.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = CharacterFrames.xcassets; sourceTree = "<group>"; };
 		DEDBC6962A65152400AB3867 /* NotificationSettingModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationSettingModalView.swift; sourceTree = "<group>"; };
 		DEDBC6982A65236C00AB3867 /* SelectNotificationDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectNotificationDay.swift; sourceTree = "<group>"; };
+		DEFEF6962A6FA15900FF0F8B /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		EF81A9B32A5B8A1400C6F417 /* ChuckchuDrivenDevelopment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChuckchuDrivenDevelopment.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF81A9B62A5B8A1400C6F417 /* ChuckchuDrivenDevelopmentApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChuckchuDrivenDevelopmentApp.swift; sourceTree = "<group>"; };
 		EF81A9BD2A5B8A1400C6F417 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -137,6 +139,7 @@
 			children = (
 				DEDBC6962A65152400AB3867 /* NotificationSettingModalView.swift */,
 				DEDBC6982A65236C00AB3867 /* SelectNotificationDay.swift */,
+				DEFEF6962A6FA15900FF0F8B /* MainView.swift */,
 			);
 			path = TheoPark;
 			sourceTree = "<group>";
@@ -397,6 +400,7 @@
 				EFEA28932A67CFCE00FC4965 /* PokeUserTestNameView.swift in Sources */,
 				EFEA28942A67CFCE00FC4965 /* PokeUserTestListView.swift in Sources */,
 				EFEA28742A67BDBF00FC4965 /* NotificationTestingView.swift in Sources */,
+				DEFEF6972A6FA15900FF0F8B /* MainView.swift in Sources */,
 				EF81A9BE2A5B8A1400C6F417 /* ContentView.swift in Sources */,
 				EFEA28992A67D00500FC4965 /* GuardyView.swift in Sources */,
 				17202EFB2A6ED8DB00E3223B /* CharacterAnimation.swift in Sources */,

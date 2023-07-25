@@ -20,7 +20,8 @@ struct ChuckchuDrivenDevelopmentApp: App {
   var body: some Scene {
     WindowGroup {
       NavigationView {
-          NotificationTestingView()
+          MainView()
+              .preferredColorScheme(.dark)
       }
     }
   }

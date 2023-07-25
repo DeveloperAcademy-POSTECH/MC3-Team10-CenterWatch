@@ -7,41 +7,41 @@
 
 import SwiftUI
 
-struct SelectedDay {
-    let day: String
-    var selected: Bool
-}
-
-struct Setting {
-    var selectedDays: [SelectedDay] = [
-        SelectedDay(day: "월", selected: true),
-        SelectedDay(day: "화", selected: true),
-        SelectedDay(day: "수", selected: true),
-        SelectedDay(day: "목", selected: true),
-        SelectedDay(day: "금", selected: true),
-        SelectedDay(day: "토", selected: false),
-        SelectedDay(day: "일", selected: false)
-    ]
-    
-    var startTime: Date = {
-        let calendar = Calendar.current
-        var dateComponents = DateComponents()
-        dateComponents.hour = 8
-        dateComponents.minute = 00
-
-        return calendar.date(from: dateComponents)!
-    }()
-    var endTime: Date = {
-        let calendar = Calendar.current
-        var dateComponents = DateComponents()
-        dateComponents.hour = 18
-        dateComponents.minute = 00
-
-        return calendar.date(from: dateComponents)!
-    }()
-    var notificationCycle: String = "10분"
-    var pokeNotification: Bool = true
-}
+//struct SelectedDay {
+//    let day: String
+//    var selected: Bool
+//}
+//
+//struct Setting {
+//    var selectedDays: [SelectedDay] = [
+//        SelectedDay(day: "월", selected: true),
+//        SelectedDay(day: "화", selected: true),
+//        SelectedDay(day: "수", selected: true),
+//        SelectedDay(day: "목", selected: true),
+//        SelectedDay(day: "금", selected: true),
+//        SelectedDay(day: "토", selected: false),
+//        SelectedDay(day: "일", selected: false)
+//    ]
+//    
+//    var startTime: Date = {
+//        let calendar = Calendar.current
+//        var dateComponents = DateComponents()
+//        dateComponents.hour = 8
+//        dateComponents.minute = 00
+//
+//        return calendar.date(from: dateComponents)!
+//    }()
+//    var endTime: Date = {
+//        let calendar = Calendar.current
+//        var dateComponents = DateComponents()
+//        dateComponents.hour = 18
+//        dateComponents.minute = 00
+//
+//        return calendar.date(from: dateComponents)!
+//    }()
+//    var notificationCycle: String = "10분"
+//    var pokeNotification: Bool = true
+//}
 
 struct ModalView: View {
     

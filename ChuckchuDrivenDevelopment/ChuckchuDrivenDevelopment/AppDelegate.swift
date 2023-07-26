@@ -22,8 +22,6 @@ class AppDelegate: NSObject, UIApplicationDelegate {
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
         FirebaseApp.configure()
         
-        /// Push Notification 대리자 설정
-        Messaging.messaging().delegate = self
         
         /// 원격 알림 등록
         if #available(iOS 10.0, *) {
@@ -50,44 +48,6 @@ class AppDelegate: NSObject, UIApplicationDelegate {
         return true
     }
 }
-
-
-
-// MARK: - FCM 메시지 및 토큰 관리
-extension AppDelegate: MessagingDelegate {
-    /// 메시지 토큰 등록 완료
-    func application(_ application: UIApplication,
-                     didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
-        // print(#function, "+++ didRegister Success", deviceToken)
-        // Messaging.messaging().apnsToken = deviceToken
-        Messaging.messaging().setAPNSToken(deviceToken, type: .unknown)
-    }
-    
-    /// 메시지 토큰 등록 실패
-    func application(_ application: UIApplication,
-                     didFailToRegisterForRemoteNotificationsWithError error: Error) {
-        // print(#function, "DEBUG: +++ register error: \(error.localizedDescription)")
-    }
-    
-    /// 메시지 FCM Device Token 등록 성공
-    func messaging(_ messaging: Messaging,
-                   didReceiveRegistrationToken fcmToken: String?) {
-        // print(#function, "Messaging")
-        let deviceToken: [String: String] = ["token" : fcmToken ?? ""]
-        // print(#function, "+++ Device Test Token", deviceToken)
-        
-        /// 현재 fcm 토큰 UserDefaults에 저장
-        guard let fcmToken else { return }
-        // UserDefaults.standard.set(fcmToken, forKey: "userDeviceToken")
-        pokeNotificationManager.setCurrentUserDeviceToken(token: fcmToken)
-    }
-
-    func didReceiveRemoteNotification() {
-        // TODO: - 추후 didReceive 메소드를 추가로 구현하여 Push Notification을 탭했을 때의 액션을 추가
-    }
-
-}
-
 
 
 // MARK: - 알람 처리 메소드 구현
@@ -117,4 +77,7 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
         completionHandler()
     }
 }
+
+
+
 

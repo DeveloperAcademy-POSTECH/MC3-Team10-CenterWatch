@@ -10,7 +10,7 @@ import SwiftUI
 struct SelectNotificationDay: View {
     
     @Binding var selectedDays: [SelectedDay]
-    
+
     var body: some View {
         HStack {
             Group {

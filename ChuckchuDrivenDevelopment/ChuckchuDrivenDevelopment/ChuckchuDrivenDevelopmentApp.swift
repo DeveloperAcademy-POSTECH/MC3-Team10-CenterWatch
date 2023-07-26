@@ -21,6 +21,9 @@ struct ChuckchuDrivenDevelopmentApp: App {
     WindowGroup {
       NavigationView {
           MainView()
+              .environmentObject(MemberGroupViewModel())
+              .environmentObject(MemberViewModel())
+              .environmentObject(PokeViewModel())
               .preferredColorScheme(.dark)
       }
     }

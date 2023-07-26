@@ -100,9 +100,7 @@ struct MainView: View {
             // MARK: - 알림 설정 버튼
             Button {
                 if selectedEndHour > selectedStartHour {
-                    /// 이전 알림 요청 삭제
-                    localNotificationManager.cancelNotification()
-                    
+    
                     /// 선택된 스케줄을 파라미터로 전달하고 푸시 알림 요청
                     localNotificationManager.setLocalNotification(
                         weekdays: selectedDaysInt,
@@ -111,12 +109,16 @@ struct MainView: View {
                         frequency: selectedFrequency
                     )
                     
-                    print("--------View--------")
-                    print("눌렷음")
-                    print("---> selected weekdays: ", selectedDaysInt)
-                    print("---> selected startHour: ", selectedStartHour)
-                    print("---> selected endHour: ", selectedEndHour)
-                    print("---> selected frequency: ", selectedFrequency)
+                    localNotificationManager.cancelNotification()
+                    
+                    /*
+                     print("--------View--------")
+                     print("눌렷음")
+                     print("---> selected weekdays: ", selectedDaysInt)
+                     print("---> selected startHour: ", selectedStartHour)
+                     print("---> selected endHour: ", selectedEndHour)
+                     print("---> selected frequency: ", selectedFrequency)
+                     */
                     
                     /// 변경된 데이터 UserDefaults에 저장
                     saveNotificationData()
@@ -151,7 +153,7 @@ struct MainView: View {
             /// 뷰의 데이터 UserDefaults의 값으로 대체
             let userDefaults = UserDefaults.standard
             let weekdaysInt = userDefaults.integer(forKey: "notificationWeekdays")
-            print("notificationWeekdays data ---> ", weekdaysInt)
+            // print("notificationWeekdays data ---> ", weekdaysInt)
             
             if userDefaults.integer(forKey: "notificationStartHour") != nil {
                 self.selectedStartHour = userDefaults.integer(forKey: "notificationStartHour")
@@ -166,10 +168,10 @@ struct MainView: View {
            
             
             if userDefaults.integer(forKey: "notificationWeekdays") != nil {
-                print("꺄아아아아앙")
+                // print("꺄아아아아앙")
                 let weekdaysInt = userDefaults.array(forKey: "notificationWeekdays") as? [Int]
-                print("weekdaysInt -> ", weekdaysInt ?? 0)
-                print("selectedWeekdays -> ", settings.selectedDays)
+                // print("weekdaysInt -> ", weekdaysInt ?? 0)
+                // print("selectedWeekdays -> ", settings.selectedDays)
                 for weekday in settings.selectedDays {
                     let index = settings.selectedDays.firstIndex(of: weekday)
                     let weekdayIndex = index ?? 0 - 1

@@ -17,3 +17,4 @@ struct MemberGroup: Identifiable, Codable, Hashable {
         return ["id": id]
     }
 }
+

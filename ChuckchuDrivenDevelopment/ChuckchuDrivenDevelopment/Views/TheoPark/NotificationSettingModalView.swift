@@ -117,9 +117,6 @@ struct ModalView: View {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button {
                         if selectedEndHour > selectedStartHour {
-                            /// 이전 알림 요청 삭제
-                            localNotificationManager.cancelNotification()
-                            
                             /// 선택된 스케줄을 파라미터로 전달하고 푸시 알림 요청
                             localNotificationManager.setLocalNotification(
                                 weekdays: selectedDaysInt,

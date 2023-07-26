@@ -84,13 +84,8 @@ struct MainView: View {
         VStack {
             Spacer()
             CharacterAnimation()
-            Rectangle()
-                .fill(.black)
-                .frame(height: 300)
-                .shadow(color: .blue.opacity(0.2), radius: 40)
             Spacer()
-
-
+            
             // MARK: - 알림 설정 세부사항
             NotificationSettingsCell(selectedStartHour: $selectedStartHour,
                                      selectedEndHour: $selectedEndHour,

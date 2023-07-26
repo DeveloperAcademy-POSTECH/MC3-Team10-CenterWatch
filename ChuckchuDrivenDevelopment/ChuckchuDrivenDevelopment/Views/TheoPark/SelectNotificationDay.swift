@@ -23,7 +23,7 @@ struct SelectNotificationDay: View {
                         } label: {
                             Circle()
                                 .frame(width: 40, height: 40)
-                                .foregroundColor(selectedDays[i].selected ? Color.accentColor : Color.white.opacity(0.1))
+                                .foregroundColor(selectedDays[i].selected ? Color.blue : Color.white.opacity(0.1))
                                 .overlay() {
                                     Text(selectedDays[i].day).font(.callout)
                                         .foregroundColor(selectedDays[i].selected ? Color.white : Color.white)

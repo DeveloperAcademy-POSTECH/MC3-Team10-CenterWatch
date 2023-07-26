@@ -78,11 +78,12 @@ struct MainView: View {
         }
         return daysConvertedToInt
     }
+
     
     var body: some View {
         VStack {
             Spacer()
-//            CharacterAnimation()
+            CharacterAnimation()
             Rectangle()
                 .fill(.black)
                 .frame(height: 300)

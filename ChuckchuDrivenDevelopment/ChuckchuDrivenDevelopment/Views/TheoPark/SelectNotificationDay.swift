@@ -23,11 +23,11 @@ struct SelectNotificationDay: View {
                         } label: {
                             Circle()
                                 .frame(width: 40, height: 40)
-                                .foregroundColor(selectedDays[i].selected ? .blue : Color.white)
+                                .foregroundColor(selectedDays[i].selected ? Color.accentColor : Color.white.opacity(0.1))
                                 .overlay() {
                                     Text(selectedDays[i].day).font(.callout)
-                                        .foregroundColor(selectedDays[i].selected ? Color.white : Color.black)
-                                        .fontWeight(selectedDays[i].selected ? .bold : .regular)
+                                        .foregroundColor(selectedDays[i].selected ? Color.white : Color.white)
+                                        .fontWeight(.bold)
                                 }
                         }
                         .buttonStyle(PlainButtonStyle())
@@ -37,7 +37,7 @@ struct SelectNotificationDay: View {
             }
         }
         .frame(height: 40)
-        .padding(EdgeInsets(top: 0, leading: 8, bottom: 0, trailing: 8))
+        .padding(EdgeInsets(top: 0, leading: 8, bottom: 0, trailing: 0))
     }
 }
 
@@ -49,7 +49,7 @@ struct SelectNotificationDay_Previews: PreviewProvider {
         SelectedDay(day: "목", selected: true),
         SelectedDay(day: "금", selected: true),
         SelectedDay(day: "토", selected: false),
-        SelectedDay(day: "일", selected: false)
+        SelectedDay(day: "일", selected: true)
     ]
     
     static var previews: some View {

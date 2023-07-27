@@ -12,6 +12,7 @@
 		DED043012A6F9924004D3395 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED043002A6F9924004D3395 /* SplashView.swift */; };
 		DEDBC6972A65152400AB3867 /* NotificationSettingModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDBC6962A65152400AB3867 /* NotificationSettingModalView.swift */; };
 		DEDBC6992A65236C00AB3867 /* SelectNotificationDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDBC6982A65236C00AB3867 /* SelectNotificationDay.swift */; };
+		EF5C255B2A724AA50072EF83 /* MiniTestingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF5C255A2A724AA50072EF83 /* MiniTestingView.swift */; };
 		EF7CFA2A2A6E19ED005F14F0 /* NotificationIntervalEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7CFA292A6E19ED005F14F0 /* NotificationIntervalEnum.swift */; };
 		EF81A9B72A5B8A1400C6F417 /* ChuckchuDrivenDevelopmentApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF81A9B62A5B8A1400C6F417 /* ChuckchuDrivenDevelopmentApp.swift */; };
 		EF81A9BE2A5B8A1400C6F417 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF81A9BD2A5B8A1400C6F417 /* ContentView.swift */; };
@@ -77,6 +78,7 @@
 		DED043002A6F9924004D3395 /* SplashView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		DEDBC6962A65152400AB3867 /* NotificationSettingModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationSettingModalView.swift; sourceTree = "<group>"; };
 		DEDBC6982A65236C00AB3867 /* SelectNotificationDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectNotificationDay.swift; sourceTree = "<group>"; };
+		EF5C255A2A724AA50072EF83 /* MiniTestingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniTestingView.swift; sourceTree = "<group>"; };
 		EF7CFA292A6E19ED005F14F0 /* NotificationIntervalEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationIntervalEnum.swift; sourceTree = "<group>"; };
 		EF81A9B32A5B8A1400C6F417 /* ChuckchuDrivenDevelopment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChuckchuDrivenDevelopment.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF81A9B62A5B8A1400C6F417 /* ChuckchuDrivenDevelopmentApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChuckchuDrivenDevelopmentApp.swift; sourceTree = "<group>"; };
@@ -159,6 +161,14 @@
 			path = TheoPark;
 			sourceTree = "<group>";
 		};
+		EF5C25592A7240840072EF83 /* PokeNotification */ = {
+			isa = PBXGroup;
+			children = (
+				EFEA28702A67B62700FC4965 /* PokeNotificationManager.swift */,
+			);
+			path = PokeNotification;
+			sourceTree = "<group>";
+		};
 		EF81A9AA2A5B8A1400C6F417 = {
 			isa = PBXGroup;
 			children = (
@@ -236,11 +246,12 @@
 		EFEA28722A67BDA600FC4965 /* PushNotification */ = {
 			isa = PBXGroup;
 			children = (
-				EFEA28702A67B62700FC4965 /* PokeNotificationManager.swift */,
+				EF5C25592A7240840072EF83 /* PokeNotification */,
 				EFB939E82A6A66B10083C08D /* LocalNotificationManager.swift */,
-				EFB939EC2A6C46B00083C08D /* LocalNotificationTestingView.swift */,
+				EF5C255A2A724AA50072EF83 /* MiniTestingView.swift */,
 				EF7CFA292A6E19ED005F14F0 /* NotificationIntervalEnum.swift */,
 				EFE2C8152A6FD80E006D5240 /* NotificationTitle.swift */,
+				EFB939EC2A6C46B00083C08D /* LocalNotificationTestingView.swift */,
 			);
 			path = PushNotification;
 			sourceTree = "<group>";
@@ -417,15 +428,14 @@
 				EFE2C8162A6FD80E006D5240 /* NotificationTitle.swift in Sources */,
 				EFECCBB02A61302A0093BB67 /* MemberGroup.swift in Sources */,
 				EFECCBAE2A612F8A0093BB67 /* PokeViewModel.swift in Sources */,
-				EFEA289B2A67D00F00FC4965 /* TheoNaView.swift in Sources */,
 				EFE2C81C2A70045F006D5240 /* MainView.swift in Sources */,
 				EFEA28932A67CFCE00FC4965 /* PokeUserTestNameView.swift in Sources */,
 				EFEA28942A67CFCE00FC4965 /* PokeUserTestListView.swift in Sources */,
 				EF7CFA2A2A6E19ED005F14F0 /* NotificationIntervalEnum.swift in Sources */,
 				DED043012A6F9924004D3395 /* SplashView.swift in Sources */,
-				EFEA28742A67BDBF00FC4965 /* NotificationTestingView.swift in Sources */,
 				EF81A9BE2A5B8A1400C6F417 /* ContentView.swift in Sources */,
 				EFE2C8182A700220006D5240 /* NotificationSettingsCell.swift in Sources */,
+				EF5C255B2A724AA50072EF83 /* MiniTestingView.swift in Sources */,
 				EFB939ED2A6C46B00083C08D /* LocalNotificationTestingView.swift in Sources */,
 				EFEA28992A67D00500FC4965 /* GuardyView.swift in Sources */,
 				EFB939EB2A6C2FD50083C08D /* CustomHourPicker.swift in Sources */,

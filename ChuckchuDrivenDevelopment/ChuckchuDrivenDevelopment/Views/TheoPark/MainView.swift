@@ -96,7 +96,8 @@ struct MainView: View {
             // MARK: - 알림 설정 버튼
             Button {
                 if selectedEndHour > selectedStartHour {
-    
+                    localNotificationManager.cancelNotification()
+                    
                     /// 선택된 스케줄을 파라미터로 전달하고 푸시 알림 요청
                     localNotificationManager.setLocalNotification(
                         weekdays: selectedDaysInt,
@@ -105,7 +106,6 @@ struct MainView: View {
                         frequency: selectedFrequency
                     )
                     
-                    localNotificationManager.cancelNotification()
                     
                     /*
                      print("--------View--------")

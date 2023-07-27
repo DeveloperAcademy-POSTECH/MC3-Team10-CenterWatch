@@ -9,15 +9,33 @@ import SwiftUI
 import UserNotifications
 
 struct MiniTestingView: View {
+    @ObservedObject var manager: LocalNotificationManager = LocalNotificationManager()
+   
     var body: some View {
         VStack {
             Button("알림 보내기") {
-                sendNotification()
+                manager.isAuthorizationRequested = true
+            }
+            Spacer()
+                .frame(height: 30)
+            Button("request Permission") {
+                manager.requestNotificationPermission()
             }
         }
     }
 }
 
+func request() {
+    let center = UNUserNotificationCenter.current()
+    center.requestAuthorization(options: [.alert, .sound, .badge]) { granted, error in
+        
+        if let error = error {
+            // Handle the error here.
+        }
+        
+        // Enable or disable features based on the authorization.
+    }
+}
 
 
 func sendNotification() {
@@ -30,7 +48,6 @@ func sendNotification() {
     content.categoryIdentifier = "alarm"
     content.userInfo = ["customData": "fizzbuzz"]
     content.sound = UNNotificationSound.default
-    
     
     let startHour = 14
     let endHour = 18

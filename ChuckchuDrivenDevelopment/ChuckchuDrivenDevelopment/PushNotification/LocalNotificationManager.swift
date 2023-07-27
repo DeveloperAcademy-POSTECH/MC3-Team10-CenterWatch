@@ -9,8 +9,10 @@ import SwiftUI
 import UserNotifications
 
 
-class LocalNotificationManager: NSObject, ObservableObject {
+class LocalNotificationManager: NSObject, ObservableObject, UNUserNotificationCenterDelegate {
     
+    @Published var isAuthorizationRequested: Bool = false
+     
     private let notificationCenter = UNUserNotificationCenter.current()
     private let notificationContent = UNMutableNotificationContent()
     private let calendar = Calendar.current
@@ -345,34 +347,9 @@ class LocalNotificationManager: NSObject, ObservableObject {
 
 
 
-// MARK: - UNUserNotificationCenterDelegate
 
-/// Foreground Mode
-extension LocalNotificationManager: UNUserNotificationCenterDelegate {
-    func userNotificationCenter(
-        _ center: UNUserNotificationCenter,
-        willPresent notification: UNNotification,
-        withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void
-    ) {
-        print("identifier:\(notification.request.identifier)")
-        completionHandler([.alert, .sound])
-    }
-    
-    /// Background Mode: 전달 알림에 대한 사용자 응답을 처리하도록 대리인에 요청
-    func userNotificationCenter(
-        _ center: UNUserNotificationCenter,
-        didReceive response: UNNotificationResponse,
-        withCompletionHandler completionHandler: @escaping () -> Void
-    ) {
-        switch response.actionIdentifier {
-        case "resetNotificationTimeAction":
-            return
-        default:
-            break
-        }
-        completionHandler()
-    }
-}
+
+
 
 
 extension LocalNotificationManager {
@@ -393,3 +370,5 @@ extension LocalNotificationManager {
         notificationCenter.setNotificationCategories([resetTimeActionCategory])
     }
 }
+
+

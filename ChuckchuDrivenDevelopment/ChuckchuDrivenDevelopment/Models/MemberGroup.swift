@@ -14,6 +14,7 @@ struct MemberGroup: Identifiable, Codable, Hashable {
     
     
     func documentData() -> [String: Any] { // 서버에 정보를 전달하기 위한 틀
-        return [id: id]
+        return ["id": id]
     }
 }
+

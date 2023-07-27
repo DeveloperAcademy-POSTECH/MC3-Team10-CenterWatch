@@ -1,46 +1,43 @@
 //
-//  NotificationTestingView.swift
+//  PokeNotificationManager.swift
 //  ChuckchuDrivenDevelopment
 //
 //  Created by Ye Eun Choi on 2023/07/19.
 //
 
+import Foundation
 import SwiftUI
 
-struct NotificationTestingView: View {
+class PokeNotificationManager: ObservableObject {
+    private(set) var currentUserDeviceToken: String?
+
     
-    private let projectServerKey = ""
-    private let testingDeviceToken = ""
-    
-    
-    var body: some View {
-        
-        VStack {
-            Button {
-                Task {
-                    let instance = await sendNotification(url: "https://fcm.googleapis.com/fcm/send")
-                }
-            } label: {
-                Text("찌르기")
-                    .font(.title)
-                    .fontWeight(.semibold)
-                    .padding(.horizontal, 10)
-            }
-            .buttonStyle(.borderedProminent)
-        }
+    // MARK: - setCurrentUserDeviceToken (Method)
+    /// private(set) 속성에 접근하여 DeviceToken을 할당합니다.
+    public func setCurrentUserDeviceToken(token: String) {
+        currentUserDeviceToken = token
     }
+
+    init(
+           currentUserDeviceToken: String?
+       ) {
+           self.currentUserDeviceToken = currentUserDeviceToken
+       }
     
+  
     
-    // MARK: - sendNotification (Method)
-    /// 앱이 빌드된 기기에서 -> 특정 기기 토큰(testingDeviceToken)으로 알림을 발송합니다.
-    public func sendNotification(url: String) async -> Void {
+    // MARK: - sendPokeNotification (Method)
+    /// 앱이 빌드된 기기에서 -> 특정 기기 토큰(userDeviceToken)으로 찌르기 알림을 발송합니다.
+    public func sendPokeNotification(toUserDeviceToken: String,
+                                     currentMemberUsername: String) async -> Void {
         
         /// url == FCM Legacy HTTP의 엔드포인트
+        let url = "https://fcm.googleapis.com/fcm/send"
         guard let url = URL(string: url) else {
             return
         }
         
-        let messageTitle = "00님이 사용자님을 찔렀습니다👈"
+        let messageTitle = "\(currentMemberUsername)님이 사용자님을 찔렀습니다👈"
         let messageBody = "꼼짝 마세요! 당신은 허리 경찰에게 포착되었습니다! 당장 허리를 펴주세요"
         
         /// HTTP Request의 body로 전달할 data를 딕셔너리로 선언한 후, JSON으로 변환
@@ -48,7 +45,7 @@ struct NotificationTestingView: View {
         [
             /// 특정 기기에 알람을 보내기 위해 "to"를 사용
             /// 경우에 따라 Topic 등 다른 용도로 활용 가능
-            "to" : testingDeviceToken,
+            "to": toUserDeviceToken,
             
             /// 알림의 내용
             "notification": [
@@ -56,8 +53,9 @@ struct NotificationTestingView: View {
                 "body": messageBody
             ],
             
+            
             /// 알림을 보내며 함께 전달할 데이터를 삽입
-            "data" : [
+            "data": [
                 "userName": "lianne"
             ]
         ]
@@ -71,7 +69,7 @@ struct NotificationTestingView: View {
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         
         /// 저장해둔 서버 키 사용
-        request.setValue("key=\(projectServerKey)", forHTTPHeaderField: "Authorization")
+        request.setValue("key= ", forHTTPHeaderField: "Authorization")
         
         do {
             guard let httpBody else { return }
@@ -90,8 +88,4 @@ struct NotificationTestingView: View {
     }
 }
 
-struct NotificationTestingView_Previews: PreviewProvider {
-    static var previews: some View {
-        NotificationTestingView()
-    }
-}
+

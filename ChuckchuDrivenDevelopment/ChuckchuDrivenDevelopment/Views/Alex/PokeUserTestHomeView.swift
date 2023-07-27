@@ -8,46 +8,52 @@
 import SwiftUI
 
 struct PokeUserTestHomeView: View {
-    @State private var showNotiSettingModal : Bool = false
+    @State private var showNotificationSettingModal: Bool = false
+   
     var body: some View {
         
-        NavigationView {
-            VStack {
-                Spacer()
-                Image("turtle")
-                
-                Spacer()
-                Spacer()
-                Spacer()
-                NavigationLink(destination: PokeUserTestListView()){
-                    Text("찌르기")
-                        .foregroundColor(Color.white)
-                        .frame(maxWidth: 96, maxHeight: 60)
-                        .padding(EdgeInsets(top: 0, leading: 26, bottom: 0, trailing: 26))
-                        .buttonStyle(.borderedProminent)
-                        .background(RoundedRectangle(cornerRadius: 16).fill(Color.black))
-                }
-                .padding(.bottom, 8)
-                
-                
-                Button {
-                    
-                } label: {
-                    Text("알림 설정")
-                        .foregroundColor(Color.white)
-                        .frame(maxWidth: 96, maxHeight: 60)
-                        .padding(EdgeInsets(top: 0, leading: 26, bottom: 0, trailing: 26))
-                        .buttonStyle(.borderedProminent)
-                        .background(RoundedRectangle(cornerRadius: 16).fill(Color.black))
-                }
-                
-                
-                
-            }.navigationBarBackButtonHidden()
-                .padding(.bottom, 72)
+        VStack {
+            Spacer()
+            Image("turtle")
             
+            Spacer()
+            Spacer()
+            Spacer()
             
-        } }
+            // FIXME: - 찌르기 관련 코드 임시 주석 처리
+            /*
+             NavigationLink(destination: PokeUserTestListView()){
+                 Text("찌르기")
+                     .foregroundColor(Color.white)
+                     .frame(maxWidth: 96, maxHeight: 60)
+                     .padding(EdgeInsets(top: 0, leading: 26, bottom: 0, trailing: 26))
+                     .buttonStyle(.borderedProminent)
+                     .background(RoundedRectangle(cornerRadius: 16).fill(Color.black))
+             }
+             .padding(.bottom, 8)
+             */
+            
+            Button {
+                self.showNotificationSettingModal = true
+            } label: {
+                Text("알림 설정")
+                    .foregroundColor(Color.white)
+                    .frame(maxWidth: 96, maxHeight: 60)
+                    .padding(EdgeInsets(top: 0, leading: 26, bottom: 0, trailing: 26))
+                    .buttonStyle(.borderedProminent)
+                    .background(RoundedRectangle(cornerRadius: 16).fill(Color.black))
+            }
+            .sheet(isPresented: self.$showNotificationSettingModal) {
+                ModalView()
+            }
+        }
+        .navigationBarBackButtonHidden()
+        .padding(.bottom, 72)
+        .onAppear {
+            UIApplication.shared.applicationIconBadgeNumber = 0
+        }
+        
+    }
 }
 
 struct PokeUserTestHomeView_Previews: PreviewProvider {

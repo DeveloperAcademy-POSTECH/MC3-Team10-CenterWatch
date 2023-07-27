@@ -28,7 +28,7 @@ extension PokeViewModel {
     @MainActor
     func fetchPoke(groupID: String) async -> QuerySnapshot? {
         do {
-            let querySnapshot = try await database.collection("Group")
+            let querySnapshot = try await database.collection("MemberGroup")
                 .document(groupID)
                 .collection("Poke")
                 .getDocuments()
@@ -38,9 +38,11 @@ extension PokeViewModel {
                 let id: String = documentData["id"] as? String ?? ""
                 let date: Date = documentData["date"] as? Date ?? Date()
                 let fromID: String = documentData["fromID"] as? String ?? ""
+                let fromUsername: String = documentData["fromUsername"] as? String ?? ""
                 let toID: String = documentData["toID"] as? String ?? ""
+                let toUsername: String = documentData["toUsername"] as? String ?? ""
                 let reaction: String = documentData["reaction"] as? String ?? ""
-                let poke: Poke = Poke(id: id, date: date, fromID: fromID, toID: toID, reaction: reaction)
+                let poke: Poke = Poke(id: id, date: date, fromID: fromID, fromUsername: fromUsername, toID: toID, toUsername: toUsername, reaction: reaction)
 
                 self.pokes.append(poke)
             }
@@ -49,14 +51,14 @@ extension PokeViewModel {
         }
         return nil
     }
-    
+   
     
     // MARK: - Create Poke (Method)
     /// Firestore에 새로운 Poke의 문서를 생성합니다.
     /// 사용법: 찌르기를 누를 때 관련된 이 함수를 호출하여 찌르기를 서버에 기록하고, 관련된 정보를 저장해줍니다.
     func createPoke(groupID: String, with poke: Poke) async {
         do {
-            try await database.collection("Group")
+            try await database.collection("MemberGroup")
                 .document(groupID)
                 .collection("Poke")
                 .document(poke.id)

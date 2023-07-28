@@ -23,21 +23,30 @@ struct SplashView: View {
             
             /// 애니메이션 효과가 들어가있는 뒷배경
                 .background() {
-                    Image("Pheen1")
-                        .blur(radius: splashOn ? 25 : 16)
-                        .scaleEffect(4)
-                        .overlay() {
-                            VStack {
-                            }
-                            .frame(maxWidth: .infinity, maxHeight: .infinity)
-                            .background(Color.blue).opacity(0.5)
+                    ZStack {
+                        Image("pin3d1")
+                            .blur(radius: 16)
                             .scaleEffect(4)
-                            .blendMode(.overlay)
+                            .overlay() {
+                                VStack {
+                                }
+                                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                                .background(Color.blue)
+                                .scaleEffect(4)
+                                .blendMode(.overlay)
                         }
-                }
-                .onAppear() {
-                    withAnimation(.easeInOut(duration: 2)) {
-                        splashOn.toggle()
+                        
+                        Image("pin3d1")
+                            .blur(radius: 16)
+                            .scaleEffect(4)
+                            .overlay() {
+                                VStack {
+                                }
+                                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                                .background(Color.blue)
+                                .scaleEffect(4)
+                                .blendMode(.overlay)
+                        }
                     }
                 }
         }

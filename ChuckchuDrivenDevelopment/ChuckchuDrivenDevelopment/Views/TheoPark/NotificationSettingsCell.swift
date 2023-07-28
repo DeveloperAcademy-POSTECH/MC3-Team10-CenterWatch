@@ -99,7 +99,7 @@ struct NotificationSettingsCell: View {
                             .opacity(0.7)
                             .font(Font(UIFont(name: "Pretendard-Medium", size: 16)!))
                         
-                        Text("\(selectedStartHour)" + ":00")
+                        Text(String(format: "%02d", selectedStartHour) + ":00")
                             .font(Font(UIFont(name: "Pretendard-Bold", size: 45)!))
                             .foregroundColor(.white)
                             .padding(.bottom, -1)
@@ -116,7 +116,7 @@ struct NotificationSettingsCell: View {
                             .foregroundColor(.white)
                             .opacity(0.7)
                         
-                        Text("\(selectedEndHour)" + ":00")
+                        Text(String(format: "%02d", selectedEndHour) + ":00")
                             .foregroundColor(.white)
                             .font(Font(UIFont(name: "Pretendard-Bold", size: 45)!))
                             .padding(.bottom, -1)

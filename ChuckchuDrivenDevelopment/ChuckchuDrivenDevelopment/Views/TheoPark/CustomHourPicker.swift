@@ -16,10 +16,11 @@ struct CustomHourPicker: View {
                 Text("\(hour):00").tag(hour)
                     .font(.system(size: 20))
                     .fontWeight(.semibold)
-                    .foregroundColor(.blue) // FIXME: 추후에 accentColor로 색상 변경
+                    .foregroundColor(.accentColor) // FIXME: 추후에 accentColor로 색상 변경
             }
         }
         .padding(.trailing, -8)
+        .padding(.leading, -8)
         .pickerStyle(WheelPickerStyle())
     }
 }

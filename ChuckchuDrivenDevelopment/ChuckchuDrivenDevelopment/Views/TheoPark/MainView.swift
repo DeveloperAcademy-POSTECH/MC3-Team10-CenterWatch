@@ -27,6 +27,18 @@ struct Setting {
 
 struct MainView: View {
     
+    let cfURL1 = Bundle.main.url(forResource: "Pretendard-Medium", withExtension: "otf")
+    let cfURL2 = Bundle.main.url(forResource: "Pretendard-Bold", withExtension: "otf")
+    var PretendardRegular: UIFont
+    var PretendardBold: UIFont
+
+    init(){
+        CTFontManagerRegisterFontsForURL(cfURL1! as CFURL, CTFontManagerScope.process, nil)
+        PretendardRegular = UIFont(name: "Pretendard-Medium", size: 15.0)!
+        CTFontManagerRegisterFontsForURL(cfURL2! as CFURL, CTFontManagerScope.process, nil)
+        PretendardBold = UIFont(name: "Pretendard-Bold", size: 15.0)!
+    }
+    
     @State var settings = Setting()
     @State var selectedStartHour: Int = 8
     @State var selectedEndHour: Int = 18

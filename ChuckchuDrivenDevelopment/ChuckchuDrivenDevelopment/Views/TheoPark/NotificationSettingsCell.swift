@@ -35,16 +35,16 @@ struct NotificationSettingsCell: View {
             HStack(alignment: .top) {
                 VStack(alignment: .leading) {
                     Text("알림 주기")
-                        .bold()
                         .foregroundColor(.white)
-                        .font(.callout)
+                        .font(Font(UIFont(name: "Pretendard-Medium", size: 16)!))
                         .opacity(0.7)
                     
                     Text("\(selectedFrequency.rawValue)" + "분")
-                        .fontWeight(.bold)
                         .foregroundColor(.white)
-                        .font(.system(size: 45))
                         .padding(.bottom, -1)
+                        .padding(.top, -15)
+                        .font(Font(UIFont(name: "Pretendard-Bold", size: 45)!))
+                    
                     
                 }
                 
@@ -61,7 +61,7 @@ struct NotificationSettingsCell: View {
                             Image(systemName: "alarm.fill")
                             
                             Text("알림 설정")
-                                .fontWeight(.bold)
+                                .font(Font(UIFont(name: "Pretendard-Bold", size: 16)!))
                         }
                         .padding(4)
                     }
@@ -95,16 +95,16 @@ struct NotificationSettingsCell: View {
                 HStack {
                     VStack(alignment: .leading) {
                         Text("시작 시간")
-                            .bold()
                             .foregroundColor(.white)
-                            .font(.callout)
                             .opacity(0.7)
+                            .font(Font(UIFont(name: "Pretendard-Medium", size: 16)!))
                         
                         Text("\(selectedStartHour)" + ":00")
-                            .fontWeight(.bold)
+                            .font(Font(UIFont(name: "Pretendard-Bold", size: 45)!))
                             .foregroundColor(.white)
-                            .font(.system(size: 45))
                             .padding(.bottom, -1)
+                            .padding(.top, -15)
+                        
                     }
                     .padding(.leading)
                     
@@ -112,16 +112,15 @@ struct NotificationSettingsCell: View {
                     
                     VStack(alignment: .leading) {
                         Text("종료 시간")
-                            .bold()
+                            .font(Font(UIFont(name: "Pretendard-Medium", size: 16)!))
                             .foregroundColor(.white)
-                            .font(.callout)
                             .opacity(0.7)
                         
                         Text("\(selectedEndHour)" + ":00")
-                            .fontWeight(.bold)
                             .foregroundColor(.white)
-                            .font(.system(size: 45))
+                            .font(Font(UIFont(name: "Pretendard-Bold", size: 45)!))
                             .padding(.bottom, -1)
+                            .padding(.top, -15)
                     }
                     .padding(.leading)
                     
@@ -136,9 +135,8 @@ struct NotificationSettingsCell: View {
                 VStack {
                     VStack(alignment: .leading) {
                         Text("요일")
-                            .bold()
+                            .font(Font(UIFont(name: "Pretendard-Medium", size: 16)!))
                             .foregroundColor(.white)
-                            .font(.callout)
                             .opacity(0.7)
                         
                         HStack {
@@ -192,9 +190,8 @@ struct NotificationSettingsCell: View {
                             }
                             
                         }
-                        .fontWeight(.bold)
                         .foregroundColor(.white)
-                        .font(.system(size: 45))
+                        .font(Font(UIFont(name: "Pretendard-Bold", size: 45)!))
                     }
                 }
                 .padding([.leading, .trailing, .bottom])

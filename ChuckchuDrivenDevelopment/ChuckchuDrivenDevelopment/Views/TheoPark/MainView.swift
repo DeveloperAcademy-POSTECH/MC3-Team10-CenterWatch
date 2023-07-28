@@ -22,50 +22,16 @@ struct Setting {
         SelectedDay(day: "금", selected: true),
         SelectedDay(day: "토", selected: false)
     ]
-    
-    /*
-     var startTime: Date = {
-         let calendar = Calendar.current
-         var dateComponents = DateComponents()
-         dateComponents.hour = 8
-         dateComponents.minute = 00
-
-         return calendar.date(from: dateComponents)!
-     }()
-     var endTime: Date = {
-         let calendar = Calendar.current
-         var dateComponents = DateComponents()
-         dateComponents.hour = 18
-         dateComponents.minute = 00
-
-         return calendar.date(from: dateComponents)!
-     }()
-     var notificationCycle: String = "10분"
-     var pokeNotification: Bool = true
-     
-     */
 }
 
 
 struct MainView: View {
+    
     @State var settings = Setting()
-    @State private var selectedStartHour: Int = 0
-    @State private var selectedEndHour: Int = 0
-    @State private var selectedFrequency: MinuteInterval = .tenMinutes
-    @State private var isInputCorrect: Bool = false
-    @State private var isSubmitted: Bool = false
+    @State var selectedStartHour: Int = 8
+    @State var selectedEndHour: Int = 18
+    @State var selectedFrequency: MinuteInterval = .hour
     
-    @StateObject private var localNotificationManager = LocalNotificationManager()
-    
-    
-    // MARK: - saveNotificationData (Method)
-    /// 화면 재진입 시 이전 데이터를 다시 그려주기 위해 화면 이탈 전 사용자 설정 값을 UserDefaults에 저장합니다.
-     func saveNotificationData() {
-         UserDefaults.standard.set(selectedStartHour, forKey: "notificationStartHour")
-         UserDefaults.standard.set(selectedEndHour, forKey: "notificationEndHour")
-         UserDefaults.standard.set(selectedDaysInt, forKey: "notificationWeekdays")
-         UserDefaults.standard.set(selectedFrequency.rawValue, forKey: "notificationFrequency")
-     }
     
     // MARK: - selectedDaysInt (Computed Property)
     /// setLocalNotification 함수에 전달하기 위해 selectedDays 데이터를 [Int]의 형태로 가공합니다.
@@ -78,7 +44,6 @@ struct MainView: View {
         }
         return daysConvertedToInt
     }
-
     
     var body: some View {
         VStack {
@@ -90,57 +55,9 @@ struct MainView: View {
             NotificationSettingsCell(selectedStartHour: $selectedStartHour,
                                      selectedEndHour: $selectedEndHour,
                                      selectedFrequency: $selectedFrequency,
-                                     selectedWeekdays: $settings.selectedDays)
+                                     selectedWeekdays: $settings.selectedDays,
+                                     settings: $settings)
             Spacer()
-            
-            // MARK: - 알림 설정 버튼
-            Button {
-                if selectedEndHour > selectedStartHour {
-    
-                    /// 선택된 스케줄을 파라미터로 전달하고 푸시 알림 요청
-                    localNotificationManager.setLocalNotification(
-                        weekdays: selectedDaysInt,
-                        startHour: selectedStartHour,
-                        endHour: selectedEndHour,
-                        frequency: selectedFrequency
-                    )
-                    
-                    localNotificationManager.cancelNotification()
-                    
-                    /*
-                     print("--------View--------")
-                     print("눌렷음")
-                     print("---> selected weekdays: ", selectedDaysInt)
-                     print("---> selected startHour: ", selectedStartHour)
-                     print("---> selected endHour: ", selectedEndHour)
-                     print("---> selected frequency: ", selectedFrequency)
-                     */
-                    
-                    /// 변경된 데이터 UserDefaults에 저장
-                    saveNotificationData()
-            
-                    isSubmitted = true
-                    
-                } else {
-                    isInputCorrect = true
-                }
-            } label: {
-                Text("알림 설정하기")
-                    .frame(maxWidth: .infinity)
-                    .fontWeight(.bold)
-                    .frame(height: 40)
-            }
-            .buttonStyle(.borderedProminent)
-            .tint(.blue) // FIXME: 추후 accentColor로 변경
-            .cornerRadius(20)
-            .padding(16)
-            // FIXME: toast message 등으로 UI 변경
-            .alert("'종료 시간'을 '시작 시간'보다 \n늦은 시간대로 맞춰주세요 ⏰", isPresented: $isInputCorrect) {
-                Button("확인", role: .cancel) { }
-            }
-            .alert("알림이 설정되었어요! 🤩", isPresented: $isSubmitted) {
-                Button("확인", role: .cancel) { }
-            }
             
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -182,9 +99,8 @@ struct MainView: View {
             }
         }
     }
+    
 }
-
-
 
 
 struct MainView_Previews: PreviewProvider {

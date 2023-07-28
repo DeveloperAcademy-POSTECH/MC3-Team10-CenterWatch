@@ -25,9 +25,9 @@ struct SelectNotificationDay: View {
                                 .frame(width: 40, height: 40)
                                 .foregroundColor(selectedDays[i].selected ? Color.blue : Color.white.opacity(0.1))
                                 .overlay() {
-                                    Text(selectedDays[i].day).font(.callout)
+                                    Text(selectedDays[i].day)
                                         .foregroundColor(selectedDays[i].selected ? Color.white : Color.white)
-                                        .fontWeight(.bold)
+                                        .font(Font(UIFont(name: "Pretendard-Bold", size: 16)!))
                                 }
                         }
                         .buttonStyle(PlainButtonStyle())

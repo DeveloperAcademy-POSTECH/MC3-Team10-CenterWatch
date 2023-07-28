@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		17202EFB2A6ED8DB00E3223B /* CharacterAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17202EFA2A6ED8DB00E3223B /* CharacterAnimation.swift */; };
 		17202EFD2A6ED90300E3223B /* CharacterFrames.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17202EFC2A6ED90300E3223B /* CharacterFrames.xcassets */; };
+		DE7294D82A73AE62003C4059 /* Pretendard-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = DE7294D72A73AE62003C4059 /* Pretendard-Bold.otf */; };
+		DE7294DA2A73AF74003C4059 /* Pretendard-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = DE7294D92A73AF74003C4059 /* Pretendard-Medium.otf */; };
 		DED043012A6F9924004D3395 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED043002A6F9924004D3395 /* SplashView.swift */; };
 		DEDBC6972A65152400AB3867 /* ModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDBC6962A65152400AB3867 /* ModalView.swift */; };
 		DEDBC6992A65236C00AB3867 /* SelectNotificationDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDBC6982A65236C00AB3867 /* SelectNotificationDay.swift */; };
@@ -74,6 +76,8 @@
 /* Begin PBXFileReference section */
 		17202EFA2A6ED8DB00E3223B /* CharacterAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterAnimation.swift; sourceTree = "<group>"; };
 		17202EFC2A6ED90300E3223B /* CharacterFrames.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = CharacterFrames.xcassets; sourceTree = "<group>"; };
+		DE7294D72A73AE62003C4059 /* Pretendard-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Bold.otf"; sourceTree = "<group>"; };
+		DE7294D92A73AF74003C4059 /* Pretendard-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Medium.otf"; sourceTree = "<group>"; };
 		DED043002A6F9924004D3395 /* SplashView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		DEDBC6962A65152400AB3867 /* ModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalView.swift; sourceTree = "<group>"; };
 		DEDBC6982A65236C00AB3867 /* SelectNotificationDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectNotificationDay.swift; sourceTree = "<group>"; };
@@ -135,6 +139,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DE7294D02A73A6FD003C4059 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				DE7294D92A73AF74003C4059 /* Pretendard-Medium.otf */,
+				DE7294D72A73AE62003C4059 /* Pretendard-Bold.otf */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		DEDBC6902A65144900AB3867 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -192,6 +205,7 @@
 				EFECCB9E2A612E200093BB67 /* ViewModels */,
 				DEDBC6902A65144900AB3867 /* Views */,
 				EF81A9C22A5B8A1500C6F417 /* Preview Content */,
+				DE7294D02A73A6FD003C4059 /* Resources */,
 				EF81A9BF2A5B8A1500C6F417 /* Assets.xcassets */,
 			);
 			path = ChuckchuDrivenDevelopment;
@@ -382,7 +396,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE7294DA2A73AF74003C4059 /* Pretendard-Medium.otf in Resources */,
 				EF81A9C42A5B8A1500C6F417 /* Preview Assets.xcassets in Resources */,
+				DE7294D82A73AE62003C4059 /* Pretendard-Bold.otf in Resources */,
 				EF81A9C02A5B8A1500C6F417 /* Assets.xcassets in Resources */,
 				EFEA286F2A65952000FC4965 /* GoogleService-Info.plist in Resources */,
 				17202EFD2A6ED90300E3223B /* CharacterFrames.xcassets in Resources */,

@@ -49,20 +49,22 @@ struct ModalView: View {
             VStack {
                 HStack {
                     Text("알림 주기")
-                        .bold()
+                        .font(Font(UIFont(name: "Pretendard-Bold", size: 18)!))
                         .foregroundColor(.white)
                         .frame(height: 60)
-                        .padding(.leading, 18)
+                        .padding(.leading, 20)
                     
                     Spacer()
                     
                     Picker("알림 주기", selection: $selectedFrequency) {
                         ForEach(notificationCycles, id: \.self) { interval in
                             Text("\(interval.rawValue)분")
+                                .font(Font(UIFont(name: "Pretendard-Bold", size: 18)!))
                         }
                     }
                     .pickerStyle(MenuPickerStyle())
                     .padding(.trailing, 10)
+                    .font(Font(UIFont(name: "Pretendard-Bold", size: 18)!))
                 }
                 .background(Color.init(hue: 0, saturation: 0, brightness: 0.16))
                 .cornerRadius(20)
@@ -74,8 +76,8 @@ struct ModalView: View {
                         VStack {
                             HStack {
                                 Text("시작 시간")
-                                    .bold()
-                                .foregroundColor(.white)
+                                    .font(Font(UIFont(name: "Pretendard-Bold", size: 18)!))
+                                    .foregroundColor(.white)
                                 
                                 Spacer()
                             }
@@ -88,7 +90,7 @@ struct ModalView: View {
                                 Spacer()
                             }
                         }
-                        .padding(EdgeInsets(top: 16, leading: 16, bottom: 4, trailing: 16))
+                        .padding(EdgeInsets(top: 18, leading: 18, bottom: 4, trailing: 16))
                         
 //                        VStack{
 //                            Text("Hello")
@@ -99,8 +101,8 @@ struct ModalView: View {
                         VStack {
                             HStack {
                                 Text("종료 시간")
-                                    .bold()
-                                .foregroundColor(.white)
+                                    .font(Font(UIFont(name: "Pretendard-Bold", size: 18)!))
+                                    .foregroundColor(.white)
                                 
                                 Spacer()
                             }
@@ -112,7 +114,7 @@ struct ModalView: View {
                                 Spacer()
                             }
                         }
-                        .padding(EdgeInsets(top: 16, leading: 16, bottom: 4, trailing: 16))
+                        .padding(EdgeInsets(top: 18, leading: 18, bottom: 4, trailing: 16))
                     }
                     
                     
@@ -123,10 +125,10 @@ struct ModalView: View {
                     VStack {
                         HStack {
                             Text("요일")
-                                .bold()
+                                .font(Font(UIFont(name: "Pretendard-Bold", size: 18)!))
                                 .foregroundColor(.white)
-                                .padding(.leading)
-                                .padding(.top, 8)
+                                .padding(.leading, 18)
+                                .padding(.top, 10)
                             
                             Spacer()
                         }
@@ -138,7 +140,7 @@ struct ModalView: View {
                 .background(Color.init(hue: 0, saturation: 0, brightness: 0.16))
                 .cornerRadius(20)
                 .padding(EdgeInsets(top: 4, leading: 16, bottom: 4, trailing: 16))
-                .navigationTitle("알림 설정")
+                .navigationTitle("알림 설정").bold()
                 .navigationBarTitleDisplayMode(.inline)
                 .toolbar {
                     ToolbarItem(placement: .navigationBarLeading) {
@@ -146,6 +148,7 @@ struct ModalView: View {
                             presentation.wrappedValue.dismiss()
                         } label: {
                             Text("취소")
+                                .font(Font(UIFont(name: "Pretendard-Medium", size: 16)!))
                         }
                     }
                     
@@ -174,6 +177,7 @@ struct ModalView: View {
                             }
                         } label: {
                             Text("완료")
+                                .font(Font(UIFont(name: "Pretendard-Medium", size: 16)!))
                         }
                     }
                 }

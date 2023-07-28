@@ -16,7 +16,7 @@ class LocalNotificationManager: NSObject, ObservableObject, UNUserNotificationCe
     private let notificationCenter = UNUserNotificationCenter.current()
     private let notificationContent = UNMutableNotificationContent()
     private let calendar = Calendar.current
-    private let notificationTitle = NotificationTitle().variations.randomElement() ?? "허리피라우🐢"
+    private let notificationTitle = NotificationTitle().variations
 
     var text: NSMutableAttributedString? = NSMutableAttributedString(string: "List of notification requests and it's time\n")
     
@@ -56,8 +56,6 @@ class LocalNotificationManager: NSObject, ObservableObject, UNUserNotificationCe
     ) {
         requestNotificationPermission()
         initNotificationCenter()
-        makeNotificationContent(with: notificationTitle)
-        
    
         for weekday in weekdays {
             /* 빈도 설정으로 들어온 횟수만큼 알림 요청 생성 */
@@ -65,6 +63,8 @@ class LocalNotificationManager: NSObject, ObservableObject, UNUserNotificationCe
             case .hour:
                 /// startHour에서 증가하는 인터벌 알림 예약 생성 및 요청
                 for count in 1...(endHour - startHour) + 1 { // 알림의 반복 횟수
+                    
+                    makeNotificationContent(with: notificationTitle)
                     
                     let hour = startHour + (count - 1)
                     let minute = 0
@@ -76,19 +76,6 @@ class LocalNotificationManager: NSObject, ObservableObject, UNUserNotificationCe
                     dateInfo.weekday = weekday
                     dateInfo.timeZone = .current
                     dateInfo.calendar = calendar
-                    
-                    /*
-                     print(">>>> hour: ", hour)
-                     print(">>>> minute: ", minute)
-                     print(">>>> weekday: ", weekday)
-                     
-                     notificationCenter.getPendingNotificationRequests { requests in
-                         for request in requests {
-                             print(">>> notification: ", request)
-                         }
-                     }
-                     
-                     */
                    
                     let identifier = UUID().uuidString + "\(count)" + "\(weekday)"
                     let trigger = UNCalendarNotificationTrigger(dateMatching: dateInfo, repeats: true)
@@ -100,6 +87,8 @@ class LocalNotificationManager: NSObject, ObservableObject, UNUserNotificationCe
                 
             case .halfHour:
                 for count in 1...(endHour - startHour) * 2 + 1 {
+                    
+                    makeNotificationContent(with: notificationTitle)
                     
                     // 다 분으로 계산하고 마지막에 시로 바꿔줌
                     let totalMinute = 30 * (count - 1)
@@ -130,10 +119,6 @@ class LocalNotificationManager: NSObject, ObservableObject, UNUserNotificationCe
                     dateInfo.timeZone = .current
                     dateInfo.calendar = calendar
                     
-                    print(">>>> hour: ", hour)
-                    print(">>>> minute: ", minute)
-                    print(">>>> weekday: ", weekday)
-                    
                     let identifier = UUID().uuidString + "\(count)" + "\(weekday)"
                     let trigger = UNCalendarNotificationTrigger(dateMatching: dateInfo, repeats: true)
                     let request = UNNotificationRequest(identifier: identifier, content: notificationContent, trigger: trigger)
@@ -151,6 +136,8 @@ class LocalNotificationManager: NSObject, ObservableObject, UNUserNotificationCe
                 
             case .quarterHour:
                 for count in 1...(endHour - startHour) * 4 + 1 {
+                    
+                    makeNotificationContent(with: notificationTitle)
                     
                     // 다 분으로 계산하고 마지막에 시로 바꿔줌
                     let totalMinute = 15 * (count - 1)
@@ -185,10 +172,6 @@ class LocalNotificationManager: NSObject, ObservableObject, UNUserNotificationCe
                     dateInfo.timeZone = .current
                     dateInfo.calendar = calendar
                     
-                    print(">>>> hour: ", hour)
-                    print(">>>> minute: ", minute)
-                    print(">>>> weekday: ", weekday)
-                    
                     let identifier = UUID().uuidString + "\(count)" + "\(weekday)"
                     let trigger = UNCalendarNotificationTrigger(dateMatching: dateInfo, repeats: true)
                     let request = UNNotificationRequest(identifier: identifier, content: notificationContent, trigger: trigger)
@@ -205,6 +188,8 @@ class LocalNotificationManager: NSObject, ObservableObject, UNUserNotificationCe
                 
             case .tenMinutes:
                 for count in 1...((endHour - startHour) * 5) + ((endHour - startHour) + 1) {
+                    
+                    makeNotificationContent(with: notificationTitle)
                     
                     // 다 분으로 계산하고 마지막에 시로 바꿔줌
                     let totalMinute = 10 * (count - 1)
@@ -238,7 +223,7 @@ class LocalNotificationManager: NSObject, ObservableObject, UNUserNotificationCe
                      0.  1.    2.    3.    4.   5.   6.    7.     8      9     10     11    12
                      0   10.   20   30.   40.   50.  60.   70.    80    90     100    110   120
                      */
-                    
+        
                     
                     var dateInfo = DateComponents()
                     dateInfo.hour = hour
@@ -247,10 +232,6 @@ class LocalNotificationManager: NSObject, ObservableObject, UNUserNotificationCe
                     dateInfo.weekday = weekday
                     dateInfo.timeZone = .current
                     dateInfo.calendar = calendar
-                    
-                    print(">>>> hour: ", hour)
-                    print(">>>> minute: ", minute)
-                    print(">>>> weekday: ", weekday)
                     
                     let identifier = UUID().uuidString + "\(count)" + "\(weekday)"
                     let trigger = UNCalendarNotificationTrigger(dateMatching: dateInfo, repeats: true)
@@ -297,8 +278,8 @@ class LocalNotificationManager: NSObject, ObservableObject, UNUserNotificationCe
     }
     
     // MARK: - notification content
-    private func makeNotificationContent(with title: String) {
-        notificationContent.title = title
+    private func makeNotificationContent(with titles: [String]) {
+        notificationContent.title = titles.randomElement() ?? "허리피라우🐢"
         notificationContent.body = "자세를 바로잡아주세요!"
         notificationContent.categoryIdentifier = "alarm"
         notificationContent.userInfo = ["허리피라우": "허우"]

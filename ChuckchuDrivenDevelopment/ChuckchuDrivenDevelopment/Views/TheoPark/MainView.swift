@@ -59,14 +59,18 @@ struct MainView: View {
         return daysConvertedToInt
     }
     
+    @State var toggleIsOn: Bool = false
+    
     var body: some View {
-        
-        
         ZStack {
             VStack {
-                Spacer()
+                dayOffToggle
+                
+                Divider()
+                    .frame(width: 335)
+                
                 CharacterAnimation()
-                Spacer()
+                    .padding(.bottom, 16)
                 
                 // MARK: - 알림 설정 세부사항
                 NotificationSettingsCell(selectedStartHour: $selectedStartHour,
@@ -126,6 +130,19 @@ struct MainView: View {
                         
                     }
                 }
+    }
+    
+    var dayOffToggle: some View {
+        HStack(spacing: 16){
+            Toggle(isOn: $toggleIsOn, label: {
+                Label("하루만 알림 끄기", systemImage: "powersleep")
+                    .foregroundColor(.white)
+                    .opacity(0.7)
+                
+            }).tint(.blue)
+        }
+        .padding(EdgeInsets(top: 12, leading: 20, bottom: 12, trailing: 20))
+    }
                 
         }
     }

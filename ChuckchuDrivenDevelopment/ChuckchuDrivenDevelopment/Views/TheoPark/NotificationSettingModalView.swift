@@ -28,12 +28,12 @@ import SwiftUI
 struct ModalView: View {
     @Environment(\.presentationMode) var presentation
    
-    let notificationCycles: [MinuteInterval] = [.tenMinutes, .quarterHour, .halfHour, .hour]
+    let notificationCycles: [MinuteInterval] = [.halfHour, .hour]
     
     @State var settings = Setting()
     @State private var selectedStartHour: Int = 0
     @State private var selectedEndHour: Int = 0
-    @State private var selectedFrequency: MinuteInterval = .tenMinutes
+    @State private var selectedFrequency: MinuteInterval = .hour
     
     @State private var showAlert: Bool = false
     

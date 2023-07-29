@@ -23,6 +23,7 @@ class LocalNotificationManager: NSObject, ObservableObject, UNUserNotificationCe
     
     
     // MARK: - Request Notification Permission (Method)
+    /// 
     public func requestNotificationPermission() {
         notificationCenter.requestAuthorization(options: [.alert, .badge, .sound]) { success, error in
            if let error {
@@ -137,122 +138,6 @@ class LocalNotificationManager: NSObject, ObservableObject, UNUserNotificationCe
                 
                 
             }
-            
-            
-        case .quarterHour:
-            for count in 1...(endHour - startHour) * 4 + 1 {
-                
-                makeNotificationContent(with: notificationTitle)
-                
-                // 다 분으로 계산하고 마지막에 시로 바꿔줌
-                let totalMinute = 15 * (count - 1)
-                var hour = startHour
-                var minute = 0
-                
-                if totalMinute >= 60 {
-                    hour = startHour + (Int(totalMinute / 60))
-                }
-                
-                if count % 4 == 0 && count-1 % 3 == 0 {
-                    minute = 45
-                } else if count % 3 == 0 {
-                    minute = 30
-                } else if count % 2 == 0 {
-                    minute = 15
-                }
-                
-                /*
-                 120min example:
-                 
-                 9   915.   930.   945.    10    1015.   1030    1045.   11
-                 0.   1.    2.     3.     4.      5.      6.      7.     8
-                 0    15.   30     45.    60.     75.     90.    105.    120
-                 */
-                
-                var dateInfo = DateComponents()
-                dateInfo.hour = hour
-                dateInfo.minute = minute
-                dateInfo.second = 0
-                dateInfo.weekday = weekday
-                dateInfo.timeZone = .current
-                dateInfo.calendar = calendar
-                
-                let identifier = UUID().uuidString + "\(count)" + "\(weekday)"
-                let trigger = UNCalendarNotificationTrigger(dateMatching: dateInfo, repeats: true)
-                let request = UNNotificationRequest(identifier: identifier, content: notificationContent, trigger: trigger)
-                
-                UNUserNotificationCenter.current().add(request)
-                
-                notificationCenter.getPendingNotificationRequests { requests in
-                    for request in requests {
-                        print(">>> notification: ", request)
-                    }
-                }
-            }
-            
-            
-        case .tenMinutes:
-            for count in 1...((endHour - startHour) * 5) + ((endHour - startHour) + 1) {
-                
-                makeNotificationContent(with: notificationTitle)
-                
-                // 다 분으로 계산하고 마지막에 시로 바꿔줌
-                let totalMinute = 10 * (count - 1)
-                var hour = startHour
-                var minute = 0
-                
-                if totalMinute >= 60 {
-                    hour = startHour + (Int(totalMinute / 60))
-                    minute = totalMinute - (60 * (hour - startHour))
-                } else {
-                    minute = totalMinute
-                }
-                
-                if totalMinute % 60 == 0 {
-                    minute = 0
-                    
-                }
-                
-                /*
-                 exception example: range 0:00~2:00
-                 
-                 0 010 020 030 040 050  1  110 120 130 140 150  2
-                 0   1   2   3   4   5   6   7   8   9  10   11  12
-                 0  10. 20  30. 40. 50. 60. 70  80  90  100  110 120
-                 */
-                
-                /*
-                 120min example:
-                 
-                 9  910.  920.  930.  940  950   10   1010.  1020  1030   1040   1050   11
-                 0.  1.    2.    3.    4.   5.   6.    7.     8      9     10     11    12
-                 0   10.   20   30.   40.   50.  60.   70.    80    90     100    110   120
-                 */
-                
-                
-                var dateInfo = DateComponents()
-                dateInfo.hour = hour
-                dateInfo.minute = minute
-                dateInfo.second = 0
-                dateInfo.weekday = weekday
-                dateInfo.timeZone = .current
-                dateInfo.calendar = calendar
-                
-                let identifier = UUID().uuidString + "\(count)" + "\(weekday)"
-                let trigger = UNCalendarNotificationTrigger(dateMatching: dateInfo, repeats: true)
-                let request = UNNotificationRequest(identifier: identifier, content: notificationContent, trigger: trigger)
-                
-                UNUserNotificationCenter.current().add(request)
-                
-                notificationCenter.getPendingNotificationRequests { requests in
-                    for request in requests {
-                        print(">>> notification: ", request)
-                    }
-                }
-                
-                print(">>>> count: ", count)
-                
-            }
         }
         
         
@@ -279,12 +164,12 @@ class LocalNotificationManager: NSObject, ObservableObject, UNUserNotificationCe
     
     /* 리팩토링에 쓰일 함수 리스트 */
     
-    // MARK: - notificationCenter init
+    // MARK: - NotificationCenter Init (Method)
     private func initNotificationCenter() {
         notificationCenter.delegate = self
     }
     
-    // MARK: - notification content
+    // MARK: - Notification Content (Method)
     private func makeNotificationContent(with titles: [String]) {
         notificationContent.title = titles.randomElement() ?? "허리피라우🐢"
         notificationContent.body = "자세를 바로잡아주세요!"
@@ -299,26 +184,21 @@ class LocalNotificationManager: NSObject, ObservableObject, UNUserNotificationCe
 
 
 
-
-
-
-
-
 extension LocalNotificationManager {
     
     func handleNotificationAction() {
-        // Define the custom actions.
+        /// Define the custom actions.
         let resetTimeAction = UNNotificationAction(identifier: "resetNotificationTimeAction",
               title: "알림 시간 재설정 하러 가기",
               options: [])
-        // Define the notification type
+        /// Define the notification type
         let resetTimeActionCategory =
               UNNotificationCategory(identifier: "resetTimeActionCategory",
               actions: [resetTimeAction],
               intentIdentifiers: [],
               hiddenPreviewsBodyPlaceholder: "알림이 너무 자주 오나요?",
               options: .customDismissAction)
-        // Register the notification type.
+        /// Register the notification type.
         notificationCenter.setNotificationCategories([resetTimeActionCategory])
     }
 }

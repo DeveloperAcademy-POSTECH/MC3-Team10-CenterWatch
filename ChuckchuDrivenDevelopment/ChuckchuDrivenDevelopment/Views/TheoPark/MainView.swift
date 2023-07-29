@@ -29,7 +29,7 @@ struct MainView: View {
     @State var settings = Setting()
     @State private var selectedStartHour: Int = 0
     @State private var selectedEndHour: Int = 0
-    @State private var selectedFrequency: MinuteInterval = .tenMinutes
+    @State private var selectedFrequency: MinuteInterval = .hour
     @State private var nextTargetWeekday: Int = 1
     @State private var isInputCorrect: Bool = false
     @State private var isSubmitted: Bool = false

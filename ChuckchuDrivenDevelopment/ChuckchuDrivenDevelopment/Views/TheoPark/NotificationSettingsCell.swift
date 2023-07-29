@@ -9,12 +9,11 @@ import SwiftUI
 
 struct NotificationSettingsCell: View {
     
-    let notificationCycles: [MinuteInterval] = [.tenMinutes, .quarterHour, .halfHour, .hour]
+    let notificationCycles: [MinuteInterval] = [.halfHour, .hour]
     
     @Binding var selectedStartHour: Int
     @Binding var selectedEndHour: Int
     @Binding var selectedFrequency: MinuteInterval
-    
     @Binding var selectedWeekdays: [SelectedDay]
     
     var body: some View {

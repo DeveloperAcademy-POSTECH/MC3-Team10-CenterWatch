@@ -9,12 +9,14 @@ import SwiftUI
 
 struct NotificationSettingsCell: View {
     
-    let notificationCycles: [MinuteInterval] = [.halfHour, .hour]
+    let notificationCycles: [TimeInterval] = [.halfHour, .hour]
     
     @Binding var selectedStartHour: Int
     @Binding var selectedEndHour: Int
-    @Binding var selectedFrequency: MinuteInterval
+    @Binding var selectedFrequency: TimeInterval
     @Binding var selectedWeekdays: [SelectedDay]
+    
+    @State var isIntervalCorrect: Bool = true
     
     var body: some View {
         VStack {
@@ -41,12 +43,26 @@ struct NotificationSettingsCell: View {
             .padding(EdgeInsets(top: 16, leading: 16, bottom: 0, trailing: 16))
             
             
+            if !isIntervalCorrect {
+                HStack {
+                    Text("최대 15시간 내로 설정 가능해요!")
+                        .font(.caption2)
+                        .foregroundColor(.red)
+                        .padding(.leading, 16)
+                        .padding(.top, 10)
+                    Spacer()
+                }
+            }
+            
+            
             VStack {
                 
                 HStack {
                     Text("시작 시간")
                     Spacer()
-                    CustomHourPicker(selectedHour: $selectedStartHour)
+                    CustomHourPicker(
+                        selectedHour: $selectedStartHour,
+                        isIntervalCorrect: $isIntervalCorrect)
                          .frame(width: 90, height: 60)
                 }
                 .padding(.horizontal, 16)
@@ -60,7 +76,9 @@ struct NotificationSettingsCell: View {
                 HStack {
                     Text("종료 시간")
                     Spacer()
-                    CustomHourPicker(selectedHour: $selectedEndHour)
+                    CustomHourPicker(
+                        selectedHour: $selectedEndHour,
+                        isIntervalCorrect: $isIntervalCorrect)
                         .frame(width: 90, height: 60)
                 }
                 .padding(.horizontal, 16)
@@ -89,6 +107,21 @@ struct NotificationSettingsCell: View {
             .cornerRadius(20)
             .padding(EdgeInsets(top: 8, leading: 16, bottom: 0, trailing: 16))
         }
+        // TODO: onChange 코드 예쁘게 묶기..
+        .onChange(of: selectedStartHour, perform: { _ in
+            if (selectedEndHour - selectedStartHour) > 15 {
+                isIntervalCorrect = false
+            } else {
+                isIntervalCorrect = true
+            }
+        })
+        .onChange(of: selectedEndHour, perform: { _ in
+            if (selectedEndHour - selectedStartHour) > 15 {
+                isIntervalCorrect = false
+            } else {
+                isIntervalCorrect = true
+            }
+        })
     }
 }
 

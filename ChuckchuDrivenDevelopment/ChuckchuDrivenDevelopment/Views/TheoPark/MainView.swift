@@ -26,15 +26,24 @@ struct Setting {
 
 
 struct MainView: View {
+    @StateObject private var localNotificationManager = LocalNotificationManager()
     @State var settings = Setting()
+    
+    /// UI에서 사용자가 선택한 데이터
     @State private var selectedStartHour: Int = 0
     @State private var selectedEndHour: Int = 0
-    @State private var selectedFrequency: MinuteInterval = .hour
+    @State private var selectedFrequency: TimeInterval = .hour
     @State private var nextTargetWeekday: Int = 1
-    @State private var isInputCorrect: Bool = false
+   
+    @State private var isRangeCorrect: Bool = false
     @State private var isSubmitted: Bool = false
+    @State private var isProceedDisabled: Bool = false
     
-    @StateObject private var localNotificationManager = LocalNotificationManager()
+    /// UserDefaults에 저장된 데이터
+    private var storedStartHour = UserDefaults.standard.integer(forKey: "notificationStartHour")
+    private var storedEndHour = UserDefaults.standard.integer(forKey: "notificationEndHour")
+    private var storedFrequency = UserDefaults.standard.integer(forKey: "notificationFrequency")
+    private var storedWeekdays = UserDefaults.standard.array(forKey: "notificationWeekdays") as? [Int]
     
     
     // MARK: - Save Notification Data (Method)
@@ -58,7 +67,6 @@ struct MainView: View {
         return daysConvertedToInt
     }
 
-    
     var body: some View {
         VStack {
             Spacer()
@@ -102,7 +110,7 @@ struct MainView: View {
                     isSubmitted = true
                     
                 } else {
-                    isInputCorrect = true
+                    isRangeCorrect = true
                 }
             } label: {
                 Text("알림 설정하기")
@@ -110,42 +118,36 @@ struct MainView: View {
                     .fontWeight(.bold)
                     .frame(height: 40)
             }
+            .disabled(isProceedDisabled)
             .buttonStyle(.borderedProminent)
             .tint(.blue) // FIXME: 추후 accentColor로 변경
             .cornerRadius(20)
             .padding(16)
             // FIXME: toast message 등으로 UI 변경
-            .alert("'종료 시간'을 '시작 시간'보다 \n늦은 시간대로 맞춰주세요 ⏰", isPresented: $isInputCorrect) {
+            .alert("'종료 시간'을 '시작 시간'보다 \n늦은 시간대로 맞춰주세요 ⏰", isPresented: $isRangeCorrect) {
                 Button("확인", role: .cancel) { }
             }
             .alert("알림이 설정되었어요! 🤩", isPresented: $isSubmitted) {
                 Button("확인", role: .cancel) { }
             }
-            
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color.init(hue: 0, saturation: 0, brightness: 0.08))
         .onAppear {
             /// 뷰의 데이터 UserDefaults의 값으로 대체
-            let userDefaults = UserDefaults.standard
-            let weekdaysInt = userDefaults.integer(forKey: "notificationWeekdays")
-            // print("notificationWeekdays data ---> ", weekdaysInt)
+            if storedStartHour != nil {
+                self.selectedStartHour = storedStartHour
+            }
+            if storedEndHour != nil {
+                self.selectedEndHour = storedEndHour
+            }
+            if storedFrequency != nil {
+                let frequencyrawValue = storedFrequency
+                self.selectedFrequency = TimeInterval(rawValue: frequencyrawValue) ?? .hour
+            }
             
-            if userDefaults.integer(forKey: "notificationStartHour") != nil {
-                self.selectedStartHour = userDefaults.integer(forKey: "notificationStartHour")
-            }
-            if userDefaults.integer(forKey: "notificationEndHour") != nil {
-                self.selectedEndHour = userDefaults.integer(forKey: "notificationEndHour")
-            }
-            if userDefaults.integer(forKey: "notificationFrequency") != nil {
-                let frequencyrawValue = userDefaults.integer(forKey: "notificationFrequency")
-                self.selectedFrequency = MinuteInterval(rawValue: frequencyrawValue) ?? .hour
-            }
-           
-            
-            if userDefaults.integer(forKey: "notificationWeekdays") != nil {
-                // print("꺄아아아아앙")
-                let weekdaysInt = userDefaults.array(forKey: "notificationWeekdays") as? [Int]
+            if storedWeekdays != nil {
+                let weekdaysInt = storedWeekdays
                 // print("weekdaysInt -> ", weekdaysInt ?? 0)
                 // print("selectedWeekdays -> ", settings.selectedDays)
                 for weekday in settings.selectedDays {
@@ -162,7 +164,12 @@ struct MainView: View {
             }
         }
     }
+    
+    
+   
+
 }
+
 
 
 

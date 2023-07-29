@@ -60,6 +60,9 @@ struct MainView: View {
     }
     
     @State var toggleIsOn: Bool = false
+    var cellOpacity: Double {
+        toggleIsOn ? 0 : 1
+    }
     
     var body: some View {
         ZStack {
@@ -73,16 +76,34 @@ struct MainView: View {
                     .padding(.bottom, 16)
                 
                 // MARK: - 알림 설정 세부사항
-                NotificationSettingsCell(selectedStartHour: $selectedStartHour,
-                                         selectedEndHour: $selectedEndHour,
-                                         selectedFrequency: $selectedFrequency,
-                                         selectedWeekdays: $settings.selectedDays,
-                                         settings: $settings)
+                
+                ZStack {
+                    NotificationSettingsCell(selectedStartHour: $selectedStartHour,
+                                             selectedEndHour: $selectedEndHour,
+                                             selectedFrequency: $selectedFrequency,
+                                             selectedWeekdays: $settings.selectedDays,
+                                             settings: $settings)
+                    .opacity(cellOpacity)
+                    
+                    .background(Color.init(hue: 0, saturation: 0, brightness: 0.12))
+                    .cornerRadius(20)
+                    .padding(EdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 16))
+                    
+                    
+                    pleaseTurnOnTheNotiView
+                        .opacity(1-cellOpacity)
+                    
+                }
+                
                 Spacer()
                 
+                
+                
             }
+            
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(Color.init(hue: 0, saturation: 0, brightness: 0.08))
+            
             .onAppear {
                 /// 뷰의 데이터 UserDefaults의 값으로 대체
                 let userDefaults = UserDefaults.standard
@@ -103,8 +124,8 @@ struct MainView: View {
                 if userDefaults.integer(forKey: "notificationWeekdays") != nil {
                     // print("꺄아아아아앙")
                     let weekdaysInt = userDefaults.array(forKey: "notificationWeekdays") as? [Int]
-//                     print("weekdaysInt -> ", weekdaysInt ?? 0)
-//                     print("selectedWeekdays -> ", settings.selectedDays)
+                    //                     print("weekdaysInt -> ", weekdaysInt ?? 0)
+                    //                     print("selectedWeekdays -> ", settings.selectedDays)
                     for weekday in settings.selectedDays {
                         let index = settings.selectedDays.firstIndex(of: weekday)
                         let weekdayIndex = index ?? 0 - 1
@@ -130,6 +151,8 @@ struct MainView: View {
                         
                     }
                 }
+            
+        }
     }
     
     var dayOffToggle: some View {
@@ -143,7 +166,26 @@ struct MainView: View {
         }
         .padding(EdgeInsets(top: 12, leading: 20, bottom: 12, trailing: 20))
     }
+    
+    var pleaseTurnOnTheNotiView: some View {
+        VStack(spacing: 25) {
+            Text("앗...!\n핀이 메세지를 보내고 싶대요.\n활성화는 알림 설정이 꼭 필요해요.")
+                .multilineTextAlignment(.center)
+                .font(Font(UIFont(name: "Pretendard-Bold", size: 19)!))
+                .lineSpacing(8)
+            
+            Button {
+                //TODO: 여기에 시스템 설정으로 보내버려..
+            } label: {
                 
+                Text("시스템 설정")
+                    .font(Font(UIFont(name: "Pretendard-Bold", size: 17)!))
+                
+                    .padding(12)
+            }
+            .buttonStyle(.borderedProminent)
+            .cornerRadius(14)
+            
         }
     }
     

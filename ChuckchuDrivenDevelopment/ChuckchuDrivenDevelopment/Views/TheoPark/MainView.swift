@@ -22,28 +22,6 @@ struct Setting {
         SelectedDay(day: "금", selected: true),
         SelectedDay(day: "토", selected: false)
     ]
-    
-    /*
-     var startTime: Date = {
-         let calendar = Calendar.current
-         var dateComponents = DateComponents()
-         dateComponents.hour = 8
-         dateComponents.minute = 00
-
-         return calendar.date(from: dateComponents)!
-     }()
-     var endTime: Date = {
-         let calendar = Calendar.current
-         var dateComponents = DateComponents()
-         dateComponents.hour = 18
-         dateComponents.minute = 00
-
-         return calendar.date(from: dateComponents)!
-     }()
-     var notificationCycle: String = "10분"
-     var pokeNotification: Bool = true
-     
-     */
 }
 
 
@@ -52,13 +30,14 @@ struct MainView: View {
     @State private var selectedStartHour: Int = 0
     @State private var selectedEndHour: Int = 0
     @State private var selectedFrequency: MinuteInterval = .tenMinutes
+    @State private var nextTargetWeekday: Int = 1
     @State private var isInputCorrect: Bool = false
     @State private var isSubmitted: Bool = false
     
     @StateObject private var localNotificationManager = LocalNotificationManager()
     
     
-    // MARK: - saveNotificationData (Method)
+    // MARK: - Save Notification Data (Method)
     /// 화면 재진입 시 이전 데이터를 다시 그려주기 위해 화면 이탈 전 사용자 설정 값을 UserDefaults에 저장합니다.
      func saveNotificationData() {
          UserDefaults.standard.set(selectedStartHour, forKey: "notificationStartHour")
@@ -67,7 +46,7 @@ struct MainView: View {
          UserDefaults.standard.set(selectedFrequency.rawValue, forKey: "notificationFrequency")
      }
     
-    // MARK: - selectedDaysInt (Computed Property)
+    // MARK: - Selected Days in Int (Computed Property)
     /// setLocalNotification 함수에 전달하기 위해 selectedDays 데이터를 [Int]의 형태로 가공합니다.
     var selectedDaysInt: [Int] {
         var daysConvertedToInt: [Int] = []
@@ -98,23 +77,24 @@ struct MainView: View {
                 if selectedEndHour > selectedStartHour {
                     localNotificationManager.cancelNotification()
                     
+                    let currentWeekday = getCurrentWeekday()
+                    
+                    /// 경우 1. 현재의 요일이 선택된 요일에 포함된다면 해당 요일의 알림을 만들고,
+                    if selectedDaysInt.contains(currentWeekday) {
+                        nextTargetWeekday = currentWeekday
+                    /// 경우 2. 포함되지 않는다면 현재와 가장 가까운 요일의 알림을 만든다
+                    // FIXME: 조건문을 분리 후 코드 깔끔하게 변경
+                    } else {
+                        nextTargetWeekday = getNearestWeekday(from: selectedDaysInt)
+                    }
+                    
                     /// 선택된 스케줄을 파라미터로 전달하고 푸시 알림 요청
                     localNotificationManager.setLocalNotification(
-                        weekdays: selectedDaysInt,
+                        weekday: nextTargetWeekday,
                         startHour: selectedStartHour,
                         endHour: selectedEndHour,
                         frequency: selectedFrequency
                     )
-                    
-                    
-                    /*
-                     print("--------View--------")
-                     print("눌렷음")
-                     print("---> selected weekdays: ", selectedDaysInt)
-                     print("---> selected startHour: ", selectedStartHour)
-                     print("---> selected endHour: ", selectedEndHour)
-                     print("---> selected frequency: ", selectedFrequency)
-                     */
                     
                     /// 변경된 데이터 UserDefaults에 저장
                     saveNotificationData()

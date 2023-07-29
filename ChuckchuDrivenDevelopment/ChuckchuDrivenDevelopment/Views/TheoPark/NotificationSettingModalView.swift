@@ -119,7 +119,7 @@ struct ModalView: View {
                         if selectedEndHour > selectedStartHour {
                             /// 선택된 스케줄을 파라미터로 전달하고 푸시 알림 요청
                             localNotificationManager.setLocalNotification(
-                                weekdays: selectedDaysInt,
+                                weekday: selectedDaysInt[0],
                                 startHour: selectedStartHour,
                                 endHour: selectedEndHour,
                                 frequency: selectedFrequency

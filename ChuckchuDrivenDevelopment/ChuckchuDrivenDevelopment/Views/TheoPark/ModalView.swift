@@ -65,6 +65,11 @@ struct ModalView: View {
                     .pickerStyle(MenuPickerStyle())
                     .padding(.trailing, 10)
                     .font(Font(UIFont(name: "Pretendard-Bold", size: 18)!))
+                    .onTapGesture {
+                        let impactHeavy = UIImpactFeedbackGenerator(style: .soft)
+                            impactHeavy.impactOccurred()
+                    }
+                    
                 }
                 .background(Color.init(hue: 0, saturation: 0, brightness: 0.16))
                 .cornerRadius(20)

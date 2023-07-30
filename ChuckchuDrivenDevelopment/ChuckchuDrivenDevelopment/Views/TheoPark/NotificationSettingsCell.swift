@@ -55,6 +55,8 @@ struct NotificationSettingsCell: View {
                     Button {
                         
                         self.showModal = true
+                        let impactHeavy = UIImpactFeedbackGenerator(style: .heavy)
+                            impactHeavy.impactOccurred()
                         
                     } label: {
                         HStack {
@@ -200,27 +202,46 @@ struct NotificationSettingsCell: View {
         .background(Color.init(hue: 0, saturation: 0, brightness: 0.12))
         .cornerRadius(20)
         .padding(EdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 16))
-        .onTapGesture {
-            self.showModal = true
+        .gesture(
+            DragGesture(minimumDistance: 0)
+                .onEnded() {_ in
+                    self.showModal = true
+                    let impactHeavy = UIImpactFeedbackGenerator(style: .heavy)
+                        impactHeavy.impactOccurred()
+                }
+        )
+        .onTouchDownGesture {
+            let impactHeavy = UIImpactFeedbackGenerator(style: .soft)
+            impactHeavy.impactOccurred()
         }
+        
     }
 }
 
+extension View {
+    
+    func onTouchDownGesture(callback: @escaping () -> Void) -> some View {
+        modifier(OnTouchDownGestureModifier(callback: callback))
+    }
+}
 
+private struct OnTouchDownGestureModifier: ViewModifier {
+    @State private var tapped = false
+    let callback: () -> Void
 
-// struct NotificationSettingsCell_Previews: PreviewProvider {
-//     @State static var previewData: [SelectedDay] = [
-//         SelectedDay(day: "월", selected: true),
-//         SelectedDay(day: "화", selected: true),
-//         SelectedDay(day: "수", selected: true),
-//         SelectedDay(day: "목", selected: true),
-//         SelectedDay(day: "금", selected: true),
-//         SelectedDay(day: "토", selected: false),
-//         SelectedDay(day: "일", selected: true)
-//     ]
-//
-//     static var previews: some View {
-//         NotificationSettingsCell(selectedStartHour: .constant(8), selectedEndHour: .constant(18), selectedFrequency: .constant(.tenMinutes), selectedWeekdays: $previewData, settings: <#T##Binding<Setting>#>)
-//     }
-// }
-
+    func body(content: Content) -> some View {
+        content
+            .scaleEffect(CGSize(width: self.tapped ? 0.97 : 1, height: self.tapped ? 0.97 : 1), anchor: .center)
+            .animation(.easeOut(duration: 0.2), value: self.tapped)
+            .simultaneousGesture(DragGesture(minimumDistance: 0)
+                .onChanged { _ in
+                    if !self.tapped {
+                        self.tapped = true
+                        self.callback()
+                    }
+                }
+                .onEnded { _ in
+                    self.tapped = false
+                })
+    }
+}

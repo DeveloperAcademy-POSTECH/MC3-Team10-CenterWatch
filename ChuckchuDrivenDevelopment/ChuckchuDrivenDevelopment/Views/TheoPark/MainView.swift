@@ -27,6 +27,8 @@ struct Setting {
 
 struct MainView: View {
     
+    @ObservedObject var manager = MotionManager()
+    
     @State private var isLoading: Bool = true
     
     let cfURL1 = Bundle.main.url(forResource: "Pretendard-Medium", withExtension: "otf")
@@ -100,7 +102,7 @@ struct MainView: View {
                 
                 
             }
-            
+            .modifier(ParallaxMotionModifier(manager: manager, magnitude: 15))
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(Color.init(hue: 0, saturation: 0, brightness: 0.08))
             

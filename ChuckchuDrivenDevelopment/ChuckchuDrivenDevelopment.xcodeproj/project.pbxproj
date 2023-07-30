@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		17202EFB2A6ED8DB00E3223B /* CharacterAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17202EFA2A6ED8DB00E3223B /* CharacterAnimation.swift */; };
 		17202EFD2A6ED90300E3223B /* CharacterFrames.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17202EFC2A6ED90300E3223B /* CharacterFrames.xcassets */; };
+		DE14C68D2A75EE5500F568E8 /* OnboardingView1.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE14C68C2A75EE5500F568E8 /* OnboardingView1.swift */; };
+		DE14C68F2A75F59800F568E8 /* OnBoardingView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE14C68E2A75F59800F568E8 /* OnBoardingView2.swift */; };
+		DE14C6912A760B0000F568E8 /* ParallaxMotionModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE14C6902A760B0000F568E8 /* ParallaxMotionModifier.swift */; };
 		DE7294D82A73AE62003C4059 /* Pretendard-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = DE7294D72A73AE62003C4059 /* Pretendard-Bold.otf */; };
 		DE7294DA2A73AF74003C4059 /* Pretendard-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = DE7294D92A73AF74003C4059 /* Pretendard-Medium.otf */; };
 		DED043012A6F9924004D3395 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED043002A6F9924004D3395 /* SplashView.swift */; };
@@ -76,6 +79,9 @@
 /* Begin PBXFileReference section */
 		17202EFA2A6ED8DB00E3223B /* CharacterAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterAnimation.swift; sourceTree = "<group>"; };
 		17202EFC2A6ED90300E3223B /* CharacterFrames.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = CharacterFrames.xcassets; sourceTree = "<group>"; };
+		DE14C68C2A75EE5500F568E8 /* OnboardingView1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView1.swift; sourceTree = "<group>"; };
+		DE14C68E2A75F59800F568E8 /* OnBoardingView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingView2.swift; sourceTree = "<group>"; };
+		DE14C6902A760B0000F568E8 /* ParallaxMotionModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParallaxMotionModifier.swift; sourceTree = "<group>"; };
 		DE7294D72A73AE62003C4059 /* Pretendard-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Bold.otf"; sourceTree = "<group>"; };
 		DE7294D92A73AF74003C4059 /* Pretendard-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Medium.otf"; sourceTree = "<group>"; };
 		DED043002A6F9924004D3395 /* SplashView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
@@ -166,7 +172,10 @@
 				DEDBC6982A65236C00AB3867 /* SelectNotificationDay.swift */,
 				EFB939EA2A6C2FD50083C08D /* CustomHourPicker.swift */,
 				EFE2C81B2A70045F006D5240 /* MainView.swift */,
+				DE14C68C2A75EE5500F568E8 /* OnboardingView1.swift */,
+				DE14C68E2A75F59800F568E8 /* OnBoardingView2.swift */,
 				EFE2C8172A700220006D5240 /* NotificationSettingsCell.swift */,
+				DE14C6902A760B0000F568E8 /* ParallaxMotionModifier.swift */,
 				DED043002A6F9924004D3395 /* SplashView.swift */,
 			);
 			path = TheoPark;
@@ -421,6 +430,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE14C68F2A75F59800F568E8 /* OnBoardingView2.swift in Sources */,
 				DEDBC6972A65152400AB3867 /* ModalView.swift in Sources */,
 				EFB939E92A6A66B10083C08D /* LocalNotificationManager.swift in Sources */,
 				EF81A9B72A5B8A1400C6F417 /* ChuckchuDrivenDevelopmentApp.swift in Sources */,
@@ -431,8 +441,10 @@
 				EF9946CD2A65404100CE3B79 /* AppDelegate.swift in Sources */,
 				DEDBC6992A65236C00AB3867 /* SelectNotificationDay.swift in Sources */,
 				EFE2C8162A6FD80E006D5240 /* NotificationTitle.swift in Sources */,
+				DE14C6912A760B0000F568E8 /* ParallaxMotionModifier.swift in Sources */,
 				EFECCBB02A61302A0093BB67 /* MemberGroup.swift in Sources */,
 				EFECCBAE2A612F8A0093BB67 /* PokeViewModel.swift in Sources */,
+				DE14C68D2A75EE5500F568E8 /* OnboardingView1.swift in Sources */,
 				EFE2C81C2A70045F006D5240 /* MainView.swift in Sources */,
 				EFEA28932A67CFCE00FC4965 /* PokeUserTestNameView.swift in Sources */,
 				EFEA28942A67CFCE00FC4965 /* PokeUserTestListView.swift in Sources */,

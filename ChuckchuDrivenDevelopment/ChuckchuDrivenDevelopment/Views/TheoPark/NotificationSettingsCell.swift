@@ -202,11 +202,14 @@ struct NotificationSettingsCell: View {
         .background(Color.init(hue: 0, saturation: 0, brightness: 0.12))
         .cornerRadius(20)
         .padding(EdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 16))
-        .onTapGesture {
-            self.showModal = true
-            let impactHeavy = UIImpactFeedbackGenerator(style: .heavy)
-                impactHeavy.impactOccurred()
-        }
+        .gesture(
+            DragGesture(minimumDistance: 0)
+                .onEnded() {_ in
+                    self.showModal = true
+                    let impactHeavy = UIImpactFeedbackGenerator(style: .heavy)
+                        impactHeavy.impactOccurred()
+                }
+        )
         .onTouchDownGesture {
             let impactHeavy = UIImpactFeedbackGenerator(style: .soft)
                 impactHeavy.impactOccurred()
@@ -215,6 +218,7 @@ struct NotificationSettingsCell: View {
 }
 
 extension View {
+    
     func onTouchDownGesture(callback: @escaping () -> Void) -> some View {
         modifier(OnTouchDownGestureModifier(callback: callback))
     }

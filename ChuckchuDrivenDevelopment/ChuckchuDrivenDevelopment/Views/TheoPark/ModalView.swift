@@ -13,24 +13,28 @@ struct ModalView: View {
     
     @Binding var selectedStartHour: Int
     @Binding var selectedEndHour: Int
-    @Binding var selectedFrequency: MinuteInterval
+    @Binding var selectedFrequency: TimeInterval
     @Binding var selectedWeekdays: [SelectedDay]
     @Binding var settings: Setting
     
+    @State private var nextTargetWeekday: Int = 1
+    @State private var isRangeCorrect: Bool = false
+    
     @State var isInputCorrect: Bool = false
     @State var isSubmitted: Bool = false
-    let notificationCycles: [MinuteInterval] = [.tenMinutes, .quarterHour, .halfHour, .hour]
+    @State var isIntervalCorrect: Bool = true
+    let notificationCycles: [TimeInterval] = [.halfHour, .hour]
     
     @StateObject var localNotificationManager = LocalNotificationManager()
     
     // MARK: - saveNotificationData (Method)
     /// 화면 재진입 시 이전 데이터를 다시 그려주기 위해 화면 이탈 전 사용자 설정 값을 UserDefaults에 저장합니다.
-     func saveNotificationData() {
-         UserDefaults.standard.set(selectedStartHour, forKey: "notificationStartHour")
-         UserDefaults.standard.set(selectedEndHour, forKey: "notificationEndHour")
-         UserDefaults.standard.set(selectedDaysInt, forKey: "notificationWeekdays")
-         UserDefaults.standard.set(selectedFrequency.rawValue, forKey: "notificationFrequency")
-     }
+    func saveNotificationData() {
+        UserDefaults.standard.set(selectedStartHour, forKey: "notificationStartHour")
+        UserDefaults.standard.set(selectedEndHour, forKey: "notificationEndHour")
+        UserDefaults.standard.set(selectedDaysInt, forKey: "notificationWeekdays")
+        UserDefaults.standard.set(selectedFrequency.rawValue, forKey: "notificationFrequency")
+    }
     
     // MARK: - selectedDaysInt (Computed Property)
     /// setLocalNotification 함수에 전달하기 위해 selectedDays 데이터를 [Int]의 형태로 가공합니다.
@@ -67,7 +71,7 @@ struct ModalView: View {
                     .font(Font(UIFont(name: "Pretendard-Bold", size: 18)!))
                     .onTapGesture {
                         let impactHeavy = UIImpactFeedbackGenerator(style: .soft)
-                            impactHeavy.impactOccurred()
+                        impactHeavy.impactOccurred()
                     }
                     
                 }
@@ -88,20 +92,16 @@ struct ModalView: View {
                             }
                             
                             HStack {
-                                CustomHourPicker(selectedHour: $selectedStartHour)
-                                    .frame(width: 120, height: 120)
-                                    
+                                CustomHourPicker(
+                                    selectedHour: $selectedStartHour,
+                                    isIntervalCorrect: $isIntervalCorrect)
+                                .frame(width: 120, height: 120)
+                                
                                 
                                 Spacer()
                             }
                         }
                         .padding(EdgeInsets(top: 18, leading: 18, bottom: 4, trailing: 16))
-                        
-//                        VStack{
-//                            Text("Hello")
-//                        }
-//                        .background(Color.white.opacity(0.1))
-//                        .frame(width: 1, height: 250)
                         
                         VStack {
                             HStack {
@@ -113,8 +113,10 @@ struct ModalView: View {
                             }
                             
                             HStack {
-                                CustomHourPicker(selectedHour: $selectedEndHour)
-                                    .frame(width: 120, height: 120)
+                                CustomHourPicker(
+                                    selectedHour: $selectedEndHour,
+                                    isIntervalCorrect: $isIntervalCorrect)
+                                .frame(width: 120, height: 120)
                                 
                                 Spacer()
                             }
@@ -160,25 +162,36 @@ struct ModalView: View {
                     ToolbarItem(placement: .navigationBarTrailing) {
                         Button {
                             presentation.wrappedValue.dismiss()
+                            
                             if selectedEndHour > selectedStartHour {
-                
+                                localNotificationManager.cancelNotification()
+                                
+                                let currentWeekday = getCurrentWeekday()
+                                
+                                /// 경우 1. 현재의 요일이 선택된 요일에 포함된다면 해당 요일의 알림을 만들고,
+                                if selectedDaysInt.contains(currentWeekday) {
+                                    nextTargetWeekday = currentWeekday
+                                    /// 경우 2. 포함되지 않는다면 현재와 가장 가까운 요일의 알림을 만든다
+                                    // FIXME: 조건문을 분리 후 코드 깔끔하게 변경
+                                } else {
+                                    nextTargetWeekday = getNearestWeekday(from: selectedDaysInt)
+                                }
+                                
                                 /// 선택된 스케줄을 파라미터로 전달하고 푸시 알림 요청
                                 localNotificationManager.setLocalNotification(
-                                    weekdays: selectedDaysInt,
+                                    weekday: nextTargetWeekday,
                                     startHour: selectedStartHour,
                                     endHour: selectedEndHour,
                                     frequency: selectedFrequency
                                 )
                                 
-                                localNotificationManager.cancelNotification()
-                                
                                 /// 변경된 데이터 UserDefaults에 저장
                                 saveNotificationData()
-                        
+                                
                                 isSubmitted = true
                                 
                             } else {
-                                isInputCorrect = true
+                                isRangeCorrect = true
                             }
                         } label: {
                             Text("완료")

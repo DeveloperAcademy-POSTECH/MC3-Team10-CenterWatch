@@ -73,6 +73,7 @@ struct MainView: View {
     }
 
     @State var toggleIsOn: Bool = false
+   
     var cellOpacity: Double {
         toggleIsOn ? 0 : 1
     }
@@ -117,8 +118,7 @@ struct MainView: View {
                     
                     
                     pleaseTurnOnTheNotiView
-                        .opacity(1-cellOpacity)
-                    
+                        .opacity(1-cellOpacity) 
                 }
                 
                 Spacer()
@@ -126,51 +126,38 @@ struct MainView: View {
             .modifier(ParallaxMotionModifier(manager: manager, magnitude: 15))
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(Color.init(hue: 0, saturation: 0, brightness: 0.08))
-             .onAppear {
-            /// 뷰의 데이터 UserDefaults의 값으로 대체
-            if storedStartHour != nil {
-                self.selectedStartHour = storedStartHour
-            }
-            if storedEndHour != nil {
-                self.selectedEndHour = storedEndHour
-            }
-            if storedFrequency != nil {
-                let frequencyrawValue = storedFrequency
-                self.selectedFrequency = TimeInterval(rawValue: frequencyrawValue) ?? .hour
-            }
-            
-            if storedWeekdays != nil {
-                let weekdaysInt = storedWeekdays
-                // print("weekdaysInt -> ", weekdaysInt ?? 0)
-                // print("selectedWeekdays -> ", settings.selectedDays)
-                for weekday in settings.selectedDays {
-                    let index = settings.selectedDays.firstIndex(of: weekday)
-                    let weekdayIndex = index ?? 0 - 1
-                    if !selectedDaysInt.isEmpty {
-                        if selectedDaysInt.contains(weekdayIndex) {
-                            settings.selectedDays[weekdayIndex].selected = true
-                        } else {
-                            settings.selectedDays[weekdayIndex].selected = false
+            .onAppear {
+                /// 뷰의 데이터 UserDefaults의 값으로 대체
+                if storedStartHour != nil {
+                    self.selectedStartHour = storedStartHour
+                }
+                if storedEndHour != nil {
+                    self.selectedEndHour = storedEndHour
+                }
+                if storedFrequency != nil {
+                    let frequencyrawValue = storedFrequency
+                    self.selectedFrequency = TimeInterval(rawValue: frequencyrawValue) ?? .hour
+                }
+                
+                if storedWeekdays != nil {
+                    let weekdaysInt = storedWeekdays
+                    // print("weekdaysInt -> ", weekdaysInt ?? 0)
+                    // print("selectedWeekdays -> ", settings.selectedDays)
+                    for weekday in settings.selectedDays {
+                        let index = settings.selectedDays.firstIndex(of: weekday)
+                        let weekdayIndex = index ?? 0 - 1
+                        if !selectedDaysInt.isEmpty {
+                            if selectedDaysInt.contains(weekdayIndex) {
+                                settings.selectedDays[weekdayIndex].selected = true
+                            } else {
+                                settings.selectedDays[weekdayIndex].selected = false
+                            }
                         }
                     }
                 }
             }
-   
-            
-//            SplashView()
-//                .opacity(isLoading ? 1 : 0)
-//                .onAppear {
-//                    DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-//                        withAnimation(.easeInOut(duration: 1)) {
-//                            self.isLoading.toggle()
-//                        }
-//
-//                    }
-//                }
-            
         }
     }
-
 
 
     

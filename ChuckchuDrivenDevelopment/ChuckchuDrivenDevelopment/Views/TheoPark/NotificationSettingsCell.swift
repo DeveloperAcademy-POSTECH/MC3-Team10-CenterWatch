@@ -9,6 +9,9 @@ import SwiftUI
 
 struct NotificationSettingsCell: View {
     
+    /// 모달뷰 띄우기용
+        @State private var showModal = false
+    
     let notificationCycles: [TimeInterval] = [.halfHour, .hour]
     
     @Binding var selectedStartHour: Int
@@ -27,9 +30,9 @@ struct NotificationSettingsCell: View {
         return daysConvertedToInt
     }
     
-    @State var isIntervalCorrect: Bool = true
+    // @State var isIntervalCorrect: Bool = true
     
-    var body: some View {
+       var body: some View {
         VStack {
             HStack(alignment: .top) {
                 VStack(alignment: .leading) {
@@ -49,11 +52,6 @@ struct NotificationSettingsCell: View {
                 
                 Spacer()
                 
-                
-                Picker("알림 주기", selection: $selectedFrequency) {
-                    ForEach(notificationCycles, id: \.self) { interval in
-                        Text("\(interval.rawValue)분")
-
                 // MARK: - 알림 설정 버튼
                 VStack {
                     Button {
@@ -95,18 +93,6 @@ struct NotificationSettingsCell: View {
             Divider()
                 .padding(.leading)
                 .padding(.bottom, 5)
-            
-            if !isIntervalCorrect {
-                HStack {
-                    Text("최대 15시간 내로 설정 가능해요!")
-                        .font(.caption2)
-                        .foregroundColor(.red)
-                        .padding(.leading, 16)
-                        .padding(.top, 10)
-                    Spacer()
-                }
-            }
-            
             
             VStack {
                 
@@ -217,33 +203,17 @@ struct NotificationSettingsCell: View {
         }
         .background(Color.init(hue: 0, saturation: 0, brightness: 0.12))
         .cornerRadius(20)
-        .gesture(
-            DragGesture(minimumDistance: 0)
-                .onEnded() {_ in
-                    self.showModal = true
-                    let impactHeavy = UIImpactFeedbackGenerator(style: .heavy)
-                        impactHeavy.impactOccurred()
-                }
-        )
+        .padding(EdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 16))
+        .onTapGesture {
+            self.showModal = true
+            let impactHeavy = UIImpactFeedbackGenerator(style: .heavy)
+                impactHeavy.impactOccurred()
+        }
         .onTouchDownGesture {
             let impactHeavy = UIImpactFeedbackGenerator(style: .soft)
             impactHeavy.impactOccurred()
         }
-        // TODO: onChange 코드 예쁘게 묶기..
-        .onChange(of: selectedStartHour, perform: { _ in
-            if (selectedEndHour - selectedStartHour) > 15 {
-                isIntervalCorrect = false
-            } else {
-                isIntervalCorrect = true
-            }
-        })
-        .onChange(of: selectedEndHour, perform: { _ in
-            if (selectedEndHour - selectedStartHour) > 15 {
-                isIntervalCorrect = false
-            } else {
-                isIntervalCorrect = true
-            }
-        })
+        
     }
 }
 

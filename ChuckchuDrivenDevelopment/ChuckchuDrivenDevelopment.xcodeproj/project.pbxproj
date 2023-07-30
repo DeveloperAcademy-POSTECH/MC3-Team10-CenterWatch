@@ -446,10 +446,7 @@
 				DE14C6912A760B0000F568E8 /* ParallaxMotionModifier.swift in Sources */,
 				EFECCBB02A61302A0093BB67 /* MemberGroup.swift in Sources */,
 				EFECCBAE2A612F8A0093BB67 /* PokeViewModel.swift in Sources */,
-<<<<<<< HEAD
-=======
 				DE14C68D2A75EE5500F568E8 /* OnboardingView1.swift in Sources */,
->>>>>>> main
 				EFE2C81C2A70045F006D5240 /* MainView.swift in Sources */,
 				EFEA28932A67CFCE00FC4965 /* PokeUserTestNameView.swift in Sources */,
 				EFEA28942A67CFCE00FC4965 /* PokeUserTestListView.swift in Sources */,

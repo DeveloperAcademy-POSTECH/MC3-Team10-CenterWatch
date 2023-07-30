@@ -41,6 +41,7 @@ class LocalNotificationManager: NSObject, ObservableObject, UNUserNotificationCe
         endHour: Int,
         frequency: TimeInterval
     ) {
+        cancelNotification() // 새로운 알림 요청을 생성하기 전 기존 요청 히스토리 리셋
         requestWeekdayTrigger(weekday: weekday, startHour: startHour, endHour: endHour, frequency: frequency)
     }
     
@@ -130,19 +131,8 @@ class LocalNotificationManager: NSObject, ObservableObject, UNUserNotificationCe
                 
                 UNUserNotificationCenter.current().add(request)
                 
-                notificationCenter.getPendingNotificationRequests { requests in
-                    for request in requests {
-                        print(">>> notification: ", request)
-                    }
-                }
-                
-                
             }
         }
-        
-        
-        
-        
         
         notificationCenter.getPendingNotificationRequests { messages in
             print("Notification Schdule Complete: ", messages)

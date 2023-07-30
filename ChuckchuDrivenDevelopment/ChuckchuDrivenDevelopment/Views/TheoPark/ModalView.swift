@@ -11,6 +11,11 @@ struct ModalView: View {
     
     @Environment(\.presentationMode) var presentation
     
+    @EnvironmentObject var userViewModel: UserViewModel
+    @ObservedObject var silentNotificationManager = SilentPushNotificationManager(
+        currentUserDeviceToken: UserDefaults.standard.string(forKey: "userDeviceToken")
+    )
+    
     @Binding var selectedStartHour: Int
     @Binding var selectedEndHour: Int
     @Binding var selectedFrequency: TimeInterval
@@ -164,7 +169,7 @@ struct ModalView: View {
                             presentation.wrappedValue.dismiss()
                             
                             if selectedEndHour > selectedStartHour {
-                                localNotificationManager.cancelNotification()
+                                // (이사 감) 곧 완전히 지울거임: localNotificationManager.cancelNotification()
                                 
                                 let currentWeekday = getCurrentWeekday()
                                 
@@ -187,6 +192,18 @@ struct ModalView: View {
                                 
                                 /// 변경된 데이터 UserDefaults에 저장
                                 saveNotificationData()
+                                
+                                /// Silent Push Notification 예약 함수 호출
+                                Task {
+                                    let userDeviceToken = UserDefaults.standard.string(
+                                        forKey: "userDeviceToken"
+                                    )
+                                    if let userDeviceToken {
+                                        await silentNotificationManager.sendNotificationOnDayChanged(
+                                            userDeviceToken: userDeviceToken
+                                        )
+                                    }
+                                }
                                 
                                 isSubmitted = true
                                 

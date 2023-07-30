@@ -143,22 +143,22 @@ struct MainView: View {
                 
             }
             
-            SplashView()
-                .opacity(isLoading ? 1 : 0)
-                .onAppear {
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                        withAnimation(.easeInOut(duration: 1)) {
-                            self.isLoading.toggle()
-                        }
-                        
-                    }
-                }
+//            SplashView()
+//                .opacity(isLoading ? 1 : 0)
+//                .onAppear {
+//                    DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+//                        withAnimation(.easeInOut(duration: 1)) {
+//                            self.isLoading.toggle()
+//                        }
+//
+//                    }
+//                }
             
         }
     }
     
     var dayOffToggle: some View {
-        HStack(spacing: 16){
+        HStack(spacing: 10){
             Toggle(isOn: $toggleIsOn, label: {
                 Label("하루만 알림 끄기", systemImage: "powersleep")
                     .foregroundColor(.white)
@@ -166,7 +166,7 @@ struct MainView: View {
                 
             }).tint(.blue)
         }
-        .padding(EdgeInsets(top: 12, leading: 20, bottom: 12, trailing: 20))
+        .padding(EdgeInsets(top: 8, leading: 20, bottom: 8, trailing: 24))
     }
     
     var pleaseTurnOnTheNotiView: some View {

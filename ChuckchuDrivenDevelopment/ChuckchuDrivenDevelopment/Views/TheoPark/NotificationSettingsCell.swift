@@ -201,7 +201,7 @@ struct NotificationSettingsCell: View {
         }
         .background(Color.init(hue: 0, saturation: 0, brightness: 0.12))
         .cornerRadius(20)
-        .padding(EdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 16))
+//        .padding(EdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 16))
         .gesture(
             DragGesture(minimumDistance: 0)
                 .onEnded() {_ in

@@ -209,8 +209,9 @@ struct NotificationSettingsCell: View {
         }
         .onTouchDownGesture {
             let impactHeavy = UIImpactFeedbackGenerator(style: .soft)
-                impactHeavy.impactOccurred()
+            impactHeavy.impactOccurred()
         }
+        
     }
 }
 

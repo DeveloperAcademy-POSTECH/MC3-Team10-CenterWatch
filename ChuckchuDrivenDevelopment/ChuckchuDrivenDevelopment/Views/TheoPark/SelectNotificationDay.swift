@@ -31,6 +31,11 @@ struct SelectNotificationDay: View {
                                 }
                         }
                         .buttonStyle(PlainButtonStyle())
+                        .onTouchDownGesture {
+                            let impactHeavy = UIImpactFeedbackGenerator(style: .light)
+                                impactHeavy.impactOccurred()
+                        }
+                        
                         Spacer()
                     }
                 }

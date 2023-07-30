@@ -21,6 +21,7 @@ struct CustomHourPicker: View {
             }
         }
         .padding(.trailing, -8)
+        .padding(.leading, -8)
         .pickerStyle(WheelPickerStyle())
     }
 }

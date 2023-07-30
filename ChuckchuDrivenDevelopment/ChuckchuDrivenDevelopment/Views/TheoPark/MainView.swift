@@ -54,7 +54,29 @@ struct MainView: View {
          UserDefaults.standard.set(selectedDaysInt, forKey: "notificationWeekdays")
          UserDefaults.standard.set(selectedFrequency.rawValue, forKey: "notificationFrequency")
      }
+
     
+    @ObservedObject var manager = MotionManager()
+    
+    @State private var isLoading: Bool = true
+    
+    let cfURL1 = Bundle.main.url(forResource: "Pretendard-Medium", withExtension: "otf")
+    let cfURL2 = Bundle.main.url(forResource: "Pretendard-Bold", withExtension: "otf")
+    var PretendardRegular: UIFont
+    var PretendardBold: UIFont
+    
+    init(){
+        CTFontManagerRegisterFontsForURL(cfURL1! as CFURL, CTFontManagerScope.process, nil)
+        PretendardRegular = UIFont(name: "Pretendard-Medium", size: 15.0)!
+        CTFontManagerRegisterFontsForURL(cfURL2! as CFURL, CTFontManagerScope.process, nil)
+        PretendardBold = UIFont(name: "Pretendard-Bold", size: 15.0)!
+    }
+
+    @State var toggleIsOn: Bool = false
+    var cellOpacity: Double {
+        toggleIsOn ? 0 : 1
+    }
+
     // MARK: - Selected Days in Int (Computed Property)
     /// setLocalNotification 함수에 전달하기 위해 selectedDays 데이터를 [Int]의 형태로 가공합니다.
     var selectedDaysInt: [Int] {
@@ -67,73 +89,44 @@ struct MainView: View {
         return daysConvertedToInt
     }
 
+    
     var body: some View {
-        VStack {
-            Spacer()
-            CharacterAnimation()
-            Spacer()
-            
-            // MARK: - 알림 설정 세부사항
-            NotificationSettingsCell(selectedStartHour: $selectedStartHour,
-                                     selectedEndHour: $selectedEndHour,
-                                     selectedFrequency: $selectedFrequency,
-                                     selectedWeekdays: $settings.selectedDays)
-            Spacer()
-            
-            // MARK: - 알림 설정 버튼
-            Button {
-                if selectedEndHour > selectedStartHour {
-                    localNotificationManager.cancelNotification()
+        ZStack {
+            VStack {
+                dayOffToggle
+                
+                Divider()
+                    .frame(width: 335)
+                
+                CharacterAnimation()
+                    .padding(.bottom, 16)
+                
+                // MARK: - 알림 설정 세부사항
+                
+                ZStack {
+                    NotificationSettingsCell(selectedStartHour: $selectedStartHour,
+                                             selectedEndHour: $selectedEndHour,
+                                             selectedFrequency: $selectedFrequency,
+                                             selectedWeekdays: $settings.selectedDays,
+                                             settings: $settings)
+                    .opacity(cellOpacity)
                     
-                    let currentWeekday = getCurrentWeekday()
+                    .background(Color.init(hue: 0, saturation: 0, brightness: 0.12))
+                    .cornerRadius(20)
+                    .padding(EdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 16))
                     
-                    /// 경우 1. 현재의 요일이 선택된 요일에 포함된다면 해당 요일의 알림을 만들고,
-                    if selectedDaysInt.contains(currentWeekday) {
-                        nextTargetWeekday = currentWeekday
-                    /// 경우 2. 포함되지 않는다면 현재와 가장 가까운 요일의 알림을 만든다
-                    // FIXME: 조건문을 분리 후 코드 깔끔하게 변경
-                    } else {
-                        nextTargetWeekday = getNearestWeekday(from: selectedDaysInt)
-                    }
                     
-                    /// 선택된 스케줄을 파라미터로 전달하고 푸시 알림 요청
-                    localNotificationManager.setLocalNotification(
-                        weekday: nextTargetWeekday,
-                        startHour: selectedStartHour,
-                        endHour: selectedEndHour,
-                        frequency: selectedFrequency
-                    )
+                    pleaseTurnOnTheNotiView
+                        .opacity(1-cellOpacity)
                     
-                    /// 변경된 데이터 UserDefaults에 저장
-                    saveNotificationData()
-            
-                    isSubmitted = true
-                    
-                } else {
-                    isRangeCorrect = true
                 }
-            } label: {
-                Text("알림 설정하기")
-                    .frame(maxWidth: .infinity)
-                    .fontWeight(.bold)
-                    .frame(height: 40)
+                
+                Spacer()
             }
-            .disabled(isProceedDisabled)
-            .buttonStyle(.borderedProminent)
-            .tint(.blue) // FIXME: 추후 accentColor로 변경
-            .cornerRadius(20)
-            .padding(16)
-            // FIXME: toast message 등으로 UI 변경
-            .alert("'종료 시간'을 '시작 시간'보다 \n늦은 시간대로 맞춰주세요 ⏰", isPresented: $isRangeCorrect) {
-                Button("확인", role: .cancel) { }
-            }
-            .alert("알림이 설정되었어요! 🤩", isPresented: $isSubmitted) {
-                Button("확인", role: .cancel) { }
-            }
-        }
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(Color.init(hue: 0, saturation: 0, brightness: 0.08))
-        .onAppear {
+            .modifier(ParallaxMotionModifier(manager: manager, magnitude: 15))
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .background(Color.init(hue: 0, saturation: 0, brightness: 0.08))
+             .onAppear {
             /// 뷰의 데이터 UserDefaults의 값으로 대체
             if storedStartHour != nil {
                 self.selectedStartHour = storedStartHour
@@ -162,16 +155,60 @@ struct MainView: View {
                     }
                 }
             }
+   
+            
+//            SplashView()
+//                .opacity(isLoading ? 1 : 0)
+//                .onAppear {
+//                    DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+//                        withAnimation(.easeInOut(duration: 1)) {
+//                            self.isLoading.toggle()
+//                        }
+//
+//                    }
+//                }
+            
+        }
+    }
+
+
+
+    
+    var dayOffToggle: some View {
+        HStack(spacing: 10){
+            Toggle(isOn: $toggleIsOn, label: {
+                Label("하루만 알림 끄기", systemImage: "powersleep")
+                    .foregroundColor(.white)
+                    .opacity(0.7)
+                
+            }).tint(.blue)
+        }
+        .padding(EdgeInsets(top: 8, leading: 20, bottom: 8, trailing: 24))
+    }
+    
+    var pleaseTurnOnTheNotiView: some View {
+        VStack(spacing: 25) {
+            Text("앗...!\n핀이 메세지를 보내고 싶대요.\n활성화는 알림 설정이 꼭 필요해요.")
+                .multilineTextAlignment(.center)
+                .font(Font(UIFont(name: "Pretendard-Bold", size: 19)!))
+                .lineSpacing(8)
+            
+            Button {
+                //TODO: 여기에 시스템 설정으로 보내버려..
+            } label: {
+                
+                Text("시스템 설정")
+                    .font(Font(UIFont(name: "Pretendard-Bold", size: 17)!))
+                
+                    .padding(12)
+            }
+            .buttonStyle(.borderedProminent)
+            .cornerRadius(14)
+            
         }
     }
     
-    
-   
-
 }
-
-
-
 
 
 struct MainView_Previews: PreviewProvider {

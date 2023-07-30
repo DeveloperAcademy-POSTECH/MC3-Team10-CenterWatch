@@ -15,17 +15,37 @@ struct NotificationSettingsCell: View {
     @Binding var selectedEndHour: Int
     @Binding var selectedFrequency: TimeInterval
     @Binding var selectedWeekdays: [SelectedDay]
+    @Binding var settings: Setting
+  
+    var selectedDaysInt: [Int] {
+        var daysConvertedToInt: [Int] = []
+        for selectedDay in settings.selectedDays {
+            if selectedDay.selected {
+                daysConvertedToInt.append((settings.selectedDays.firstIndex(of: selectedDay) ?? 0) + 1)
+            }
+        }
+        return daysConvertedToInt
+    }
     
     @State var isIntervalCorrect: Bool = true
     
     var body: some View {
         VStack {
-            HStack {
-                Text("알림 주기")
-                    .bold()
-                    .foregroundColor(.white)
-                    .frame(height: 60)
-                    .padding(.leading, 18)
+            HStack(alignment: .top) {
+                VStack(alignment: .leading) {
+                    Text("알림 주기")
+                        .foregroundColor(.white)
+                        .font(Font(UIFont(name: "Pretendard-Medium", size: 16)!))
+                        .opacity(0.7)
+                    
+                    Text("\(selectedFrequency.rawValue)" + "분")
+                        .foregroundColor(.white)
+                        .padding(.bottom, -1)
+                        .padding(.top, -15)
+                        .font(Font(UIFont(name: "Pretendard-Bold", size: 45)!))
+                    
+                    
+                }
                 
                 Spacer()
                 
@@ -33,16 +53,48 @@ struct NotificationSettingsCell: View {
                 Picker("알림 주기", selection: $selectedFrequency) {
                     ForEach(notificationCycles, id: \.self) { interval in
                         Text("\(interval.rawValue)분")
+
+                // MARK: - 알림 설정 버튼
+                VStack {
+                    Button {
+                        
+                        self.showModal = true
+                        let impactHeavy = UIImpactFeedbackGenerator(style: .heavy)
+                            impactHeavy.impactOccurred()
+                        
+                    } label: {
+                        HStack {
+                            Image(systemName: "alarm.fill")
+                            
+                            Text("알림 설정")
+                                .font(Font(UIFont(name: "Pretendard-Bold", size: 16)!))
+                        }
+                        .padding(4)
+                    }
+                    .buttonStyle(.borderedProminent)
+                    .cornerRadius(24)
+                    // FIXME: toast message 등으로 UI 변경
+                    //            .alert("'종료 시간'을 '시작 시간'보다 \n늦은 시간대로 맞춰주세요 ⏰", isPresented: $isInputCorrect) {
+                    //                Button("확인", role: .cancel) { }
+                    //            }
+                    //            .alert("알림이 설정되었어요! 🤩", isPresented: $isSubmitted) {
+                    //                Button("확인", role: .cancel) { }
+                    //            }
+                    .sheet(isPresented: self.$showModal) {
+                        ModalView(selectedStartHour: $selectedStartHour,
+                                  selectedEndHour: $selectedEndHour,
+                                  selectedFrequency: $selectedFrequency,
+                                  selectedWeekdays: $settings.selectedDays,
+                                  settings: $settings)
+                        .preferredColorScheme(.dark)
                     }
                 }
-                .pickerStyle(MenuPickerStyle())
-                .frame(height: 60)
-                .padding(.trailing, 8)
             }
-            .background(Color.init(hue: 0, saturation: 0, brightness: 0.12))
-            .cornerRadius(20)
-            .padding(EdgeInsets(top: 16, leading: 16, bottom: 0, trailing: 16))
+            .padding([.top, .leading, .trailing])
             
+            Divider()
+                .padding(.leading)
+                .padding(.bottom, 5)
             
             if !isIntervalCorrect {
                 HStack {
@@ -59,54 +111,123 @@ struct NotificationSettingsCell: View {
             VStack {
                 
                 HStack {
-                    Text("시작 시간")
+                    VStack(alignment: .leading) {
+                        Text("시작 시간")
+                            .foregroundColor(.white)
+                            .opacity(0.7)
+                            .font(Font(UIFont(name: "Pretendard-Medium", size: 16)!))
+                        
+                        Text(String(format: "%02d", selectedStartHour) + ":00")
+                            .font(Font(UIFont(name: "Pretendard-Bold", size: 45)!))
+                            .foregroundColor(.white)
+                            .padding(.bottom, -1)
+                            .padding(.top, -15)
+                        
+                    }
+                    .padding(.leading)
+                    
                     Spacer()
-                    CustomHourPicker(
-                        selectedHour: $selectedStartHour,
-                        isIntervalCorrect: $isIntervalCorrect)
-                         .frame(width: 90, height: 60)
+                    
+                    VStack(alignment: .leading) {
+                        Text("종료 시간")
+                            .font(Font(UIFont(name: "Pretendard-Medium", size: 16)!))
+                            .foregroundColor(.white)
+                            .opacity(0.7)
+                        
+                        Text(String(format: "%02d", selectedEndHour) + ":00")
+                            .foregroundColor(.white)
+                            .font(Font(UIFont(name: "Pretendard-Bold", size: 45)!))
+                            .padding(.bottom, -1)
+                            .padding(.top, -15)
+                    }
+                    .padding(.leading)
+                    
+                    Spacer()
+                    
                 }
-                .padding(.horizontal, 16)
-                .padding(.bottom, -10)
                 
                 Divider()
-                    .background(Color.white).opacity(0.1)
                     .padding(.leading)
-                    .padding(.bottom, -10)
-                
-                HStack {
-                    Text("종료 시간")
-                    Spacer()
-                    CustomHourPicker(
-                        selectedHour: $selectedEndHour,
-                        isIntervalCorrect: $isIntervalCorrect)
-                        .frame(width: 90, height: 60)
-                }
-                .padding(.horizontal, 16)
-                .padding(.vertical, -10)
-                
-                Divider()
-                    .background(Color.white).opacity(0.1)
-                    .padding(.leading)
+                    .padding(.bottom, 5)
                 
                 VStack {
-                    HStack {
+                    VStack(alignment: .leading) {
                         Text("요일")
-                            .bold()
+                            .font(Font(UIFont(name: "Pretendard-Medium", size: 16)!))
                             .foregroundColor(.white)
-                            .padding(.leading)
-                            .padding(.top, 8)
+                            .opacity(0.7)
                         
-                        Spacer()
+                        HStack {
+                            if(!settings.selectedDays[0].selected) {
+                                Text("일").opacity(0.3)
+                            } else {
+                                Text("일")
+                            }
+                            
+                            
+                            
+                            Spacer()
+                            
+                            Group {
+                                if(!settings.selectedDays[1].selected) {
+                                    Text("월").opacity(0.3)
+                                } else {
+                                    Text("월")
+                                }
+                                Spacer()
+                                if(!settings.selectedDays[2].selected) {
+                                    Text("화").opacity(0.3)
+                                } else {
+                                    Text("화")
+                                }
+                                Spacer()
+                                if(!settings.selectedDays[3].selected) {
+                                    Text("수").opacity(0.3)
+                                } else {
+                                    Text("수")
+                                }
+                                Spacer()
+                                if(!settings.selectedDays[4].selected) {
+                                    Text("목").opacity(0.3)
+                                } else {
+                                    Text("목")
+                                }
+                                Spacer()
+                                if(!settings.selectedDays[5].selected) {
+                                    Text("금").opacity(0.3)
+                                } else {
+                                    Text("금")
+                                }
+                            }
+                            
+                            Spacer()
+                            if(!settings.selectedDays[6].selected) {
+                                Text("토").opacity(0.3)
+                            } else {
+                                Text("토")
+                            }
+                            
+                        }
+                        .foregroundColor(.white)
+                        .font(Font(UIFont(name: "Pretendard-Bold", size: 45)!))
                     }
-                    
-                    SelectNotificationDay(selectedDays: $selectedWeekdays)
-                        .padding(EdgeInsets(top: 4, leading: 6, bottom: 16, trailing: 0))
                 }
+                .padding([.leading, .trailing, .bottom])
             }
-            .background(Color.init(hue: 0, saturation: 0, brightness: 0.12))
-            .cornerRadius(20)
-            .padding(EdgeInsets(top: 8, leading: 16, bottom: 0, trailing: 16))
+        }
+        .background(Color.init(hue: 0, saturation: 0, brightness: 0.12))
+        .cornerRadius(20)
+        .gesture(
+            DragGesture(minimumDistance: 0)
+                .onEnded() {_ in
+                    self.showModal = true
+                    let impactHeavy = UIImpactFeedbackGenerator(style: .heavy)
+                        impactHeavy.impactOccurred()
+                }
+        )
+        .onTouchDownGesture {
+            let impactHeavy = UIImpactFeedbackGenerator(style: .soft)
+            impactHeavy.impactOccurred()
         }
         // TODO: onChange 코드 예쁘게 묶기..
         .onChange(of: selectedStartHour, perform: { _ in
@@ -128,12 +249,31 @@ struct NotificationSettingsCell: View {
 
 
 
+extension View {
+    
+    func onTouchDownGesture(callback: @escaping () -> Void) -> some View {
+        modifier(OnTouchDownGestureModifier(callback: callback))
+    }
+}
 
-/*
- struct NotificationSettingsCell_Previews: PreviewProvider {
-     static var previews: some View {
-         NotificationSettingsCell()
-     }
- }
- */
+private struct OnTouchDownGestureModifier: ViewModifier {
+    @State private var tapped = false
+    let callback: () -> Void
+
+    func body(content: Content) -> some View {
+        content
+            .scaleEffect(CGSize(width: self.tapped ? 0.97 : 1, height: self.tapped ? 0.97 : 1), anchor: .center)
+            .animation(.easeOut(duration: 0.2), value: self.tapped)
+            .simultaneousGesture(DragGesture(minimumDistance: 0)
+                .onChanged { _ in
+                    if !self.tapped {
+                        self.tapped = true
+                        self.callback()
+                    }
+                }
+                .onEnded { _ in
+                    self.tapped = false
+                })
+    }
+}
 

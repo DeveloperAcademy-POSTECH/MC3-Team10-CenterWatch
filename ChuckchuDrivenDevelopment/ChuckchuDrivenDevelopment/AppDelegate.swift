@@ -22,30 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
         
-        /// background fetch 관련 작업을 등록
-        /// 앱이 꺼지면 task scheduler를 등록하고 refresh를 스케줄한다
-        BGTaskScheduler.shared.register(forTaskWithIdentifier: UUID().uuidString,
-                                        using: nil) { task in
-            task.setTaskCompleted(success: true)
-            /// 요일이 바뀌면, 현재 요일과 userDefaults에 저장된 요일 데이터 비교
-            /// 현재 요일이 데이터에 포함될 시 새로운 알림 리스트 생성
-            let currentWeekday = getCurrentWeekday()
-            
-            for weekday in self.weekdays {
-                if weekday == currentWeekday {
-                    self.localNotificationManager.setLocalNotification(
-                        weekday: weekday,
-                        startHour: self.startHour,
-                        endHour: self.endHour,
-                        frequency: MinuteInterval(rawValue: self.frequency) ?? .hour)
-                   
-                    self.scheduleAppRefresh() // 다음 background refresh 예약
-                }
-            }
-        }
-        scheduleAppRefresh() // FIXME: 이게 왜 한 번 더 들어가야 하는 거지?
-        
-        /// 시스템 알림 허용이 됐는지 구분
+        // MARK: - 시스템 알림 허용 여부 구분
         if localNotificationManager.isAuthorizationRequested {
             if #available(iOS 10.0, *) {
                 UNUserNotificationCenter.current().delegate = self as UNUserNotificationCenterDelegate
@@ -67,32 +44,63 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         application.registerForRemoteNotifications()
 
         UNUserNotificationCenter.current().delegate = self
-       
+      
+        BGTaskScheduler.shared.register(
+            forTaskWithIdentifier: "com.liannechoi.ChuckchuDrivenDevelopment.task.refresh",
+            using: nil
+        ) { task in
+            self.handleAppRefresh(task: task as! BGProcessingTask)
+        }
         return true
     }
-    
-    
 }
 
 
-
-// MARK: - Background fetch 핸들링 관련
 extension AppDelegate {
-    /// BGAppRefreshTaskRequest 생성 후 BGTaskScheduler.submit(_:)을 통해 request 발송
+  
     func scheduleAppRefresh() {
         /// 현재 요일을 파악하기 위해, 매일 자정에 background refresh가 요청 됨
+        let request = BGProcessingTaskRequest(identifier: "com.liannechoi.ChuckchuDrivenDevelopment.task.refresh")
         let dateComponents = DateComponents(hour: 0, minute: 0, second: 0)
         let refreshDate = calendar.date(from: dateComponents)
-        let request = BGAppRefreshTaskRequest(identifier: UUID().uuidString)
         request.earliestBeginDate = refreshDate
+        request.requiresNetworkConnectivity = false
+        request.requiresExternalPower = false
+
         do {
             try BGTaskScheduler.shared.submit(request)
-            print("background refresh scheduled")
         } catch {
-            print("Couldn't schedule app refresh \(error.localizedDescription)")
+            print("Could not schedule app refresh: \(error)")
         }
     }
+    
+    
+
+    func handleAppRefresh(task: BGProcessingTask) {
+        scheduleAppRefresh()
+        
+        task.expirationHandler = {
+            task.setTaskCompleted(success: false)
+        }
+        
+        let currentWeekday = getCurrentWeekday()
+        
+        for weekday in self.weekdays {
+            if weekday == currentWeekday {
+                self.localNotificationManager.setLocalNotification(
+                    weekday: weekday,
+                    startHour: self.startHour,
+                    endHour: self.endHour,
+                    frequency: TimeInterval(rawValue: self.frequency) ?? .hour)
+               
+                // self.scheduleAppRefresh() // 다음 background refresh 예약
+                print("successfully gone through the task >>> ", weekday)
+            }
+        }
+        task.setTaskCompleted(success: true)
+    }
 }
+
 
 
 
@@ -123,4 +131,5 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
         completionHandler()
     }
 }
+
 

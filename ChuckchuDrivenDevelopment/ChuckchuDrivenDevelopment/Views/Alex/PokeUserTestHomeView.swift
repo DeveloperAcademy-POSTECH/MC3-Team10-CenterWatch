@@ -43,9 +43,11 @@ struct PokeUserTestHomeView: View {
                     .buttonStyle(.borderedProminent)
                     .background(RoundedRectangle(cornerRadius: 16).fill(Color.black))
             }
-            .sheet(isPresented: self.$showNotificationSettingModal) {
-                ModalView()
-            }
+            /*
+             .sheet(isPresented: self.$showNotificationSettingModal) {
+                 ModalView()
+             }
+             */
         }
         .navigationBarBackButtonHidden()
         .padding(.bottom, 72)

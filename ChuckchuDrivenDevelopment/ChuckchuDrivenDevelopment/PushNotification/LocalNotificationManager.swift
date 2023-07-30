@@ -39,7 +39,7 @@ class LocalNotificationManager: NSObject, ObservableObject, UNUserNotificationCe
         weekday: Int,
         startHour: Int,
         endHour: Int,
-        frequency: MinuteInterval
+        frequency: TimeInterval
     ) {
         requestWeekdayTrigger(weekday: weekday, startHour: startHour, endHour: endHour, frequency: frequency)
     }
@@ -52,7 +52,7 @@ class LocalNotificationManager: NSObject, ObservableObject, UNUserNotificationCe
         weekday: Int,
         startHour: Int,
         endHour: Int,
-        frequency: MinuteInterval
+        frequency: TimeInterval
     ) {
         requestNotificationPermission()
         initNotificationCenter()

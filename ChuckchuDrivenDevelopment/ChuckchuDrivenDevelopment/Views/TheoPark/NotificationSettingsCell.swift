@@ -29,6 +29,7 @@ struct NotificationSettingsCell: View {
                 
                 Spacer()
                 
+                
                 Picker("알림 주기", selection: $selectedFrequency) {
                     ForEach(notificationCycles, id: \.self) { interval in
                         Text("\(interval.rawValue)분")

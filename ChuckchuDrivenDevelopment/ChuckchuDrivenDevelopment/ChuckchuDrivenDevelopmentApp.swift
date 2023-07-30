@@ -14,7 +14,7 @@ struct ChuckchuDrivenDevelopmentApp: App {
   var body: some Scene {
     WindowGroup {
       NavigationView {
-          MiniTestingView()
+          MainView()
               .preferredColorScheme(.dark)
       }
     }

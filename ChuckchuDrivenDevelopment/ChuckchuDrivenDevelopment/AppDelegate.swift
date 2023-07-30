@@ -18,7 +18,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var endHour: Int = UserDefaults.standard.integer(forKey: "notificationEndHour")
     var frequency: Int = UserDefaults.standard.integer(forKey: "notificationFrequency")
 
-    
+
+
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
         
@@ -45,62 +46,58 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         UNUserNotificationCenter.current().delegate = self
       
-        BGTaskScheduler.shared.register(
-            forTaskWithIdentifier: "com.liannechoi.ChuckchuDrivenDevelopment.task.refresh",
-            using: nil
-        ) { task in
-            self.handleAppRefresh(task: task as! BGProcessingTask)
-        }
+
         return true
     }
 }
 
+/*
+ extension AppDelegate {
+   
+     func scheduleAppRefresh() {
+         /// 현재 요일을 파악하기 위해, 매일 자정에 background refresh가 요청 됨
+         let request = BGProcessingTaskRequest(identifier: "com.liannechoi.ChuckchuDrivenDevelopment.task.refresh")
+         let dateComponents = DateComponents(hour: 0, minute: 0, second: 0)
+         let refreshDate = calendar.date(from: dateComponents)
+         request.earliestBeginDate = refreshDate
+         request.requiresNetworkConnectivity = false
+         request.requiresExternalPower = false
 
-extension AppDelegate {
-  
-    func scheduleAppRefresh() {
-        /// 현재 요일을 파악하기 위해, 매일 자정에 background refresh가 요청 됨
-        let request = BGProcessingTaskRequest(identifier: "com.liannechoi.ChuckchuDrivenDevelopment.task.refresh")
-        let dateComponents = DateComponents(hour: 0, minute: 0, second: 0)
-        let refreshDate = calendar.date(from: dateComponents)
-        request.earliestBeginDate = refreshDate
-        request.requiresNetworkConnectivity = false
-        request.requiresExternalPower = false
+         do {
+             try BGTaskScheduler.shared.submit(request)
+         } catch {
+             print("Could not schedule app refresh: \(error)")
+         }
+     }
+     
+     
 
-        do {
-            try BGTaskScheduler.shared.submit(request)
-        } catch {
-            print("Could not schedule app refresh: \(error)")
-        }
-    }
-    
-    
-
-    func handleAppRefresh(task: BGProcessingTask) {
-        scheduleAppRefresh()
-        
-        task.expirationHandler = {
-            task.setTaskCompleted(success: false)
-        }
-        
-        let currentWeekday = getCurrentWeekday()
-        
-        for weekday in self.weekdays {
-            if weekday == currentWeekday {
-                self.localNotificationManager.setLocalNotification(
-                    weekday: weekday,
-                    startHour: self.startHour,
-                    endHour: self.endHour,
-                    frequency: TimeInterval(rawValue: self.frequency) ?? .hour)
-               
-                // self.scheduleAppRefresh() // 다음 background refresh 예약
-                print("successfully gone through the task >>> ", weekday)
-            }
-        }
-        task.setTaskCompleted(success: true)
-    }
-}
-
+     func handleAppRefresh(task: BGProcessingTask) {
+         scheduleAppRefresh()
+         
+         task.expirationHandler = {
+             task.setTaskCompleted(success: false)
+         }
+         
+         let currentWeekday = getCurrentWeekday()
+         
+         for weekday in self.weekdays {
+             if weekday == currentWeekday {
+                 self.localNotificationManager.setLocalNotification(
+                     weekday: weekday,
+                     startHour: self.startHour,
+                     endHour: self.endHour,
+                     frequency: TimeInterval(rawValue: self.frequency) ?? .hour)
+                
+                 // self.scheduleAppRefresh() // 다음 background refresh 예약
+                 print("successfully gone through the task >>> ", weekday)
+             }
+         }
+         task.setTaskCompleted(success: true)
+     }
+ }
+ 
+ */
 
 
 

@@ -26,8 +26,11 @@ struct Setting {
 
 
 struct MainView: View {
+    @EnvironmentObject var userViewModel: UserViewModel
     @StateObject private var localNotificationManager = LocalNotificationManager()
     @State var settings = Setting()
+    
+    private var currentUserToken = UserDefaults.standard.string(forKey: "userDeviceToken")
     
     /// UI에서 사용자가 선택한 데이터
     @State private var selectedStartHour: Int = 0
@@ -118,7 +121,7 @@ struct MainView: View {
                     
                     
                     pleaseTurnOnTheNotiView
-                        .opacity(1-cellOpacity) 
+                        .opacity(1-cellOpacity)
                 }
                 
                 Spacer()
@@ -155,6 +158,27 @@ struct MainView: View {
                         }
                     }
                 }
+            }
+        }
+        .task {
+            /// 현재 유저의 토큰 정보가 서버에 없으면, 해당 정보를 서버에 업로드
+            await userViewModel.fetchUsers()
+            for user in userViewModel.users {
+                if let currentUserToken {
+                    if user.deviceToken != currentUserToken {
+                        /// 토큰 암호화
+                        var encodedDeviceToken = ""
+                        if let data = currentUserToken.data(using: .utf8) {
+                            encodedDeviceToken = data.base64EncodedString()
+                        }
+                        /// 토큰을 포함한 유저 정보 업로드
+                        let newUser = User(id: UUID().uuidString, deviceToken: encodedDeviceToken)
+                        if !userViewModel.users.map({ $0.deviceToken }).contains(encodedDeviceToken) {
+                            await userViewModel.createUser(user: newUser)
+                        }
+                    }
+                }
+                
             }
         }
     }

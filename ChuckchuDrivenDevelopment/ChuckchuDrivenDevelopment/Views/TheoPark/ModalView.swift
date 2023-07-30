@@ -16,21 +16,25 @@ struct ModalView: View {
     @Binding var selectedFrequency: MinuteInterval
     @Binding var selectedWeekdays: [SelectedDay]
     @Binding var settings: Setting
+    @Binding var textOpacity: Double
     
     @State var isInputCorrect: Bool = false
     @State var isSubmitted: Bool = false
+    
     let notificationCycles: [MinuteInterval] = [.tenMinutes, .quarterHour, .halfHour, .hour]
     
     @StateObject var localNotificationManager = LocalNotificationManager()
     
     // MARK: - saveNotificationData (Method)
     /// 화면 재진입 시 이전 데이터를 다시 그려주기 위해 화면 이탈 전 사용자 설정 값을 UserDefaults에 저장합니다.
-     func saveNotificationData() {
-         UserDefaults.standard.set(selectedStartHour, forKey: "notificationStartHour")
-         UserDefaults.standard.set(selectedEndHour, forKey: "notificationEndHour")
-         UserDefaults.standard.set(selectedDaysInt, forKey: "notificationWeekdays")
-         UserDefaults.standard.set(selectedFrequency.rawValue, forKey: "notificationFrequency")
-     }
+    func saveNotificationData() {
+//        withAnimation(.easeInOut) {
+            UserDefaults.standard.set(selectedStartHour, forKey: "notificationStartHour")
+            UserDefaults.standard.set(selectedEndHour, forKey: "notificationEndHour")
+            UserDefaults.standard.set(selectedDaysInt, forKey: "notificationWeekdays")
+            UserDefaults.standard.set(selectedFrequency.rawValue, forKey: "notificationFrequency")
+//        }
+    }
     
     // MARK: - selectedDaysInt (Computed Property)
     /// setLocalNotification 함수에 전달하기 위해 selectedDays 데이터를 [Int]의 형태로 가공합니다.
@@ -160,6 +164,11 @@ struct ModalView: View {
                     ToolbarItem(placement: .navigationBarTrailing) {
                         Button {
                             presentation.wrappedValue.dismiss()
+                            textOpacity = 0.2
+                            withAnimation(.easeInOut.delay(0.2)) {
+//                            withAnimation(.easeInOut) {
+                                textOpacity = 1
+                            }
                             if selectedEndHour > selectedStartHour {
                 
                                 /// 선택된 스케줄을 파라미터로 전달하고 푸시 알림 요청
@@ -194,6 +203,35 @@ struct ModalView: View {
 }
 
 
+
+
+//struct ModalView_Previews: PreviewProvider {
+//    // Define some example @State variables to be used in the preview
+//    @State static var selectedStartHour: Int = 8
+//    @State static var selectedEndHour: Int = 18
+//    @State static var selectedFrequency: MinuteInterval = .halfHour
+//    @State static var selectedWeekdays: [SelectedDay] = [
+//        SelectedDay(day: "일", selected: true),
+//        SelectedDay(day: "월", selected: true),
+//        SelectedDay(day: "화", selected: true),
+//        SelectedDay(day: "수", selected: true),
+//        SelectedDay(day: "목", selected: true),
+//        SelectedDay(day: "금", selected: true),
+//        SelectedDay(day: "토", selected: true)
+//    ]
+//    @State static var settings = Setting()
+//
+//    static var previews: some View {
+//        ModalView(
+//            selectedStartHour: .constant(8),
+//            selectedEndHour:.constant(18),
+//            selectedFrequency: $selectedFrequency,
+//            selectedWeekdays: $selectedWeekdays,
+//            settings: $settings
+//        )
+//        .preferredColorScheme(.dark)
+//    }
+//}
 
 
 //struct AlarmSettingModalView_Previews: PreviewProvider {

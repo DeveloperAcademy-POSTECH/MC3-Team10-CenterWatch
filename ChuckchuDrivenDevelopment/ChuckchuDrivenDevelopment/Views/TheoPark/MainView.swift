@@ -49,6 +49,7 @@ struct MainView: View {
     @State var selectedFrequency: MinuteInterval = .hour
     
     
+    
     // MARK: - selectedDaysInt (Computed Property)
     /// setLocalNotification 함수에 전달하기 위해 selectedDays 데이터를 [Int]의 형태로 가공합니다.
     var selectedDaysInt: [Int] {
@@ -84,7 +85,9 @@ struct MainView: View {
                                              selectedEndHour: $selectedEndHour,
                                              selectedFrequency: $selectedFrequency,
                                              selectedWeekdays: $settings.selectedDays,
-                                             settings: $settings)
+                                             settings: $settings
+                                    
+                    )
                     .opacity(cellOpacity)
                     
                     .background(Color.init(hue: 0, saturation: 0, brightness: 0.12))
@@ -112,20 +115,20 @@ struct MainView: View {
                 let weekdaysInt = userDefaults.integer(forKey: "notificationWeekdays")
                 // print("notificationWeekdays data ---> ", weekdaysInt)
                 
-                if userDefaults.integer(forKey: "notificationStartHour") != nil {
+//                if userDefaults.integer(forKey: "notificationStartHour") != nil {
                     self.selectedStartHour = userDefaults.integer(forKey: "notificationStartHour")
-                }
-                if userDefaults.integer(forKey: "notificationEndHour") != nil {
+//                }
+//                if userDefaults.integer(forKey: "notificationEndHour") != nil {
                     self.selectedEndHour = userDefaults.integer(forKey: "notificationEndHour")
-                }
-                if userDefaults.integer(forKey: "notificationFrequency") != nil {
+//                }
+//                if userDefaults.integer(forKey: "notificationFrequency") != nil {
                     let frequencyrawValue = userDefaults.integer(forKey: "notificationFrequency")
                     self.selectedFrequency = MinuteInterval(rawValue: frequencyrawValue) ?? .hour
-                }
+//                }
                 
-                if userDefaults.integer(forKey: "notificationWeekdays") != nil {
+//                if userDefaults.integer(forKey: "notificationWeekdays") != nil {
                     // print("꺄아아아아앙")
-                    let weekdaysInt = userDefaults.array(forKey: "notificationWeekdays") as? [Int]
+                    let weekdaysIntArray = userDefaults.array(forKey: "notificationWeekdays") as? [Int]
                     //                     print("weekdaysInt -> ", weekdaysInt ?? 0)
                     //                     print("selectedWeekdays -> ", settings.selectedDays)
                     for weekday in settings.selectedDays {
@@ -139,9 +142,17 @@ struct MainView: View {
                             }
                         }
                     }
-                }
+                
+//                withAnimation {
+//                    textOpacity = 1.0
+//                }
+//                }
                 
             }
+//            .onChange(of: selectedFrequency) { newValue in
+//
+//            }
+            
             
 //            SplashView()
 //                .opacity(isLoading ? 1 : 0)

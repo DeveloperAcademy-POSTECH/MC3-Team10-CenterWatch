@@ -19,6 +19,7 @@ struct NotificationSettingsCell: View {
     @Binding var selectedFrequency: MinuteInterval
     @Binding var selectedWeekdays: [SelectedDay]
     @Binding var settings: Setting
+    @State var textOpacity: Double = 1
   
     var selectedDaysInt: [Int] {
         var daysConvertedToInt: [Int] = []
@@ -44,6 +45,8 @@ struct NotificationSettingsCell: View {
                         .padding(.bottom, -1)
                         .padding(.top, -15)
                         .font(Font(UIFont(name: "Pretendard-Bold", size: 45)!))
+                        .opacity(textOpacity)
+                        .id("NotificationSettingsSelectedFrequencyTextView\(selectedFrequency.rawValue)")
                     
                     
                 }
@@ -81,7 +84,8 @@ struct NotificationSettingsCell: View {
                                   selectedEndHour: $selectedEndHour,
                                   selectedFrequency: $selectedFrequency,
                                   selectedWeekdays: $settings.selectedDays,
-                                  settings: $settings)
+                                  settings: $settings,
+                                  textOpacity: $textOpacity)
                         .preferredColorScheme(.dark)
                     }
                 }
@@ -106,6 +110,7 @@ struct NotificationSettingsCell: View {
                             .foregroundColor(.white)
                             .padding(.bottom, -1)
                             .padding(.top, -15)
+                            .opacity(textOpacity)
                         
                     }
                     .padding(.leading)
@@ -123,6 +128,7 @@ struct NotificationSettingsCell: View {
                             .font(Font(UIFont(name: "Pretendard-Bold", size: 45)!))
                             .padding(.bottom, -1)
                             .padding(.top, -15)
+                            .opacity(textOpacity)
                     }
                     .padding(.leading)
                     
@@ -192,6 +198,7 @@ struct NotificationSettingsCell: View {
                             }
                             
                         }
+                        .opacity(textOpacity)
                         .foregroundColor(.white)
                         .font(Font(UIFont(name: "Pretendard-Bold", size: 45)!))
                     }

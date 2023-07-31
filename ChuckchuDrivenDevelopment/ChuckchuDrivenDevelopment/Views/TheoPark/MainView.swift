@@ -35,9 +35,6 @@ struct MainView: View {
     @State private var selectedFrequency: TimeInterval = .hour
     @State private var nextTargetWeekday: Int = 1
    
-    @State private var isRangeCorrect: Bool = false
-    @State private var isSubmitted: Bool = false
-    @State private var isProceedDisabled: Bool = false
     
     /// UserDefaults에 저장된 데이터
     private var storedStartHour = UserDefaults.standard.integer(forKey: "notificationStartHour")
@@ -46,14 +43,7 @@ struct MainView: View {
     private var storedWeekdays = UserDefaults.standard.array(forKey: "notificationWeekdays") as? [Int]
     
     
-    // MARK: - Save Notification Data (Method)
-    /// 화면 재진입 시 이전 데이터를 다시 그려주기 위해 화면 이탈 전 사용자 설정 값을 UserDefaults에 저장합니다.
-     func saveNotificationData() {
-         UserDefaults.standard.set(selectedStartHour, forKey: "notificationStartHour")
-         UserDefaults.standard.set(selectedEndHour, forKey: "notificationEndHour")
-         UserDefaults.standard.set(selectedDaysInt, forKey: "notificationWeekdays")
-         UserDefaults.standard.set(selectedFrequency.rawValue, forKey: "notificationFrequency")
-     }
+
 
     
     @ObservedObject var manager = MotionManager()
@@ -128,16 +118,6 @@ struct MainView: View {
             .background(Color.init(hue: 0, saturation: 0, brightness: 0.08))
             .onAppear {
                 /// 뷰의 데이터 UserDefaults의 값으로 대체
-                if storedStartHour != nil {
-                    self.selectedStartHour = storedStartHour
-                }
-                if storedEndHour != nil {
-                    self.selectedEndHour = storedEndHour
-                }
-                if storedFrequency != nil {
-                    let frequencyrawValue = storedFrequency
-                    self.selectedFrequency = TimeInterval(rawValue: frequencyrawValue) ?? .hour
-                }
                 
                 if storedWeekdays != nil {
                     let weekdaysInt = storedWeekdays

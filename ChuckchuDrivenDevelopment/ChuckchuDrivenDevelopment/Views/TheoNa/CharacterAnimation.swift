@@ -14,8 +14,8 @@ struct CharacterAnimation: View {
     @State private var tapCount = 0
     
     var body: some View {
-        Image(is3DImage ? "pin3d\(currentFrameIndex + 1)" :
-                "pin2d\(currentFrameIndex + 1)")
+        Image(is3DImage ? "Pin3D\(currentFrameIndex + 1)" :
+                "Pin2D\(currentFrameIndex + 1)")
         .resizable()
         .scaledToFit()
         .onAppear {

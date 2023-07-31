@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		17202EFB2A6ED8DB00E3223B /* CharacterAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17202EFA2A6ED8DB00E3223B /* CharacterAnimation.swift */; };
 		17202EFD2A6ED90300E3223B /* CharacterFrames.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17202EFC2A6ED90300E3223B /* CharacterFrames.xcassets */; };
+		175824D82A77EFD10013A2EE /* TimePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175824D72A77EFD10013A2EE /* TimePickerView.swift */; };
 		DE14C68D2A75EE5500F568E8 /* OnboardingView1.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE14C68C2A75EE5500F568E8 /* OnboardingView1.swift */; };
 		DE14C68F2A75F59800F568E8 /* OnBoardingView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE14C68E2A75F59800F568E8 /* OnBoardingView2.swift */; };
 		DE14C6912A760B0000F568E8 /* ParallaxMotionModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE14C6902A760B0000F568E8 /* ParallaxMotionModifier.swift */; };
@@ -80,13 +81,14 @@
 /* Begin PBXFileReference section */
 		17202EFA2A6ED8DB00E3223B /* CharacterAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterAnimation.swift; sourceTree = "<group>"; };
 		17202EFC2A6ED90300E3223B /* CharacterFrames.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = CharacterFrames.xcassets; sourceTree = "<group>"; };
+		175824D72A77EFD10013A2EE /* TimePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimePickerView.swift; sourceTree = "<group>"; };
 		DE14C68C2A75EE5500F568E8 /* OnboardingView1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView1.swift; sourceTree = "<group>"; };
 		DE14C68E2A75F59800F568E8 /* OnBoardingView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingView2.swift; sourceTree = "<group>"; };
 		DE14C6902A760B0000F568E8 /* ParallaxMotionModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParallaxMotionModifier.swift; sourceTree = "<group>"; };
 		DE7294D72A73AE62003C4059 /* Pretendard-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Bold.otf"; sourceTree = "<group>"; };
 		DE7294D92A73AF74003C4059 /* Pretendard-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Medium.otf"; sourceTree = "<group>"; };
 		DED043002A6F9924004D3395 /* SplashView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
-		DEDBC6962A65152400AB3867 /* ModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalView.swift; sourceTree = "<group>"; };
+		DEDBC6962A65152400AB3867 /* ModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalView.swift; sourceTree = "<group>"; tabWidth = 3; wrapsLines = 0; };
 		DEDBC6982A65236C00AB3867 /* SelectNotificationDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectNotificationDay.swift; sourceTree = "<group>"; };
 		EF5C255A2A724AA50072EF83 /* MiniTestingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniTestingView.swift; sourceTree = "<group>"; };
 		EF6933F12A755C0A00178631 /* WeekdayCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekdayCalculator.swift; sourceTree = "<group>"; };
@@ -179,6 +181,7 @@
 				EFE2C8172A700220006D5240 /* NotificationSettingsCell.swift */,
 				DE14C6902A760B0000F568E8 /* ParallaxMotionModifier.swift */,
 				DED043002A6F9924004D3395 /* SplashView.swift */,
+				175824D72A77EFD10013A2EE /* TimePickerView.swift */,
 			);
 			path = TheoPark;
 			sourceTree = "<group>";
@@ -459,6 +462,7 @@
 				EFEA28992A67D00500FC4965 /* GuardyView.swift in Sources */,
 				EF6933F22A755C0A00178631 /* WeekdayCalculator.swift in Sources */,
 				EFB939EB2A6C2FD50083C08D /* CustomHourPicker.swift in Sources */,
+				175824D82A77EFD10013A2EE /* TimePickerView.swift in Sources */,
 				17202EFB2A6ED8DB00E3223B /* CharacterAnimation.swift in Sources */,
 				EFECCBAC2A612F810093BB67 /* MemberViewModel.swift in Sources */,
 				EFECCBA82A612F610093BB67 /* Poke.swift in Sources */,

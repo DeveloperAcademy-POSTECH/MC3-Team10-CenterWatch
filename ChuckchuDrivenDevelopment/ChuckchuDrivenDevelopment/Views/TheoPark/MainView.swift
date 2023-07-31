@@ -34,7 +34,7 @@ struct MainView: View {
     @State private var selectedEndHour: Int = 0
     @State private var selectedFrequency: TimeInterval = .hour
     @State private var nextTargetWeekday: Int = 1
-   
+    
     @State private var isRangeCorrect: Bool = false
     @State private var isSubmitted: Bool = false
     @State private var isProceedDisabled: Bool = false
@@ -48,13 +48,13 @@ struct MainView: View {
     
     // MARK: - Save Notification Data (Method)
     /// 화면 재진입 시 이전 데이터를 다시 그려주기 위해 화면 이탈 전 사용자 설정 값을 UserDefaults에 저장합니다.
-     func saveNotificationData() {
-         UserDefaults.standard.set(selectedStartHour, forKey: "notificationStartHour")
-         UserDefaults.standard.set(selectedEndHour, forKey: "notificationEndHour")
-         UserDefaults.standard.set(selectedDaysInt, forKey: "notificationWeekdays")
-         UserDefaults.standard.set(selectedFrequency.rawValue, forKey: "notificationFrequency")
-     }
-
+    func saveNotificationData() {
+        UserDefaults.standard.set(selectedStartHour, forKey: "notificationStartHour")
+        UserDefaults.standard.set(selectedEndHour, forKey: "notificationEndHour")
+        UserDefaults.standard.set(selectedDaysInt, forKey: "notificationWeekdays")
+        UserDefaults.standard.set(selectedFrequency.rawValue, forKey: "notificationFrequency")
+    }
+    
     
     @ObservedObject var manager = MotionManager()
     
@@ -71,13 +71,13 @@ struct MainView: View {
         CTFontManagerRegisterFontsForURL(cfURL2! as CFURL, CTFontManagerScope.process, nil)
         PretendardBold = UIFont(name: "Pretendard-Bold", size: 15.0)!
     }
-
+    
     @State var toggleIsOn: Bool = false
-   
+    
     var cellOpacity: Double {
         toggleIsOn ? 0 : 1
     }
-
+    
     // MARK: - Selected Days in Int (Computed Property)
     /// setLocalNotification 함수에 전달하기 위해 selectedDays 데이터를 [Int]의 형태로 가공합니다.
     var selectedDaysInt: [Int] {
@@ -89,7 +89,7 @@ struct MainView: View {
         }
         return daysConvertedToInt
     }
-
+    
     
     var body: some View {
         ZStack {
@@ -135,22 +135,22 @@ struct MainView: View {
                 let weekdaysInt = userDefaults.integer(forKey: "notificationWeekdays")
                 // print("notificationWeekdays data ---> ", weekdaysInt)
                 
-//                if userDefaults.integer(forKey: "notificationStartHour") != nil {
-                    self.selectedStartHour = userDefaults.integer(forKey: "notificationStartHour")
-//                }
-//                if userDefaults.integer(forKey: "notificationEndHour") != nil {
-                    self.selectedEndHour = userDefaults.integer(forKey: "notificationEndHour")
-//                }
-//                if userDefaults.integer(forKey: "notificationFrequency") != nil {
-                    let frequencyrawValue = userDefaults.integer(forKey: "notificationFrequency")
-                    self.selectedFrequency = TimeInterval(rawValue: frequencyrawValue) ?? .hour
-//                }
+                //                if userDefaults.integer(forKey: "notificationStartHour") != nil {
+                self.selectedStartHour = userDefaults.integer(forKey: "notificationStartHour")
+                //                }
+                //                if userDefaults.integer(forKey: "notificationEndHour") != nil {
+                self.selectedEndHour = userDefaults.integer(forKey: "notificationEndHour")
+                //                }
+                //                if userDefaults.integer(forKey: "notificationFrequency") != nil {
+                let frequencyrawValue = userDefaults.integer(forKey: "notificationFrequency")
+                self.selectedFrequency = TimeInterval(rawValue: frequencyrawValue) ?? .hour
+                //                }
                 
-//                if userDefaults.integer(forKey: "notificationWeekdays") != nil {
-                    // print("꺄아아아아앙")
-                    let weekdaysIntArray = userDefaults.array(forKey: "notificationWeekdays") as? [Int]
-                    //                     print("weekdaysInt -> ", weekdaysInt ?? 0)
-                    //                     print("selectedWeekdays -> ", settings.selectedDays)
+                //                if userDefaults.integer(forKey: "notificationWeekdays") != nil {
+                // print("꺄아아아아앙")
+                let weekdaysIntArray = userDefaults.array(forKey: "notificationWeekdays") as? [Int]
+                //                     print("weekdaysInt -> ", weekdaysInt ?? 0)
+                //                     print("selectedWeekdays -> ", settings.selectedDays)
                 if storedStartHour != nil {
                     self.selectedStartHour = storedStartHour
                 }
@@ -166,7 +166,7 @@ struct MainView: View {
                     let weekdaysInt = storedWeekdays
                     // print("weekdaysInt -> ", weekdaysInt ?? 0)
                     // print("selectedWeekdays -> ", settings.selectedDays)
-        for weekday in settings.selectedDays {
+                    for weekday in settings.selectedDays {
                         let index = settings.selectedDays.firstIndex(of: weekday)
                         let weekdayIndex = index ?? 0 - 1
                         if !selectedDaysInt.isEmpty {
@@ -177,34 +177,33 @@ struct MainView: View {
                             }
                         }
                     }
-
-//                withAnimation {
-//                    textOpacity = 1.0
-//                }
-//                }
+                    
+                    //                withAnimation {
+                    //                    textOpacity = 1.0
+                    //                }
+                    //                }
+                    
+                    //            .onChange(of: selectedFrequency) { newValue in
+                    //
+                    //            }
                 
-//            .onChange(of: selectedFrequency) { newValue in
-//
-//            }
-            
-            
-//            SplashView()
-//                .opacity(isLoading ? 1 : 0)
-//                .onAppear {
-//                    DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-//                        withAnimation(.easeInOut(duration: 1)) {
-//                            self.isLoading.toggle()
-//                        }
-//
-//                    }
-//                }
-            
                 }
             }
+            
+            SplashView()
+                .opacity(isLoading ? 1 : 0)
+                .onAppear {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                        withAnimation(.easeInOut(duration: 1)) {
+                            self.isLoading.toggle()
+                        }
+                        
+                    }
+                }
         }
     }
-
-
+    
+    
     
     var dayOffToggle: some View {
         HStack(spacing: 10){

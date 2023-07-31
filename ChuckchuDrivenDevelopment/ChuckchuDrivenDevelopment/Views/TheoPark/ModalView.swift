@@ -16,6 +16,7 @@ struct ModalView: View {
     @Binding var selectedFrequency: TimeInterval
     @Binding var selectedWeekdays: [SelectedDay]
     @Binding var settings: Setting
+    @Binding var textOpacity: Double
     
     @State private var nextTargetWeekday: Int = 1
     @State private var isRangeCorrect: Bool = false
@@ -24,7 +25,7 @@ struct ModalView: View {
     @State var isSubmitted: Bool = false
     @State var isIntervalCorrect: Bool = true
     let notificationCycles: [TimeInterval] = [.halfHour, .hour]
-    
+
     @StateObject var localNotificationManager = LocalNotificationManager()
     
     // MARK: - saveNotificationData (Method)
@@ -162,7 +163,12 @@ struct ModalView: View {
                     ToolbarItem(placement: .navigationBarTrailing) {
                         Button {
                             presentation.wrappedValue.dismiss()
-                            
+                            textOpacity = 0.2
+                            withAnimation(.easeInOut.delay(0.2)) {
+//                            withAnimation(.easeInOut) {
+                                textOpacity = 1
+                            }
+
                             if selectedEndHour > selectedStartHour {
                                 localNotificationManager.cancelNotification()
                                 
@@ -207,6 +213,35 @@ struct ModalView: View {
 }
 
 
+
+
+//struct ModalView_Previews: PreviewProvider {
+//    // Define some example @State variables to be used in the preview
+//    @State static var selectedStartHour: Int = 8
+//    @State static var selectedEndHour: Int = 18
+//    @State static var selectedFrequency: MinuteInterval = .halfHour
+//    @State static var selectedWeekdays: [SelectedDay] = [
+//        SelectedDay(day: "일", selected: true),
+//        SelectedDay(day: "월", selected: true),
+//        SelectedDay(day: "화", selected: true),
+//        SelectedDay(day: "수", selected: true),
+//        SelectedDay(day: "목", selected: true),
+//        SelectedDay(day: "금", selected: true),
+//        SelectedDay(day: "토", selected: true)
+//    ]
+//    @State static var settings = Setting()
+//
+//    static var previews: some View {
+//        ModalView(
+//            selectedStartHour: .constant(8),
+//            selectedEndHour:.constant(18),
+//            selectedFrequency: $selectedFrequency,
+//            selectedWeekdays: $selectedWeekdays,
+//            settings: $settings
+//        )
+//        .preferredColorScheme(.dark)
+//    }
+//}
 
 
 //struct AlarmSettingModalView_Previews: PreviewProvider {

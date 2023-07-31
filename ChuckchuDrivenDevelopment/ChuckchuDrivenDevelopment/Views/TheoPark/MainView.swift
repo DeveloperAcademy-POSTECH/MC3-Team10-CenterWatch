@@ -72,6 +72,11 @@ struct MainView: View {
         PretendardBold = UIFont(name: "Pretendard-Bold", size: 15.0)!
     }
 
+    @State var settings = Setting()
+    @State var selectedStartHour: Int = 8
+    @State var selectedEndHour: Int = 18
+    @State var selectedFrequency: MinuteInterval = .hour
+
     @State var toggleIsOn: Bool = false
    
     var cellOpacity: Double {
@@ -109,7 +114,9 @@ struct MainView: View {
                                              selectedEndHour: $selectedEndHour,
                                              selectedFrequency: $selectedFrequency,
                                              selectedWeekdays: $settings.selectedDays,
-                                             settings: $settings)
+                                             settings: $settings
+                                    
+                    )
                     .opacity(cellOpacity)
                     
                     .background(Color.init(hue: 0, saturation: 0, brightness: 0.12))
@@ -128,6 +135,26 @@ struct MainView: View {
             .background(Color.init(hue: 0, saturation: 0, brightness: 0.08))
             .onAppear {
                 /// 뷰의 데이터 UserDefaults의 값으로 대체
+                let userDefaults = UserDefaults.standard
+                let weekdaysInt = userDefaults.integer(forKey: "notificationWeekdays")
+                // print("notificationWeekdays data ---> ", weekdaysInt)
+                
+//                if userDefaults.integer(forKey: "notificationStartHour") != nil {
+                    self.selectedStartHour = userDefaults.integer(forKey: "notificationStartHour")
+//                }
+//                if userDefaults.integer(forKey: "notificationEndHour") != nil {
+                    self.selectedEndHour = userDefaults.integer(forKey: "notificationEndHour")
+//                }
+//                if userDefaults.integer(forKey: "notificationFrequency") != nil {
+                    let frequencyrawValue = userDefaults.integer(forKey: "notificationFrequency")
+                    self.selectedFrequency = MinuteInterval(rawValue: frequencyrawValue) ?? .hour
+//                }
+                
+//                if userDefaults.integer(forKey: "notificationWeekdays") != nil {
+                    // print("꺄아아아아앙")
+                    let weekdaysIntArray = userDefaults.array(forKey: "notificationWeekdays") as? [Int]
+                    //                     print("weekdaysInt -> ", weekdaysInt ?? 0)
+                    //                     print("selectedWeekdays -> ", settings.selectedDays)
                 if storedStartHour != nil {
                     self.selectedStartHour = storedStartHour
                 }
@@ -143,7 +170,7 @@ struct MainView: View {
                     let weekdaysInt = storedWeekdays
                     // print("weekdaysInt -> ", weekdaysInt ?? 0)
                     // print("selectedWeekdays -> ", settings.selectedDays)
-                    for weekday in settings.selectedDays {
+        for weekday in settings.selectedDays {
                         let index = settings.selectedDays.firstIndex(of: weekday)
                         let weekdayIndex = index ?? 0 - 1
                         if !selectedDaysInt.isEmpty {
@@ -154,6 +181,28 @@ struct MainView: View {
                             }
                         }
                     }
+
+//                withAnimation {
+//                    textOpacity = 1.0
+//                }
+//                }
+                
+//            .onChange(of: selectedFrequency) { newValue in
+//
+//            }
+            
+            
+//            SplashView()
+//                .opacity(isLoading ? 1 : 0)
+//                .onAppear {
+//                    DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+//                        withAnimation(.easeInOut(duration: 1)) {
+//                            self.isLoading.toggle()
+//                        }
+//
+//                    }
+//                }
+            
                 }
             }
         }

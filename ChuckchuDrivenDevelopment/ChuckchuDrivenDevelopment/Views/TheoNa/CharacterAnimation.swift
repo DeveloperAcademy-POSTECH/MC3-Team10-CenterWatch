@@ -18,6 +18,9 @@ struct CharacterAnimation: View {
     @State var tapLocation: CGPoint?
     
     @State private var tapped = false
+    @Binding var animationPaused: Bool
+    @Binding var grayscale: Double
+    
     
     var body: some View {
         
@@ -37,7 +40,7 @@ struct CharacterAnimation: View {
                 self.tapped = false
                 
             }
-
+        
         let dragGesture = DragGesture(minimumDistance: 0, coordinateSpace: .global)
             .onChanged { value in
                 if !self.tapped {
@@ -50,11 +53,11 @@ struct CharacterAnimation: View {
                     }
                     points.append(point)
                     let impactHeavy = UIImpactFeedbackGenerator(style: .light)
-                        impactHeavy.impactOccurred()
+                    impactHeavy.impactOccurred()
                 }
                 
             }
-
+        
         
         
         ZStack {
@@ -74,11 +77,11 @@ struct CharacterAnimation: View {
                 }
                 
                 Image(is3DImage ? "pin3d\(currentFrameIndex + 1)" :
-                            "pin2d\(currentFrameIndex + 1)")
-                    .resizable()
-                    .scaledToFit()
-                    .onAppear {
-                        startAnimation()
+                        "pin2d\(currentFrameIndex + 1)")
+                .resizable()
+                .scaledToFit()
+                .onAppear {
+                    startAnimation()
                 }
                 
                 if(!is3DImage) {
@@ -107,8 +110,9 @@ struct CharacterAnimation: View {
                     .opacity(0.8)
                 }
             }
-                    
             
+            .animation(animationPaused ? .none : nil) // Apply animation conditionally
+            .grayscale(grayscale) // Apply grayscale based on the binding
             ForEach(points.indices, id: \.self) { index in
                 CreateCircle(location: points[index])
             }
@@ -117,12 +121,13 @@ struct CharacterAnimation: View {
         .gesture(dragGesture.sequenced(before: tapDetector))
         
     }
-    
     private func startAnimation() {
         // Timer를 사용하여 0.05초마다 다음 프레임으로 이동하여 애니메이션 생성
         Timer.scheduledTimer(withTimeInterval: 0.05, repeats: true) { timer in
             withTransaction(Transaction(animation: nil)) {
-                currentFrameIndex = (currentFrameIndex + 1) % totalFrames
+                if !animationPaused {
+                    currentFrameIndex = (currentFrameIndex + 1) % totalFrames
+                }
             }
         }
     }
@@ -130,7 +135,10 @@ struct CharacterAnimation: View {
 
 
 struct CharacterAnimation_Previews: PreviewProvider {
+    @State static private var animationPaused = false
+    @State static private var grayscale = 0.0
+    
     static var previews: some View {
-        CharacterAnimation()
+        CharacterAnimation(animationPaused: $animationPaused, grayscale: $grayscale)
     }
 }

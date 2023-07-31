@@ -7,9 +7,8 @@
 
 import Foundation
 
-enum MinuteInterval: Int {
-    case tenMinutes = 10
-    case quarterHour = 15
+// MARK: - Notification Interval (Enum)
+enum TimeInterval: Int {
     case halfHour = 30
     case hour = 60
 }

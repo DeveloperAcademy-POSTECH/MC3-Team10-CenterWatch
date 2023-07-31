@@ -10,13 +10,13 @@ import SwiftUI
 struct NotificationSettingsCell: View {
     
     /// 모달뷰 띄우기용
-    @State private var showModal = false
+        @State private var showModal = false
     
-    let notificationCycles: [MinuteInterval] = [.tenMinutes, .quarterHour, .halfHour, .hour]
+    let notificationCycles: [TimeInterval] = [.halfHour, .hour]
     
     @Binding var selectedStartHour: Int
     @Binding var selectedEndHour: Int
-    @Binding var selectedFrequency: MinuteInterval
+    @Binding var selectedFrequency: TimeInterval
     @Binding var selectedWeekdays: [SelectedDay]
     @Binding var settings: Setting
     @State var textOpacity: Double = 1
@@ -31,7 +31,9 @@ struct NotificationSettingsCell: View {
         return daysConvertedToInt
     }
     
-    var body: some View {
+    // @State var isIntervalCorrect: Bool = true
+    
+       var body: some View {
         VStack {
             HStack(alignment: .top) {
                 VStack(alignment: .leading) {
@@ -208,15 +210,12 @@ struct NotificationSettingsCell: View {
         }
         .background(Color.init(hue: 0, saturation: 0, brightness: 0.12))
         .cornerRadius(20)
-//        .padding(EdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 16))
-        .gesture(
-            DragGesture(minimumDistance: 0)
-                .onEnded() {_ in
-                    self.showModal = true
-                    let impactHeavy = UIImpactFeedbackGenerator(style: .heavy)
-                        impactHeavy.impactOccurred()
-                }
-        )
+        .padding(EdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 16))
+        .onTapGesture {
+            self.showModal = true
+            let impactHeavy = UIImpactFeedbackGenerator(style: .heavy)
+                impactHeavy.impactOccurred()
+        }
         .onTouchDownGesture {
             let impactHeavy = UIImpactFeedbackGenerator(style: .soft)
             impactHeavy.impactOccurred()
@@ -224,6 +223,8 @@ struct NotificationSettingsCell: View {
         
     }
 }
+
+
 
 extension View {
     

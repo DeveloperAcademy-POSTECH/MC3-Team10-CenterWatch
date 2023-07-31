@@ -26,6 +26,35 @@ struct Setting {
 
 
 struct MainView: View {
+    @StateObject private var localNotificationManager = LocalNotificationManager()
+    @State var settings = Setting()
+    
+    /// UI에서 사용자가 선택한 데이터
+    @State private var selectedStartHour: Int = 0
+    @State private var selectedEndHour: Int = 0
+    @State private var selectedFrequency: TimeInterval = .hour
+    @State private var nextTargetWeekday: Int = 1
+   
+    @State private var isRangeCorrect: Bool = false
+    @State private var isSubmitted: Bool = false
+    @State private var isProceedDisabled: Bool = false
+    
+    /// UserDefaults에 저장된 데이터
+    private var storedStartHour = UserDefaults.standard.integer(forKey: "notificationStartHour")
+    private var storedEndHour = UserDefaults.standard.integer(forKey: "notificationEndHour")
+    private var storedFrequency = UserDefaults.standard.integer(forKey: "notificationFrequency")
+    private var storedWeekdays = UserDefaults.standard.array(forKey: "notificationWeekdays") as? [Int]
+    
+    
+    // MARK: - Save Notification Data (Method)
+    /// 화면 재진입 시 이전 데이터를 다시 그려주기 위해 화면 이탈 전 사용자 설정 값을 UserDefaults에 저장합니다.
+     func saveNotificationData() {
+         UserDefaults.standard.set(selectedStartHour, forKey: "notificationStartHour")
+         UserDefaults.standard.set(selectedEndHour, forKey: "notificationEndHour")
+         UserDefaults.standard.set(selectedDaysInt, forKey: "notificationWeekdays")
+         UserDefaults.standard.set(selectedFrequency.rawValue, forKey: "notificationFrequency")
+     }
+
     
     @ObservedObject var manager = MotionManager()
     
@@ -42,15 +71,19 @@ struct MainView: View {
         CTFontManagerRegisterFontsForURL(cfURL2! as CFURL, CTFontManagerScope.process, nil)
         PretendardBold = UIFont(name: "Pretendard-Bold", size: 15.0)!
     }
-    
+
     @State var settings = Setting()
     @State var selectedStartHour: Int = 8
     @State var selectedEndHour: Int = 18
     @State var selectedFrequency: MinuteInterval = .hour
-    
-    
-    
-    // MARK: - selectedDaysInt (Computed Property)
+
+    @State var toggleIsOn: Bool = false
+   
+    var cellOpacity: Double {
+        toggleIsOn ? 0 : 1
+    }
+
+    // MARK: - Selected Days in Int (Computed Property)
     /// setLocalNotification 함수에 전달하기 위해 selectedDays 데이터를 [Int]의 형태로 가공합니다.
     var selectedDaysInt: [Int] {
         var daysConvertedToInt: [Int] = []
@@ -61,11 +94,7 @@ struct MainView: View {
         }
         return daysConvertedToInt
     }
-    
-    @State var toggleIsOn: Bool = false
-    var cellOpacity: Double {
-        toggleIsOn ? 0 : 1
-    }
+
     
     var body: some View {
         ZStack {
@@ -96,19 +125,14 @@ struct MainView: View {
                     
                     
                     pleaseTurnOnTheNotiView
-                        .opacity(1-cellOpacity)
-                    
+                        .opacity(1-cellOpacity) 
                 }
                 
                 Spacer()
-                
-                
-                
             }
             .modifier(ParallaxMotionModifier(manager: manager, magnitude: 15))
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(Color.init(hue: 0, saturation: 0, brightness: 0.08))
-            
             .onAppear {
                 /// 뷰의 데이터 UserDefaults의 값으로 대체
                 let userDefaults = UserDefaults.standard
@@ -131,7 +155,22 @@ struct MainView: View {
                     let weekdaysIntArray = userDefaults.array(forKey: "notificationWeekdays") as? [Int]
                     //                     print("weekdaysInt -> ", weekdaysInt ?? 0)
                     //                     print("selectedWeekdays -> ", settings.selectedDays)
-                    for weekday in settings.selectedDays {
+                if storedStartHour != nil {
+                    self.selectedStartHour = storedStartHour
+                }
+                if storedEndHour != nil {
+                    self.selectedEndHour = storedEndHour
+                }
+                if storedFrequency != nil {
+                    let frequencyrawValue = storedFrequency
+                    self.selectedFrequency = TimeInterval(rawValue: frequencyrawValue) ?? .hour
+                }
+                
+                if storedWeekdays != nil {
+                    let weekdaysInt = storedWeekdays
+                    // print("weekdaysInt -> ", weekdaysInt ?? 0)
+                    // print("selectedWeekdays -> ", settings.selectedDays)
+        for weekday in settings.selectedDays {
                         let index = settings.selectedDays.firstIndex(of: weekday)
                         let weekdayIndex = index ?? 0 - 1
                         if !selectedDaysInt.isEmpty {
@@ -142,13 +181,12 @@ struct MainView: View {
                             }
                         }
                     }
-                
+
 //                withAnimation {
 //                    textOpacity = 1.0
 //                }
 //                }
                 
-            }
 //            .onChange(of: selectedFrequency) { newValue in
 //
 //            }
@@ -165,8 +203,12 @@ struct MainView: View {
 //                    }
 //                }
             
+                }
+            }
         }
     }
+
+
     
     var dayOffToggle: some View {
         HStack(spacing: 10){

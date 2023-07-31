@@ -97,7 +97,7 @@ struct MainView: View {
                 dayOffToggle
                 
                 Divider()
-                    .frame(width: 335)
+                    .padding(.leading)
                 
                 CharacterAnimation()
                     .padding(.bottom, 16)
@@ -105,27 +105,28 @@ struct MainView: View {
                 // MARK: - 알림 설정 세부사항
                 
                 ZStack {
+                    
                     NotificationSettingsCell(selectedStartHour: $selectedStartHour,
                                              selectedEndHour: $selectedEndHour,
                                              selectedFrequency: $selectedFrequency,
                                              selectedWeekdays: $settings.selectedDays,
                                              settings: $settings
-                                    
+                                             
                     )
                     .opacity(cellOpacity)
-                    
-                    .background(Color.init(hue: 0, saturation: 0, brightness: 0.12))
                     .cornerRadius(20)
                     .padding(EdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 16))
+                    .shadow(radius: 6)
+                    .modifier(ParallaxMotionModifier(manager: manager, magnitude3d: 20, magnitude2d: 25))
                     
                     
                     pleaseTurnOnTheNotiView
-                        .opacity(1-cellOpacity) 
+                        .opacity(1-cellOpacity)
+                    
                 }
                 
                 Spacer()
             }
-            .modifier(ParallaxMotionModifier(manager: manager, magnitude: 15))
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(Color.init(hue: 0, saturation: 0, brightness: 0.08))
             .onAppear {

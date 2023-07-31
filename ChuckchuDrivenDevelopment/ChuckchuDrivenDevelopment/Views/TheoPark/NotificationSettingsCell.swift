@@ -49,8 +49,6 @@ struct NotificationSettingsCell: View {
                         .font(Font(UIFont(name: "Pretendard-Bold", size: 45)!))
                         .opacity(textOpacity)
                         .id("NotificationSettingsSelectedFrequencyTextView\(selectedFrequency.rawValue)")
-                    
-                    
                 }
                 
                 Spacer()
@@ -239,7 +237,7 @@ private struct OnTouchDownGestureModifier: ViewModifier {
 
     func body(content: Content) -> some View {
         content
-            .scaleEffect(CGSize(width: self.tapped ? 0.97 : 1, height: self.tapped ? 0.97 : 1), anchor: .center)
+            .scaleEffect(CGSize(width: self.tapped ? 0.95 : 1, height: self.tapped ? 0.95 : 1), anchor: .center)
             .animation(.easeOut(duration: 0.2), value: self.tapped)
             .simultaneousGesture(DragGesture(minimumDistance: 0)
                 .onChanged { _ in

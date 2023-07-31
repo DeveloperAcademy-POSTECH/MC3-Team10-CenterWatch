@@ -11,11 +11,14 @@ import CoreMotion
 struct ParallaxMotionModifier: ViewModifier {
     
     @ObservedObject var manager: MotionManager
-    var magnitude: Double
+    var magnitude3d: Double
+    var magnitude2d: Double
     
     func body(content: Content) -> some View {
         content
-            .offset(x: CGFloat(manager.roll * magnitude), y: CGFloat(manager.pitch * magnitude))
+            .rotation3DEffect(.degrees(manager.roll * magnitude3d / 5), axis: (x: 0, y: 1, z: 0))
+            .rotation3DEffect(.degrees(manager.pitch * magnitude3d / 5 - 1), axis: (x: -1, y: 0, z: 0))
+            .offset(x: CGFloat(manager.roll * magnitude2d), y: CGFloat(manager.pitch * magnitude2d / 2))
     }
 }
 
@@ -28,7 +31,7 @@ class MotionManager: ObservableObject {
 
     init() {
         self.manager = CMMotionManager()
-        self.manager.deviceMotionUpdateInterval = 1/60
+        self.manager.deviceMotionUpdateInterval = 1/120
         self.manager.startDeviceMotionUpdates(to: .main) { (motionData, error) in
             guard error == nil else {
                 print(error!)

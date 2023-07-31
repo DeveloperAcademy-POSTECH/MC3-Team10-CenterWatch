@@ -39,6 +39,10 @@ struct MainView: View {
     @State private var isSubmitted: Bool = false
     @State private var isProceedDisabled: Bool = false
     
+    @State private var animationPaused = false
+    @State private var grayscaleValue: Double = 0.0
+    
+    
     /// UserDefaults에 저장된 데이터
     private var storedStartHour = UserDefaults.standard.integer(forKey: "notificationStartHour")
     private var storedEndHour = UserDefaults.standard.integer(forKey: "notificationEndHour")
@@ -94,12 +98,14 @@ struct MainView: View {
     var body: some View {
         ZStack {
             VStack {
+                Spacer()
                 dayOffToggle
                 
                 Divider()
                     .padding(.leading)
+                    .padding(.trailing)
                 
-                CharacterAnimation()
+                CharacterAnimation(animationPaused: $animationPaused, grayscale: $grayscaleValue)
                     .padding(.bottom, 16)
                 
                 // MARK: - 알림 설정 세부사항
@@ -114,16 +120,28 @@ struct MainView: View {
                                              
                     )
                     .opacity(cellOpacity)
+                    .background(Color.init(hue: 0, saturation: 0, brightness: 0.12))
                     .cornerRadius(20)
                     .padding(EdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 16))
                     .shadow(radius: 6)
                     .modifier(ParallaxMotionModifier(manager: manager, magnitude3d: 20, magnitude2d: 25))
                     
                     
-                    pleaseTurnOnTheNotiView
+                   dayOffActiveView
                         .opacity(1-cellOpacity)
                     
+                        .onChange(of: toggleIsOn) { newValue in
+                                // Update animationPaused and grayscaleValue based on toggleIsOn
+                                if newValue {
+                                    animationPaused = true
+                                    grayscaleValue = 1.0
+                                } else {
+                                    animationPaused = false
+                                    grayscaleValue = 0.0
+                                }
+                            }
                 }
+                
                 
                 Spacer()
             }
@@ -133,24 +151,16 @@ struct MainView: View {
                 /// 뷰의 데이터 UserDefaults의 값으로 대체
                 let userDefaults = UserDefaults.standard
                 let weekdaysInt = userDefaults.integer(forKey: "notificationWeekdays")
-                // print("notificationWeekdays data ---> ", weekdaysInt)
-                
-                //                if userDefaults.integer(forKey: "notificationStartHour") != nil {
+               
                 self.selectedStartHour = userDefaults.integer(forKey: "notificationStartHour")
-                //                }
-                //                if userDefaults.integer(forKey: "notificationEndHour") != nil {
+            
                 self.selectedEndHour = userDefaults.integer(forKey: "notificationEndHour")
-                //                }
-                //                if userDefaults.integer(forKey: "notificationFrequency") != nil {
+           
                 let frequencyrawValue = userDefaults.integer(forKey: "notificationFrequency")
                 self.selectedFrequency = TimeInterval(rawValue: frequencyrawValue) ?? .hour
-                //                }
-                
-                //                if userDefaults.integer(forKey: "notificationWeekdays") != nil {
-                // print("꺄아아아아앙")
+       
                 let weekdaysIntArray = userDefaults.array(forKey: "notificationWeekdays") as? [Int]
-                //                     print("weekdaysInt -> ", weekdaysInt ?? 0)
-                //                     print("selectedWeekdays -> ", settings.selectedDays)
+               
                 if storedStartHour != nil {
                     self.selectedStartHour = storedStartHour
                 }
@@ -177,15 +187,7 @@ struct MainView: View {
                             }
                         }
                     }
-                    
-                    //                withAnimation {
-                    //                    textOpacity = 1.0
-                    //                }
-                    //                }
-                    
-                    //            .onChange(of: selectedFrequency) { newValue in
-                    //
-                    //            }
+                  
                 
                 }
             }
@@ -197,7 +199,7 @@ struct MainView: View {
                         withAnimation(.easeInOut(duration: 1)) {
                             self.isLoading.toggle()
                         }
-                        
+
                     }
                 }
         }
@@ -217,27 +219,39 @@ struct MainView: View {
         .padding(EdgeInsets(top: 8, leading: 20, bottom: 8, trailing: 24))
     }
     
-    var pleaseTurnOnTheNotiView: some View {
+    var dayOffActiveView: some View {
         VStack(spacing: 25) {
-            Text("앗...!\n핀이 메세지를 보내고 싶대요.\n활성화는 알림 설정이 꼭 필요해요.")
+            Image("Icon_DayOffActive")
+            Text("현재 알림이 꺼져 있어요.\n다음 날, 핀이 다시 돌아올거에요.")
                 .multilineTextAlignment(.center)
                 .font(Font(UIFont(name: "Pretendard-Bold", size: 19)!))
                 .lineSpacing(8)
-            
-            Button {
-                //TODO: 여기에 시스템 설정으로 보내버려..
-            } label: {
-                
-                Text("시스템 설정")
-                    .font(Font(UIFont(name: "Pretendard-Bold", size: 17)!))
-                
-                    .padding(12)
-            }
-            .buttonStyle(.borderedProminent)
-            .cornerRadius(14)
-            
+                .padding(.bottom)
         }
+        
     }
+    //MARK: 노티 허용을 하지 않았을 때 <시스템 설정>으로 보내는 화면입니다.
+//    var pleaseTurnOnTheNotiView: some View {
+//        VStack(spacing: 25) {
+//            Text("앗...!\n핀이 메세지를 보내고 싶대요.\n활성화는 알림 설정이 꼭 필요해요.")
+//                .multilineTextAlignment(.center)
+//                .font(Font(UIFont(name: "Pretendard-Bold", size: 19)!))
+//                .lineSpacing(8)
+//
+//            Button {
+//                //TODO: 여기에 시스템 설정으로 ..
+//            } label: {
+//
+//                Text("시스템 설정")
+//                    .font(Font(UIFont(name: "Pretendard-Bold", size: 17)!))
+//
+//                    .padding(12)
+//            }
+//            .buttonStyle(.borderedProminent)
+//            .cornerRadius(14)
+//
+//        }
+//    }
     
 }
 

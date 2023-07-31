@@ -72,11 +72,6 @@ struct MainView: View {
         PretendardBold = UIFont(name: "Pretendard-Bold", size: 15.0)!
     }
 
-    @State var settings = Setting()
-    @State var selectedStartHour: Int = 8
-    @State var selectedEndHour: Int = 18
-    @State var selectedFrequency: MinuteInterval = .hour
-
     @State var toggleIsOn: Bool = false
    
     var cellOpacity: Double {
@@ -147,7 +142,7 @@ struct MainView: View {
 //                }
 //                if userDefaults.integer(forKey: "notificationFrequency") != nil {
                     let frequencyrawValue = userDefaults.integer(forKey: "notificationFrequency")
-                    self.selectedFrequency = MinuteInterval(rawValue: frequencyrawValue) ?? .hour
+                    self.selectedFrequency = TimeInterval(rawValue: frequencyrawValue) ?? .hour
 //                }
                 
 //                if userDefaults.integer(forKey: "notificationWeekdays") != nil {

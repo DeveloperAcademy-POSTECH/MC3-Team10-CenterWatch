@@ -76,8 +76,8 @@ struct CharacterAnimation: View {
                     
                 }
                 
-                Image(is3DImage ? "pin3d\(currentFrameIndex + 1)" :
-                        "pin2d\(currentFrameIndex + 1)")
+                Image(is3DImage ? "Pin3D\(currentFrameIndex + 1)" :
+                        "Pin2D\(currentFrameIndex + 1)")
                 .resizable()
                 .scaledToFit()
                 .onAppear {

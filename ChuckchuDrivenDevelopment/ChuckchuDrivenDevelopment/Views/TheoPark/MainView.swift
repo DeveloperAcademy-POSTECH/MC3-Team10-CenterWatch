@@ -52,13 +52,13 @@ struct MainView: View {
     
 
     // MARK: - Save Notification Data (Method)
-    /// 화면 재진입 시 이전 데이터를 다시 그려주기 위해 화면 이탈 전 사용자 설정 값을 UserDefaults에 저장합니다.
-//     func saveNotificationData() {
-//         UserDefaults.standard.set(selectedStartHour, forKey: "notificationStartHour")
-//         UserDefaults.standard.set(selectedEndHour, forKey: "notificationEndHour")
-//         UserDefaults.standard.set(selectedDaysInt, forKey: "notificationWeekdays")
-//         UserDefaults.standard.set(selectedFrequency.rawValue, forKey: "notificationFrequency")
-//     }
+    // 화면 재진입 시 이전 데이터를 다시 그려주기 위해 화면 이탈 전 사용자 설정 값을 UserDefaults에 저장합니다.
+     func saveNotificationData() {
+         UserDefaults.standard.set(selectedStartHour, forKey: "notificationStartHour")
+         UserDefaults.standard.set(selectedEndHour, forKey: "notificationEndHour")
+         UserDefaults.standard.set(selectedDaysInt, forKey: "notificationWeekdays")
+         UserDefaults.standard.set(selectedFrequency.rawValue, forKey: "notificationFrequency")
+     }
 
     
     @ObservedObject var manager = MotionManager()

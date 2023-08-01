@@ -88,49 +88,6 @@ struct ModalView: View {
                     TimePickerView(selectedStartHour: $selectedStartHour, selectedEndHour: $selectedEndHour)
                         .padding(EdgeInsets(top: 8, leading: -6, bottom: 0, trailing: -6))
                     
-//                    HStack {
-//                        VStack {
-//                            HStack {
-//                                Text("시작 시간")
-//                                    .font(Font(UIFont(name: "Pretendard-Bold", size: 18)!))
-//                                    .foregroundColor(.white)
-//
-////                                Spacer()
-//                            }
-//
-//                            HStack {
-//                                CustomHourPicker(
-//                                    selectedHour: $selectedStartHour,
-//                                    isIntervalCorrect: $isIntervalCorrect)
-//                                .frame(width: 120, height: 120)
-//
-//
-//                                Spacer()
-//                            }
-//                        }
-//                        .padding(EdgeInsets(top: 18, leading: 18, bottom: 4, trailing: 16))
-//
-//                        VStack {
-//                            HStack {
-//                                Text("종료 시간")
-//                                    .font(Font(UIFont(name: "Pretendard-Bold", size: 18)!))
-//                                    .foregroundColor(.white)
-//
-//                                Spacer()
-//                            }
-//
-//                            HStack {
-//                                CustomHourPicker(
-//                                    selectedHour: $selectedEndHour,
-//                                    isIntervalCorrect: $isIntervalCorrect)
-//                                .frame(width: 120, height: 120)
-//
-//                                Spacer()
-//                            }
-//                        }
-//                        .padding(EdgeInsets(top: 18, leading: 18, bottom: 4, trailing: 16))
-//                    }
-                    
                     
                     Divider()
                         .background(Color.white).opacity(0.2)
@@ -177,25 +134,25 @@ struct ModalView: View {
                             }
 
                             if selectedEndHour > selectedStartHour {
-
+                                
                                 localNotificationManager.cancelNotification()
                                 let currentWeekday = getCurrentWeekday()
                                 /// 경우 1. 현재의 요일이 선택된 요일에 포함된다면 해당 요일의 알림을 만들고,
-//                                if selectedDaysInt.contains(currentWeekday) {
-//                                    nextTargetWeekday = currentWeekday
-//                                    /// 경우 2. 포함되지 않는다면 현재와 가장 가까운 요일의 알림을 만든다
-//                                    // FIXME: 조건문을 분리 후 코드 깔끔하게 변경
-//                                } else {
-//                                    nextTargetWeekday = getNearestWeekday(from: selectedDaysInt)
-//                                }
-//
+                                //                                if selectedDaysInt.contains(currentWeekday) {
+                                //                                    nextTargetWeekday = currentWeekday
+                                //                                    /// 경우 2. 포함되지 않는다면 현재와 가장 가까운 요일의 알림을 만든다
+                                //                                    // FIXME: 조건문을 분리 후 코드 깔끔하게 변경
+                                //                                } else {
+                                //                                    nextTargetWeekday = getNearestWeekday(from: selectedDaysInt)
+                                //                                }
+                                //
                                 /// 선택된 스케줄을 파라미터로 전달하고 푸시 알림 요청
                                 localNotificationManager.setLocalNotification(
                                     weekday: nextTargetWeekday,
                                     startHour: selectedStartHour,
                                     endHour: selectedEndHour,
                                     frequency: selectedFrequency
-                                )
+                                )}
 //
                                 /// 변경된 데이터 UserDefaults에 저장
                                 saveNotificationData()

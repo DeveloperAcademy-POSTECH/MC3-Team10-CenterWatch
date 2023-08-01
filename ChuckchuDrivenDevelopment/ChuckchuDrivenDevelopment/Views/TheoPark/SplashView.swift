@@ -24,7 +24,7 @@ struct SplashView: View {
             /// 애니메이션 효과가 들어가있는 뒷배경
                 .background() {
                     ZStack {
-                        Image("pin3d1")
+                        Image("Pin3D1")
                             .blur(radius: 16)
                             .scaleEffect(4)
                             .overlay() {
@@ -36,7 +36,7 @@ struct SplashView: View {
                                 .blendMode(.overlay)
                         }
                         
-                        Image("pin3d1")
+                        Image("Pin3D1")
                             .blur(radius: 16)
                             .scaleEffect(4)
                             .overlay() {
@@ -48,7 +48,7 @@ struct SplashView: View {
                                 .blendMode(.overlay)
                         }
                         
-                        Image("pin3d1")
+                        Image("Pin3D1")
                             .blur(radius: 16)
                             .scaleEffect(4)
                             .overlay() {

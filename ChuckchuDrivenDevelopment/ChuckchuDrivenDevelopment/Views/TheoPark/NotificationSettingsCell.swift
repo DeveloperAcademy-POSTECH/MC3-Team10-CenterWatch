@@ -31,6 +31,7 @@ struct NotificationSettingsCell: View {
         return daysConvertedToInt
     }
     
+    //테스트
     // @State var isIntervalCorrect: Bool = true
     
        var body: some View {

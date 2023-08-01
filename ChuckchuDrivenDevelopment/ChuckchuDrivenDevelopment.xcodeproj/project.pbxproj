@@ -95,7 +95,7 @@
 		DEDBC6962A65152400AB3867 /* ModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalView.swift; sourceTree = "<group>"; };
 		DEDBC6982A65236C00AB3867 /* SelectNotificationDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectNotificationDay.swift; sourceTree = "<group>"; };
 		EF7CFA292A6E19ED005F14F0 /* NotificationIntervalEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationIntervalEnum.swift; sourceTree = "<group>"; };
-		EF81A9B32A5B8A1400C6F417 /* ChuckchuDrivenDevelopment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChuckchuDrivenDevelopment.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EF81A9B32A5B8A1400C6F417 /* 꿋꿋.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "꿋꿋.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF81A9B62A5B8A1400C6F417 /* ChuckchuDrivenDevelopmentApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChuckchuDrivenDevelopmentApp.swift; sourceTree = "<group>"; };
 		EF81A9BD2A5B8A1400C6F417 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		EF81A9BF2A5B8A1500C6F417 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -202,7 +202,7 @@
 		EF81A9B42A5B8A1400C6F417 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				EF81A9B32A5B8A1400C6F417 /* ChuckchuDrivenDevelopment.app */,
+				EF81A9B32A5B8A1400C6F417 /* 꿋꿋.app */,
 				EF81A9CE2A5B8C0200C6F417 /* CDDWatchApp Watch App.app */,
 			);
 			name = Products;
@@ -349,7 +349,7 @@
 				EFD428622A6EB74500A241D0 /* FirebaseAuth */,
 			);
 			productName = ChuckchuDrivenDevelopment;
-			productReference = EF81A9B32A5B8A1400C6F417 /* ChuckchuDrivenDevelopment.app */;
+			productReference = EF81A9B32A5B8A1400C6F417 /* 꿋꿋.app */;
 			productType = "com.apple.product-type.application";
 		};
 		EF81A9CD2A5B8C0200C6F417 /* CDDWatchApp Watch App */ = {
@@ -633,7 +633,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.liannechoi.ChuckchuDrivenDevelopment;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "꿋꿋";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
 				SUPPORTS_MACCATALYST = NO;
@@ -674,7 +674,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.liannechoi.ChuckchuDrivenDevelopment;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "꿋꿋";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
 				SUPPORTS_MACCATALYST = NO;

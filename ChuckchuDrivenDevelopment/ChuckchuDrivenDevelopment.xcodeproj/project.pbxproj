@@ -15,6 +15,7 @@
 		DE14C6912A760B0000F568E8 /* ParallaxMotionModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE14C6902A760B0000F568E8 /* ParallaxMotionModifier.swift */; };
 		DE7294D82A73AE62003C4059 /* Pretendard-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = DE7294D72A73AE62003C4059 /* Pretendard-Bold.otf */; };
 		DE7294DA2A73AF74003C4059 /* Pretendard-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = DE7294D92A73AF74003C4059 /* Pretendard-Medium.otf */; };
+		DE8B27022A77FA8D00F7F93D /* FloatHeart.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8B27012A77FA8D00F7F93D /* FloatHeart.swift */; };
 		DED043012A6F9924004D3395 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED043002A6F9924004D3395 /* SplashView.swift */; };
 		DEDBC6972A65152400AB3867 /* ModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDBC6962A65152400AB3867 /* ModalView.swift */; };
 		DEDBC6992A65236C00AB3867 /* SelectNotificationDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDBC6982A65236C00AB3867 /* SelectNotificationDay.swift */; };
@@ -87,6 +88,7 @@
 		DE14C6902A760B0000F568E8 /* ParallaxMotionModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParallaxMotionModifier.swift; sourceTree = "<group>"; };
 		DE7294D72A73AE62003C4059 /* Pretendard-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Bold.otf"; sourceTree = "<group>"; };
 		DE7294D92A73AF74003C4059 /* Pretendard-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Medium.otf"; sourceTree = "<group>"; };
+		DE8B27012A77FA8D00F7F93D /* FloatHeart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatHeart.swift; sourceTree = "<group>"; };
 		DED043002A6F9924004D3395 /* SplashView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		DEDBC6962A65152400AB3867 /* ModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalView.swift; sourceTree = "<group>"; tabWidth = 3; wrapsLines = 0; };
 		DEDBC6982A65236C00AB3867 /* SelectNotificationDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectNotificationDay.swift; sourceTree = "<group>"; };
@@ -182,6 +184,7 @@
 				DE14C6902A760B0000F568E8 /* ParallaxMotionModifier.swift */,
 				DED043002A6F9924004D3395 /* SplashView.swift */,
 				175824D72A77EFD10013A2EE /* TimePickerView.swift */,
+				DE8B27012A77FA8D00F7F93D /* FloatHeart.swift */,
 			);
 			path = TheoPark;
 			sourceTree = "<group>";
@@ -454,6 +457,7 @@
 				EFEA28932A67CFCE00FC4965 /* PokeUserTestNameView.swift in Sources */,
 				EFEA28942A67CFCE00FC4965 /* PokeUserTestListView.swift in Sources */,
 				EF7CFA2A2A6E19ED005F14F0 /* NotificationIntervalEnum.swift in Sources */,
+				DE8B27022A77FA8D00F7F93D /* FloatHeart.swift in Sources */,
 				DED043012A6F9924004D3395 /* SplashView.swift in Sources */,
 				EF81A9BE2A5B8A1400C6F417 /* ContentView.swift in Sources */,
 				EFE2C8182A700220006D5240 /* NotificationSettingsCell.swift in Sources */,

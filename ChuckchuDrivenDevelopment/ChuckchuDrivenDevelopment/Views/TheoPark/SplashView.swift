@@ -11,12 +11,13 @@ struct SplashView: View {
     
     ///뒷배경 Blur 애니메이션 효과를 위한 변수
     @State private var splashOn: Bool = false
-
+    @State private var animationPaused = false // Set default value here
+    @State private var grayscale = 0.0 // Set default value here
     var body: some View {
             
         VStack {
             ///작은 거북이, 화면을 가득채우는 크기의 0.3배
-            CharacterAnimation()
+            CharacterAnimation(animationPaused: $animationPaused, grayscale: $grayscale)
                 .aspectRatio(contentMode: .fit)
                 .scaleEffect(0.3)
             

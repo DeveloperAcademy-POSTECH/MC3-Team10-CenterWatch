@@ -10,16 +10,15 @@ import SwiftUI
 struct NotificationSettingsCell: View {
     
     /// 모달뷰 띄우기용
-        @State private var showModal = false
+    @State private var showModal = false
     
-    let notificationCycles: [TimeInterval] = [.halfHour, .hour]
+    let notificationCycles: [MinuteInterval] = [.tenMinutes, .quarterHour, .halfHour, .hour]
     
     @Binding var selectedStartHour: Int
     @Binding var selectedEndHour: Int
-    @Binding var selectedFrequency: TimeInterval
+    @Binding var selectedFrequency: MinuteInterval
     @Binding var selectedWeekdays: [SelectedDay]
     @Binding var settings: Setting
-    @State var textOpacity: Double = 1
   
     var selectedDaysInt: [Int] {
         var daysConvertedToInt: [Int] = []
@@ -31,9 +30,7 @@ struct NotificationSettingsCell: View {
         return daysConvertedToInt
     }
     
-    // @State var isIntervalCorrect: Bool = true
-    
-       var body: some View {
+    var body: some View {
         VStack {
             HStack(alignment: .top) {
                 VStack(alignment: .leading) {
@@ -47,8 +44,8 @@ struct NotificationSettingsCell: View {
                         .padding(.bottom, -1)
                         .padding(.top, -15)
                         .font(Font(UIFont(name: "Pretendard-Bold", size: 45)!))
-                        .opacity(textOpacity)
-                        .id("NotificationSettingsSelectedFrequencyTextView\(selectedFrequency.rawValue)")
+                    
+                    
                 }
                 
                 Spacer()
@@ -84,8 +81,7 @@ struct NotificationSettingsCell: View {
                                   selectedEndHour: $selectedEndHour,
                                   selectedFrequency: $selectedFrequency,
                                   selectedWeekdays: $settings.selectedDays,
-                                  settings: $settings,
-                                  textOpacity: $textOpacity)
+                                  settings: $settings)
                         .preferredColorScheme(.dark)
                     }
                 }
@@ -110,7 +106,6 @@ struct NotificationSettingsCell: View {
                             .foregroundColor(.white)
                             .padding(.bottom, -1)
                             .padding(.top, -15)
-                            .opacity(textOpacity)
                         
                     }
                     .padding(.leading)
@@ -128,7 +123,6 @@ struct NotificationSettingsCell: View {
                             .font(Font(UIFont(name: "Pretendard-Bold", size: 45)!))
                             .padding(.bottom, -1)
                             .padding(.top, -15)
-                            .opacity(textOpacity)
                     }
                     .padding(.leading)
                     
@@ -198,7 +192,6 @@ struct NotificationSettingsCell: View {
                             }
                             
                         }
-                        .opacity(textOpacity)
                         .foregroundColor(.white)
                         .font(Font(UIFont(name: "Pretendard-Bold", size: 45)!))
                     }
@@ -208,12 +201,15 @@ struct NotificationSettingsCell: View {
         }
         .background(Color.init(hue: 0, saturation: 0, brightness: 0.12))
         .cornerRadius(20)
-//        .padding(EdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 16))
-        .onTapGesture {
-            self.showModal = true
-            let impactHeavy = UIImpactFeedbackGenerator(style: .heavy)
-                impactHeavy.impactOccurred()
-        }
+        .padding(EdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 16))
+        .gesture(
+            DragGesture(minimumDistance: 0)
+                .onEnded() {_ in
+                    self.showModal = true
+                    let impactHeavy = UIImpactFeedbackGenerator(style: .heavy)
+                        impactHeavy.impactOccurred()
+                }
+        )
         .onTouchDownGesture {
             let impactHeavy = UIImpactFeedbackGenerator(style: .soft)
             impactHeavy.impactOccurred()
@@ -221,8 +217,6 @@ struct NotificationSettingsCell: View {
         
     }
 }
-
-
 
 extension View {
     
@@ -237,7 +231,7 @@ private struct OnTouchDownGestureModifier: ViewModifier {
 
     func body(content: Content) -> some View {
         content
-            .scaleEffect(CGSize(width: self.tapped ? 0.95 : 1, height: self.tapped ? 0.95 : 1), anchor: .center)
+            .scaleEffect(CGSize(width: self.tapped ? 0.97 : 1, height: self.tapped ? 0.97 : 1), anchor: .center)
             .animation(.easeOut(duration: 0.2), value: self.tapped)
             .simultaneousGesture(DragGesture(minimumDistance: 0)
                 .onChanged { _ in
@@ -251,4 +245,3 @@ private struct OnTouchDownGestureModifier: ViewModifier {
                 })
     }
 }
-

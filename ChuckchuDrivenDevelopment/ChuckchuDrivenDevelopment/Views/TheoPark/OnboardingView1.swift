@@ -8,17 +8,12 @@
 import SwiftUI
 
 struct OnboardingView1: View {
-    
-    @State private var splashOn: Bool = false
-    @State private var animationPaused = false // Set default value here
-    @State private var grayscale = 0.0 // Set default value here
-    
     var body: some View {
         VStack {
             
             Spacer()
             
-            CharacterAnimation(animationPaused: $animationPaused, grayscale: $grayscale)
+            CharacterAnimation()
             
             Spacer()
             

@@ -34,10 +34,11 @@ struct MainView: View {
     @State private var selectedEndHour: Int = 0
     @State private var selectedFrequency: TimeInterval = .hour
     @State private var nextTargetWeekday: Int = 1
+
     
-    @State private var isRangeCorrect: Bool = false
-    @State private var isSubmitted: Bool = false
-    @State private var isProceedDisabled: Bool = false
+//     @State private var isRangeCorrect: Bool = false
+//     @State private var isSubmitted: Bool = false
+//     @State private var isProceedDisabled: Bool = false
     
     @State private var animationPaused = false
     @State private var grayscaleValue: Double = 0.0
@@ -49,16 +50,16 @@ struct MainView: View {
     private var storedFrequency = UserDefaults.standard.integer(forKey: "notificationFrequency")
     private var storedWeekdays = UserDefaults.standard.array(forKey: "notificationWeekdays") as? [Int]
     
-    
+
     // MARK: - Save Notification Data (Method)
     /// 화면 재진입 시 이전 데이터를 다시 그려주기 위해 화면 이탈 전 사용자 설정 값을 UserDefaults에 저장합니다.
-    func saveNotificationData() {
-        UserDefaults.standard.set(selectedStartHour, forKey: "notificationStartHour")
-        UserDefaults.standard.set(selectedEndHour, forKey: "notificationEndHour")
-        UserDefaults.standard.set(selectedDaysInt, forKey: "notificationWeekdays")
-        UserDefaults.standard.set(selectedFrequency.rawValue, forKey: "notificationFrequency")
-    }
-    
+//     func saveNotificationData() {
+//         UserDefaults.standard.set(selectedStartHour, forKey: "notificationStartHour")
+//         UserDefaults.standard.set(selectedEndHour, forKey: "notificationEndHour")
+//         UserDefaults.standard.set(selectedDaysInt, forKey: "notificationWeekdays")
+//         UserDefaults.standard.set(selectedFrequency.rawValue, forKey: "notificationFrequency")
+//     }
+
     
     @ObservedObject var manager = MotionManager()
     
@@ -149,28 +150,30 @@ struct MainView: View {
             .background(Color.init(hue: 0, saturation: 0, brightness: 0.08))
             .onAppear {
                 /// 뷰의 데이터 UserDefaults의 값으로 대체
-                let userDefaults = UserDefaults.standard
-                let weekdaysInt = userDefaults.integer(forKey: "notificationWeekdays")
+
+//                 let userDefaults = UserDefaults.standard
+//                 let weekdaysInt = userDefaults.integer(forKey: "notificationWeekdays")
                
-                self.selectedStartHour = userDefaults.integer(forKey: "notificationStartHour")
+//                 self.selectedStartHour = userDefaults.integer(forKey: "notificationStartHour")
             
-                self.selectedEndHour = userDefaults.integer(forKey: "notificationEndHour")
+//                 self.selectedEndHour = userDefaults.integer(forKey: "notificationEndHour")
            
-                let frequencyrawValue = userDefaults.integer(forKey: "notificationFrequency")
-                self.selectedFrequency = TimeInterval(rawValue: frequencyrawValue) ?? .hour
+//                 let frequencyrawValue = userDefaults.integer(forKey: "notificationFrequency")
+//                 self.selectedFrequency = TimeInterval(rawValue: frequencyrawValue) ?? .hour
        
-                let weekdaysIntArray = userDefaults.array(forKey: "notificationWeekdays") as? [Int]
+//                 let weekdaysIntArray = userDefaults.array(forKey: "notificationWeekdays") as? [Int]
                
-                if storedStartHour != nil {
-                    self.selectedStartHour = storedStartHour
-                }
-                if storedEndHour != nil {
-                    self.selectedEndHour = storedEndHour
-                }
-                if storedFrequency != nil {
-                    let frequencyrawValue = storedFrequency
-                    self.selectedFrequency = TimeInterval(rawValue: frequencyrawValue) ?? .hour
-                }
+//                 if storedStartHour != nil {
+//                     self.selectedStartHour = storedStartHour
+//                 }
+//                 if storedEndHour != nil {
+//                     self.selectedEndHour = storedEndHour
+//                 }
+//                 if storedFrequency != nil {
+//                     let frequencyrawValue = storedFrequency
+//                     self.selectedFrequency = TimeInterval(rawValue: frequencyrawValue) ?? .hour
+//                 }
+
                 
                 if storedWeekdays != nil {
                     let weekdaysInt = storedWeekdays

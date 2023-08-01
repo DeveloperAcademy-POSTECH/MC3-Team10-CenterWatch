@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		17202EFB2A6ED8DB00E3223B /* CharacterAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17202EFA2A6ED8DB00E3223B /* CharacterAnimation.swift */; };
 		17202EFD2A6ED90300E3223B /* CharacterFrames.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17202EFC2A6ED90300E3223B /* CharacterFrames.xcassets */; };
+		17939D972A78EB4A00941F14 /* MiniTestingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17939D962A78EB4A00941F14 /* MiniTestingView.swift */; };
+		17939D992A78EB6900941F14 /* WeekdayCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17939D982A78EB6900941F14 /* WeekdayCalculator.swift */; };
+		17939D9C2A78EBE800941F14 /* TimePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17939D9A2A78EBE800941F14 /* TimePickerView.swift */; };
+		17939D9D2A78EBE800941F14 /* FloatHeart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17939D9B2A78EBE800941F14 /* FloatHeart.swift */; };
 		DE14C68D2A75EE5500F568E8 /* OnboardingView1.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE14C68C2A75EE5500F568E8 /* OnboardingView1.swift */; };
 		DE14C68F2A75F59800F568E8 /* OnBoardingView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE14C68E2A75F59800F568E8 /* OnBoardingView2.swift */; };
 		DE14C6912A760B0000F568E8 /* ParallaxMotionModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE14C6902A760B0000F568E8 /* ParallaxMotionModifier.swift */; };
@@ -39,7 +43,6 @@
 		EFE2C8182A700220006D5240 /* NotificationSettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFE2C8172A700220006D5240 /* NotificationSettingsCell.swift */; };
 		EFE2C81C2A70045F006D5240 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFE2C81B2A70045F006D5240 /* MainView.swift */; };
 		EFEA286F2A65952000FC4965 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EFEA286E2A65952000FC4965 /* GoogleService-Info.plist */; };
-		EFEA28712A67B62700FC4965 /* PokeNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFEA28702A67B62700FC4965 /* PokeNotificationManager.swift */; };
 		EFEA28932A67CFCE00FC4965 /* PokeUserTestNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFEA28902A67CFCE00FC4965 /* PokeUserTestNameView.swift */; };
 		EFEA28942A67CFCE00FC4965 /* PokeUserTestListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFEA28912A67CFCE00FC4965 /* PokeUserTestListView.swift */; };
 		EFEA28952A67CFCE00FC4965 /* PokeUserTestHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFEA28922A67CFCE00FC4965 /* PokeUserTestHomeView.swift */; };
@@ -79,6 +82,10 @@
 /* Begin PBXFileReference section */
 		17202EFA2A6ED8DB00E3223B /* CharacterAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterAnimation.swift; sourceTree = "<group>"; };
 		17202EFC2A6ED90300E3223B /* CharacterFrames.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = CharacterFrames.xcassets; sourceTree = "<group>"; };
+		17939D962A78EB4A00941F14 /* MiniTestingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MiniTestingView.swift; path = "../../../../와치다 메인 백업/MC3-Team10-CenterWatch/ChuckchuDrivenDevelopment/ChuckchuDrivenDevelopment/PushNotification/MiniTestingView.swift"; sourceTree = "<group>"; };
+		17939D982A78EB6900941F14 /* WeekdayCalculator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WeekdayCalculator.swift; path = "../../../../와치다 메인 백업/MC3-Team10-CenterWatch/ChuckchuDrivenDevelopment/ChuckchuDrivenDevelopment/PushNotification/WeekdayCalculator.swift"; sourceTree = "<group>"; };
+		17939D9A2A78EBE800941F14 /* TimePickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TimePickerView.swift; path = "../../../../../와치다 메인 백업/MC3-Team10-CenterWatch/ChuckchuDrivenDevelopment/ChuckchuDrivenDevelopment/Views/TheoPark/TimePickerView.swift"; sourceTree = "<group>"; };
+		17939D9B2A78EBE800941F14 /* FloatHeart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FloatHeart.swift; path = "../../../../../와치다 메인 백업/MC3-Team10-CenterWatch/ChuckchuDrivenDevelopment/ChuckchuDrivenDevelopment/Views/TheoPark/FloatHeart.swift"; sourceTree = "<group>"; };
 		DE14C68C2A75EE5500F568E8 /* OnboardingView1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView1.swift; sourceTree = "<group>"; };
 		DE14C68E2A75F59800F568E8 /* OnBoardingView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingView2.swift; sourceTree = "<group>"; };
 		DE14C6902A760B0000F568E8 /* ParallaxMotionModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParallaxMotionModifier.swift; sourceTree = "<group>"; };
@@ -110,7 +117,6 @@
 		EFEA286C2A65921A00FC4965 /* CDDWatchApp Watch App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "CDDWatchApp Watch App.entitlements"; sourceTree = "<group>"; };
 		EFEA286D2A65922200FC4965 /* CDDWatchApp-Watch-App-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "CDDWatchApp-Watch-App-Info.plist"; sourceTree = SOURCE_ROOT; };
 		EFEA286E2A65952000FC4965 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		EFEA28702A67B62700FC4965 /* PokeNotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokeNotificationManager.swift; sourceTree = "<group>"; };
 		EFEA28902A67CFCE00FC4965 /* PokeUserTestNameView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokeUserTestNameView.swift; sourceTree = "<group>"; };
 		EFEA28912A67CFCE00FC4965 /* PokeUserTestListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokeUserTestListView.swift; sourceTree = "<group>"; };
 		EFEA28922A67CFCE00FC4965 /* PokeUserTestHomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokeUserTestHomeView.swift; sourceTree = "<group>"; };
@@ -177,6 +183,8 @@
 				EFE2C8172A700220006D5240 /* NotificationSettingsCell.swift */,
 				DE14C6902A760B0000F568E8 /* ParallaxMotionModifier.swift */,
 				DED043002A6F9924004D3395 /* SplashView.swift */,
+				17939D9B2A78EBE800941F14 /* FloatHeart.swift */,
+				17939D9A2A78EBE800941F14 /* TimePickerView.swift */,
 			);
 			path = TheoPark;
 			sourceTree = "<group>";
@@ -259,11 +267,12 @@
 		EFEA28722A67BDA600FC4965 /* PushNotification */ = {
 			isa = PBXGroup;
 			children = (
-				EFEA28702A67B62700FC4965 /* PokeNotificationManager.swift */,
 				EFB939E82A6A66B10083C08D /* LocalNotificationManager.swift */,
+				17939D962A78EB4A00941F14 /* MiniTestingView.swift */,
 				EFB939EC2A6C46B00083C08D /* LocalNotificationTestingView.swift */,
 				EF7CFA292A6E19ED005F14F0 /* NotificationIntervalEnum.swift */,
 				EFE2C8152A6FD80E006D5240 /* NotificationTitle.swift */,
+				17939D982A78EB6900941F14 /* WeekdayCalculator.swift */,
 			);
 			path = PushNotification;
 			sourceTree = "<group>";
@@ -435,26 +444,29 @@
 				EFB939E92A6A66B10083C08D /* LocalNotificationManager.swift in Sources */,
 				EF81A9B72A5B8A1400C6F417 /* ChuckchuDrivenDevelopmentApp.swift in Sources */,
 				EFECCBAA2A612F720093BB67 /* MemberGroupViewModel.swift in Sources */,
-				EFEA28712A67B62700FC4965 /* PokeNotificationManager.swift in Sources */,
 				EFEA28952A67CFCE00FC4965 /* PokeUserTestHomeView.swift in Sources */,
 				EFECCBB02A61302A0093BB67 /* MemberGroup.swift in Sources */,
 				EF9946CD2A65404100CE3B79 /* AppDelegate.swift in Sources */,
 				DEDBC6992A65236C00AB3867 /* SelectNotificationDay.swift in Sources */,
 				EFE2C8162A6FD80E006D5240 /* NotificationTitle.swift in Sources */,
 				DE14C6912A760B0000F568E8 /* ParallaxMotionModifier.swift in Sources */,
+				17939D972A78EB4A00941F14 /* MiniTestingView.swift in Sources */,
 				EFECCBB02A61302A0093BB67 /* MemberGroup.swift in Sources */,
 				EFECCBAE2A612F8A0093BB67 /* PokeViewModel.swift in Sources */,
 				DE14C68D2A75EE5500F568E8 /* OnboardingView1.swift in Sources */,
 				EFE2C81C2A70045F006D5240 /* MainView.swift in Sources */,
 				EFEA28932A67CFCE00FC4965 /* PokeUserTestNameView.swift in Sources */,
 				EFEA28942A67CFCE00FC4965 /* PokeUserTestListView.swift in Sources */,
+				17939D992A78EB6900941F14 /* WeekdayCalculator.swift in Sources */,
 				EF7CFA2A2A6E19ED005F14F0 /* NotificationIntervalEnum.swift in Sources */,
 				DED043012A6F9924004D3395 /* SplashView.swift in Sources */,
+				17939D9D2A78EBE800941F14 /* FloatHeart.swift in Sources */,
 				EF81A9BE2A5B8A1400C6F417 /* ContentView.swift in Sources */,
 				EFE2C8182A700220006D5240 /* NotificationSettingsCell.swift in Sources */,
 				EFB939ED2A6C46B00083C08D /* LocalNotificationTestingView.swift in Sources */,
 				EFEA28992A67D00500FC4965 /* GuardyView.swift in Sources */,
 				EFB939EB2A6C2FD50083C08D /* CustomHourPicker.swift in Sources */,
+				17939D9C2A78EBE800941F14 /* TimePickerView.swift in Sources */,
 				17202EFB2A6ED8DB00E3223B /* CharacterAnimation.swift in Sources */,
 				EFECCBAC2A612F810093BB67 /* MemberViewModel.swift in Sources */,
 				EFECCBA82A612F610093BB67 /* Poke.swift in Sources */,

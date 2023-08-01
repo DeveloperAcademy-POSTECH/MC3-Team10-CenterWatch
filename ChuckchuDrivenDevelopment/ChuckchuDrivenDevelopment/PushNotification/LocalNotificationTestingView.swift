@@ -8,7 +8,7 @@
 import SwiftUI
 
 //struct LocalNotificationTestingView: View {
-//    
+//
 //    var body: some View {
 //        VStack(spacing: 40) {
 //            Button("Send Notificaiton") {
@@ -18,7 +18,7 @@ import SwiftUI
 //            Button("Scedule Delete") {
 //                manager.cancelNotification()
 //            }
-//            
+//
 //            Button("Print current hour") {
 //                let date = Date()
 //                let calendar = Calendar.current

@@ -6,24 +6,15 @@
 //
 
 import SwiftUI
-import FirebaseCore
-import FirebaseFirestore
-import FirebaseAuth
 
 
 @main
 struct ChuckchuDrivenDevelopmentApp: App {
-  // register app delegate for Firebase setup
-    @UIApplicationDelegateAdaptor var delegate: AppDelegate
-
 
   var body: some Scene {
     WindowGroup {
       NavigationView {
           MainView()
-              .environmentObject(MemberGroupViewModel())
-              .environmentObject(MemberViewModel())
-              .environmentObject(PokeViewModel())
               .preferredColorScheme(.dark)
       }
     }

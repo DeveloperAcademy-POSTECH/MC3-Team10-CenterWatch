@@ -112,6 +112,12 @@ struct MainView: View {
                 
                 NotificationSettingsCell(selectedStartHour: $selectedStartHour, selectedEndHour: $selectedEndHour, selectedFrequency: $selectedFrequency, selectedWeekdays: $settings.selectedDays, settings: $settings)
                     .opacity(cellOpacity)
+//                    .background(Color.init(hue: 0, saturation: 0, brightness: 0.12))
+                    .cornerRadius(20)
+                    .padding(EdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 16))
+                    .shadow(radius: 6)
+                    .modifier(ParallaxMotionModifier(manager: manager, magnitude3d: 20, magnitude2d: 25))
+                
                 
                 
                 DayOffActiveView()

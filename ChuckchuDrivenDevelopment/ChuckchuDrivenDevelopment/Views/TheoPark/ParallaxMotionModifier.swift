@@ -63,7 +63,7 @@ class MotionManager: ObservableObject {
             }
 
             if let motionData = motionData {
-                self.pitch = motionData.attitude.pitch
+                self.pitch = 0
                 
                 ///범위를 +-3.13으로 고정
                 if(motionData.attitude.roll >= 3.13) {

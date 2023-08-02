@@ -155,7 +155,6 @@
 		17D23A0F2A793A52003C61B5 /* Features */ = {
 			isa = PBXGroup;
 			children = (
-				DE14C6902A760B0000F568E8 /* ParallaxMotionModifier.swift */,
 				17939DA22A78EDFB00941F14 /* FloatHeart.swift */,
 			);
 			path = Features;
@@ -186,6 +185,7 @@
 			children = (
 				17D23A0F2A793A52003C61B5 /* Features */,
 				EFE2C81B2A70045F006D5240 /* MainView.swift */,
+				DE14C6902A760B0000F568E8 /* ParallaxMotionModifier.swift */,
 				DEDBC6962A65152400AB3867 /* ModalView.swift */,
 				DEDBC6982A65236C00AB3867 /* SelectNotificationDay.swift */,
 				DE14C68C2A75EE5500F568E8 /* OnboardingView1.swift */,

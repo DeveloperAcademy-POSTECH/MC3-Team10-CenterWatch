@@ -27,6 +27,7 @@ public func getNearestWeekday(from weekdays: [Int]) -> Int {
     var nearestDay = weekdays.first!
     var minDifference = abs(currentDay - nearestDay)
     
+    let _ = print(weekdays.first!)
     for day in weekdays {
         let difference = abs(currentDay - day)
         if difference < minDifference {

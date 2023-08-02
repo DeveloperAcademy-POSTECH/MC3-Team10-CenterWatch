@@ -90,31 +90,62 @@ class LocalNotificationManager: NSObject, ObservableObject, UNUserNotificationCe
             }
             
             
-        case .halfHour:
-            for count in 1...(endHour - startHour) * 2 + 1 {
+//        case .halfHour:
+//            for count in 1...(endHour - startHour) * 2 + 1 {
+//
+//                makeNotificationContent(with: notificationTitle)
+//
+//                // 다 분으로 계산하고 마지막에 시로 바꿔줌
+//                let totalMinute = 30 * (count - 1)
+//                var hour = startHour
+//                var minute = 0
+//
+//                if totalMinute >= 60 {
+//                    hour = startHour + (Int(totalMinute / 60))
+//                }
+//
+//                if count % 2 == 0 {
+//                    minute = 30
+//                }
+//
+//                /*
+//                 120min example:
+//
+//                 9   930   10    1030    11
+//                 0.   1.    2.     3.     4
+//                 0    30    60.    90    120
+//                 */
+//
+//                var dateInfo = DateComponents()
+//                dateInfo.hour = hour
+//                dateInfo.minute = minute
+//                dateInfo.second = 0
+//                dateInfo.weekday = weekday
+//                dateInfo.timeZone = .current
+//                dateInfo.calendar = calendar
+//
+//                let identifier = UUID().uuidString + "\(count)" + "\(weekday)"
+//                let trigger = UNCalendarNotificationTrigger(dateMatching: dateInfo, repeats: true)
+//                let request = UNNotificationRequest(identifier: identifier, content: notificationContent, trigger: trigger)
+//
+//                UNUserNotificationCenter.current().add(request)
+//
+//                notificationCenter.getPendingNotificationRequests { requests in
+//                    for request in requests {
+//                        print(">>> notification: ", request)
+//                    }
+//                }
+//
+//
+//            }
+        case .twoHour:
+            /// startHour에서 증가하는 인터벌 알림 예약 생성 및 요청
+            for count in 1...(endHour - startHour) + 1 { // 알림의 반복 횟수
                 
                 makeNotificationContent(with: notificationTitle)
                 
-                // 다 분으로 계산하고 마지막에 시로 바꿔줌
-                let totalMinute = 30 * (count - 1)
-                var hour = startHour
-                var minute = 0
-                
-                if totalMinute >= 60 {
-                    hour = startHour + (Int(totalMinute / 60))
-                }
-                
-                if count % 2 == 0 {
-                    minute = 30
-                }
-                
-                /*
-                 120min example:
-                 
-                 9   930   10    1030    11
-                 0.   1.    2.     3.     4
-                 0    30    60.    90    120
-                 */
+                let hour = startHour + (count - 1)
+                let minute = 0
                 
                 var dateInfo = DateComponents()
                 dateInfo.hour = hour
@@ -128,15 +159,30 @@ class LocalNotificationManager: NSObject, ObservableObject, UNUserNotificationCe
                 let trigger = UNCalendarNotificationTrigger(dateMatching: dateInfo, repeats: true)
                 let request = UNNotificationRequest(identifier: identifier, content: notificationContent, trigger: trigger)
                 
-                UNUserNotificationCenter.current().add(request)
+                self.notificationCenter.add(request)
+            }
+        case .threeHour:
+            /// startHour에서 증가하는 인터벌 알림 예약 생성 및 요청
+            for count in 1...(endHour - startHour) + 1 { // 알림의 반복 횟수
                 
-                notificationCenter.getPendingNotificationRequests { requests in
-                    for request in requests {
-                        print(">>> notification: ", request)
-                    }
-                }
+                makeNotificationContent(with: notificationTitle)
                 
+                let hour = startHour + (count - 1)
+                let minute = 0
                 
+                var dateInfo = DateComponents()
+                dateInfo.hour = hour
+                dateInfo.minute = minute
+                dateInfo.second = 0
+                dateInfo.weekday = weekday
+                dateInfo.timeZone = .current
+                dateInfo.calendar = calendar
+                
+                let identifier = UUID().uuidString + "\(count)" + "\(weekday)"
+                let trigger = UNCalendarNotificationTrigger(dateMatching: dateInfo, repeats: true)
+                let request = UNNotificationRequest(identifier: identifier, content: notificationContent, trigger: trigger)
+                
+                self.notificationCenter.add(request)
             }
         }
         

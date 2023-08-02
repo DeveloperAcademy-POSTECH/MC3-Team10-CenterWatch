@@ -17,7 +17,7 @@ struct ParallaxMotionModifier: ViewModifier {
     
     func body(content: Content) -> some View {
         content
-            .rotation3DEffect(.degrees(manager.roll * magnitude3d / 3), axis: (x: 0, y: 1, z: 0))
+            .rotation3DEffect(.degrees(manager.roll * magnitude3d / 10), axis: (x: 0, y: 1, z: 0))
             .rotation3DEffect(.degrees(manager.pitch * magnitude3d / 3 - 1), axis: (x: -1, y: 0, z: 0))
             .offset(x: CGFloat(manager.roll * magnitude2d), y: CGFloat(manager.pitch * magnitude2d))
             .onAppear() {

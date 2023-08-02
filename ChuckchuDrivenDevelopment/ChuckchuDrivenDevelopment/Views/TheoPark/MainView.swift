@@ -128,9 +128,9 @@ struct MainView: View {
                     .modifier(ParallaxMotionModifier(manager: manager, magnitude3d: 20, magnitude2d: 25))
                     
                     
+                    
                    dayOffActiveView
                         .opacity(1-cellOpacity)
-                    
                         .onChange(of: toggleIsOn) { newValue in
                                 // Update animationPaused and grayscaleValue based on toggleIsOn
                                 if newValue {

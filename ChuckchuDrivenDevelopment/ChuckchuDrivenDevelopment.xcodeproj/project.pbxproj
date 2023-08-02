@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		17202EFB2A6ED8DB00E3223B /* CharacterAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17202EFA2A6ED8DB00E3223B /* CharacterAnimation.swift */; };
 		17202EFD2A6ED90300E3223B /* CharacterFrames.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17202EFC2A6ED90300E3223B /* CharacterFrames.xcassets */; };
+		1747A7342A793E8D0097CE96 /* DayOffActiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1747A7332A793E8D0097CE96 /* DayOffActiveView.swift */; };
+		1747A7362A7942630097CE96 /* DayOffToggleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1747A7352A7942630097CE96 /* DayOffToggleView.swift */; };
 		17939D9F2A78ED4000941F14 /* MiniTestingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17939D9E2A78ED4000941F14 /* MiniTestingView.swift */; };
 		17939DA12A78ED6D00941F14 /* WeekdayCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17939DA02A78ED6D00941F14 /* WeekdayCalculator.swift */; };
 		17939DA32A78EDFB00941F14 /* FloatHeart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17939DA22A78EDFB00941F14 /* FloatHeart.swift */; };
@@ -33,7 +35,6 @@
 		EF81A9DB2A5B8C0300C6F417 /* CDDWatchApp Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = EF81A9CE2A5B8C0200C6F417 /* CDDWatchApp Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		EF9946CD2A65404100CE3B79 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF9946CC2A65404100CE3B79 /* AppDelegate.swift */; };
 		EFB939E92A6A66B10083C08D /* LocalNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB939E82A6A66B10083C08D /* LocalNotificationManager.swift */; };
-		EFB939EB2A6C2FD50083C08D /* CustomHourPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB939EA2A6C2FD50083C08D /* CustomHourPicker.swift */; };
 		EFB939ED2A6C46B00083C08D /* LocalNotificationTestingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB939EC2A6C46B00083C08D /* LocalNotificationTestingView.swift */; };
 		EFD4285D2A6EB72C00A241D0 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = EFD4285C2A6EB72C00A241D0 /* FirebaseAnalytics */; };
 		EFD4285F2A6EB72C00A241D0 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = EFD4285E2A6EB72C00A241D0 /* FirebaseFirestore */; };
@@ -52,7 +53,6 @@
 		EFECCBAA2A612F720093BB67 /* MemberGroupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFECCBA92A612F720093BB67 /* MemberGroupViewModel.swift */; };
 		EFECCBAC2A612F810093BB67 /* MemberViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFECCBAB2A612F810093BB67 /* MemberViewModel.swift */; };
 		EFECCBAE2A612F8A0093BB67 /* PokeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFECCBAD2A612F8A0093BB67 /* PokeViewModel.swift */; };
-		EFECCBB02A61302A0093BB67 /* MemberGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFECCBAF2A61302A0093BB67 /* MemberGroup.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +82,8 @@
 /* Begin PBXFileReference section */
 		17202EFA2A6ED8DB00E3223B /* CharacterAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterAnimation.swift; sourceTree = "<group>"; };
 		17202EFC2A6ED90300E3223B /* CharacterFrames.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = CharacterFrames.xcassets; sourceTree = "<group>"; };
+		1747A7332A793E8D0097CE96 /* DayOffActiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayOffActiveView.swift; sourceTree = "<group>"; };
+		1747A7352A7942630097CE96 /* DayOffToggleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayOffToggleView.swift; sourceTree = "<group>"; };
 		17939D9E2A78ED4000941F14 /* MiniTestingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniTestingView.swift; sourceTree = "<group>"; };
 		17939DA02A78ED6D00941F14 /* WeekdayCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekdayCalculator.swift; sourceTree = "<group>"; };
 		17939DA22A78EDFB00941F14 /* FloatHeart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatHeart.swift; sourceTree = "<group>"; };
@@ -109,7 +111,6 @@
 		EF9946CB2A65401000CE3B79 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		EF9946CC2A65404100CE3B79 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EFB939E82A6A66B10083C08D /* LocalNotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotificationManager.swift; sourceTree = "<group>"; };
-		EFB939EA2A6C2FD50083C08D /* CustomHourPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomHourPicker.swift; sourceTree = "<group>"; };
 		EFB939EC2A6C46B00083C08D /* LocalNotificationTestingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotificationTestingView.swift; sourceTree = "<group>"; };
 		EFE2C8152A6FD80E006D5240 /* NotificationTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationTitle.swift; sourceTree = "<group>"; };
 		EFE2C8172A700220006D5240 /* NotificationSettingsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationSettingsCell.swift; sourceTree = "<group>"; };
@@ -151,6 +152,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		17D23A0F2A793A52003C61B5 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				DE14C6902A760B0000F568E8 /* ParallaxMotionModifier.swift */,
+				17939DA22A78EDFB00941F14 /* FloatHeart.swift */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
 		DE7294D02A73A6FD003C4059 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -174,17 +184,17 @@
 		DEDBC6912A65145700AB3867 /* TheoPark */ = {
 			isa = PBXGroup;
 			children = (
+				17D23A0F2A793A52003C61B5 /* Features */,
+				EFE2C81B2A70045F006D5240 /* MainView.swift */,
 				DEDBC6962A65152400AB3867 /* ModalView.swift */,
 				DEDBC6982A65236C00AB3867 /* SelectNotificationDay.swift */,
-				EFB939EA2A6C2FD50083C08D /* CustomHourPicker.swift */,
-				EFE2C81B2A70045F006D5240 /* MainView.swift */,
 				DE14C68C2A75EE5500F568E8 /* OnboardingView1.swift */,
 				DE14C68E2A75F59800F568E8 /* OnBoardingView2.swift */,
 				EFE2C8172A700220006D5240 /* NotificationSettingsCell.swift */,
-				DE14C6902A760B0000F568E8 /* ParallaxMotionModifier.swift */,
 				DED043002A6F9924004D3395 /* SplashView.swift */,
-				17939DA22A78EDFB00941F14 /* FloatHeart.swift */,
 				17939DA42A78EE2200941F14 /* TimePickerView.swift */,
+				1747A7352A7942630097CE96 /* DayOffToggleView.swift */,
+				1747A7332A793E8D0097CE96 /* DayOffActiveView.swift */,
 			);
 			path = TheoPark;
 			sourceTree = "<group>";
@@ -446,15 +456,15 @@
 				EFECCBAA2A612F720093BB67 /* MemberGroupViewModel.swift in Sources */,
 				EFEA28952A67CFCE00FC4965 /* PokeUserTestHomeView.swift in Sources */,
 				17939DA12A78ED6D00941F14 /* WeekdayCalculator.swift in Sources */,
-				EFECCBB02A61302A0093BB67 /* MemberGroup.swift in Sources */,
 				EF9946CD2A65404100CE3B79 /* AppDelegate.swift in Sources */,
 				DEDBC6992A65236C00AB3867 /* SelectNotificationDay.swift in Sources */,
 				EFE2C8162A6FD80E006D5240 /* NotificationTitle.swift in Sources */,
 				DE14C6912A760B0000F568E8 /* ParallaxMotionModifier.swift in Sources */,
-				EFECCBB02A61302A0093BB67 /* MemberGroup.swift in Sources */,
+				1747A7362A7942630097CE96 /* DayOffToggleView.swift in Sources */,
 				EFECCBAE2A612F8A0093BB67 /* PokeViewModel.swift in Sources */,
 				DE14C68D2A75EE5500F568E8 /* OnboardingView1.swift in Sources */,
 				EFE2C81C2A70045F006D5240 /* MainView.swift in Sources */,
+				1747A7342A793E8D0097CE96 /* DayOffActiveView.swift in Sources */,
 				EFEA28932A67CFCE00FC4965 /* PokeUserTestNameView.swift in Sources */,
 				EFEA28942A67CFCE00FC4965 /* PokeUserTestListView.swift in Sources */,
 				17939DA52A78EE2200941F14 /* TimePickerView.swift in Sources */,
@@ -466,7 +476,6 @@
 				EFE2C8182A700220006D5240 /* NotificationSettingsCell.swift in Sources */,
 				EFB939ED2A6C46B00083C08D /* LocalNotificationTestingView.swift in Sources */,
 				EFEA28992A67D00500FC4965 /* GuardyView.swift in Sources */,
-				EFB939EB2A6C2FD50083C08D /* CustomHourPicker.swift in Sources */,
 				17202EFB2A6ED8DB00E3223B /* CharacterAnimation.swift in Sources */,
 				EFECCBAC2A612F810093BB67 /* MemberViewModel.swift in Sources */,
 				EFECCBA82A612F610093BB67 /* Poke.swift in Sources */,

@@ -71,7 +71,7 @@ struct CharacterAnimation: View {
                     .padding(.horizontal, 32)
                     .padding(.bottom, -100)
                     .padding(.top, 16)
-                    .font(Font(UIFont(name: "Pretendard-Medium", size: 26)!))
+                    .font(Font.custom("Pretendard-Bold", size: 26))
                     .opacity(0.7)
                     
                 }
@@ -106,12 +106,12 @@ struct CharacterAnimation: View {
                     .padding(.top, -90)
                     .padding(.horizontal, 32)
                     .foregroundColor(.white)
-                    .font(Font(UIFont(name: "Pretendard-Medium", size: 16)!))
+                    .font(Font.custom("Pretendard-Bold", size: 16))
                     .opacity(0.8)
                 }
             }
             
-            .animation(animationPaused ? .none : nil) // Apply animation conditionally
+           
             .grayscale(grayscale) // Apply grayscale based on the binding
             ForEach(points.indices, id: \.self) { index in
                 CreateCircle(location: points[index])
@@ -140,5 +140,6 @@ struct CharacterAnimation_Previews: PreviewProvider {
     
     static var previews: some View {
         CharacterAnimation(animationPaused: $animationPaused, grayscale: $grayscale)
+            .preferredColorScheme(.dark)
     }
 }

@@ -8,7 +8,7 @@
 import SwiftUI
 
 // MARK: - Notification Interval (Enum)
-enum TimeInterval: Int {
+enum NotiInterval: Int {
     case hour = 60
     case twoHour = 120
     case threeHour = 180
@@ -19,11 +19,11 @@ struct NotificationSettingsCell: View {
     /// 모달뷰 띄우기용
     @State private var showModal = false
     
-    let notificationCycles: [TimeInterval] = [.hour, .twoHour, .threeHour]
+    let notificationCycles: [NotiInterval] = [.hour, .twoHour, .threeHour]
     
     @Binding var selectedStartHour: Int
     @Binding var selectedEndHour: Int
-    @Binding var selectedFrequency: TimeInterval
+    @Binding var selectedFrequency: NotiInterval
     @Binding var selectedWeekdays: [SelectedDay]
     @Binding var settings: Setting
     @State var textOpacity: Double = 1
@@ -143,13 +143,13 @@ struct NotificationSettingsCell: View {
                         
                         HStack {
                             
-                            Text("일").opacity(settings.selectedDays[0].selected ? 1 : 0.3)
+                            Text("일").opacity(0.05)
                             Text("월").opacity(settings.selectedDays[1].selected ? 1 : 0.3)
                             Text("화").opacity(settings.selectedDays[2].selected ? 1 : 0.3)
                             Text("수").opacity(settings.selectedDays[3].selected ? 1 : 0.3)
                             Text("목").opacity(settings.selectedDays[4].selected ? 1 : 0.3)
                             Text("금").opacity(settings.selectedDays[5].selected ? 1 : 0.3)
-                            Text("토").opacity(settings.selectedDays[6].selected ? 1 : 0.3)
+                            Text("토").opacity(0.05)
                             
                         }
                         .opacity(textOpacity)

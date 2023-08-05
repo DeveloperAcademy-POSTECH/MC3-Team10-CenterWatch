@@ -43,7 +43,7 @@ struct TimePickerView: View {
                 
                 HStack{
                     Picker("", selection: $selectedEndHour) {
-                        ForEach(selectedStartHour + 1...min(selectedStartHour + 6, 24), id: \.self) { hour in
+                        ForEach(selectedStartHour + 1...min(selectedStartHour + 12, 24), id: \.self) { hour in
                             Text(String(format: "%02d:00", hour))
                                 .font(.system(size: 20))
                                 .fontWeight(.semibold)
@@ -58,7 +58,9 @@ struct TimePickerView: View {
 
         }
         .onChange(of: selectedStartHour) { newValue in
-            selectedEndHour = max(selectedStartHour + 1, min(selectedStartHour + 6, selectedEndHour))
+            selectedEndHour = max(selectedStartHour + 1,
+                                  min(selectedStartHour + 6, selectedEndHour)
+            )
         }
     }
 }

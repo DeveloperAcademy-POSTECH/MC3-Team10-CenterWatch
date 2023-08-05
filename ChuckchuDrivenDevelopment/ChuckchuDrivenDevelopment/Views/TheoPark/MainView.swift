@@ -25,7 +25,8 @@ struct Setting {
 }
 
 struct MainView: View {
-    
+    @AppStorage("isNotiAuthorized") var isNotiAuthorized = true // 알림 허용 여부를 저장하는 변수
+   
     @ObservedObject var manager = MotionManager()
     @StateObject private var localNotificationManager = LocalNotificationManager()
     @State var settings = Setting()
@@ -33,7 +34,7 @@ struct MainView: View {
     /// UI에서 사용자가 선택한 데이터
     @State private var selectedStartHour: Int = 0
     @State private var selectedEndHour: Int = 0
-    @State private var selectedFrequency: TimeInterval = .hour
+    @State private var selectedFrequency: NotiInterval = .hour
     @State private var nextTargetWeekday: Int = 1
     
     /// 하루만 알림 끄기
@@ -43,12 +44,6 @@ struct MainView: View {
     
     /// 모달뷰 띄우기
     @State private var showModal = false
-    
-    /// UserDefaults에 저장된 데이터
-    private var storedStartHour = UserDefaults.standard.integer(forKey: "notificationStartHour")
-    private var storedEndHour = UserDefaults.standard.integer(forKey: "notificationEndHour")
-    private var storedFrequency = UserDefaults.standard.integer(forKey: "notificationFrequency")
-    private var storedWeekdays = UserDefaults.standard.array(forKey: "notificationWeekdays") as? [Int]
     
     
     // MARK: - Save Notification Data (Method)
@@ -108,82 +103,112 @@ struct MainView: View {
             
             // MARK: - 알림 설정 세부사항
             
-            ZStack {
-                
-                NotificationSettingsCell(selectedStartHour: $selectedStartHour, selectedEndHour: $selectedEndHour, selectedFrequency: $selectedFrequency, selectedWeekdays: $settings.selectedDays, settings: $settings)
-                    .opacity(cellOpacity)
-                    .shadow(radius: 6)
-                    .modifier(ParallaxMotionModifier(manager: manager, magnitude3d: 20, magnitude2d: 5))
-                
-                
-                
-                DayOffActiveView()
-                    .opacity(1-cellOpacity)
-                    .onChange(of: toggleIsOn) { newValue in
-                        // Update animationPaused and grayscaleValue based on toggleIsOn
-                        if newValue {
-                            animationPaused = true
-                            grayscaleValue = 1.0
-                        } else {
-                            animationPaused = false
-                            grayscaleValue = 0.0
+            if isNotiAuthorized {
+                ZStack {
+                    NotificationSettingsCell(selectedStartHour: $selectedStartHour, selectedEndHour: $selectedEndHour, selectedFrequency: $selectedFrequency, selectedWeekdays: $settings.selectedDays, settings: $settings)
+                        .opacity(cellOpacity)
+                        .shadow(radius: 6)
+                        .modifier(ParallaxMotionModifier(manager: manager, magnitude3d: 20, magnitude2d: 5))
+                    
+                    
+                    DayOffActiveView()
+                        .opacity(1-cellOpacity)
+                        .onChange(of: toggleIsOn) { newValue in
+                            // Update animationPaused and grayscaleValue based on toggleIsOn
+                            if newValue {
+                                animationPaused = true
+                                grayscaleValue = 1.0
+                            } else {
+                                animationPaused = false
+                                grayscaleValue = 0.0
+                            }
                         }
-                    }
-                
+                }
+                .cornerRadius(20)
+                .padding(EdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 16))
+                .shadow(radius: 6)
+                .modifier(ParallaxMotionModifier(manager: manager, magnitude3d: 20, magnitude2d: 25))
+
+            } else {
+                pleaseTurnOnTheNotiView
             }
-//            .background(Color.init(hue: 0, saturation: 0, brightness: 0.12))
-            .cornerRadius(20)
-            .padding(EdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 16))
-            .shadow(radius: 6)
-            .modifier(ParallaxMotionModifier(manager: manager, magnitude3d: 20, magnitude2d: 25))
             
             Spacer()
         }
+        .navigationBarHidden(true)
         .background(Color.init(hue: 0, saturation: 0, brightness: 0.08))
         .onAppear {
-            for weekday in settings.selectedDays {
-                let index = settings.selectedDays.firstIndex(of: weekday)
-                let weekdayIndex = index ?? 0 - 1
-                if !selectedDaysInt.isEmpty {
-                    if selectedDaysInt.contains(weekdayIndex) {
-                        settings.selectedDays[weekdayIndex].selected = true
-                    } else {
-                        settings.selectedDays[weekdayIndex].selected = false
+            checkIfFirstInApp()
+            
+             for weekday in settings.selectedDays {
+                 let index = settings.selectedDays.firstIndex(of: weekday)
+                 let weekdayIndex = index ?? 0 - 1
+                 if !selectedDaysInt.isEmpty {
+                     if selectedDaysInt.contains(weekdayIndex) {
+                         settings.selectedDays[weekdayIndex].selected = true
+                     } else {
+                         settings.selectedDays[weekdayIndex].selected = false
+                     }
+                 }
+             }
+            
+            /// UserDefaults에 저장된 데이터
+            self.selectedStartHour = UserDefaults.standard.integer(forKey: "notificationStartHour")
+            self.selectedEndHour = UserDefaults.standard.integer(forKey: "notificationEndHour")
+            self.selectedFrequency = NotiInterval(rawValue: UserDefaults.standard.integer(forKey: "notificationFrequency")) ?? .hour
+           
+            /// 저장된 요일 값에 해당 요일이 존재하면 저장된 값을 초기값으로 재할당
+            if let arr = UserDefaults.standard.array(forKey: "notificationWeekdays") as? [Int] {
+                for int in 0...settings.selectedDays.count {
+                    if arr.contains(int + 1) {
+                        settings.selectedDays[int].selected = true
                     }
                 }
             }
+        }
+    }
+   
+
+    //MARK: 노티 허용을 하지 않았을 때 <시스템 설정>으로 보내는 화면입니다.
+    var pleaseTurnOnTheNotiView: some View {
+        VStack(spacing: 25) {
+            Text("앗...!\n핀이 메세지를 보내고 싶대요.\n활성화는 알림 설정이 꼭 필요해요.")
+                .multilineTextAlignment(.center)
+                .font(Font(UIFont(name: "Pretendard-Bold", size: 19)!))
+                .lineSpacing(8)
+            
+            Button {
+                openAppSettings()
+                
+            } label: {
+                
+                Text("시스템 설정")
+                    .font(Font(UIFont(name: "Pretendard-Bold", size: 17)!))
+                
+                    .padding(12)
+            }
+            .buttonStyle(.borderedProminent)
+            .cornerRadius(14)
             
         }
     }
-    
-    //MARK: 노티 허용을 하지 않았을 때 <시스템 설정>으로 보내는 화면입니다.
-    //    var pleaseTurnOnTheNotiView: some View {
-    //        VStack(spacing: 25) {
-    //            Text("앗...!\n핀이 메세지를 보내고 싶대요.\n활성화는 알림 설정이 꼭 필요해요.")
-    //                .multilineTextAlignment(.center)
-    //                .font(Font(UIFont(name: "Pretendard-Bold", size: 19)!))
-    //                .lineSpacing(8)
-    //
-    //            Button {
-    //                //TODO: 여기에 시스템 설정으로 ..
-    //            } label: {
-    //
-    //                Text("시스템 설정")
-    //                    .font(Font(UIFont(name: "Pretendard-Bold", size: 17)!))
-    //
-    //                    .padding(12)
-    //            }
-    //            .buttonStyle(.borderedProminent)
-    //            .cornerRadius(14)
-    //
-    //        }
-    //    }
-    
 }
+
+
 
 struct MainView_Previews: PreviewProvider {
     static var previews: some View {
         MainView()
             .preferredColorScheme(.dark)
+    }
+}
+
+
+
+// MARK: - Open App Settings (Method)
+/// 앱의 시스템 설정 페이지로 이동합니다.
+private func openAppSettings() {
+    if let settingsURL = URL(string: UIApplication.openSettingsURLString) {
+        UIApplication.shared.open(settingsURL, options: [:], completionHandler: nil)
     }
 }

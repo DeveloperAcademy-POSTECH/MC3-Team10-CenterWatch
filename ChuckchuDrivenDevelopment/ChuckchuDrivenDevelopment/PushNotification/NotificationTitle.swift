@@ -10,6 +10,10 @@ import Foundation
 // MARK: - NotificationTitle (Struct)
 /// 로컬 푸시 알림의 타이틀 내용을 정의합니다.
 struct NotificationTitle {
+    
+    let openingVariations: [String] = [
+        "오늘도 활기찬 하루!\n제가 힘을 실어드릴게요! 🐢"
+    ]
   
     let variations: [String] = [
         "어? 굽었다.",
@@ -45,6 +49,11 @@ struct NotificationTitle {
         "Commit: 건강한 개발자가 되어봐요.",
         "척chu~",
         "눈깜빡, 목돌려, 스트레칭 완료"
+    ]
+    
+    let closingVariations: [String] = [
+        "수고하셨어요!\n내일도 기운차게 만나요! 👋🏻"
+    
     ]
     
 }

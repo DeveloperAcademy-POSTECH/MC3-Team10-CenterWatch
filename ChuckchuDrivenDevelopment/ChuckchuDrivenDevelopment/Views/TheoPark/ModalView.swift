@@ -13,7 +13,7 @@ struct ModalView: View {
     
     @Binding var selectedStartHour: Int
     @Binding var selectedEndHour: Int
-    @Binding var selectedFrequency: TimeInterval
+    @Binding var selectedFrequency: NotiInterval
     @Binding var selectedWeekdays: [SelectedDay]
     @Binding var settings: Setting
     @Binding var textOpacity: Double
@@ -26,7 +26,7 @@ struct ModalView: View {
     @State var isInputCorrect: Bool = false
     @State var isSubmitted: Bool = false
     @State var isIntervalCorrect: Bool = true
-    let notificationCycles: [TimeInterval] = [.hour, .twoHour, .threeHour]
+    let notificationCycles: [NotiInterval] = [.hour, .twoHour, .threeHour]
     
     @StateObject var localNotificationManager = LocalNotificationManager()
     
@@ -124,31 +124,24 @@ struct ModalView: View {
                     }
                     
                     ToolbarItem(placement: .navigationBarTrailing) {
+                        // MARK: - 설정 완료 버튼
                         Button {
                             presentation.wrappedValue.dismiss()
                             textOpacity = 0.2
                             withAnimation(.easeInOut.delay(0.2)) {
                                 textOpacity = 1
                             }
-                            if !selectedDaysInt.isEmpty {
-                                localNotificationManager.cancelNotification()
-                                let currentWeekday = getCurrentWeekday()
-                                // 경우 1. 현재의 요일이 선택된 요일에 포함된다면 해당 요일의 알림을 만들고,
-                                if selectedDaysInt.contains(currentWeekday) {
-                                    nextTargetWeekday = currentWeekday
-                                    /// 경우 2. 포함되지 않는다면 현재와 가장 가까운 요일의 알림을 만든다
-                                    // FIXME: 조건문을 분리 후 코드 깔끔하게 변경
-                                } else {
-                                    nextTargetWeekday = getNearestWeekday(from: selectedDaysInt)
-                                }
-                                
-                                // 선택된 스케줄을 파라미터로 전달하고 푸시 알림 요청
-                                localNotificationManager.setLocalNotification(
-                                    weekday: nextTargetWeekday,
-                                    startHour: selectedStartHour,
-                                    endHour: selectedEndHour,
-                                    frequency: selectedFrequency
-                                )}
+                            
+                            /// 기존 알림 삭제
+                            localNotificationManager.cancelNotification()
+                            
+                            /// 선택된 스케줄을 파라미터로 전달하고 푸시 알림 요청
+                            localNotificationManager.setLocalNotification(
+                                weekdays: selectedDaysInt,
+                                startHour: selectedStartHour,
+                                endHour: selectedEndHour,
+                                frequency: selectedFrequency
+                            )
 
                             /// 변경된 데이터 UserDefaults에 저장
                             saveNotificationData()

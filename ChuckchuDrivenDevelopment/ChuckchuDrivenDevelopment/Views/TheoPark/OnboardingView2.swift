@@ -10,9 +10,6 @@ import SwiftUI
 struct OnboardingView2: View {
     @ObservedObject var localNotificationManager: LocalNotificationManager = LocalNotificationManager()
     
-    let optionalFontBold: UIFont? = UIFont(name: "Pretendard-Bold", size: 21)
-    let optionalFontMedium: UIFont? = UIFont(name: "Pretendard-Medium", size: 19)
-    
     var body: some View {
         ZStack {
             VStack {
@@ -36,19 +33,16 @@ struct OnboardingView2: View {
                     .padding(.top, 150)
                     .padding(.bottom, 30)
                 
+                
                 Text("""
-알림을 허용하면, 핀의 진심이 담긴 메세지를 받을 수 있어요.
-""")
-                if let unwrappedFont = optionalFontBold {
-                    Text("""
     알림을 허용하면, 핀의 진심이 담긴 메세지를 받을 수 있어요.
     """)
-                    .multilineTextAlignment(.center)
-                    .foregroundColor(.white)
-                    .font(Font(unwrappedFont))
-                    .lineSpacing(4)
-                    .frame(maxWidth: 300)
-                }
+                .multilineTextAlignment(.center)
+                .foregroundColor(.white)
+                .font(Font(UIFont(name: "Pretendard-Bold", size: 21)!))
+                .lineSpacing(4)
+                .frame(maxWidth: 300)
+                
             
                 Spacer()
                 
@@ -56,11 +50,9 @@ struct OnboardingView2: View {
                     MainView()
                 } label: {
                     Text("알림 설정")
-                    if let unwrappedFont = optionalFontMedium {
-                        Text("알림 설정")
-                            .frame(maxWidth: .infinity, maxHeight: 60)
-                            .font(Font(unwrappedFont))
-                    }
+                        .frame(maxWidth: .infinity, maxHeight: 60)
+                        .font(Font(UIFont(name: "Pretendard-Medium", size: 19)!))
+                    
                 }
                 .background(Color.black)
                 .foregroundColor(.white)
@@ -73,6 +65,7 @@ struct OnboardingView2: View {
                 })
             }
         }
+        .navigationBarHidden(true)
     }
 }
 

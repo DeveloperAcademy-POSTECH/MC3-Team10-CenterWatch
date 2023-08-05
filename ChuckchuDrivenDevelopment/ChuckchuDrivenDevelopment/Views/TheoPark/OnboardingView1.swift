@@ -13,8 +13,6 @@ struct OnboardingView1: View {
     @State private var animationPaused = false // Set default value here
     @State private var grayscale = 0.0 // Set default value here
     
-    let optionalFontBold: UIFont? = UIFont(name: "Pretendard-Bold", size: 38)
-    let optionalFontMedium: UIFont? = UIFont(name: "Pretendard-Medium", size: 19)
     
     var body: some View {
         VStack {
@@ -26,37 +24,26 @@ struct OnboardingView1: View {
             Spacer()
             
             VStack {
-                
                 Text("""
-핀과 함께하는
-바른 자세 만들기
-""")
-                if let unwrappedFont = optionalFontBold {
-                    Text("""
     핀과 함께하는
     바른 자세 만들기
     """)
-                        .multilineTextAlignment(.center)
-                        .foregroundColor(.white)
-                        .font(Font(unwrappedFont))
-                        .padding(.bottom, 24)
-                        .padding(.top, 50)
-                }
-               
+                .multilineTextAlignment(.center)
+                .foregroundColor(.white)
+                .font(Font(UIFont(name: "Pretendard-Bold", size: 38)!))
+                .padding(.bottom, 24)
+                .padding(.top, 50)
+                
+                
                 Text("""
-내가 원하는 주기에 알림을 받고,
-즉각적인 바른자세를 쉽게 만드세요.
-""")
-                if let unwrappedFont = optionalFontMedium {
-                    Text("""
     내가 원하는 주기에 알림을 받고,
     즉각적인 바른자세를 쉽게 만드세요.
     """)
-                    .multilineTextAlignment(.center)
-                    .foregroundColor(.white).opacity(0.7)
-                    .font(Font(unwrappedFont))
-                    .lineSpacing(4)
-                }
+                .multilineTextAlignment(.center)
+                .foregroundColor(.white).opacity(0.7)
+                .font(Font(UIFont(name: "Pretendard-Medium", size: 19)!))
+                .lineSpacing(4)
+                
                 
                 Spacer()
                 
@@ -64,11 +51,9 @@ struct OnboardingView1: View {
                     OnboardingView2()
                 } label: {
                     Text("시작하기")
-                    if let unwrappedFont = optionalFontMedium {
-                        Text("시작하기")
-                            .frame(maxWidth: .infinity, maxHeight: 40)
-                            .font(Font(unwrappedFont))
-                    }
+                        .frame(maxWidth: .infinity, maxHeight: 60)
+                        .font(Font(UIFont(name: "Pretendard-Medium", size: 19)!))
+                    
                 }
                 .background(Color.black)
                 .foregroundColor(.white)

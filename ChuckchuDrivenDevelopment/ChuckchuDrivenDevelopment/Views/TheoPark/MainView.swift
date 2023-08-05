@@ -35,8 +35,7 @@ struct MainView: View {
     @State private var selectedStartHour: Int = 0
     @State private var selectedEndHour: Int = 0
     @State private var selectedFrequency: NotiInterval = .hour
-    @State private var nextTargetWeekday: Int = 1
-    
+   
     /// 하루만 알림 끄기
     @State private var animationPaused = false
     @State private var grayscaleValue: Double = 0.0
@@ -193,7 +192,6 @@ struct MainView: View {
         }
     }
 }
-
 
 
 struct MainView_Previews: PreviewProvider {

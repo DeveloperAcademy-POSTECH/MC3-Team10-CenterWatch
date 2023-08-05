@@ -18,14 +18,8 @@ struct ModalView: View {
     @Binding var settings: Setting
     @Binding var textOpacity: Double
     
-    @State private var nextTargetWeekday: Int = 1
-    @State private var isRangeCorrect: Bool = false
-    
     @State private var isCompleted: Bool = false //변경 감지를 위한 프로퍼티
     
-    @State var isInputCorrect: Bool = false
-    @State var isSubmitted: Bool = false
-    @State var isIntervalCorrect: Bool = true
     let notificationCycles: [NotiInterval] = [.hour, .twoHour, .threeHour]
     
     @StateObject var localNotificationManager = LocalNotificationManager()
@@ -145,7 +139,7 @@ struct ModalView: View {
 
                             /// 변경된 데이터 UserDefaults에 저장
                             saveNotificationData()
-                            isSubmitted = true
+                            
                         } label: {
                             Text("완료")
                                 .font(Font(UIFont(name: "Pretendard-Medium", size: 16)!))

@@ -38,7 +38,6 @@ struct NotificationSettingsCell: View {
         return daysConvertedToInt
     }
     
-    // @State var isIntervalCorrect: Bool = true
     
     var body: some View {
         VStack {

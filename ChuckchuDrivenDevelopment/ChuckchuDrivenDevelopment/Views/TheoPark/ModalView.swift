@@ -78,7 +78,6 @@ struct ModalView: View {
                 
                 
                 VStack {
-                    
                     TimePickerView(selectedStartHour: $selectedStartHour, selectedEndHour: $selectedEndHour)
                         .padding(EdgeInsets(top: 8, leading: -6, bottom: 0, trailing: -6))
                     
@@ -125,7 +124,7 @@ struct ModalView: View {
                             withAnimation(.easeInOut.delay(0.2)) {
                                 textOpacity = 1
                             }
-                            
+                                
                             /// 기존 알림 삭제
                             localNotificationManager.cancelNotification()
                             

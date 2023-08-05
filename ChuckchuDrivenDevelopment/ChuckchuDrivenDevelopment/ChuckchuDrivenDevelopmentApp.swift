@@ -50,5 +50,4 @@ struct ChuckchuDrivenDevelopmentApp: App {
 /// 온보딩뷰를 적절히 보여주기 위해, 사용자가 앱을 처음 진입했는지의 여부를 저장합니다.
 public func checkIfFirstInApp() {
     UserDefaults.standard.set(false, forKey: "firstInApp")
-    print("firstInApp >>>>> ", UserDefaults.standard.bool(forKey: "firstInApp"))
 }

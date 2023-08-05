@@ -59,7 +59,6 @@ extension LocalNotificationManager {
         endHour: Int,
         frequency: NotiInterval
     ) {
-        requestNotificationPermission()
         initNotificationCenter()
         
         /// 0시 -> 24시로 계산되게 하기

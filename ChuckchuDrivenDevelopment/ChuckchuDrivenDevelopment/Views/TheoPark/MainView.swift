@@ -156,12 +156,20 @@ struct MainView: View {
             self.selectedEndHour = UserDefaults.standard.integer(forKey: "notificationEndHour")
             self.selectedFrequency = NotiInterval(rawValue: UserDefaults.standard.integer(forKey: "notificationFrequency")) ?? .hour
            
-            /// 저장된 요일 값에 해당 요일이 존재하면 저장된 값을 초기값으로 재할당
+            /// 저장된 요일 값에 해당 요일이 존재하면 저장된 값을 재할당
             if let arr = UserDefaults.standard.array(forKey: "notificationWeekdays") as? [Int] {
                 for int in 0...settings.selectedDays.count {
                     if arr.contains(int + 1) {
                         settings.selectedDays[int].selected = true
                     }
+                }
+            }
+            
+            /// 선택된 요일이 없을 경우, 평일을 초기값으로 할당
+            let selectionArr = settings.selectedDays.map({ $0.selected })
+            if !selectionArr.contains(true) {
+                for i in 0...5 {
+                    settings.selectedDays[i].selected = true
                 }
             }
         }

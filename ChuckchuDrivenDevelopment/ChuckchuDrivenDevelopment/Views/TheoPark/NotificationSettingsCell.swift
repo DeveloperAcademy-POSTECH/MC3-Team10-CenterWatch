@@ -61,28 +61,28 @@ struct NotificationSettingsCell: View {
                 Spacer()
                 
                 // MARK: - 알림 설정 버튼
-                    Button {
-                        self.showModal = true
-                        let impactHeavy = UIImpactFeedbackGenerator(style: .heavy)
-                        impactHeavy.impactOccurred()
-                        
-                    } label: {
-                        Image(systemName: "alarm.fill")
-                        Text("알림 설정")
-                            .padding(4)
-                    }
-                    .font(Font(UIFont(name: "Pretendard-Bold", size: 16)!))
-                    .buttonStyle(.borderedProminent)
-                    .cornerRadius(24)
-                    .sheet(isPresented: self.$showModal) {
-                        ModalView(selectedStartHour: $selectedStartHour,
-                                  selectedEndHour: $selectedEndHour,
-                                  selectedFrequency: $selectedFrequency,
-                                  selectedWeekdays: $settings.selectedDays,
-                                  settings: $settings,
-                                  textOpacity: $textOpacity)
+                Button {
+                    self.showModal = true
+                    let impactHeavy = UIImpactFeedbackGenerator(style: .heavy)
+                    impactHeavy.impactOccurred()
+                    
+                } label: {
+                    Image(systemName: "alarm.fill")
+                    Text("알림 설정")
+                        .padding(4)
+                }
+                .font(Font(UIFont(name: "Pretendard-Bold", size: 16)!))
+                .buttonStyle(.borderedProminent)
+                .cornerRadius(24)
+                .sheet(isPresented: self.$showModal) {
+                    ModalView(selectedStartHour: $selectedStartHour,
+                              selectedEndHour: $selectedEndHour,
+                              selectedFrequency: $selectedFrequency,
+                              selectedWeekdays: $settings.selectedDays,
+                              settings: $settings,
+                              textOpacity: $textOpacity)
                     .preferredColorScheme(.dark)
-                    }
+                }
             }
             .padding([.top, .leading, .trailing])
             
@@ -160,17 +160,14 @@ struct NotificationSettingsCell: View {
                 .padding([.leading, .trailing, .bottom])
             }
         }
-//        .background(Color.init(hue: 0, saturation: 0, brightness: 0.12))
-//        .cornerRadius(20)
-        //        .padding(EdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 16))
-        .gesture(
-            DragGesture(minimumDistance: 0)
-                .onEnded() {_ in
-                    self.showModal = true
-                    let impactHeavy = UIImpactFeedbackGenerator(style: .heavy)
-                    impactHeavy.impactOccurred()
-                }
-        )
+        .background(Color.init(hue: 0, saturation: 0, brightness: 0.12))
+        .cornerRadius(20)
+//        .padding(EdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 16))
+        .onTapGesture {
+            self.showModal = true
+            let impactHeavy = UIImpactFeedbackGenerator(style: .heavy)
+            impactHeavy.impactOccurred()
+        }
         .onTouchDownGesture {
             let impactHeavy = UIImpactFeedbackGenerator(style: .soft)
             impactHeavy.impactOccurred()

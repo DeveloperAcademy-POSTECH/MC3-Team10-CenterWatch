@@ -9,7 +9,7 @@ import SwiftUI
 
 struct CharacterAnimation: View {
     @State private var currentFrameIndex = 0
-    private let totalFrames = 4 // 전체 프레임 개수
+    
     @State private var is3DImage = true
     @State private var tapCount = 0
     
@@ -18,15 +18,16 @@ struct CharacterAnimation: View {
     @State var tapLocation: CGPoint?
     
     @State private var tapped = false
+    
     @Binding var animationPaused: Bool
     @Binding var grayscale: Double
     
+    private let totalFrames = 4 // 전체 프레임 개수
     
     var body: some View {
         
         let tapDetector = TapGesture()
             .onEnded {
-                
                 if is3DImage {
                     tapCount += 1
                     if tapCount == 10 {
@@ -36,7 +37,6 @@ struct CharacterAnimation: View {
                 } else {
                     is3DImage = true
                 }
-                
                 self.tapped = false
                 
             }
@@ -57,7 +57,6 @@ struct CharacterAnimation: View {
                 }
                 
             }
-        
         
         
         ZStack {
@@ -111,7 +110,7 @@ struct CharacterAnimation: View {
                 }
             }
             
-           
+            
             .grayscale(grayscale) // Apply grayscale based on the binding
             ForEach(points.indices, id: \.self) { index in
                 CreateCircle(location: points[index])

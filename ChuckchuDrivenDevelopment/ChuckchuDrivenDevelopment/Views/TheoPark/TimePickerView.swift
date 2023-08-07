@@ -14,48 +14,24 @@ struct TimePickerView: View {
     var body: some View {
         HStack {
             VStack(alignment: .leading) {
-                Text("시작 시간")
-                        .font(Font.custom("Pretendard-Bold", size: 18))
-                        .foregroundColor(.white)
-                        .padding(.leading, 10)
+                FontView("시작 시간", 18, .white)
+                    .padding(.leading, 10)
                 HStack{
-                    Picker("", selection: $selectedStartHour) {
-                        ForEach(0..<24, id: \.self) { hour in
-                            Text(String(format: "%02d:00", hour))
-                                .font(.system(size: 20))
-                                .fontWeight(.semibold)
-                                .foregroundColor(.accentColor)
-                        }
-                    }
-                    .pickerStyle(WheelPickerStyle())
-                    .frame(width: 130, height: 120)
+                    WheelPickerView(selectedHour: $selectedStartHour)
                     Spacer()
                 }
             }
             .frame(maxWidth: .infinity, alignment: .leading)
             .padding()
-
+            
             VStack(alignment: .leading) {
-                Text("종료 시간")
-                    .font(Font.custom("Pretendard-Bold", size: 18))
-                    .foregroundColor(.white)
+                FontView("종료 시간", 18, .white)
                     .padding(.leading, 10)
-                
                 HStack{
-                    Picker("", selection: $selectedEndHour) {
-                        ForEach(selectedStartHour + 1...min(selectedStartHour + 6, 24), id: \.self) { hour in
-                            Text(String(format: "%02d:00", hour))
-                                .font(.system(size: 20))
-                                .fontWeight(.semibold)
-                                .foregroundColor(.accentColor)
-                        }
-                    }
-                    .pickerStyle(WheelPickerStyle())
-                    .frame(width: 130, height: 120)
-                Spacer()
+                    WheelPickerView(selectedHour: $selectedEndHour, minHour: selectedStartHour + 1, maxHour: selectedStartHour + 7) 
+                    Spacer()
                 }
             }
-
         }
         .onChange(of: selectedStartHour) { newValue in
             selectedEndHour = max(selectedStartHour + 1, min(selectedStartHour + 6, selectedEndHour))

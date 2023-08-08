@@ -9,6 +9,9 @@
 		<string>remote-notification</string>
 	</array>
 	<key>UIAppFonts</key>
-	<array/>
+	<array>
+		<string>Pretendard-Bold.otf</string>
+		<string>Pretendard-Medium.otf</string>
+	</array>
 </dict>
 </plist>

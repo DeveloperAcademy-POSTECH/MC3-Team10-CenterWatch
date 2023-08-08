@@ -10,36 +10,39 @@ import SwiftUI
 struct SelectNotificationDay: View {
     
     @Binding var selectedDays: [SelectedDay]
-
+    
     var body: some View {
         HStack {
             Group {
                 ForEach(selectedDays.indices, id: \.self) { i in
-                    Group {
-                        Button {
-                            withAnimation(.easeInOut(duration: 0.1)) {
-                                selectedDays[i].selected.toggle()
-                            }
-                        } label: {
-                            Circle()
-                                .frame(width: 40, height: 40)
-                                .foregroundColor(selectedDays[i].selected ? Color.blue : Color.white.opacity(0.1))
-                                .overlay() {
-                                    Text(selectedDays[i].day)
-                                        .foregroundColor(selectedDays[i].selected ? Color.white : Color.white)
-                                        .font(Font(UIFont(name: "Pretendard-Bold", size: 16)!))
+                    if i != 0, i != 6 {
+                        Group {
+                            Button {
+                                withAnimation(.easeInOut(duration: 0.1)) {
+                                    selectedDays[i].selected.toggle()
                                 }
-                        }
-                        .buttonStyle(PlainButtonStyle())
-                        .onTouchDownGesture {
-                            let impactHeavy = UIImpactFeedbackGenerator(style: .light)
+                            } label: {
+                                Circle()
+                                    .frame(width: 55, height: 55)
+                                    .foregroundColor(selectedDays[i].selected ? Color.blue : Color.white.opacity(0.1))
+                                    .overlay() {
+                                        Text(selectedDays[i].day)
+                                            .foregroundColor(selectedDays[i].selected ? Color.white : Color.white)
+                                            .font(Font(UIFont(name: "Pretendard-Bold", size: 16)!))
+                                    }
+                            }
+                            .buttonStyle(PlainButtonStyle())
+                            .onTouchDownGesture {
+                                let impactHeavy = UIImpactFeedbackGenerator(style: .light)
                                 impactHeavy.impactOccurred()
+                            }
+                            
+                            Spacer()
                         }
-                        
-                        Spacer()
                     }
                 }
             }
+            .padding(.bottom, 10)
         }
         .frame(height: 40)
         .padding(EdgeInsets(top: 0, leading: 8, bottom: 0, trailing: 0))

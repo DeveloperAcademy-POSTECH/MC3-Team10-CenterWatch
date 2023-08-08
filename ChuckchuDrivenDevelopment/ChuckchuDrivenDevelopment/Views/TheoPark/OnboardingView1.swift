@@ -13,54 +13,51 @@ struct OnboardingView1: View {
     @State private var animationPaused = false // Set default value here
     @State private var grayscale = 0.0 // Set default value here
     
-    
     var body: some View {
-        VStack {
+        VStack(spacing: 20) {
             
-            Spacer()
             
             CharacterAnimation(animationPaused: $animationPaused, grayscale: $grayscale)
-            
-            Spacer()
-            
-            VStack {
+            //                .background(.red)
+                .padding()
+            //            Spacer()
+            VStack(spacing: 20) {
                 Text("""
-    핀과 함께하는
-    바른 자세 만들기
-    """)
+핀과 함께하는
+바른 자세 만들기
+""")
                 .multilineTextAlignment(.center)
                 .foregroundColor(.white)
                 .font(Font(UIFont(name: "Pretendard-Bold", size: 38)!))
-                .padding(.bottom, 24)
-                .padding(.top, 50)
-                
+                .lineSpacing(4)
+                //                    .background(.blue)
                 
                 Text("""
-    내가 원하는 주기에 알림을 받고,
-    즉각적인 바른자세를 쉽게 만드세요.
-    """)
+내가 원하는 주기에 알림을 받고,
+즉각적인 바른자세를 쉽게 만드세요.
+""")
                 .multilineTextAlignment(.center)
                 .foregroundColor(.white).opacity(0.7)
                 .font(Font(UIFont(name: "Pretendard-Medium", size: 19)!))
                 .lineSpacing(4)
                 
-                
-                Spacer()
-                
-                NavigationLink {
-                    OnboardingView2()
+            }
+            .padding()
+            .padding()
+            VStack {
+                Button {
+                    
                 } label: {
                     Text("시작하기")
-                        .frame(maxWidth: .infinity, maxHeight: 60)
+                        .frame(maxWidth: .infinity, maxHeight: 40)
                         .font(Font(UIFont(name: "Pretendard-Medium", size: 19)!))
-                    
                 }
-                .background(Color.black)
-                .foregroundColor(.white)
-                .cornerRadius(15)
+                .buttonStyle(.borderedProminent)
                 .padding()
-                .padding(.bottom, 40)
+                .padding(.bottom, -4)
             }
+            
+            
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color.init(hue: 0, saturation: 0, brightness: 0.08))

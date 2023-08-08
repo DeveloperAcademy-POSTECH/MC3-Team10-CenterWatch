@@ -7,13 +7,11 @@
 
 import SwiftUI
 
-struct OnboardingView2: View {
-    @ObservedObject var localNotificationManager: LocalNotificationManager = LocalNotificationManager()
-    
+struct OnBoardingView2: View {
     var body: some View {
         ZStack {
             VStack {
-                Image("onBoarding_2")
+                Image("onBoarding")
                     .resizable()
                     .scaledToFill()
             }
@@ -22,73 +20,47 @@ struct OnboardingView2: View {
             
             VStack {
                 
-                Image(systemName: "bell.fill")
-                    .font(.system(size: 50))
-                    .foregroundColor(.white)
+                Image("icon-notification-mono")
                     .background() {
                         Circle()
                             .opacity(0.7)
-                            .frame(width: 90, height: 90)
+                            .frame(width: 84, height: 84)
                     }
-                    .padding(.top, 150)
+                    .padding(.top, 100)
                     .padding(.bottom, 30)
                 
-                
                 Text("""
-    알림을 허용하면, 핀의 진심이 담긴 메세지를 받을 수 있어요.
-    """)
+알림을 허용하면, 핀의 진심이 담긴 메세지를 받을 수 있어요.
+""")
                 .multilineTextAlignment(.center)
                 .foregroundColor(.white)
-                .font(Font(UIFont(name: "Pretendard-Bold", size: 21)!))
-                .lineSpacing(4)
+                .font(Font(UIFont(name: "Pretendard-Bold", size: 20)!))
+                .lineSpacing(6)
                 .frame(maxWidth: 300)
                 
-            
                 Spacer()
                 
-                NavigationLink {
-                    MainView()
+                Button {
+                    
                 } label: {
                     Text("알림 설정")
                         .frame(maxWidth: .infinity, maxHeight: 60)
                         .font(Font(UIFont(name: "Pretendard-Medium", size: 19)!))
-                    
                 }
                 .background(Color.black)
                 .foregroundColor(.white)
                 .cornerRadius(15)
                 .padding()
-                .padding(.bottom, 40)
-                .simultaneousGesture(TapGesture().onEnded {
-                    /// 시스템 알림 허용 요청
-                    localNotificationManager.requestNotificationPermission()
-                })
+                .padding(.bottom, 34)
             }
+            
         }
-        .navigationBarHidden(true)
     }
 }
 
-struct OnboardingView2_Previews: PreviewProvider {
+
+struct OnBoardingView2_Previews: PreviewProvider {
     static var previews: some View {
-        OnboardingView2()
-    }
-}
-
-
-
-
-
-struct ContentView: View {
-    // Define an optional UIFont
-    var optionalFont: UIFont? = UIFont(name: "Helvetica", size: 20)
-    
-    var body: some View {
-        if let unwrappedFont = optionalFont {
-            Text("Optional Font Example")
-                .font(Font(unwrappedFont)) // Unwrapping the optional UIFont
-        } else {
-            Text("Default Font")
-        }
+        OnBoardingView2()
     }
 }

@@ -43,7 +43,6 @@
 		EFEA28932A67CFCE00FC4965 /* PokeUserTestNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFEA28902A67CFCE00FC4965 /* PokeUserTestNameView.swift */; };
 		EFEA28942A67CFCE00FC4965 /* PokeUserTestListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFEA28912A67CFCE00FC4965 /* PokeUserTestListView.swift */; };
 		EFEA28952A67CFCE00FC4965 /* PokeUserTestHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFEA28922A67CFCE00FC4965 /* PokeUserTestHomeView.swift */; };
-	
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -111,7 +110,6 @@
 		EFEA28902A67CFCE00FC4965 /* PokeUserTestNameView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokeUserTestNameView.swift; sourceTree = "<group>"; };
 		EFEA28912A67CFCE00FC4965 /* PokeUserTestListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokeUserTestListView.swift; sourceTree = "<group>"; };
 		EFEA28922A67CFCE00FC4965 /* PokeUserTestHomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokeUserTestHomeView.swift; sourceTree = "<group>"; };
-		
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,8 +134,6 @@
 		17288A102A7BC350008EE5EF /* TestingViews */ = {
 			isa = PBXGroup;
 			children = (
-				EFB939EC2A6C46B00083C08D /* LocalNotificationTestingView.swift */,
-				17939D9E2A78ED4000941F14 /* MiniTestingView.swift */,
 			);
 			path = TestingViews;
 			sourceTree = "<group>";
@@ -301,7 +297,6 @@
 			path = TheoNa;
 			sourceTree = "<group>";
 		};
-		
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -435,9 +430,7 @@
 				EF81A9BE2A5B8A1400C6F417 /* ContentView.swift in Sources */,
 				EFE2C8182A700220006D5240 /* NotificationSettingsCell.swift in Sources */,
 				17288A152A7C02EC008EE5EF /* WheelPickerView.swift in Sources */,
-				17939D9F2A78ED4000941F14 /* MiniTestingView.swift in Sources */,
 				EFE2C8182A700220006D5240 /* NotificationSettingsCell.swift in Sources */,
-				EFB939ED2A6C46B00083C08D /* LocalNotificationTestingView.swift in Sources */,
 				17A545FD2A7A2E0B00147685 /* BottomView.swift in Sources */,
 				17288A132A7BCDBF008EE5EF /* FontView.swift in Sources */,
 				17202EFB2A6ED8DB00E3223B /* CharacterAnimation.swift in Sources */,

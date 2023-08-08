@@ -29,10 +29,10 @@ class ToggleStateModel: ObservableObject {
     @Published var toggleIsOn: Bool = false {
         didSet {
             if toggleIsOn {
-                animationPaused = true
+                self.animationPaused = true
                 grayscaleValue = 1.0
             } else {
-                animationPaused = false
+                self.animationPaused = false
                 grayscaleValue = 0.0
             }
         }
@@ -111,58 +111,54 @@ struct MainView: View {
         VStack {
             Spacer()
             DayOffToggleView(toggleIsOn: $toggleState.toggleIsOn)
-                          .onChange(of: toggleState.toggleIsOn) { newValue in
-                              let weekdays = selectedDaysInt
-                              let startHour = selectedStartHour
-                              let endHour = selectedEndHour
-                              let frequency = selectedFrequency
-                              localNotificationManager.toggleMessage(toggleState: newValue, weekdays: weekdays, startHour: startHour, endHour: endHour, frequency: frequency)
-                          }
+                .onChange(of: toggleState.toggleIsOn) { newValue in
+                    let weekdays = selectedDaysInt
+                    let startHour = selectedStartHour
+                    let endHour = selectedEndHour
+                    let frequency = selectedFrequency
+                    localNotificationManager.toggleMessage(toggleState: newValue, weekdays: weekdays, startHour: startHour, endHour: endHour, frequency: frequency)
+                }
             Divider()
                 .padding(.leading)
                 .padding(.trailing)
             
             CharacterAnimation(animationPaused: $toggleState.animationPaused, grayscale: $toggleState.grayscaleValue)
-            
                 .padding(.bottom, 16)
             
             // MARK: - 알림 설정 세부사항
-            
-            if isNotiAuthorized {
-                ZStack {
+            ZStack {
+                if isNotiAuthorized {
+                    
                     NotificationSettingsCell(selectedStartHour: $selectedStartHour, selectedEndHour: $selectedEndHour, selectedFrequency: $selectedFrequency, selectedWeekdays: $settings.selectedDays, settings: $settings)
                         .opacity(cellOpacity)
                         .shadow(radius: 6)
                         .modifier(ParallaxMotionModifier(manager: manager, magnitude3d: 20, magnitude2d: 5))
                     
-                    
+                } else {
+                    pleaseTurnOnTheNotiView
+                }
+                
+                if toggleState.toggleIsOn {
                     DayOffActiveView()
                         .opacity(1-cellOpacity)
-                        .onChange(of: toggleIsOn) { newValue in
-                            // Update animationPaused and grayscaleValue based on toggleIsOn
-                            if newValue {
-                                animationPaused = true
-                                grayscaleValue = 1.0
-                            } else {
-                                animationPaused = false
-                                grayscaleValue = 0.0
-                            }
-                        }
                 }
-                .cornerRadius(20)
-                .padding(EdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 16))
-                .shadow(radius: 6)
-                .modifier(ParallaxMotionModifier(manager: manager, magnitude3d: 20, magnitude2d: 25))
-
-            } else {
-                pleaseTurnOnTheNotiView
             }
+            .cornerRadius(20)
+            .padding(EdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 16))
+            .shadow(radius: 6)
+            .modifier(ParallaxMotionModifier(manager: manager, magnitude3d: 20, magnitude2d: 25))
             
             Spacer()
+            
         }
         .navigationBarHidden(true)
         .background(Color.init(hue: 0, saturation: 0, brightness: 0.08))
         .onAppear {
+            let isAuthorized = UserDefaults.standard.bool(forKey: "isNotiAuthorized")
+            
+            print("isNotiAuthorized: ", isNotiAuthorized)
+            print("isAuthorized: ", isAuthorized)
+            
             checkIfFirstInApp()
             
             self.toggleState.toggleIsOn = UserDefaults.standard.bool(forKey: "dayOffToggleState")

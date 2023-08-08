@@ -13,6 +13,7 @@ class LocalNotificationManager: NSObject, ObservableObject, UNUserNotificationCe
     
     @Published var isAuthorizationRequested: Bool = false
     
+    private let calendar = Calendar.current
     private let notificationCenter = UNUserNotificationCenter.current()
     private let notificationContent = UNMutableNotificationContent()
     private let notificationTitle = NotificationTitle().variations

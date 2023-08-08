@@ -70,9 +70,8 @@ private func switchAuthorizationStatus() {
         switch settings.authorizationStatus {
      
         case .notDetermined:
-            UserDefaults.standard.set(false, forKey: "isNotiAuthorized")
             print("Authorization not determined.")
-        
+            
         case .denied:
             UserDefaults.standard.set(false, forKey: "isNotiAuthorized")
             print("Authorization denied. You can't switch it on programmatically.")

@@ -43,7 +43,7 @@
 		EFEA28932A67CFCE00FC4965 /* PokeUserTestNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFEA28902A67CFCE00FC4965 /* PokeUserTestNameView.swift */; };
 		EFEA28942A67CFCE00FC4965 /* PokeUserTestListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFEA28912A67CFCE00FC4965 /* PokeUserTestListView.swift */; };
 		EFEA28952A67CFCE00FC4965 /* PokeUserTestHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFEA28922A67CFCE00FC4965 /* PokeUserTestHomeView.swift */; };
-		EFEA28992A67D00500FC4965 /* GuardyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFEA28982A67D00500FC4965 /* GuardyView.swift */; };
+	
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -111,7 +111,7 @@
 		EFEA28902A67CFCE00FC4965 /* PokeUserTestNameView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokeUserTestNameView.swift; sourceTree = "<group>"; };
 		EFEA28912A67CFCE00FC4965 /* PokeUserTestListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokeUserTestListView.swift; sourceTree = "<group>"; };
 		EFEA28922A67CFCE00FC4965 /* PokeUserTestHomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokeUserTestHomeView.swift; sourceTree = "<group>"; };
-		EFEA28982A67D00500FC4965 /* GuardyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuardyView.swift; sourceTree = "<group>"; };
+		
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -301,14 +301,7 @@
 			path = TheoNa;
 			sourceTree = "<group>";
 		};
-		EFEA28972A67CFF800FC4965 /* Guardy */ = {
-			isa = PBXGroup;
-			children = (
-				EFEA28982A67D00500FC4965 /* GuardyView.swift */,
-			);
-			path = Guardy;
-			sourceTree = "<group>";
-		};
+		
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -441,7 +434,6 @@
 				DED043012A6F9924004D3395 /* SplashView.swift in Sources */,
 				EF81A9BE2A5B8A1400C6F417 /* ContentView.swift in Sources */,
 				EFE2C8182A700220006D5240 /* NotificationSettingsCell.swift in Sources */,
-				EFEA28992A67D00500FC4965 /* GuardyView.swift in Sources */,
 				17288A152A7C02EC008EE5EF /* WheelPickerView.swift in Sources */,
 				17939D9F2A78ED4000941F14 /* MiniTestingView.swift in Sources */,
 				EFE2C8182A700220006D5240 /* NotificationSettingsCell.swift in Sources */,

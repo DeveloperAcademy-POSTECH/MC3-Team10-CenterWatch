@@ -10,11 +10,11 @@ import UserNotifications
 
 
 class LocalNotificationManager: NSObject, ObservableObject, UNUserNotificationCenterDelegate {
+    
     @Published var isAuthorizationRequested: Bool = false
     
     private let notificationCenter = UNUserNotificationCenter.current()
     private let notificationContent = UNMutableNotificationContent()
-    private let calendar = Calendar.current
     private let notificationTitle = NotificationTitle().variations
     
     
@@ -177,7 +177,18 @@ extension LocalNotificationManager {
 
 // MARK: - 하루 휴식 알림 관련
 extension LocalNotificationManager {
-  
+    
+    // MARK: - Toggle Notification (Method)
+    /// '하루만 알림끄기' 토글의 활성화 여부에 따라 각 지정된 함수를 호출합니다.
+    public func toggleMessage(toggleState: Bool, weekdays: [Int], startHour: Int, endHour: Int, frequency: NotiInterval) {
+        if toggleState {
+            setNextDayNotification()
+        } else {
+            setLocalNotification(weekdays: weekdays, startHour: startHour, endHour: endHour, frequency: frequency)
+            
+        }
+    }
+    
     // MARK: - Set Next Day Notification (Method)
     /// '하루만 알림 끄기' 토글을 활성화시킬 때 24시간 후 발송되는 알림을 생성합니다.
     public func setNextDayNotification() {

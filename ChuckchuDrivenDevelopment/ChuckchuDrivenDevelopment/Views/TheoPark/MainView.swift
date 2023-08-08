@@ -24,9 +24,30 @@ struct Setting {
     ]
 }
 
+
+class ToggleStateModel: ObservableObject {
+    @Published var toggleIsOn: Bool = false {
+        didSet {
+            if toggleIsOn {
+                animationPaused = true
+                grayscaleValue = 1.0
+            } else {
+                animationPaused = false
+                grayscaleValue = 0.0
+            }
+        }
+    }
+    /// 하루만 알림 끄기
+    @Published var animationPaused: Bool = false
+    @Published var grayscaleValue: Double = 0.0
+}
+
+
+
 struct MainView: View {
     @AppStorage("isNotiAuthorized") var isNotiAuthorized = true // 알림 허용 여부를 저장하는 변수
    
+    @ObservedObject var toggleState = ToggleStateModel()
     @ObservedObject var manager = MotionManager()
     @StateObject private var localNotificationManager = LocalNotificationManager()
     @State var settings = Setting()
@@ -39,7 +60,7 @@ struct MainView: View {
     /// 하루만 알림 끄기
     @State private var animationPaused = false
     @State private var grayscaleValue: Double = 0.0
-    @State var toggleIsOn: Bool = false
+    //    @State var toggleIsOn: Bool = false
     
     /// 모달뷰 띄우기
     @State private var showModal = false
@@ -54,7 +75,6 @@ struct MainView: View {
         UserDefaults.standard.set(selectedFrequency.rawValue, forKey: "notificationFrequency")
     }
     
-    
     let cfURL1 = Bundle.main.url(forResource: "Pretendard-Medium", withExtension: "otf")
     let cfURL2 = Bundle.main.url(forResource: "Pretendard-Bold", withExtension: "otf")
     var PretendardRegular: UIFont
@@ -65,13 +85,12 @@ struct MainView: View {
         PretendardRegular = UIFont(name: "Pretendard-Medium", size: 15.0)!
         CTFontManagerRegisterFontsForURL(cfURL2! as CFURL, CTFontManagerScope.process, nil)
         PretendardBold = UIFont(name: "Pretendard-Bold", size: 15.0)!
-        
     }
     
     
     //하루 알림 끄기시 없어지는 정보 뷰
     var cellOpacity: Double {
-        toggleIsOn ? 0 : 1
+        toggleState.toggleIsOn ? 0 : 1
     }
     
     // MARK: - Selected Days in Int (Computed Property)
@@ -91,13 +110,20 @@ struct MainView: View {
         
         VStack {
             Spacer()
-            DayOffToggleView(toggleIsOn: $toggleIsOn)
-            
+            DayOffToggleView(toggleIsOn: $toggleState.toggleIsOn)
+                          .onChange(of: toggleState.toggleIsOn) { newValue in
+                              let weekdays = selectedDaysInt
+                              let startHour = selectedStartHour
+                              let endHour = selectedEndHour
+                              let frequency = selectedFrequency
+                              localNotificationManager.toggleMessage(toggleState: newValue, weekdays: weekdays, startHour: startHour, endHour: endHour, frequency: frequency)
+                          }
             Divider()
                 .padding(.leading)
                 .padding(.trailing)
             
-            CharacterAnimation(animationPaused: $animationPaused, grayscale: $grayscaleValue)
+            CharacterAnimation(animationPaused: $toggleState.animationPaused, grayscale: $toggleState.grayscaleValue)
+            
                 .padding(.bottom, 16)
             
             // MARK: - 알림 설정 세부사항
@@ -139,6 +165,8 @@ struct MainView: View {
         .onAppear {
             checkIfFirstInApp()
             
+            self.toggleState.toggleIsOn = UserDefaults.standard.bool(forKey: "dayOffToggleState")
+
              for weekday in settings.selectedDays {
                  let index = settings.selectedDays.firstIndex(of: weekday)
                  let weekdayIndex = index ?? 0 - 1

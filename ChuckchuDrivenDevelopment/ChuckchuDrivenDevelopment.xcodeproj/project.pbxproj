@@ -9,10 +9,13 @@
 /* Begin PBXBuildFile section */
 		17202EFB2A6ED8DB00E3223B /* CharacterAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17202EFA2A6ED8DB00E3223B /* CharacterAnimation.swift */; };
 		17202EFD2A6ED90300E3223B /* CharacterFrames.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17202EFC2A6ED90300E3223B /* CharacterFrames.xcassets */; };
+		17288A132A7BCDBF008EE5EF /* FontView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17288A122A7BCDBF008EE5EF /* FontView.swift */; };
+		17288A152A7C02EC008EE5EF /* WheelPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17288A142A7C02EC008EE5EF /* WheelPickerView.swift */; };
 		1747A7342A793E8D0097CE96 /* DayOffActiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1747A7332A793E8D0097CE96 /* DayOffActiveView.swift */; };
 		1747A7362A7942630097CE96 /* DayOffToggleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1747A7352A7942630097CE96 /* DayOffToggleView.swift */; };
 		17939DA32A78EDFB00941F14 /* FloatHeart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17939DA22A78EDFB00941F14 /* FloatHeart.swift */; };
 		17939DA52A78EE2200941F14 /* TimePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17939DA42A78EE2200941F14 /* TimePickerView.swift */; };
+		17A545FD2A7A2E0B00147685 /* BottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A545FC2A7A2E0B00147685 /* BottomView.swift */; };
 		DE14C68D2A75EE5500F568E8 /* OnboardingView1.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE14C68C2A75EE5500F568E8 /* OnboardingView1.swift */; };
 		DE14C68F2A75F59800F568E8 /* OnboardingView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE14C68E2A75F59800F568E8 /* OnboardingView2.swift */; };
 		DE14C6912A760B0000F568E8 /* ParallaxMotionModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE14C6902A760B0000F568E8 /* ParallaxMotionModifier.swift */; };
@@ -70,10 +73,13 @@
 /* Begin PBXFileReference section */
 		17202EFA2A6ED8DB00E3223B /* CharacterAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterAnimation.swift; sourceTree = "<group>"; };
 		17202EFC2A6ED90300E3223B /* CharacterFrames.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = CharacterFrames.xcassets; sourceTree = "<group>"; };
+		17288A122A7BCDBF008EE5EF /* FontView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontView.swift; sourceTree = "<group>"; };
+		17288A142A7C02EC008EE5EF /* WheelPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WheelPickerView.swift; sourceTree = "<group>"; };
 		1747A7332A793E8D0097CE96 /* DayOffActiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayOffActiveView.swift; sourceTree = "<group>"; };
 		1747A7352A7942630097CE96 /* DayOffToggleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayOffToggleView.swift; sourceTree = "<group>"; };
 		17939DA22A78EDFB00941F14 /* FloatHeart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatHeart.swift; sourceTree = "<group>"; };
 		17939DA42A78EE2200941F14 /* TimePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimePickerView.swift; sourceTree = "<group>"; };
+		17A545FC2A7A2E0B00147685 /* BottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomView.swift; sourceTree = "<group>"; };
 		DE14C68C2A75EE5500F568E8 /* OnboardingView1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView1.swift; sourceTree = "<group>"; };
 		DE14C68E2A75F59800F568E8 /* OnboardingView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView2.swift; sourceTree = "<group>"; };
 		DE14C6902A760B0000F568E8 /* ParallaxMotionModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParallaxMotionModifier.swift; sourceTree = "<group>"; };
@@ -98,7 +104,7 @@
 		EFB939E82A6A66B10083C08D /* LocalNotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotificationManager.swift; sourceTree = "<group>"; };
 		EFE2C8152A6FD80E006D5240 /* NotificationTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationTitle.swift; sourceTree = "<group>"; };
 		EFE2C8172A700220006D5240 /* NotificationSettingsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationSettingsCell.swift; sourceTree = "<group>"; };
-		EFE2C81B2A70045F006D5240 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		EFE2C81B2A70045F006D5240 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; wrapsLines = 0; };
 		EFEA286C2A65921A00FC4965 /* CDDWatchApp Watch App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "CDDWatchApp Watch App.entitlements"; sourceTree = "<group>"; };
 		EFEA286D2A65922200FC4965 /* CDDWatchApp-Watch-App-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "CDDWatchApp-Watch-App-Info.plist"; sourceTree = SOURCE_ROOT; };
 		EFEA286E2A65952000FC4965 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -127,10 +133,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		17288A102A7BC350008EE5EF /* TestingViews */ = {
+			isa = PBXGroup;
+			children = (
+				EFB939EC2A6C46B00083C08D /* LocalNotificationTestingView.swift */,
+				17939D9E2A78ED4000941F14 /* MiniTestingView.swift */,
+			);
+			path = TestingViews;
+			sourceTree = "<group>";
+		};
+		17288A112A7BCDA6008EE5EF /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				17288A122A7BCDBF008EE5EF /* FontView.swift */,
+				17288A142A7C02EC008EE5EF /* WheelPickerView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		17D23A0F2A793A52003C61B5 /* Features */ = {
 			isa = PBXGroup;
 			children = (
 				17939DA22A78EDFB00941F14 /* FloatHeart.swift */,
+				DE14C6902A760B0000F568E8 /* ParallaxMotionModifier.swift */,
 			);
 			path = Features;
 			sourceTree = "<group>";
@@ -147,7 +172,6 @@
 		DEDBC6902A65144900AB3867 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				EFEA28972A67CFF800FC4965 /* Guardy */,
 				EFEA28962A67CFEF00FC4965 /* TheoNa */,
 				EFEA288F2A67CFCE00FC4965 /* Alex */,
 				DEDBC6912A65145700AB3867 /* TheoPark */,
@@ -158,9 +182,10 @@
 		DEDBC6912A65145700AB3867 /* TheoPark */ = {
 			isa = PBXGroup;
 			children = (
+				17288A112A7BCDA6008EE5EF /* Components */,
 				17D23A0F2A793A52003C61B5 /* Features */,
 				EFE2C81B2A70045F006D5240 /* MainView.swift */,
-				DE14C6902A760B0000F568E8 /* ParallaxMotionModifier.swift */,
+				17A545FC2A7A2E0B00147685 /* BottomView.swift */,
 				DEDBC6962A65152400AB3867 /* ModalView.swift */,
 				DEDBC6982A65236C00AB3867 /* SelectNotificationDay.swift */,
 				DE14C68C2A75EE5500F568E8 /* OnboardingView1.swift */,
@@ -202,6 +227,7 @@
 				EF81A9B62A5B8A1400C6F417 /* ChuckchuDrivenDevelopmentApp.swift */,
 				EF9946CC2A65404100CE3B79 /* AppDelegate.swift */,
 				EF81A9BD2A5B8A1400C6F417 /* ContentView.swift */,
+				17288A102A7BC350008EE5EF /* TestingViews */,
 				EFEA28722A67BDA600FC4965 /* PushNotification */,
 				DEDBC6902A65144900AB3867 /* Views */,
 				EF81A9C22A5B8A1500C6F417 /* Preview Content */,
@@ -416,6 +442,12 @@
 				EF81A9BE2A5B8A1400C6F417 /* ContentView.swift in Sources */,
 				EFE2C8182A700220006D5240 /* NotificationSettingsCell.swift in Sources */,
 				EFEA28992A67D00500FC4965 /* GuardyView.swift in Sources */,
+				17288A152A7C02EC008EE5EF /* WheelPickerView.swift in Sources */,
+				17939D9F2A78ED4000941F14 /* MiniTestingView.swift in Sources */,
+				EFE2C8182A700220006D5240 /* NotificationSettingsCell.swift in Sources */,
+				EFB939ED2A6C46B00083C08D /* LocalNotificationTestingView.swift in Sources */,
+				17A545FD2A7A2E0B00147685 /* BottomView.swift in Sources */,
+				17288A132A7BCDBF008EE5EF /* FontView.swift in Sources */,
 				17202EFB2A6ED8DB00E3223B /* CharacterAnimation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

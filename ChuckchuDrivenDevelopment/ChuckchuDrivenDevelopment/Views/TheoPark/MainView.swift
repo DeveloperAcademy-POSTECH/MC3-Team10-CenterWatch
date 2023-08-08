@@ -75,7 +75,6 @@ struct MainView: View {
         UserDefaults.standard.set(selectedFrequency.rawValue, forKey: "notificationFrequency")
     }
     
-    
     let cfURL1 = Bundle.main.url(forResource: "Pretendard-Medium", withExtension: "otf")
     let cfURL2 = Bundle.main.url(forResource: "Pretendard-Bold", withExtension: "otf")
     var PretendardRegular: UIFont
@@ -86,7 +85,6 @@ struct MainView: View {
         PretendardRegular = UIFont(name: "Pretendard-Medium", size: 15.0)!
         CTFontManagerRegisterFontsForURL(cfURL2! as CFURL, CTFontManagerScope.process, nil)
         PretendardBold = UIFont(name: "Pretendard-Bold", size: 15.0)!
-        
     }
     
     
@@ -142,15 +140,17 @@ struct MainView: View {
                 .padding(EdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 16))
                 .shadow(radius: 6)
                 .modifier(ParallaxMotionModifier(manager: manager, magnitude3d: 20, magnitude2d: 25))
+
                 
             } else {
                 DayOffActiveView()
                     .opacity(1-cellOpacity)
             }
-            
+
             Spacer()
         }
         .navigationBarHidden(true)
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color.init(hue: 0, saturation: 0, brightness: 0.08))
         .onAppear {
             checkIfFirstInApp()

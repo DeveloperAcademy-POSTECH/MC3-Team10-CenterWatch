@@ -14,7 +14,6 @@ struct DayOffActiveView: View {
             Text("현재 알림이 꺼져 있어요.\n다음 날, 핀이 다시 돌아올거에요.")
                 .multilineTextAlignment(.center)
                 .font(Font.custom("Pretendard-Bold", size: 19))
-//                .font(Font(UIFont(name: "Pretendard-Bold", size: 19)!))
                 .lineSpacing(8)
                 .padding(.bottom)
         }

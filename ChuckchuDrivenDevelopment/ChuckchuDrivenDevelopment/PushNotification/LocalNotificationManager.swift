@@ -10,12 +10,15 @@ import UserNotifications
 
 
 class LocalNotificationManager: NSObject, ObservableObject, UNUserNotificationCenterDelegate {
-    @Published var isAuthorizationRequested: Bool = false
     
+    @Published var isAuthorizationRequested: Bool = false
+  
+    private let calendar = Calendar.current
     private let notificationCenter = UNUserNotificationCenter.current()
     private let notificationContent = UNMutableNotificationContent()
-    private let calendar = Calendar.current
     private let notificationTitle = NotificationTitle().variations
+
+    var text: NSMutableAttributedString? = NSMutableAttributedString(string: "List of notification requests and it's time\n")
     
     
     // MARK: - Request Notification Permission (Method)
@@ -146,11 +149,62 @@ extension LocalNotificationManager {
             
         }
         /// 요청된 알림 확인
+
+        case .twoHour:
+            /// startHour에서 증가하는 인터벌 알림 예약 생성 및 요청
+            for count in 1...(endHour - startHour) + 1 { // 알림의 반복 횟수
+                
+                makeNotificationContent(with: notificationTitle)
+                
+                let hour = startHour + (count - 1)
+                let minute = 0
+                
+                var dateInfo = DateComponents()
+                dateInfo.hour = hour
+                dateInfo.minute = minute
+                dateInfo.second = 0
+                dateInfo.weekday = weekday
+                dateInfo.timeZone = .current
+                dateInfo.calendar = calendar
+                
+                let identifier = UUID().uuidString + "\(count)" + "\(weekday)"
+                let trigger = UNCalendarNotificationTrigger(dateMatching: dateInfo, repeats: true)
+                let request = UNNotificationRequest(identifier: identifier, content: notificationContent, trigger: trigger)
+                
+                self.notificationCenter.add(request)
+            }
+            
+        case .threeHour:
+            /// startHour에서 증가하는 인터벌 알림 예약 생성 및 요청
+            for count in 1...(endHour - startHour) + 1 { // 알림의 반복 횟수
+                
+                makeNotificationContent(with: notificationTitle)
+                
+                let hour = startHour + (count - 1)
+                let minute = 0
+                
+                var dateInfo = DateComponents()
+                dateInfo.hour = hour
+                dateInfo.minute = minute
+                dateInfo.second = 0
+                dateInfo.weekday = weekday
+                dateInfo.timeZone = .current
+                dateInfo.calendar = calendar
+                
+                let identifier = UUID().uuidString + "\(count)" + "\(weekday)"
+                let trigger = UNCalendarNotificationTrigger(dateMatching: dateInfo, repeats: true)
+                let request = UNNotificationRequest(identifier: identifier, content: notificationContent, trigger: trigger)
+                
+                self.notificationCenter.add(request)
+            }
+        }
+        
         notificationCenter.getPendingNotificationRequests { messages in
             print("Notification Schdule Complete: ", messages)
         }
     }
     
+
     // MARK: - Cancel Notification (Method)
     /// 예약이 된 모든 알림 요청을 삭제합니다.
     public func cancelNotification() {
@@ -158,6 +212,10 @@ extension LocalNotificationManager {
     }
     
     
+
+
+    /* 리팩토링에 쓰일 함수 리스트 */
+
     // MARK: - NotificationCenter Init (Method)
     private func initNotificationCenter() {
         notificationCenter.delegate = self

@@ -13,20 +13,17 @@
 		17288A152A7C02EC008EE5EF /* WheelPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17288A142A7C02EC008EE5EF /* WheelPickerView.swift */; };
 		1747A7342A793E8D0097CE96 /* DayOffActiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1747A7332A793E8D0097CE96 /* DayOffActiveView.swift */; };
 		1747A7362A7942630097CE96 /* DayOffToggleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1747A7352A7942630097CE96 /* DayOffToggleView.swift */; };
-		17939D9F2A78ED4000941F14 /* MiniTestingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17939D9E2A78ED4000941F14 /* MiniTestingView.swift */; };
-		17939DA12A78ED6D00941F14 /* WeekdayCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17939DA02A78ED6D00941F14 /* WeekdayCalculator.swift */; };
 		17939DA32A78EDFB00941F14 /* FloatHeart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17939DA22A78EDFB00941F14 /* FloatHeart.swift */; };
 		17939DA52A78EE2200941F14 /* TimePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17939DA42A78EE2200941F14 /* TimePickerView.swift */; };
 		17A545FD2A7A2E0B00147685 /* BottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A545FC2A7A2E0B00147685 /* BottomView.swift */; };
 		DE14C68D2A75EE5500F568E8 /* OnboardingView1.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE14C68C2A75EE5500F568E8 /* OnboardingView1.swift */; };
-		DE14C68F2A75F59800F568E8 /* OnBoardingView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE14C68E2A75F59800F568E8 /* OnBoardingView2.swift */; };
+		DE14C68F2A75F59800F568E8 /* OnboardingView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE14C68E2A75F59800F568E8 /* OnboardingView2.swift */; };
 		DE14C6912A760B0000F568E8 /* ParallaxMotionModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE14C6902A760B0000F568E8 /* ParallaxMotionModifier.swift */; };
 		DE7294D82A73AE62003C4059 /* Pretendard-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = DE7294D72A73AE62003C4059 /* Pretendard-Bold.otf */; };
 		DE7294DA2A73AF74003C4059 /* Pretendard-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = DE7294D92A73AF74003C4059 /* Pretendard-Medium.otf */; };
 		DED043012A6F9924004D3395 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED043002A6F9924004D3395 /* SplashView.swift */; };
 		DEDBC6972A65152400AB3867 /* ModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDBC6962A65152400AB3867 /* ModalView.swift */; };
 		DEDBC6992A65236C00AB3867 /* SelectNotificationDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDBC6982A65236C00AB3867 /* SelectNotificationDay.swift */; };
-		EF7CFA2A2A6E19ED005F14F0 /* NotificationIntervalEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7CFA292A6E19ED005F14F0 /* NotificationIntervalEnum.swift */; };
 		EF81A9B72A5B8A1400C6F417 /* ChuckchuDrivenDevelopmentApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF81A9B62A5B8A1400C6F417 /* ChuckchuDrivenDevelopmentApp.swift */; };
 		EF81A9BE2A5B8A1400C6F417 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF81A9BD2A5B8A1400C6F417 /* ContentView.swift */; };
 		EF81A9C02A5B8A1500C6F417 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF81A9BF2A5B8A1500C6F417 /* Assets.xcassets */; };
@@ -38,11 +35,7 @@
 		EF81A9DB2A5B8C0300C6F417 /* CDDWatchApp Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = EF81A9CE2A5B8C0200C6F417 /* CDDWatchApp Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		EF9946CD2A65404100CE3B79 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF9946CC2A65404100CE3B79 /* AppDelegate.swift */; };
 		EFB939E92A6A66B10083C08D /* LocalNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB939E82A6A66B10083C08D /* LocalNotificationManager.swift */; };
-		EFB939ED2A6C46B00083C08D /* LocalNotificationTestingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB939EC2A6C46B00083C08D /* LocalNotificationTestingView.swift */; };
 		EFD4285D2A6EB72C00A241D0 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = EFD4285C2A6EB72C00A241D0 /* FirebaseAnalytics */; };
-		EFD4285F2A6EB72C00A241D0 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = EFD4285E2A6EB72C00A241D0 /* FirebaseFirestore */; };
-		EFD428612A6EB72C00A241D0 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = EFD428602A6EB72C00A241D0 /* FirebaseMessaging */; };
-		EFD428632A6EB74500A241D0 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = EFD428622A6EB74500A241D0 /* FirebaseAuth */; };
 		EFE2C8162A6FD80E006D5240 /* NotificationTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFE2C8152A6FD80E006D5240 /* NotificationTitle.swift */; };
 		EFE2C8182A700220006D5240 /* NotificationSettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFE2C8172A700220006D5240 /* NotificationSettingsCell.swift */; };
 		EFE2C81C2A70045F006D5240 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFE2C81B2A70045F006D5240 /* MainView.swift */; };
@@ -50,11 +43,7 @@
 		EFEA28932A67CFCE00FC4965 /* PokeUserTestNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFEA28902A67CFCE00FC4965 /* PokeUserTestNameView.swift */; };
 		EFEA28942A67CFCE00FC4965 /* PokeUserTestListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFEA28912A67CFCE00FC4965 /* PokeUserTestListView.swift */; };
 		EFEA28952A67CFCE00FC4965 /* PokeUserTestHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFEA28922A67CFCE00FC4965 /* PokeUserTestHomeView.swift */; };
-		EFECCBA62A612F540093BB67 /* Member.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFECCBA52A612F540093BB67 /* Member.swift */; };
-		EFECCBA82A612F610093BB67 /* Poke.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFECCBA72A612F610093BB67 /* Poke.swift */; };
-		EFECCBAA2A612F720093BB67 /* MemberGroupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFECCBA92A612F720093BB67 /* MemberGroupViewModel.swift */; };
-		EFECCBAC2A612F810093BB67 /* MemberViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFECCBAB2A612F810093BB67 /* MemberViewModel.swift */; };
-		EFECCBAE2A612F8A0093BB67 /* PokeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFECCBAD2A612F8A0093BB67 /* PokeViewModel.swift */; };
+		EFEA28992A67D00500FC4965 /* GuardyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFEA28982A67D00500FC4965 /* GuardyView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,21 +77,18 @@
 		17288A142A7C02EC008EE5EF /* WheelPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WheelPickerView.swift; sourceTree = "<group>"; };
 		1747A7332A793E8D0097CE96 /* DayOffActiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayOffActiveView.swift; sourceTree = "<group>"; };
 		1747A7352A7942630097CE96 /* DayOffToggleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayOffToggleView.swift; sourceTree = "<group>"; };
-		17939D9E2A78ED4000941F14 /* MiniTestingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniTestingView.swift; sourceTree = "<group>"; };
-		17939DA02A78ED6D00941F14 /* WeekdayCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekdayCalculator.swift; sourceTree = "<group>"; };
 		17939DA22A78EDFB00941F14 /* FloatHeart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatHeart.swift; sourceTree = "<group>"; };
 		17939DA42A78EE2200941F14 /* TimePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimePickerView.swift; sourceTree = "<group>"; };
 		17A545FC2A7A2E0B00147685 /* BottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomView.swift; sourceTree = "<group>"; };
 		DE14C68C2A75EE5500F568E8 /* OnboardingView1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView1.swift; sourceTree = "<group>"; };
-		DE14C68E2A75F59800F568E8 /* OnBoardingView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingView2.swift; sourceTree = "<group>"; };
+		DE14C68E2A75F59800F568E8 /* OnboardingView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView2.swift; sourceTree = "<group>"; };
 		DE14C6902A760B0000F568E8 /* ParallaxMotionModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParallaxMotionModifier.swift; sourceTree = "<group>"; };
 		DE7294D72A73AE62003C4059 /* Pretendard-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Bold.otf"; sourceTree = "<group>"; };
 		DE7294D92A73AF74003C4059 /* Pretendard-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Medium.otf"; sourceTree = "<group>"; };
 		DED043002A6F9924004D3395 /* SplashView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		DEDBC6962A65152400AB3867 /* ModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalView.swift; sourceTree = "<group>"; };
 		DEDBC6982A65236C00AB3867 /* SelectNotificationDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectNotificationDay.swift; sourceTree = "<group>"; };
-		EF7CFA292A6E19ED005F14F0 /* NotificationIntervalEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationIntervalEnum.swift; sourceTree = "<group>"; };
-		EF81A9B32A5B8A1400C6F417 /* 꿋꿋.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "꿋꿋.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EF81A9B32A5B8A1400C6F417 /* GgoodGgood.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GgoodGgood.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF81A9B62A5B8A1400C6F417 /* ChuckchuDrivenDevelopmentApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChuckchuDrivenDevelopmentApp.swift; sourceTree = "<group>"; };
 		EF81A9BD2A5B8A1400C6F417 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		EF81A9BF2A5B8A1500C6F417 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -116,7 +102,6 @@
 		EF9946CB2A65401000CE3B79 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		EF9946CC2A65404100CE3B79 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EFB939E82A6A66B10083C08D /* LocalNotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotificationManager.swift; sourceTree = "<group>"; };
-		EFB939EC2A6C46B00083C08D /* LocalNotificationTestingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotificationTestingView.swift; sourceTree = "<group>"; };
 		EFE2C8152A6FD80E006D5240 /* NotificationTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationTitle.swift; sourceTree = "<group>"; };
 		EFE2C8172A700220006D5240 /* NotificationSettingsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationSettingsCell.swift; sourceTree = "<group>"; };
 		EFE2C81B2A70045F006D5240 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; wrapsLines = 0; };
@@ -126,12 +111,7 @@
 		EFEA28902A67CFCE00FC4965 /* PokeUserTestNameView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokeUserTestNameView.swift; sourceTree = "<group>"; };
 		EFEA28912A67CFCE00FC4965 /* PokeUserTestListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokeUserTestListView.swift; sourceTree = "<group>"; };
 		EFEA28922A67CFCE00FC4965 /* PokeUserTestHomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokeUserTestHomeView.swift; sourceTree = "<group>"; };
-		EFECCBA52A612F540093BB67 /* Member.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Member.swift; sourceTree = "<group>"; };
-		EFECCBA72A612F610093BB67 /* Poke.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Poke.swift; sourceTree = "<group>"; };
-		EFECCBA92A612F720093BB67 /* MemberGroupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberGroupViewModel.swift; sourceTree = "<group>"; };
-		EFECCBAB2A612F810093BB67 /* MemberViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberViewModel.swift; sourceTree = "<group>"; };
-		EFECCBAD2A612F8A0093BB67 /* PokeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokeViewModel.swift; sourceTree = "<group>"; };
-		EFECCBAF2A61302A0093BB67 /* MemberGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberGroup.swift; sourceTree = "<group>"; };
+		EFEA28982A67D00500FC4965 /* GuardyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuardyView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,10 +119,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EFD428612A6EB72C00A241D0 /* FirebaseMessaging in Frameworks */,
 				EFD4285D2A6EB72C00A241D0 /* FirebaseAnalytics in Frameworks */,
-				EFD4285F2A6EB72C00A241D0 /* FirebaseFirestore in Frameworks */,
-				EFD428632A6EB74500A241D0 /* FirebaseAuth in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -212,7 +189,7 @@
 				DEDBC6962A65152400AB3867 /* ModalView.swift */,
 				DEDBC6982A65236C00AB3867 /* SelectNotificationDay.swift */,
 				DE14C68C2A75EE5500F568E8 /* OnboardingView1.swift */,
-				DE14C68E2A75F59800F568E8 /* OnBoardingView2.swift */,
+				DE14C68E2A75F59800F568E8 /* OnboardingView2.swift */,
 				EFE2C8172A700220006D5240 /* NotificationSettingsCell.swift */,
 				DED043002A6F9924004D3395 /* SplashView.swift */,
 				17939DA42A78EE2200941F14 /* TimePickerView.swift */,
@@ -235,7 +212,7 @@
 		EF81A9B42A5B8A1400C6F417 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				EF81A9B32A5B8A1400C6F417 /* 꿋꿋.app */,
+				EF81A9B32A5B8A1400C6F417 /* GgoodGgood.app */,
 				EF81A9CE2A5B8C0200C6F417 /* CDDWatchApp Watch App.app */,
 			);
 			name = Products;
@@ -252,8 +229,6 @@
 				EF81A9BD2A5B8A1400C6F417 /* ContentView.swift */,
 				17288A102A7BC350008EE5EF /* TestingViews */,
 				EFEA28722A67BDA600FC4965 /* PushNotification */,
-				EFECCB9F2A612E280093BB67 /* Models */,
-				EFECCB9E2A612E200093BB67 /* ViewModels */,
 				DEDBC6902A65144900AB3867 /* Views */,
 				EF81A9C22A5B8A1500C6F417 /* Preview Content */,
 				DE7294D02A73A6FD003C4059 /* Resources */,
@@ -302,9 +277,7 @@
 			isa = PBXGroup;
 			children = (
 				EFB939E82A6A66B10083C08D /* LocalNotificationManager.swift */,
-				EF7CFA292A6E19ED005F14F0 /* NotificationIntervalEnum.swift */,
 				EFE2C8152A6FD80E006D5240 /* NotificationTitle.swift */,
-				17939DA02A78ED6D00941F14 /* WeekdayCalculator.swift */,
 			);
 			path = PushNotification;
 			sourceTree = "<group>";
@@ -328,24 +301,12 @@
 			path = TheoNa;
 			sourceTree = "<group>";
 		};
-		EFECCB9E2A612E200093BB67 /* ViewModels */ = {
+		EFEA28972A67CFF800FC4965 /* Guardy */ = {
 			isa = PBXGroup;
 			children = (
-				EFECCBA92A612F720093BB67 /* MemberGroupViewModel.swift */,
-				EFECCBAB2A612F810093BB67 /* MemberViewModel.swift */,
-				EFECCBAD2A612F8A0093BB67 /* PokeViewModel.swift */,
+				EFEA28982A67D00500FC4965 /* GuardyView.swift */,
 			);
-			path = ViewModels;
-			sourceTree = "<group>";
-		};
-		EFECCB9F2A612E280093BB67 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				EFECCBAF2A61302A0093BB67 /* MemberGroup.swift */,
-				EFECCBA52A612F540093BB67 /* Member.swift */,
-				EFECCBA72A612F610093BB67 /* Poke.swift */,
-			);
-			path = Models;
+			path = Guardy;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -368,12 +329,9 @@
 			name = ChuckchuDrivenDevelopment;
 			packageProductDependencies = (
 				EFD4285C2A6EB72C00A241D0 /* FirebaseAnalytics */,
-				EFD4285E2A6EB72C00A241D0 /* FirebaseFirestore */,
-				EFD428602A6EB72C00A241D0 /* FirebaseMessaging */,
-				EFD428622A6EB74500A241D0 /* FirebaseAuth */,
 			);
 			productName = ChuckchuDrivenDevelopment;
-			productReference = EF81A9B32A5B8A1400C6F417 /* 꿋꿋.app */;
+			productReference = EF81A9B32A5B8A1400C6F417 /* GgoodGgood.app */;
 			productType = "com.apple.product-type.application";
 		};
 		EF81A9CD2A5B8C0200C6F417 /* CDDWatchApp Watch App */ = {
@@ -463,19 +421,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DE14C68F2A75F59800F568E8 /* OnBoardingView2.swift in Sources */,
+				DE14C68F2A75F59800F568E8 /* OnboardingView2.swift in Sources */,
 				DEDBC6972A65152400AB3867 /* ModalView.swift in Sources */,
 				EFB939E92A6A66B10083C08D /* LocalNotificationManager.swift in Sources */,
 				EF81A9B72A5B8A1400C6F417 /* ChuckchuDrivenDevelopmentApp.swift in Sources */,
-				EFECCBAA2A612F720093BB67 /* MemberGroupViewModel.swift in Sources */,
 				EFEA28952A67CFCE00FC4965 /* PokeUserTestHomeView.swift in Sources */,
-				17939DA12A78ED6D00941F14 /* WeekdayCalculator.swift in Sources */,
 				EF9946CD2A65404100CE3B79 /* AppDelegate.swift in Sources */,
 				DEDBC6992A65236C00AB3867 /* SelectNotificationDay.swift in Sources */,
 				EFE2C8162A6FD80E006D5240 /* NotificationTitle.swift in Sources */,
 				DE14C6912A760B0000F568E8 /* ParallaxMotionModifier.swift in Sources */,
 				1747A7362A7942630097CE96 /* DayOffToggleView.swift in Sources */,
-				EFECCBAE2A612F8A0093BB67 /* PokeViewModel.swift in Sources */,
 				DE14C68D2A75EE5500F568E8 /* OnboardingView1.swift in Sources */,
 				EFE2C81C2A70045F006D5240 /* MainView.swift in Sources */,
 				1747A7342A793E8D0097CE96 /* DayOffActiveView.swift in Sources */,
@@ -483,9 +438,10 @@
 				EFEA28942A67CFCE00FC4965 /* PokeUserTestListView.swift in Sources */,
 				17939DA52A78EE2200941F14 /* TimePickerView.swift in Sources */,
 				17939DA32A78EDFB00941F14 /* FloatHeart.swift in Sources */,
-				EF7CFA2A2A6E19ED005F14F0 /* NotificationIntervalEnum.swift in Sources */,
 				DED043012A6F9924004D3395 /* SplashView.swift in Sources */,
 				EF81A9BE2A5B8A1400C6F417 /* ContentView.swift in Sources */,
+				EFE2C8182A700220006D5240 /* NotificationSettingsCell.swift in Sources */,
+				EFEA28992A67D00500FC4965 /* GuardyView.swift in Sources */,
 				17288A152A7C02EC008EE5EF /* WheelPickerView.swift in Sources */,
 				17939D9F2A78ED4000941F14 /* MiniTestingView.swift in Sources */,
 				EFE2C8182A700220006D5240 /* NotificationSettingsCell.swift in Sources */,
@@ -493,9 +449,6 @@
 				17A545FD2A7A2E0B00147685 /* BottomView.swift in Sources */,
 				17288A132A7BCDBF008EE5EF /* FontView.swift in Sources */,
 				17202EFB2A6ED8DB00E3223B /* CharacterAnimation.swift in Sources */,
-				EFECCBAC2A612F810093BB67 /* MemberViewModel.swift in Sources */,
-				EFECCBA82A612F610093BB67 /* Poke.swift in Sources */,
-				EFECCBA62A612F540093BB67 /* Member.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -658,7 +611,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.liannechoi.ChuckchuDrivenDevelopment;
-				PRODUCT_NAME = "꿋꿋";
+				PRODUCT_NAME = GgoodGgood;
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
 				SUPPORTS_MACCATALYST = NO;
@@ -699,7 +652,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.liannechoi.ChuckchuDrivenDevelopment;
-				PRODUCT_NAME = "꿋꿋";
+				PRODUCT_NAME = GgoodGgood;
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
 				SUPPORTS_MACCATALYST = NO;
@@ -823,21 +776,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = EFD4285B2A6EB72C00A241D0 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseAnalytics;
-		};
-		EFD4285E2A6EB72C00A241D0 /* FirebaseFirestore */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = EFD4285B2A6EB72C00A241D0 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseFirestore;
-		};
-		EFD428602A6EB72C00A241D0 /* FirebaseMessaging */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = EFD4285B2A6EB72C00A241D0 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseMessaging;
-		};
-		EFD428622A6EB74500A241D0 /* FirebaseAuth */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = EFD4285B2A6EB72C00A241D0 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseAuth;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

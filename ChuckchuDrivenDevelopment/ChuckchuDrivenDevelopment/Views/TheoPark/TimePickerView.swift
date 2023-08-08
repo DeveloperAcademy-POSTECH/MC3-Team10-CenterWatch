@@ -34,7 +34,9 @@ struct TimePickerView: View {
             }
         }
         .onChange(of: selectedStartHour) { newValue in
-            selectedEndHour = max(selectedStartHour + 1, min(selectedStartHour + 6, selectedEndHour))
+            selectedEndHour = max(selectedStartHour + 1,
+                                  min(selectedStartHour + 6, selectedEndHour)
+            )
         }
     }
 }

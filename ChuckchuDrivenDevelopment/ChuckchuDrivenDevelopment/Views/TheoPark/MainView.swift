@@ -46,8 +46,8 @@ class ToggleStateModel: ObservableObject {
 
 struct MainView: View {
     @AppStorage("isNotiAuthorized") var isNotiAuthorized = true // 알림 허용 여부를 저장하는 변수
+   
     @ObservedObject var toggleState = ToggleStateModel()
-    
     @ObservedObject var manager = MotionManager()
     @StateObject private var localNotificationManager = LocalNotificationManager()
     @State var settings = Setting()
@@ -56,7 +56,7 @@ struct MainView: View {
     @State private var selectedStartHour: Int = 0
     @State private var selectedEndHour: Int = 0
     @State private var selectedFrequency: NotiInterval = .hour
-    
+   
     /// 하루만 알림 끄기
     @State private var animationPaused = false
     @State private var grayscaleValue: Double = 0.0
@@ -135,45 +135,55 @@ struct MainView: View {
                         .shadow(radius: 6)
                         .modifier(ParallaxMotionModifier(manager: manager, magnitude3d: 20, magnitude2d: 5))
                     
+                    
+                    DayOffActiveView()
+                        .opacity(1-cellOpacity)
+                        .onChange(of: toggleIsOn) { newValue in
+                            // Update animationPaused and grayscaleValue based on toggleIsOn
+                            if newValue {
+                                animationPaused = true
+                                grayscaleValue = 1.0
+                            } else {
+                                animationPaused = false
+                                grayscaleValue = 0.0
+                            }
+                        }
                 }
                 .cornerRadius(20)
                 .padding(EdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 16))
                 .shadow(radius: 6)
                 .modifier(ParallaxMotionModifier(manager: manager, magnitude3d: 20, magnitude2d: 25))
 
-                
             } else {
-                DayOffActiveView()
-                    .opacity(1-cellOpacity)
+                pleaseTurnOnTheNotiView
             }
-
+            
             Spacer()
         }
         .navigationBarHidden(true)
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color.init(hue: 0, saturation: 0, brightness: 0.08))
         .onAppear {
             checkIfFirstInApp()
             
             self.toggleState.toggleIsOn = UserDefaults.standard.bool(forKey: "dayOffToggleState")
-            
-            for weekday in settings.selectedDays {
-                let index = settings.selectedDays.firstIndex(of: weekday)
-                let weekdayIndex = index ?? 0 - 1
-                if !selectedDaysInt.isEmpty {
-                    if selectedDaysInt.contains(weekdayIndex) {
-                        settings.selectedDays[weekdayIndex].selected = true
-                    } else {
-                        settings.selectedDays[weekdayIndex].selected = false
-                    }
-                }
-            }
+
+             for weekday in settings.selectedDays {
+                 let index = settings.selectedDays.firstIndex(of: weekday)
+                 let weekdayIndex = index ?? 0 - 1
+                 if !selectedDaysInt.isEmpty {
+                     if selectedDaysInt.contains(weekdayIndex) {
+                         settings.selectedDays[weekdayIndex].selected = true
+                     } else {
+                         settings.selectedDays[weekdayIndex].selected = false
+                     }
+                 }
+             }
             
             /// UserDefaults에 저장된 데이터
             self.selectedStartHour = UserDefaults.standard.integer(forKey: "notificationStartHour")
             self.selectedEndHour = UserDefaults.standard.integer(forKey: "notificationEndHour")
             self.selectedFrequency = NotiInterval(rawValue: UserDefaults.standard.integer(forKey: "notificationFrequency")) ?? .hour
-            
+           
             /// 저장된 요일 값에 해당 요일이 존재하면 저장된 값을 재할당
             if let arr = UserDefaults.standard.array(forKey: "notificationWeekdays") as? [Int] {
                 for int in 0...settings.selectedDays.count {
@@ -192,8 +202,8 @@ struct MainView: View {
             }
         }
     }
-    
-    
+   
+
     //MARK: 노티 허용을 하지 않았을 때 <시스템 설정>으로 보내는 화면입니다.
     var pleaseTurnOnTheNotiView: some View {
         VStack(spacing: 25) {

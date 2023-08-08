@@ -61,28 +61,28 @@ struct NotificationSettingsCell: View {
                 Spacer()
                 
                 // MARK: - 알림 설정 버튼
-                    Button {
-                        self.showModal = true
-                        let impactHeavy = UIImpactFeedbackGenerator(style: .heavy)
-                        impactHeavy.impactOccurred()
-                        
-                    } label: {
-                        Image(systemName: "alarm.fill")
-                        Text("알림 설정")
-                            .padding(4)
-                    }
-                    .font(Font(UIFont(name: "Pretendard-Bold", size: 16)!))
-                    .buttonStyle(.borderedProminent)
-                    .cornerRadius(24)
-                    .sheet(isPresented: self.$showModal) {
-                        ModalView(selectedStartHour: $selectedStartHour,
-                                  selectedEndHour: $selectedEndHour,
-                                  selectedFrequency: $selectedFrequency,
-                                  selectedWeekdays: $settings.selectedDays,
-                                  settings: $settings,
-                                  textOpacity: $textOpacity)
+                Button {
+                    self.showModal = true
+                    let impactHeavy = UIImpactFeedbackGenerator(style: .heavy)
+                    impactHeavy.impactOccurred()
+                    
+                } label: {
+                    Image(systemName: "alarm.fill")
+                    Text("알림 설정")
+                        .padding(4)
+                }
+                .font(Font(UIFont(name: "Pretendard-Bold", size: 16)!))
+                .buttonStyle(.borderedProminent)
+                .cornerRadius(24)
+                .sheet(isPresented: self.$showModal) {
+                    ModalView(selectedStartHour: $selectedStartHour,
+                              selectedEndHour: $selectedEndHour,
+                              selectedFrequency: $selectedFrequency,
+                              selectedWeekdays: $settings.selectedDays,
+                              settings: $settings,
+                              textOpacity: $textOpacity)
                     .preferredColorScheme(.dark)
-                    }
+                }
             }
             .padding([.top, .leading, .trailing])
             

@@ -9,12 +9,15 @@
 /* Begin PBXBuildFile section */
 		17202EFB2A6ED8DB00E3223B /* CharacterAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17202EFA2A6ED8DB00E3223B /* CharacterAnimation.swift */; };
 		17202EFD2A6ED90300E3223B /* CharacterFrames.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17202EFC2A6ED90300E3223B /* CharacterFrames.xcassets */; };
+		17288A132A7BCDBF008EE5EF /* FontView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17288A122A7BCDBF008EE5EF /* FontView.swift */; };
+		17288A152A7C02EC008EE5EF /* WheelPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17288A142A7C02EC008EE5EF /* WheelPickerView.swift */; };
 		1747A7342A793E8D0097CE96 /* DayOffActiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1747A7332A793E8D0097CE96 /* DayOffActiveView.swift */; };
 		1747A7362A7942630097CE96 /* DayOffToggleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1747A7352A7942630097CE96 /* DayOffToggleView.swift */; };
 		17939D9F2A78ED4000941F14 /* MiniTestingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17939D9E2A78ED4000941F14 /* MiniTestingView.swift */; };
 		17939DA12A78ED6D00941F14 /* WeekdayCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17939DA02A78ED6D00941F14 /* WeekdayCalculator.swift */; };
 		17939DA32A78EDFB00941F14 /* FloatHeart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17939DA22A78EDFB00941F14 /* FloatHeart.swift */; };
 		17939DA52A78EE2200941F14 /* TimePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17939DA42A78EE2200941F14 /* TimePickerView.swift */; };
+		17A545FD2A7A2E0B00147685 /* BottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A545FC2A7A2E0B00147685 /* BottomView.swift */; };
 		DE14C68D2A75EE5500F568E8 /* OnboardingView1.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE14C68C2A75EE5500F568E8 /* OnboardingView1.swift */; };
 		DE14C68F2A75F59800F568E8 /* OnBoardingView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE14C68E2A75F59800F568E8 /* OnBoardingView2.swift */; };
 		DE14C6912A760B0000F568E8 /* ParallaxMotionModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE14C6902A760B0000F568E8 /* ParallaxMotionModifier.swift */; };
@@ -47,7 +50,6 @@
 		EFEA28932A67CFCE00FC4965 /* PokeUserTestNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFEA28902A67CFCE00FC4965 /* PokeUserTestNameView.swift */; };
 		EFEA28942A67CFCE00FC4965 /* PokeUserTestListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFEA28912A67CFCE00FC4965 /* PokeUserTestListView.swift */; };
 		EFEA28952A67CFCE00FC4965 /* PokeUserTestHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFEA28922A67CFCE00FC4965 /* PokeUserTestHomeView.swift */; };
-		EFEA28992A67D00500FC4965 /* GuardyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFEA28982A67D00500FC4965 /* GuardyView.swift */; };
 		EFECCBA62A612F540093BB67 /* Member.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFECCBA52A612F540093BB67 /* Member.swift */; };
 		EFECCBA82A612F610093BB67 /* Poke.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFECCBA72A612F610093BB67 /* Poke.swift */; };
 		EFECCBAA2A612F720093BB67 /* MemberGroupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFECCBA92A612F720093BB67 /* MemberGroupViewModel.swift */; };
@@ -82,12 +84,15 @@
 /* Begin PBXFileReference section */
 		17202EFA2A6ED8DB00E3223B /* CharacterAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterAnimation.swift; sourceTree = "<group>"; };
 		17202EFC2A6ED90300E3223B /* CharacterFrames.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = CharacterFrames.xcassets; sourceTree = "<group>"; };
+		17288A122A7BCDBF008EE5EF /* FontView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontView.swift; sourceTree = "<group>"; };
+		17288A142A7C02EC008EE5EF /* WheelPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WheelPickerView.swift; sourceTree = "<group>"; };
 		1747A7332A793E8D0097CE96 /* DayOffActiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayOffActiveView.swift; sourceTree = "<group>"; };
 		1747A7352A7942630097CE96 /* DayOffToggleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayOffToggleView.swift; sourceTree = "<group>"; };
 		17939D9E2A78ED4000941F14 /* MiniTestingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniTestingView.swift; sourceTree = "<group>"; };
 		17939DA02A78ED6D00941F14 /* WeekdayCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekdayCalculator.swift; sourceTree = "<group>"; };
 		17939DA22A78EDFB00941F14 /* FloatHeart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatHeart.swift; sourceTree = "<group>"; };
 		17939DA42A78EE2200941F14 /* TimePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimePickerView.swift; sourceTree = "<group>"; };
+		17A545FC2A7A2E0B00147685 /* BottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomView.swift; sourceTree = "<group>"; };
 		DE14C68C2A75EE5500F568E8 /* OnboardingView1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView1.swift; sourceTree = "<group>"; };
 		DE14C68E2A75F59800F568E8 /* OnBoardingView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingView2.swift; sourceTree = "<group>"; };
 		DE14C6902A760B0000F568E8 /* ParallaxMotionModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParallaxMotionModifier.swift; sourceTree = "<group>"; };
@@ -114,14 +119,13 @@
 		EFB939EC2A6C46B00083C08D /* LocalNotificationTestingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotificationTestingView.swift; sourceTree = "<group>"; };
 		EFE2C8152A6FD80E006D5240 /* NotificationTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationTitle.swift; sourceTree = "<group>"; };
 		EFE2C8172A700220006D5240 /* NotificationSettingsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationSettingsCell.swift; sourceTree = "<group>"; };
-		EFE2C81B2A70045F006D5240 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		EFE2C81B2A70045F006D5240 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; wrapsLines = 0; };
 		EFEA286C2A65921A00FC4965 /* CDDWatchApp Watch App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "CDDWatchApp Watch App.entitlements"; sourceTree = "<group>"; };
 		EFEA286D2A65922200FC4965 /* CDDWatchApp-Watch-App-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "CDDWatchApp-Watch-App-Info.plist"; sourceTree = SOURCE_ROOT; };
 		EFEA286E2A65952000FC4965 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		EFEA28902A67CFCE00FC4965 /* PokeUserTestNameView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokeUserTestNameView.swift; sourceTree = "<group>"; };
 		EFEA28912A67CFCE00FC4965 /* PokeUserTestListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokeUserTestListView.swift; sourceTree = "<group>"; };
 		EFEA28922A67CFCE00FC4965 /* PokeUserTestHomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokeUserTestHomeView.swift; sourceTree = "<group>"; };
-		EFEA28982A67D00500FC4965 /* GuardyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuardyView.swift; sourceTree = "<group>"; };
 		EFECCBA52A612F540093BB67 /* Member.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Member.swift; sourceTree = "<group>"; };
 		EFECCBA72A612F610093BB67 /* Poke.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Poke.swift; sourceTree = "<group>"; };
 		EFECCBA92A612F720093BB67 /* MemberGroupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberGroupViewModel.swift; sourceTree = "<group>"; };
@@ -152,10 +156,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		17288A102A7BC350008EE5EF /* TestingViews */ = {
+			isa = PBXGroup;
+			children = (
+				EFB939EC2A6C46B00083C08D /* LocalNotificationTestingView.swift */,
+				17939D9E2A78ED4000941F14 /* MiniTestingView.swift */,
+			);
+			path = TestingViews;
+			sourceTree = "<group>";
+		};
+		17288A112A7BCDA6008EE5EF /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				17288A122A7BCDBF008EE5EF /* FontView.swift */,
+				17288A142A7C02EC008EE5EF /* WheelPickerView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		17D23A0F2A793A52003C61B5 /* Features */ = {
 			isa = PBXGroup;
 			children = (
 				17939DA22A78EDFB00941F14 /* FloatHeart.swift */,
+				DE14C6902A760B0000F568E8 /* ParallaxMotionModifier.swift */,
 			);
 			path = Features;
 			sourceTree = "<group>";
@@ -172,7 +195,6 @@
 		DEDBC6902A65144900AB3867 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				EFEA28972A67CFF800FC4965 /* Guardy */,
 				EFEA28962A67CFEF00FC4965 /* TheoNa */,
 				EFEA288F2A67CFCE00FC4965 /* Alex */,
 				DEDBC6912A65145700AB3867 /* TheoPark */,
@@ -183,9 +205,10 @@
 		DEDBC6912A65145700AB3867 /* TheoPark */ = {
 			isa = PBXGroup;
 			children = (
+				17288A112A7BCDA6008EE5EF /* Components */,
 				17D23A0F2A793A52003C61B5 /* Features */,
 				EFE2C81B2A70045F006D5240 /* MainView.swift */,
-				DE14C6902A760B0000F568E8 /* ParallaxMotionModifier.swift */,
+				17A545FC2A7A2E0B00147685 /* BottomView.swift */,
 				DEDBC6962A65152400AB3867 /* ModalView.swift */,
 				DEDBC6982A65236C00AB3867 /* SelectNotificationDay.swift */,
 				DE14C68C2A75EE5500F568E8 /* OnboardingView1.swift */,
@@ -227,6 +250,7 @@
 				EF81A9B62A5B8A1400C6F417 /* ChuckchuDrivenDevelopmentApp.swift */,
 				EF9946CC2A65404100CE3B79 /* AppDelegate.swift */,
 				EF81A9BD2A5B8A1400C6F417 /* ContentView.swift */,
+				17288A102A7BC350008EE5EF /* TestingViews */,
 				EFEA28722A67BDA600FC4965 /* PushNotification */,
 				EFECCB9F2A612E280093BB67 /* Models */,
 				EFECCB9E2A612E200093BB67 /* ViewModels */,
@@ -278,10 +302,8 @@
 			isa = PBXGroup;
 			children = (
 				EFB939E82A6A66B10083C08D /* LocalNotificationManager.swift */,
-				EFB939EC2A6C46B00083C08D /* LocalNotificationTestingView.swift */,
 				EF7CFA292A6E19ED005F14F0 /* NotificationIntervalEnum.swift */,
 				EFE2C8152A6FD80E006D5240 /* NotificationTitle.swift */,
-				17939D9E2A78ED4000941F14 /* MiniTestingView.swift */,
 				17939DA02A78ED6D00941F14 /* WeekdayCalculator.swift */,
 			);
 			path = PushNotification;
@@ -304,14 +326,6 @@
 				17202EFC2A6ED90300E3223B /* CharacterFrames.xcassets */,
 			);
 			path = TheoNa;
-			sourceTree = "<group>";
-		};
-		EFEA28972A67CFF800FC4965 /* Guardy */ = {
-			isa = PBXGroup;
-			children = (
-				EFEA28982A67D00500FC4965 /* GuardyView.swift */,
-			);
-			path = Guardy;
 			sourceTree = "<group>";
 		};
 		EFECCB9E2A612E200093BB67 /* ViewModels */ = {
@@ -472,10 +486,12 @@
 				EF7CFA2A2A6E19ED005F14F0 /* NotificationIntervalEnum.swift in Sources */,
 				DED043012A6F9924004D3395 /* SplashView.swift in Sources */,
 				EF81A9BE2A5B8A1400C6F417 /* ContentView.swift in Sources */,
+				17288A152A7C02EC008EE5EF /* WheelPickerView.swift in Sources */,
 				17939D9F2A78ED4000941F14 /* MiniTestingView.swift in Sources */,
 				EFE2C8182A700220006D5240 /* NotificationSettingsCell.swift in Sources */,
 				EFB939ED2A6C46B00083C08D /* LocalNotificationTestingView.swift in Sources */,
-				EFEA28992A67D00500FC4965 /* GuardyView.swift in Sources */,
+				17A545FD2A7A2E0B00147685 /* BottomView.swift in Sources */,
+				17288A132A7BCDBF008EE5EF /* FontView.swift in Sources */,
 				17202EFB2A6ED8DB00E3223B /* CharacterAnimation.swift in Sources */,
 				EFECCBAC2A612F810093BB67 /* MemberViewModel.swift in Sources */,
 				EFECCBA82A612F610093BB67 /* Poke.swift in Sources */,

@@ -12,7 +12,7 @@ import SwiftUI
 struct DayOffToggleView: View {
     
     @Binding var toggleIsOn: Bool
-    
+
     var body: some View {
         HStack(spacing: 10){
             Toggle(isOn: $toggleIsOn, label: {

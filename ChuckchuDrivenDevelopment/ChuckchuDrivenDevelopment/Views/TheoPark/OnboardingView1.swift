@@ -16,7 +16,6 @@ struct OnboardingView1: View {
     var body: some View {
         VStack(spacing: 20) {
             
-            
             CharacterAnimation(animationPaused: $animationPaused, grayscale: $grayscale)
             //                .background(.red)
                 .padding()

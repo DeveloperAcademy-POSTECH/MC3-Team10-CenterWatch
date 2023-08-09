@@ -24,7 +24,6 @@ struct Setting {
     ]
 }
 
-
 class ToggleStateModel: ObservableObject {
     @Published var toggleIsOn: Bool = false {
         didSet {
@@ -40,14 +39,17 @@ class ToggleStateModel: ObservableObject {
     /// 하루만 알림 끄기
     @Published var animationPaused: Bool = false
     @Published var grayscaleValue: Double = 0.0
+    
+    init() {
+        self.animationPaused = animationPaused
+        self.grayscaleValue = grayscaleValue
+    }
 }
-
-
 
 struct MainView: View {
     @AppStorage("isNotiAuthorized") var isNotiAuthorized = true // 알림 허용 여부를 저장하는 변수
    
-    @ObservedObject var toggleState = ToggleStateModel()
+    @StateObject var toggleState = ToggleStateModel()
     @ObservedObject var manager = MotionManager()
     @StateObject private var localNotificationManager = LocalNotificationManager()
     @State var settings = Setting()
@@ -64,7 +66,6 @@ struct MainView: View {
     
     /// 모달뷰 띄우기
     @State private var showModal = false
-    
     
     // MARK: - Save Notification Data (Method)
     // 화면 재진입 시 이전 데이터를 다시 그려주기 위해 화면 이탈 전 사용자 설정 값을 UserDefaults에 저장합니다.
@@ -104,7 +105,6 @@ struct MainView: View {
         }
         return daysConvertedToInt
     }
-    
     
     var body: some View {
         

@@ -8,7 +8,6 @@
 import SwiftUI
 import UserNotifications
 
-
 class LocalNotificationManager: NSObject, ObservableObject, UNUserNotificationCenterDelegate {
     
     @Published var isAuthorizationRequested: Bool = false
@@ -29,7 +28,6 @@ class LocalNotificationManager: NSObject, ObservableObject, UNUserNotificationCe
         }
     }
 }
-
 
 
 // MARK: - 사용자 설정 알림 관련

@@ -14,7 +14,7 @@ struct TimePickerView: View {
     var body: some View {
         HStack {
             VStack(alignment: .leading) {
-                FontView("시작 시간", 18, .white)
+                FontView("시작 시간", 18, .white, 1)
                     .padding(.leading, 10)
                 HStack{
                     WheelPickerView(selectedHour: $selectedStartHour)
@@ -25,7 +25,7 @@ struct TimePickerView: View {
             .padding()
             
             VStack(alignment: .leading) {
-                FontView("종료 시간", 18, .white)
+                FontView("종료 시간", 18, .white, 1)
                     .padding(.leading, 10)
                 HStack{
                     WheelPickerView(selectedHour: $selectedEndHour, minHour: selectedStartHour + 1, maxHour: selectedStartHour + 7) 

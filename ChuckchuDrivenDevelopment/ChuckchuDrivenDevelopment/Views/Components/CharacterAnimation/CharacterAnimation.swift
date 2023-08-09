@@ -123,11 +123,11 @@ struct CharacterAnimation: View {
     private func startAnimation() {
         // Timer를 사용하여 0.05초마다 다음 프레임으로 이동하여 애니메이션 생성
         Timer.scheduledTimer(withTimeInterval: 0.05, repeats: true) { timer in
-            withTransaction(Transaction(animation: nil)) {
+//            withTransaction(Transaction(animation: nil)) {
                 if !animationPaused {
                     currentFrameIndex = (currentFrameIndex + 1) % totalFrames
                 }
-            }
+//            }
         }
     }
 }

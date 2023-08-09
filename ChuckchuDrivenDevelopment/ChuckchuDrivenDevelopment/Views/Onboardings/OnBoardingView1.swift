@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct OnboardingView1: View {
+struct OnBoardingView1: View {
     
     @State private var splashOn: Bool = false
     @State private var animationPaused = false // Set default value here
@@ -45,15 +45,18 @@ struct OnboardingView1: View {
             .padding()
             .padding()
             VStack {
-                Button {
-                    
+                NavigationLink {
+                    OnBoardingView2()
                 } label: {
                     Text("시작하기")
-                        .frame(maxWidth: .infinity, maxHeight: 40)
+                        .frame(maxWidth: .infinity, maxHeight: 60)
                         .font(Font(UIFont(name: "Pretendard-Medium", size: 19)!))
                 }
-                .buttonStyle(.borderedProminent)
+                .background(Color.accentColor)
+                .foregroundColor(.white)
+                .cornerRadius(15)
                 .padding()
+                
                 .padding(.bottom, -4)
             }
             
@@ -64,8 +67,8 @@ struct OnboardingView1: View {
     }
 }
 
-struct OnboardingView1_Previews: PreviewProvider {
+struct OnBoardingView1_Previews: PreviewProvider {
     static var previews: some View {
-        OnboardingView1()
+        OnBoardingView1()
     }
 }

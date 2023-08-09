@@ -89,7 +89,7 @@ struct NotificationSettingsCell: View {
                 .padding(.leading)
                 .padding(.bottom, 5)
             
-            VStack {
+            VStack(alignment: .leading) {
                 
                 HStack {
                     VStack(alignment: .leading) {
@@ -140,15 +140,18 @@ struct NotificationSettingsCell: View {
                             .foregroundColor(.white)
                             .opacity(0.7)
                         
-                        HStack {
+                        HStack(spacing: 16) {
                             
-                            Text("일").opacity(0.05)
                             Text("월").opacity(settings.selectedDays[1].selected ? 1 : 0.3)
+
                             Text("화").opacity(settings.selectedDays[2].selected ? 1 : 0.3)
+
                             Text("수").opacity(settings.selectedDays[3].selected ? 1 : 0.3)
+
                             Text("목").opacity(settings.selectedDays[4].selected ? 1 : 0.3)
+
                             Text("금").opacity(settings.selectedDays[5].selected ? 1 : 0.3)
-                            Text("토").opacity(0.05)
+
                             
                         }
                         .opacity(textOpacity)

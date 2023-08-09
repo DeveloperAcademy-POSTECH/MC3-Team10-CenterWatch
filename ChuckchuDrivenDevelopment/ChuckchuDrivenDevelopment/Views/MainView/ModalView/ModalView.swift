@@ -98,7 +98,7 @@ struct ModalView: View {
                         }
                         
                         SelectNotificationDay(selectedDays: $selectedWeekdays)
-                            .padding(EdgeInsets(top: 4, leading: 6, bottom: 16, trailing: 0))
+                            .padding(EdgeInsets(top: 12, leading: 6, bottom: 16, trailing: 0))
                     }
                 }
                 .background(Color.init(hue: 0, saturation: 0, brightness: 0.16))

@@ -23,12 +23,12 @@ struct SelectNotificationDay: View {
                                 }
                             } label: {
                                 Circle()
-                                    .frame(width: 55, height: 55)
+                                    .frame(width: 50, height: 50)
                                     .foregroundColor(selectedDays[i].selected ? Color.blue : Color.white.opacity(0.1))
                                     .overlay() {
                                         Text(selectedDays[i].day)
                                             .foregroundColor(selectedDays[i].selected ? Color.white : Color.white)
-                                            .font(Font(UIFont(name: "Pretendard-Bold", size: 16)!))
+                                            .font(Font(UIFont(name: "Pretendard-Bold", size: 18)!))
                                     }
                             }
                             .buttonStyle(PlainButtonStyle())

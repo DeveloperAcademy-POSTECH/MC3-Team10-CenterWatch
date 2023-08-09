@@ -20,7 +20,7 @@ struct ChuckchuDrivenDevelopmentApp: App {
             Group {
                 if ifFirstInApp == true {
                     NavigationStack {
-                        OnboardingView1()
+                        OnBoardingView1()
                     }
                 } else {
                     ZStack {

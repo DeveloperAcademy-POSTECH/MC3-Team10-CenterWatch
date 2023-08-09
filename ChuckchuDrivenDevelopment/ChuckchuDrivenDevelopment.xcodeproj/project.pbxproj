@@ -15,8 +15,8 @@
 		1747A7362A7942630097CE96 /* DayOffToggleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1747A7352A7942630097CE96 /* DayOffToggleView.swift */; };
 		17939DA32A78EDFB00941F14 /* FloatHeart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17939DA22A78EDFB00941F14 /* FloatHeart.swift */; };
 		17939DA52A78EE2200941F14 /* TimePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17939DA42A78EE2200941F14 /* TimePickerView.swift */; };
-		DE14C68D2A75EE5500F568E8 /* OnboardingView1.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE14C68C2A75EE5500F568E8 /* OnboardingView1.swift */; };
-		DE14C68F2A75F59800F568E8 /* OnboardingView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE14C68E2A75F59800F568E8 /* OnboardingView2.swift */; };
+		DE14C68D2A75EE5500F568E8 /* OnBoardingView1.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE14C68C2A75EE5500F568E8 /* OnBoardingView1.swift */; };
+		DE14C68F2A75F59800F568E8 /* OnBoardingView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE14C68E2A75F59800F568E8 /* OnBoardingView2.swift */; };
 		DE14C6912A760B0000F568E8 /* ParallaxMotionModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE14C6902A760B0000F568E8 /* ParallaxMotionModifier.swift */; };
 		DE7294D82A73AE62003C4059 /* Pretendard-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = DE7294D72A73AE62003C4059 /* Pretendard-Bold.otf */; };
 		DE7294DA2A73AF74003C4059 /* Pretendard-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = DE7294D92A73AF74003C4059 /* Pretendard-Medium.otf */; };
@@ -77,8 +77,8 @@
 		1747A7352A7942630097CE96 /* DayOffToggleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayOffToggleView.swift; sourceTree = "<group>"; };
 		17939DA22A78EDFB00941F14 /* FloatHeart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatHeart.swift; sourceTree = "<group>"; };
 		17939DA42A78EE2200941F14 /* TimePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimePickerView.swift; sourceTree = "<group>"; };
-		DE14C68C2A75EE5500F568E8 /* OnboardingView1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView1.swift; sourceTree = "<group>"; };
-		DE14C68E2A75F59800F568E8 /* OnboardingView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView2.swift; sourceTree = "<group>"; };
+		DE14C68C2A75EE5500F568E8 /* OnBoardingView1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingView1.swift; sourceTree = "<group>"; };
+		DE14C68E2A75F59800F568E8 /* OnBoardingView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingView2.swift; sourceTree = "<group>"; };
 		DE14C6902A760B0000F568E8 /* ParallaxMotionModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParallaxMotionModifier.swift; sourceTree = "<group>"; };
 		DE7294D72A73AE62003C4059 /* Pretendard-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Bold.otf"; sourceTree = "<group>"; };
 		DE7294D92A73AF74003C4059 /* Pretendard-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Medium.otf"; sourceTree = "<group>"; };
@@ -152,8 +152,8 @@
 		DE1E098E2A83575F008459D2 /* Onboardings */ = {
 			isa = PBXGroup;
 			children = (
-				DE14C68C2A75EE5500F568E8 /* OnboardingView1.swift */,
-				DE14C68E2A75F59800F568E8 /* OnboardingView2.swift */,
+				DE14C68C2A75EE5500F568E8 /* OnBoardingView1.swift */,
+				DE14C68E2A75F59800F568E8 /* OnBoardingView2.swift */,
 			);
 			path = Onboardings;
 			sourceTree = "<group>";
@@ -414,7 +414,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DE14C68F2A75F59800F568E8 /* OnboardingView2.swift in Sources */,
+				DE14C68F2A75F59800F568E8 /* OnBoardingView2.swift in Sources */,
 				DEDBC6972A65152400AB3867 /* ModalView.swift in Sources */,
 				EFB939E92A6A66B10083C08D /* LocalNotificationManager.swift in Sources */,
 				EF81A9B72A5B8A1400C6F417 /* ChuckchuDrivenDevelopmentApp.swift in Sources */,
@@ -424,7 +424,7 @@
 				EFE2C8162A6FD80E006D5240 /* NotificationTitle.swift in Sources */,
 				DE14C6912A760B0000F568E8 /* ParallaxMotionModifier.swift in Sources */,
 				1747A7362A7942630097CE96 /* DayOffToggleView.swift in Sources */,
-				DE14C68D2A75EE5500F568E8 /* OnboardingView1.swift in Sources */,
+				DE14C68D2A75EE5500F568E8 /* OnBoardingView1.swift in Sources */,
 				EFE2C81C2A70045F006D5240 /* MainView.swift in Sources */,
 				1747A7342A793E8D0097CE96 /* DayOffActiveView.swift in Sources */,
 				EFEA28932A67CFCE00FC4965 /* PokeUserTestNameView.swift in Sources */,

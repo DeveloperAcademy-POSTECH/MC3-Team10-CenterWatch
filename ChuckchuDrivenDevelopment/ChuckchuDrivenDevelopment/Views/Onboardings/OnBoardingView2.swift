@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct OnBoardingView2: View {
+    
+    @ObservedObject var localNotificationManager: LocalNotificationManager = LocalNotificationManager()
+    
     var body: some View {
         ZStack {
             VStack {
@@ -40,8 +43,8 @@ struct OnBoardingView2: View {
                 
                 Spacer()
                 
-                Button {
-                    
+                NavigationLink {
+                    MainView()
                 } label: {
                     Text("알림 설정")
                         .frame(maxWidth: .infinity, maxHeight: 60)
@@ -52,6 +55,10 @@ struct OnBoardingView2: View {
                 .cornerRadius(15)
                 .padding()
                 .padding(.bottom, 34)
+                .simultaneousGesture(TapGesture().onEnded {
+                    /// 시스템 알림 허용 요청
+                    localNotificationManager.requestNotificationPermission()
+                })
             }
             
         }

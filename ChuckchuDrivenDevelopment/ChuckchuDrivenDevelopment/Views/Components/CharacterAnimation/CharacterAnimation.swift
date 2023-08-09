@@ -63,15 +63,13 @@ struct CharacterAnimation: View {
             VStack {
                 if(!is3DImage) {
                     HStack {
-                        Text("Apple Developer Academy @ Postech")
-                        
+                        FontView("Apple Developer Academy @ Postech", 26, .white, 0.7)
                         Spacer()
                     }
                     .padding(.horizontal, 32)
                     .padding(.bottom, -100)
                     .padding(.top, 16)
                     .font(Font.custom("Pretendard-Bold", size: 26))
-                    .opacity(0.7)
                     
                 }
                 
@@ -79,9 +77,6 @@ struct CharacterAnimation: View {
                         "Pin2D\(currentFrameIndex + 1)")
                 .resizable()
                 .scaledToFit()
-                .onAppear {
-                    startAnimation()
-                }
                 
                 if(!is3DImage) {
                     HStack(alignment: .top) {
@@ -118,16 +113,18 @@ struct CharacterAnimation: View {
             
         }
         .gesture(dragGesture.sequenced(before: tapDetector))
-        
+        .onAppear {
+            startAnimation()
+        }
     }
     private func startAnimation() {
         // Timer를 사용하여 0.05초마다 다음 프레임으로 이동하여 애니메이션 생성
         Timer.scheduledTimer(withTimeInterval: 0.05, repeats: true) { timer in
-//            withTransaction(Transaction(animation: nil)) {
+            withTransaction(Transaction(animation: nil)) {
                 if !animationPaused {
                     currentFrameIndex = (currentFrameIndex + 1) % totalFrames
                 }
-//            }
+            }
         }
     }
 }

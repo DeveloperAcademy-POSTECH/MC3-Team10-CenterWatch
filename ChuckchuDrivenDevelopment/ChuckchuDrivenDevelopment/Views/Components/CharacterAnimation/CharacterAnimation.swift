@@ -63,7 +63,7 @@ struct CharacterAnimation: View {
             VStack {
                 if(!is3DImage) {
                     HStack {
-                        FontView("Apple Developer Academy @ Postech", 26, .white, 0.7)
+                        FontView("Apple Developer Academy @ POSTECH", 26, .white, 0.7)
                         Spacer()
                     }
                     .padding(.horizontal, 32)

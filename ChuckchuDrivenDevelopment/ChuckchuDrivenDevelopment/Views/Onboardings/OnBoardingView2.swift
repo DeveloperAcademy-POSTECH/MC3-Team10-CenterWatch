@@ -12,56 +12,73 @@ struct OnBoardingView2: View {
     @ObservedObject var localNotificationManager: LocalNotificationManager = LocalNotificationManager()
     
     var body: some View {
-        ZStack {
-            VStack {
-                Image("onBoarding")
-                    .resizable()
-                    .scaledToFill()
-            }
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .ignoresSafeArea()
-            
-            VStack {
-                
-                Image("icon-notification-mono")
-                    .background() {
-                        Circle()
-                            .opacity(0.7)
-                            .frame(width: 84, height: 84)
-                    }
-                    .padding(.top, 100)
-                    .padding(.bottom, 30)
-                
-                Text("""
-알림을 허용하면, 핀의 진심이 담긴 메세지를 받을 수 있어요.
-""")
-                .multilineTextAlignment(.center)
-                .foregroundColor(.white)
-                .font(Font(UIFont(name: "Pretendard-Bold", size: 20)!))
-                .lineSpacing(6)
-                .frame(maxWidth: 300)
-                
+        VStack {
+            iconAndText(textLabel: "알림을 허용하면, 핀의 진심이 담긴 메세지를 받을 수 있어요.")
                 Spacer()
-                
-                NavigationLink {
-                    MainView()
-                } label: {
-                    Text("알림 설정")
-                        .frame(maxWidth: .infinity, maxHeight: 60)
-                        .font(Font(UIFont(name: "Pretendard-Medium", size: 19)!))
-                }
-                .background(Color.black)
-                .foregroundColor(.white)
-                .cornerRadius(15)
-                .padding()
-                .padding(.bottom, 34)
-                .simultaneousGesture(TapGesture().onEnded {
-                    /// 시스템 알림 허용 요청
-                    localNotificationManager.requestNotificationPermission()
-                })
-            }
             
+            settingButton(label: "알림 설정")
         }
+        .background() {
+            onboardingBackground(label: "onBoarding")
+        }
+    }
+    
+    @ViewBuilder
+    private func iconAndText(textLabel: String) -> some View {
+        Image("icon-notification-mono")
+            .background() {
+                Circle()
+                    .frame(width: 84, height: 84)
+                    .opacity(0.7)
+                    .foregroundColor(.black)
+            }
+            .padding(.bottom, 30).padding(.top, 80)
+        
+        FontView(textLabel, .pretendardBold, 20, .white, 1)
+            .multilineTextAlignment(.center)
+            .lineSpacing(6)
+            .frame(maxWidth: 300)
+    }
+    
+    @ViewBuilder
+    private func settingButton(label: String) -> some View {
+        NavigationLink {
+            MainView()
+        } label: {
+            FontView(label, .pretendardBold, 19, .white, 1)
+                .frame(maxWidth: .infinity, maxHeight: 60)
+        }
+        .background(Color.black)
+        .foregroundColor(.white)
+        .cornerRadius(15)
+        .padding(.horizontal)
+        .simultaneousGesture(TapGesture().onEnded {
+            /// 시스템 알림 허용 요청
+            localNotificationManager.requestNotificationPermission()
+        })
+        .gesture(
+            DragGesture(minimumDistance: 0)
+                .onEnded() {_ in
+                    let impactHeavy = UIImpactFeedbackGenerator(style: .heavy)
+                    impactHeavy.impactOccurred()
+                }
+        )
+        .onTouchDownGesture(shrinkRate: 0.95) {
+            let impactHeavy = UIImpactFeedbackGenerator(style: .soft)
+            impactHeavy.impactOccurred()
+        }
+        .navigationBarBackButtonHidden(true)
+    }
+    
+    @ViewBuilder
+    private func onboardingBackground(label: String) -> some View {
+        VStack {
+            Image(label)
+                .resizable()
+                .scaledToFill()
+        }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .ignoresSafeArea()
     }
 }
 

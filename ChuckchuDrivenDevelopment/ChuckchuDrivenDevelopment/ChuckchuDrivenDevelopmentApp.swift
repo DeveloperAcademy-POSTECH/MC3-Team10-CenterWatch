@@ -18,25 +18,26 @@ struct ChuckchuDrivenDevelopmentApp: App {
     var body: some Scene {
         WindowGroup {
             Group {
-                if ifFirstInApp == true {
-                    NavigationStack {
-                        OnBoardingView1()
-                    }
-                } else {
-                    ZStack {
+                ZStack {
+                    if ifFirstInApp == true {
+                        NavigationStack {
+                            OnBoardingView1()
+                        }
+                    } else {
                         MainView()
-
-                        SplashView()
-                            .opacity(isLoading ? 0 : 1)
-                            .onAppear {
-                                DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) {
-                                    withAnimation(.easeInOut(duration: 2)) {
-                                        isLoading.toggle()
-                                    }
+                    }
+                    
+                    SplashView()
+                        .opacity(isLoading ? 0 : 1)
+                        .onAppear {
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) {
+                                withAnimation(.easeInOut(duration: 2)) {
+                                    isLoading.toggle()
                                 }
                             }
-                    }
+                        }
                 }
+                
             }
             .preferredColorScheme(isDarkModeEnabled ? .dark : .light) // 다크 모드 상태에 따라 컬러 스킴 설정
         }

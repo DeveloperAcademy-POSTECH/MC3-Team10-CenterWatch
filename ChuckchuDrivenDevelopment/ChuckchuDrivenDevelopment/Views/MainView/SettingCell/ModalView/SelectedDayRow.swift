@@ -7,12 +7,12 @@
 
 import SwiftUI
 
-struct SelectNotificationDay: View {
+struct SelectedDayRow: View {
     
     @Binding var selectedDays: [SelectedDay]
     
     var body: some View {
-        HStack {
+        HStack(alignment: .center) {
             Group {
                 ForEach(selectedDays.indices, id: \.self) { i in
                     if i != 0, i != 6 {
@@ -26,18 +26,17 @@ struct SelectNotificationDay: View {
                                     .frame(width: 50, height: 50)
                                     .foregroundColor(selectedDays[i].selected ? Color.blue : Color.white.opacity(0.1))
                                     .overlay() {
-                                        Text(selectedDays[i].day)
-                                            .foregroundColor(selectedDays[i].selected ? Color.white : Color.white)
-                                            .font(Font(UIFont(name: "Pretendard-Bold", size: 18)!))
+                                        FontView(selectedDays[i].day, .pretendardBold, 18, .white, 1)
                                     }
                             }
                             .buttonStyle(PlainButtonStyle())
-                            .onTouchDownGesture {
+                            .onTouchDownGesture(shrinkRate: 0.9) {
                                 let impactHeavy = UIImpactFeedbackGenerator(style: .light)
                                 impactHeavy.impactOccurred()
                             }
-                            
-                            Spacer()
+                            if(i != 5) {
+                                Spacer()
+                            }
                         }
                     }
                 }
@@ -45,7 +44,6 @@ struct SelectNotificationDay: View {
             .padding(.bottom, 10)
         }
         .frame(height: 40)
-        .padding(EdgeInsets(top: 0, leading: 8, bottom: 0, trailing: 0))
     }
 }
 
@@ -55,12 +53,10 @@ struct SelectNotificationDay_Previews: PreviewProvider {
         SelectedDay(day: "화", selected: true),
         SelectedDay(day: "수", selected: true),
         SelectedDay(day: "목", selected: true),
-        SelectedDay(day: "금", selected: true),
-        SelectedDay(day: "토", selected: false),
-        SelectedDay(day: "일", selected: true)
+        SelectedDay(day: "금", selected: true)
     ]
     
     static var previews: some View {
-        SelectNotificationDay(selectedDays: $previewData)
+        SelectedDayRow(selectedDays: $previewData)
     }
 }

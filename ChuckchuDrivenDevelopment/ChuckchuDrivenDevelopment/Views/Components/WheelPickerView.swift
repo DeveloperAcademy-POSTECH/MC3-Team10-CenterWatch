@@ -45,7 +45,4 @@ struct WheelPickerView: View {
         .pickerStyle(WheelPickerStyle())
         .frame(width: 130, height: 120)
     }
-    
-    
-    
 }

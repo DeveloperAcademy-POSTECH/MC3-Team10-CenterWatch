@@ -8,37 +8,12 @@
 import SwiftUI
 import CoreMotion
 
-struct ParallaxMotionModifier: ViewModifier {
-    @Environment(\.scenePhase) var scenePhase
-    
-    @ObservedObject var manager: MotionManager
-    var magnitude3d: Double
-    var magnitude2d: Double
-    
-    func body(content: Content) -> some View {
-        content
-            .rotation3DEffect(.degrees(manager.roll * magnitude3d / 10), axis: (x: 0, y: 1, z: 0))
-            .rotation3DEffect(.degrees(manager.pitch * magnitude3d / 3 - 1), axis: (x: -1, y: 0, z: 0))
-            .offset(x: CGFloat(manager.roll * magnitude2d), y: CGFloat(manager.pitch * magnitude2d))
-            .onChange(of: scenePhase) { newValue in
-                if newValue == .inactive || newValue == .background {
-                    manager.manager.stopDeviceMotionUpdates()
-                } else { manager.startMotion() }
-            }
-    }
-}
-
 class MotionManager: ObservableObject {
 
     @Published var pitch: Double = 0.0
     @Published var roll: Double = 0.0
     
     var manager: CMMotionManager
-    
-//    private var initalRoll: Double = 0
-//    private var tempRoll: Double = 0
-//    private var initalPitch: Double = 0
-//    @State private var initalOn: Bool = false
 
     init() {
         self.manager = CMMotionManager()
@@ -94,21 +69,34 @@ class MotionManager: ObservableObject {
                     self.roll = -0.5
                 }
                 
-        
-//                if(motionData.attitude.roll >= 1) {
-//                    self.roll = 1
-//                } else if(motionData.attitude.roll <= -1) {
-//                    self.roll = -1
-//                } else {
-//                    self.roll = motionData.attitude.roll
-//                }
-//
-//
-                
-//                print("self.roll"+"\(self.roll)")
-//                print("inital.roll"+"\(self.initalRoll)")
                 
             }
         }
+    }
+}
+
+struct ParallaxMotionModifier: ViewModifier {
+    @Environment(\.scenePhase) var scenePhase
+    
+    @ObservedObject var manager: MotionManager
+    var magnitude3d: Double
+    var magnitude2d: Double
+    
+    func body(content: Content) -> some View {
+        content
+            .rotation3DEffect(.degrees(manager.roll * magnitude3d / 10), axis: (x: 0, y: 1, z: 0))
+//            .rotation3DEffect(.degrees(manager.pitch * magnitude3d / 3 - 1), axis: (x: -1, y: 0, z: 0))
+            .offset(x: CGFloat(manager.roll * magnitude2d), y: CGFloat(manager.pitch * magnitude2d))
+            .onChange(of: scenePhase) { newValue in
+                if newValue == .inactive || newValue == .background {
+                    manager.manager.stopDeviceMotionUpdates()
+                } else { manager.startMotion() }
+            }
+    }
+}
+
+extension View {
+    func parallaxMotion(with: MotionManager, magnitude3d: Double, magnitude2d: Double) -> some View {
+        modifier(ParallaxMotionModifier(manager: with, magnitude3d: magnitude3d, magnitude2d: magnitude2d))
     }
 }

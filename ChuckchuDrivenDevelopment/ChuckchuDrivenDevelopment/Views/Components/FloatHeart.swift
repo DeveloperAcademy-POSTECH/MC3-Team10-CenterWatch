@@ -48,7 +48,7 @@ struct CreateCircle: View {
             .offset(y: onAppeared ? -1000 : 0)
             .scaleEffect(onAppeared ? 4 : 0.5)
             .opacity(onAppeared ? 1 : 0.7)
-            .blur(radius: onAppeared ? 2 : 0)
+            .blur(radius: onAppeared ? 6 : 0)
             .onAppear() {
                 withAnimation(.easeIn(duration: 3)) {
                     onAppeared.toggle()

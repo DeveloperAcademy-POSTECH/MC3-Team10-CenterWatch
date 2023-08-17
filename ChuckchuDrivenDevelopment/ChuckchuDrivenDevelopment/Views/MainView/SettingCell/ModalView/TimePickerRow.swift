@@ -32,7 +32,7 @@ struct TimePickerRow: View {
                 
                 HStack{
                     
-                    WheelPickerView(selectedHour: $selectedEndHour, minHour: selectedStartHour + 1, maxHour: selectedStartHour + 7)
+                    WheelPickerView(selectedHour: $selectedEndHour, minHour: selectedStartHour + 1, maxHour: selectedStartHour + 10)
                         Spacer()
                 }
             }

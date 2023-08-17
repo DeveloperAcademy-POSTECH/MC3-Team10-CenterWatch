@@ -12,7 +12,8 @@ import Foundation
 struct NotificationTitle {
     
     let openingVariations: [String] = [
-        "오늘도 활기찬 하루!\n제가 힘을 실어드릴게요! 🐢"
+        "오늘도 활기찬 하루!",
+        "제가 힘을 실어드릴게요!🐢"
     ]
   
     let variations: [String] = [
@@ -52,8 +53,8 @@ struct NotificationTitle {
     ]
     
     let closingVariations: [String] = [
-        "수고하셨어요!\n내일도 기운차게 만나요! 👋🏻"
-    
+        "수고하셨어요!",
+        "내일도 기운차게 만나요!👋🏻"
     ]
     
 }

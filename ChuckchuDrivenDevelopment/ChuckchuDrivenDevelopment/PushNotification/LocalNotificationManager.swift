@@ -16,8 +16,10 @@ class LocalNotificationManager: NSObject, ObservableObject, UNUserNotificationCe
     private let calendar = Calendar.current
     private let notificationCenter = UNUserNotificationCenter.current()
     private let notificationContent = UNMutableNotificationContent()
-    private let notificationTitle = NotificationTitle().variations
-    
+    private let notificationTitle = NotificationTitle()
+   
+    private var isOpening: Bool = false
+    private var isClosing: Bool = false
     
     // MARK: - Request Notification Permission (Method)
     /// 시스템상의 알림 허용을 요청합니다.
@@ -29,7 +31,6 @@ class LocalNotificationManager: NSObject, ObservableObject, UNUserNotificationCe
         }
     }
 }
-
 
 
 // MARK: - 사용자 설정 알림 관련
@@ -49,7 +50,6 @@ extension LocalNotificationManager {
             endHour: endHour,
             frequency: frequency)
     }
-    
     
     // MARK: - Request Weekday Trigger (Method)
     /// 요일별 푸시 알림 예약을 생성하고 알림을 요청합니다.
@@ -74,8 +74,22 @@ extension LocalNotificationManager {
             case .hour:
                 /// startHour에서 증가하는 인터벌 알림 예약 생성 및 요청
                 for count in 1...(endHour - startHour) + 1 { // 알림의 반복 횟수
+                  
+                    switch count {
+                    case 1:
+                        isOpening = true
+                        isClosing = false
+                    case (endHour - startHour) + 1:
+                        isOpening = false
+                        isClosing = true
+                    default:
+                        isClosing = false
+                        isOpening = false
+                    }
                     
-                    makeNotificationContent(with: notificationTitle)
+                    makeNotificationContent(with: notificationTitle,
+                                            isOpening: isOpening,
+                                            isClosing: isClosing)
                     
                     let hour = startHour + (count - 1)
                     let minute = 0
@@ -95,14 +109,27 @@ extension LocalNotificationManager {
                     self.notificationCenter.add(request)
                 }
                 
-                
             case .twoHour:
                 /// startHour에서 증가하는 인터벌 알림 예약 생성 및 요청
                 for count in 1...((endHour - startHour) / 2) + 1 { // 알림의 반복 횟수
                     
-                    makeNotificationContent(with: notificationTitle)
+                    switch count {
+                    case 1:
+                        isOpening = true
+                        isClosing = false
+                    case ((endHour - startHour) / 2) + 1:
+                        isOpening = false
+                        isClosing = true
+                    default:
+                        isClosing = false
+                        isOpening = false
+                    }
                     
-                    let hour = startHour + (count - 1)
+                    makeNotificationContent(with: notificationTitle,
+                                            isOpening: isOpening,
+                                            isClosing: isClosing)
+                    
+                    let hour = startHour + ((count - 1) * 2)
                     let minute = 0
                     
                     var dateInfo = DateComponents()
@@ -124,9 +151,23 @@ extension LocalNotificationManager {
                 /// startHour에서 증가하는 인터벌 알림 예약 생성 및 요청
                 for count in 1...((endHour - startHour) / 3) + 1 { // 알림의 반복 횟수
                     
-                    makeNotificationContent(with: notificationTitle)
+                    switch count {
+                    case 1:
+                        isOpening = true
+                        isClosing = false
+                    case ((endHour - startHour) / 3) + 1:
+                        isOpening = false
+                        isClosing = true
+                    default:
+                        isClosing = false
+                        isOpening = false
+                    }
                     
-                    let hour = startHour + (count - 1)
+                    makeNotificationContent(with: notificationTitle,
+                                            isOpening: isOpening,
+                                            isClosing: isClosing)
+                    
+                    let hour = startHour + ((count - 1) * 3)
                     let minute = 0
                     
                     var dateInfo = DateComponents()
@@ -165,15 +206,25 @@ extension LocalNotificationManager {
     }
     
     // MARK: - Notification Content (Method)
-    private func makeNotificationContent(with titles: [String]) {
-        notificationContent.title = titles.randomElement() ?? "허리피라우🐢"
-        notificationContent.body = "자세를 바로잡아주세요!"
+    private func makeNotificationContent(with content: NotificationTitle, isOpening: Bool, isClosing: Bool) {
+        var notiTitle: String = ""
+        var notiBody: String = ""
+        if isOpening {
+            notiTitle = content.openingVariations[0]
+            notiBody = content.openingVariations[1]
+        } else if isClosing {
+            notiTitle = content.closingVariations[0]
+            notiBody = content.closingVariations[1]
+        } else {
+            notiTitle = content.closingVariations.randomElement() ?? "허리피라우🐢"
+            notiBody = "자세를 바로잡아주세요!"
+        }
+        notificationContent.title = notiTitle
+        notificationContent.body = notiBody
         notificationContent.categoryIdentifier = "alarm"
-        notificationContent.userInfo = ["허리핀": "핀"]
         notificationContent.sound = UNNotificationSound.default
     }
 }
-
 
 
 // MARK: - 하루 휴식 알림 관련
@@ -211,5 +262,10 @@ extension LocalNotificationManager {
         
         /// 알림 요청 전송
         self.notificationCenter.add(request)
+        
+        /// 요청된 알림 확인
+        notificationCenter.getPendingNotificationRequests { messages in
+            print("Notification Schdule Complete: ", messages)
+        }
     }
 }

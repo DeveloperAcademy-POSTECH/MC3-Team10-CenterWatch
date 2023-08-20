@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-
+import FirebaseCore
 
 @main
 struct ChuckchuDrivenDevelopmentApp: App {

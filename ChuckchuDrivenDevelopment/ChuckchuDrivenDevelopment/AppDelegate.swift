@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import FirebaseCore
 
 class AppDelegate: UIResponder, UIApplicationDelegate {
     @ObservedObject var localNotificationManager: LocalNotificationManager = LocalNotificationManager()
@@ -21,9 +22,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
-        
+        FirebaseApp.configure()
         switchAuthorizationStatus()
-        
         UNUserNotificationCenter.current().delegate = self
 
         return true

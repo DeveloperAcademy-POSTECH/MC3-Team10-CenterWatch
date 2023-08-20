@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import FirebaseAnalytics
 
 struct MainView: View {
     
@@ -37,6 +38,11 @@ struct MainView: View {
                     let endHour = settings.selectedEndHour
                     let frequency = settings.selectedFrequency
                     localNotificationManager.toggleMessage(toggleState: newValue, weekdays: weekdays, startHour: startHour, endHour: endHour, frequency: frequency)
+                    
+                    /// Firebase Analytics
+                    Analytics
+                        .logEvent("event_name",
+                                  parameters: ["toggle_On" : "notification paused"])
                 }
             
             Divider().padding(.horizontal)

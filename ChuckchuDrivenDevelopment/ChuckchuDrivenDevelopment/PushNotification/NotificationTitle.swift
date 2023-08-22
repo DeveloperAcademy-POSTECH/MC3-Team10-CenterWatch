@@ -4,18 +4,15 @@
 //
 //  Created by Ye Eun Choi on 2023/07/25.
 //
-
 import Foundation
-
 // MARK: - NotificationTitle (Struct)
 /// 로컬 푸시 알림의 타이틀 내용을 정의합니다.
 struct NotificationTitle {
     
     let openingVariations: [String] = [
-        "오늘도 활기찬 하루!",
-        "제가 힘을 실어드릴게요!🐢"
+        "오늘도 활기찬 하루!\n제가 힘을 실어드릴게요! 🐢"
     ]
-  
+    
     let variations: [String] = [
         "어? 굽었다.",
         "겸손한 척추네요. 이제는 자신감을 가져도 괜찮아요!",
@@ -53,8 +50,8 @@ struct NotificationTitle {
     ]
     
     let closingVariations: [String] = [
-        "수고하셨어요!",
-        "내일도 기운차게 만나요!👋🏻"
+        "수고하셨어요!\n내일도 기운차게 만나요! 👋🏻"
+        
     ]
     
 }

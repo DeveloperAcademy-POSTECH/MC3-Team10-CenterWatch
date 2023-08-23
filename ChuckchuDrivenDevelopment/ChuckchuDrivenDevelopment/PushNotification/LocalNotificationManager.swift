@@ -182,6 +182,9 @@ extension LocalNotificationManager {
         if toggleState {
             setNextDayNotification()
         } else {
+            /// 이전 알림 예약 전체 취소
+            cancelNotification()
+            
             setLocalNotification(weekdays: weekdays, startHour: startHour, endHour: endHour, frequency: frequency)
             
         }

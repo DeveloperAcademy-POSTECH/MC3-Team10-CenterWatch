@@ -24,6 +24,8 @@
 		DEC44F1F2A867A3100137070 /* DataModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC44F1E2A867A3100137070 /* DataModels.swift */; };
 		DEC44F212A87544B00137070 /* FrequencySettingRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC44F202A87544B00137070 /* FrequencySettingRow.swift */; };
 		DED043012A6F9924004D3395 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED043002A6F9924004D3395 /* SplashView.swift */; };
+		DED50C132A99AC3900042F97 /* WCSettingMoblie.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED50C122A99AC3900042F97 /* WCSettingMoblie.swift */; };
+		DED50C152A99AD9A00042F97 /* WCSettingWatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED50C142A99AD9A00042F97 /* WCSettingWatch.swift */; };
 		DEDBC6972A65152400AB3867 /* ModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDBC6962A65152400AB3867 /* ModalView.swift */; };
 		DEDBC6992A65236C00AB3867 /* SelectedDayRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDBC6982A65236C00AB3867 /* SelectedDayRow.swift */; };
 		EF81A9B72A5B8A1400C6F417 /* ChuckchuDrivenDevelopmentApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF81A9B62A5B8A1400C6F417 /* ChuckchuDrivenDevelopmentApp.swift */; };
@@ -89,6 +91,8 @@
 		DEC44F1E2A867A3100137070 /* DataModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModels.swift; sourceTree = "<group>"; };
 		DEC44F202A87544B00137070 /* FrequencySettingRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrequencySettingRow.swift; sourceTree = "<group>"; };
 		DED043002A6F9924004D3395 /* SplashView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
+		DED50C122A99AC3900042F97 /* WCSettingMoblie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WCSettingMoblie.swift; sourceTree = "<group>"; };
+		DED50C142A99AD9A00042F97 /* WCSettingWatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WCSettingWatch.swift; sourceTree = "<group>"; };
 		DEDBC6962A65152400AB3867 /* ModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalView.swift; sourceTree = "<group>"; };
 		DEDBC6982A65236C00AB3867 /* SelectedDayRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedDayRow.swift; sourceTree = "<group>"; };
 		EF81A9B32A5B8A1400C6F417 /* GgoodGgood.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GgoodGgood.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -145,6 +149,7 @@
 				DE14C6902A760B0000F568E8 /* ParallaxMotionModifier.swift */,
 				DEC44F1C2A86650300137070 /* TouchDownGestureModifier.swift */,
 				17288A142A7C02EC008EE5EF /* WheelPickerView.swift */,
+				DED50C122A99AC3900042F97 /* WCSettingMoblie.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -271,6 +276,7 @@
 				EFEA286C2A65921A00FC4965 /* CDDWatchApp Watch App.entitlements */,
 				EF81A9D02A5B8C0200C6F417 /* CDDWatchAppApp.swift */,
 				EF81A9D22A5B8C0200C6F417 /* ContentView.swift */,
+				DED50C142A99AD9A00042F97 /* WCSettingWatch.swift */,
 				EF81A9D42A5B8C0300C6F417 /* Assets.xcassets */,
 				EF81A9D62A5B8C0300C6F417 /* Preview Content */,
 			);
@@ -433,6 +439,7 @@
 				DEDBC6992A65236C00AB3867 /* SelectedDayRow.swift in Sources */,
 				DEC44F1F2A867A3100137070 /* DataModels.swift in Sources */,
 				EFE2C8162A6FD80E006D5240 /* NotificationTitle.swift in Sources */,
+				DED50C132A99AC3900042F97 /* WCSettingMoblie.swift in Sources */,
 				DE14C6912A760B0000F568E8 /* ParallaxMotionModifier.swift in Sources */,
 				1747A7362A7942630097CE96 /* DailyNotiToggleRow.swift in Sources */,
 				DE14C68D2A75EE5500F568E8 /* OnBoardingView1.swift in Sources */,
@@ -457,6 +464,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DED50C152A99AD9A00042F97 /* WCSettingWatch.swift in Sources */,
 				EF81A9D32A5B8C0200C6F417 /* ContentView.swift in Sources */,
 				EF81A9D12A5B8C0200C6F417 /* CDDWatchAppApp.swift in Sources */,
 			);

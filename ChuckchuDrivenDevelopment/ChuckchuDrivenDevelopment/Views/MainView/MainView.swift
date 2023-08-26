@@ -10,6 +10,8 @@ import FirebaseAnalytics
 
 struct MainView: View {
     
+    var watchConnecter = WCSettingMobile()
+    
     @StateObject private var localNotificationManager = LocalNotificationManager()
     @AppStorage("isNotiAuthorized") var isNotiAuthorized = true
     @State var settings = Setting()
@@ -97,6 +99,9 @@ struct MainView: View {
                     settings.selectedDays[i].selected = true
                 }
             }
+            
+            /// 실행시 워치에 값 전송
+            watchConnecter.session.sendMessage(["startHour" : [settings.selectedStartHour, settings.selectedEndHour, settings.selectedFrequency.rawValue]], replyHandler: nil)
         }
     }
 

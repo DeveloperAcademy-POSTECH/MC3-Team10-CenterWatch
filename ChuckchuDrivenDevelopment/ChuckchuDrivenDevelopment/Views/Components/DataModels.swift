@@ -4,7 +4,7 @@
 //
 //  Created by 박상준 on 2023/08/11.
 //
-
+import Combine
 
 struct SelectedDay: Equatable, Hashable {
     let day: String
@@ -12,6 +12,7 @@ struct SelectedDay: Equatable, Hashable {
 }
 
 struct Setting {
+    
     var selectedDays: [SelectedDay] = [
         .init(day: "일", selected: false),
         .init(day: "월", selected: true),
@@ -28,12 +29,12 @@ struct Setting {
     
     var selectedDaysInt: [Int] {
         var daysConvertedToInt: [Int] = []
-            for selectedDay in selectedDays {
-                if selectedDay.selected {
-                    daysConvertedToInt.append((selectedDays.firstIndex(of: selectedDay) ?? 0) + 1)
-                }
+        for selectedDay in selectedDays {
+            if selectedDay.selected {
+                daysConvertedToInt.append((selectedDays.firstIndex(of: selectedDay) ?? 0) + 1)
             }
-            return daysConvertedToInt
+        }
+        return daysConvertedToInt
     }
 }
 

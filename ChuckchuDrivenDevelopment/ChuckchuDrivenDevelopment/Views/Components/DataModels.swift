@@ -43,9 +43,3 @@ enum NotiInterval: Int {
     case twoHour = 120
     case threeHour = 180
 }
-
-struct SendToWatch {
-    var selectedStartHour: Int = 0
-    var selectedEndHour: Int = 0
-    var selectedFrequency: NotiInterval = .hour
-}

@@ -21,6 +21,7 @@ struct ContentView: View {
     }
     
     var body: some View {
+        ///iOS에서 값을 받지 못했다면
         if(watchConnecter.data[0] == -1) {
             Text("꿋꿋 iOS앱에서 설정을 완료해주세요!")
         } else {

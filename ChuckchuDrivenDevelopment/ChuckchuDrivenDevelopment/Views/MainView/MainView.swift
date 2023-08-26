@@ -10,9 +10,11 @@ import FirebaseAnalytics
 
 struct MainView: View {
     
+    var watchConnecter = WCSettingMobile()
+    
     @StateObject private var localNotificationManager = LocalNotificationManager()
     @AppStorage("isNotiAuthorized") var isNotiAuthorized = true
-    @State var settings = Setting()
+    @ObservedObject var settings = Setting()
     
     @StateObject var toggleState = ToggleStateModel()
     @ObservedObject var manager = MotionManager()
@@ -97,6 +99,9 @@ struct MainView: View {
                     settings.selectedDays[i].selected = true
                 }
             }
+            
+            /// 실행시 워치에 값 전송
+            watchConnecter.session.sendMessage(["startHour" : [settings.selectedStartHour, settings.selectedEndHour, settings.selectedFrequency.rawValue]], replyHandler: nil)
         }
     }
 
@@ -128,7 +133,7 @@ struct MainView: View {
         ZStack {
             
             if isNotiAuthorized {
-                SettingInfomationCell(settings: $settings)
+                SettingInfomationCell(settings: settings)
                     .opacity(cellOpacity)
                     .shadow(radius: 6)
                     .parallaxMotion(with: manager, magnitude3d: 20, magnitude2d: 5)

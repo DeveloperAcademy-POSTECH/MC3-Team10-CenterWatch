@@ -9,8 +9,10 @@ import SwiftUI
 
 struct ModalView: View {
     
+    var watchConnecter = WCSettingMobile()
+    
     @StateObject var localNotificationManager = LocalNotificationManager()
-    @Binding var settings: Setting
+    @ObservedObject var settings: Setting
     
     @Environment(\.presentationMode) var presentation
     @State private var isCompleted: Bool = false //변경 감지를 위한 프로퍼티
@@ -67,6 +69,9 @@ struct ModalView: View {
                                 
                             changeNotiSetting()
                             
+                            watchConnecter.session.sendMessage(["data" : [settings.selectedStartHour, settings.selectedEndHour, settings.selectedFrequency.rawValue]], replyHandler: nil)
+                            try? watchConnecter.session.updateApplicationContext(["update" : [settings.selectedStartHour, settings.selectedEndHour, settings.selectedFrequency.rawValue]])
+                            
                         } label: {
                             FontView("완료", .pretendardMedium, 16, .accentColor, 1)
                         }
@@ -89,6 +94,7 @@ struct ModalView: View {
                 Spacer()
             }
         }
+        .interactiveDismissDisabled()
     }
     
     // MARK: - saveNotificationData (Method)

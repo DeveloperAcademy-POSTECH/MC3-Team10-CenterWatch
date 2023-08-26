@@ -93,7 +93,7 @@ struct SettingInfomationCell: View {
     private func selectedHourViewer(startWith: Int, endWith: Int) -> some View {
         HStack {
             VStack(alignment: .leading) {
-                FontView("종료 시간", .pretendardMedium, 16, .white, 0.7)
+                FontView("시작 시간", .pretendardMedium, 16, .white, 0.7)
                 
                 FontView(String(format: "%02d", startWith) + ":00", .pretendardBold, 45, .white, Float(textOpacity))
                     .padding(.bottom, -1).padding(.top, -15)

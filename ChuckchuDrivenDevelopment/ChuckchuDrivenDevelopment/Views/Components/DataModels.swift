@@ -11,9 +11,9 @@ struct SelectedDay: Equatable, Hashable {
     var selected: Bool
 }
 
-class Setting: ObservableObject {
+struct Setting {
     
-    @Published var selectedDays: [SelectedDay] = [
+    var selectedDays: [SelectedDay] = [
         .init(day: "일", selected: false),
         .init(day: "월", selected: true),
         .init(day: "화", selected: true),
@@ -23,9 +23,9 @@ class Setting: ObservableObject {
         .init(day: "토", selected: false)
     ]
     
-    @Published var selectedStartHour: Int = 0
-    @Published var selectedEndHour: Int = 0
-    @Published var selectedFrequency: NotiInterval = .hour
+    var selectedStartHour: Int = 0
+    var selectedEndHour: Int = 0
+    var selectedFrequency: NotiInterval = .hour
     
     var selectedDaysInt: [Int] {
         var daysConvertedToInt: [Int] = []

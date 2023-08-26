@@ -14,7 +14,7 @@ struct MainView: View {
     
     @StateObject private var localNotificationManager = LocalNotificationManager()
     @AppStorage("isNotiAuthorized") var isNotiAuthorized = true
-    @ObservedObject var settings = Setting()
+    @State var settings = Setting()
     
     @StateObject var toggleState = ToggleStateModel()
     @ObservedObject var manager = MotionManager()
@@ -133,7 +133,7 @@ struct MainView: View {
         ZStack {
             
             if isNotiAuthorized {
-                SettingInfomationCell(settings: settings)
+                SettingInfomationCell(settings: $settings)
                     .opacity(cellOpacity)
                     .shadow(radius: 6)
                     .parallaxMotion(with: manager, magnitude3d: 20, magnitude2d: 5)

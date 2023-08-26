@@ -12,7 +12,7 @@ struct SettingInfomationCell: View {
     @State private var showModal = false
     @State private var textOpacity: Double = 1
     
-    @ObservedObject var settings: Setting
+    @Binding var settings: Setting
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -84,7 +84,7 @@ struct SettingInfomationCell: View {
         .buttonStyle(.borderedProminent)
         .cornerRadius(20)
         .sheet(isPresented: self.$showModal) {
-            ModalView(settings: settings, textOpacity: $textOpacity)
+            ModalView(settings: $settings, textOpacity: $textOpacity)
         }
     }
 

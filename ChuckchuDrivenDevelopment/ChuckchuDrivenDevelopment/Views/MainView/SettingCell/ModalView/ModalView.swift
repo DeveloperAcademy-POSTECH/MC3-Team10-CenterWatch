@@ -12,7 +12,7 @@ struct ModalView: View {
     var watchConnecter = WCSettingMobile()
     
     @StateObject var localNotificationManager = LocalNotificationManager()
-    @ObservedObject var settings: Setting
+    @Binding var settings: Setting
     
     @Environment(\.presentationMode) var presentation
     @State private var isCompleted: Bool = false //변경 감지를 위한 프로퍼티

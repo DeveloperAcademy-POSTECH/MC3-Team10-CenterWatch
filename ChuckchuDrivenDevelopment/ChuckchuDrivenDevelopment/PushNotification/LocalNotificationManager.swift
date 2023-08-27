@@ -65,7 +65,12 @@ extension LocalNotificationManager {
             endHour = 24
         }
         
+        /// 일, 토 값이 들어오면 제외되는 로직
         for weekday in weekdays {
+            if weekday == 1 || weekday == 7 {
+                continue
+            }
+            
             /* 빈도 설정으로 들어온 횟수만큼 알림 요청 생성 */
             switch frequency {
             case .hour:

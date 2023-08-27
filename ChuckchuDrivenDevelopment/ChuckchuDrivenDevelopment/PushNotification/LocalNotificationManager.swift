@@ -99,7 +99,7 @@ extension LocalNotificationManager {
                     
                     makeNotificationContent(with: notificationTitle)
                     
-                    let hour = startHour + (count - 1)
+                    let hour = startHour + ((count - 1) * 2)
                     let minute = 0
                     
                     var dateInfo = DateComponents()
@@ -123,7 +123,7 @@ extension LocalNotificationManager {
                     
                     makeNotificationContent(with: notificationTitle)
                     
-                    let hour = startHour + (count - 1)
+                    let hour = startHour + ((count - 1) * 3)
                     let minute = 0
                     
                     var dateInfo = DateComponents()

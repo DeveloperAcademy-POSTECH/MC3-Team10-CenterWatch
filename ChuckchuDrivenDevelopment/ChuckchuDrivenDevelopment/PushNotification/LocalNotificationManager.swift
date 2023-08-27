@@ -186,6 +186,11 @@ extension LocalNotificationManager {
     public func toggleMessage(toggleState: Bool, weekdays: [Int], startHour: Int, endHour: Int, frequency: NotiInterval) {
         if toggleState {
             setNextDayNotification()
+            
+            /// 요청된 알림 확인
+            notificationCenter.getPendingNotificationRequests { messages in
+                print("Notification Schdule Complete: ", messages)
+            }
         } else {
             /// 이전 알림 예약 전체 취소
             cancelNotification()

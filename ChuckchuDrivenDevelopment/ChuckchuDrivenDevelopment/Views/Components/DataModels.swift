@@ -34,7 +34,6 @@ struct Setting {
                 daysConvertedToInt.append((selectedDays.firstIndex(of: selectedDay) ?? 0) + 1)
             }
         }
-        print("----> daysConvertedToInt: ", daysConvertedToInt)
         return daysConvertedToInt
     }
 }

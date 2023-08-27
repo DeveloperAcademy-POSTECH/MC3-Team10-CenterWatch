@@ -95,6 +95,7 @@ struct MainView: View {
             /// 선택된 요일이 없을 경우, 평일을 초기값으로 할당
             let selectionArr = settings.selectedDays.map({ $0.selected })
             if !selectionArr.contains(true) {
+                // TODO: int 값 말고 요일 string 값으로 로직 변경
                 for i in 0...5 {
                     settings.selectedDays[i].selected = true
                 }

@@ -60,6 +60,8 @@ struct ModalView: View {
                     ToolbarItem(placement: .navigationBarTrailing) {
                         // MARK: - 설정 완료 버튼
                         Button {
+                            print("--> modal selectedDaysInt: ", settings.selectedDaysInt)
+                            
                             presentation.wrappedValue.dismiss()
                             
                             textOpacity = 0.2

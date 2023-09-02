@@ -12,7 +12,7 @@ struct IfDailyNotiOffCell: View {
         VStack(spacing: 25) {
             Image("Icon_DayOffActive")
             
-            FontView("현재 알림이 꺼져 있어요.\n다음 날, 핀이 다시 돌아올거에요.", .pretendardBold, 19, .white, 1)
+            FontView(String(localized: "The notifications are currently turned off. Fynn will be back tomorrow."), .pretendardBold, 19, .white, 1)
                 .multilineTextAlignment(.center)
                 .padding(.bottom)
                 .lineSpacing(8)

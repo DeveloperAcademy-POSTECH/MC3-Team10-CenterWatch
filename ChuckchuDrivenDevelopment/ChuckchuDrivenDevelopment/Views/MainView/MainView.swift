@@ -110,7 +110,7 @@ struct MainView: View {
     @ViewBuilder
     private func pleaseTurnOnTheNotiView() -> some View {
         VStack(spacing: 25) {
-            FontView("앗...!\n핀이 메세지를 보내고 싶대요.\n활성화는 알림 설정이 꼭 필요해요.", .pretendardBold, 19, .white, 1)
+            FontView(String(localized: "Oh...! Fynn wants to send a message. Activation requires notification settings."), .pretendardBold, 19, .white, 1)
                 .multilineTextAlignment(.center)
                 .lineSpacing(8)
             
@@ -119,7 +119,7 @@ struct MainView: View {
                 
             } label: {
                 
-                FontView("시스템 설정", .pretendardBold, 17, .white, 1)
+                FontView(String(localized: "System Settings"), .pretendardBold, 17, .white, 1)
                     .padding(12)
             }
             .buttonStyle(.borderedProminent)

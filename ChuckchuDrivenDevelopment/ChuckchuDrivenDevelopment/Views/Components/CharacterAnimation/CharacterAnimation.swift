@@ -83,17 +83,17 @@ struct CharacterAnimation: View {
                             Text("Mini Challenge 3")
                             Text("Team 10")
                             Text("")
-                            Text("세상의 중심에서 시계를 와치다")
+                            Text(String(localized: "Watching for a watch in the center of the world"))
                         }
                         
                         Spacer()
                         
                         VStack(alignment: .leading) {
-                            Text("Guardy / 김수호")
-                            Text("Theo(Park) / 박상준")
-                            Text("Lianne / 최예은")
-                            Text("Alex / 이도후")
-                            Text("Theo(Na) / 나경빈")
+                            Text(String(localized: "Guardy / SuHo Kim"))
+                            Text(String(localized: "Theo(Park) / SangJun Park"))
+                            Text(String(localized: "Lianne / YeEun Choi"))
+                            Text(String(localized: "Alex / DoHu Lee"))
+                            Text(String(localized: "Theo(Na) / GyeongBin Na"))
                         }
                     }
                     .padding(.top, -90)

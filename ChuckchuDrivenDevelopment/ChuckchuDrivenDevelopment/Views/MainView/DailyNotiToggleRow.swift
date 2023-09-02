@@ -36,7 +36,7 @@ struct DailyNotiToggleRow: View {
     var body: some View {
         HStack(spacing: 10){
             Toggle(isOn: $toggleIsOn, label: {
-                Label("하루만 알림 끄기", systemImage: "powersleep")
+                Label(String(localized: "Turn off notifications for a day"), systemImage: "powersleep")
                     .font(Font.custom("Pretendard-Bold", size: 16))
                     .foregroundColor(.white)
                     .opacity(0.7)

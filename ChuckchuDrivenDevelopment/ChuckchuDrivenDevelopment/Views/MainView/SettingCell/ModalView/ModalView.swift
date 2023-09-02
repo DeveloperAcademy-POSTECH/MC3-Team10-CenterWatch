@@ -21,7 +21,7 @@ struct ModalView: View {
     var body: some View {
         NavigationView {
             VStack {
-                FrequencySettingRow(with: $settings.selectedFrequency, label: "알림 설정")
+                FrequencySettingRow(with: $settings.selectedFrequency, label: String(localized: "Interval Settings"))
                 
                 VStack {
                     
@@ -33,7 +33,7 @@ struct ModalView: View {
                     
                     VStack {
                         HStack() {
-                            FontView("요일", .pretendardBold, 18, .white, 1).padding(.leading, 18).padding(.top, 10)
+                            FontView(String(localized: "Day"), .pretendardBold, 18, .white, 1).padding(.leading, 18).padding(.top, 10)
                             
                                 Spacer()
                         }
@@ -45,7 +45,7 @@ struct ModalView: View {
                 .background(Color.init(hue: 0, saturation: 0, brightness: 0.16))
                 .cornerRadius(20)
                 .padding(EdgeInsets(top: 4, leading: 16, bottom: 4, trailing: 16))
-                .navigationTitle("알림 설정").bold()
+                .navigationTitle(String(localized: "Notification Settings")).bold()
                 .navigationBarTitleDisplayMode(.inline)
                 .toolbar {
                     
@@ -53,7 +53,7 @@ struct ModalView: View {
                         Button {
                             presentation.wrappedValue.dismiss()
                         } label: {
-                            FontView("취소", .pretendardMedium, 16, .accentColor, 1)
+                            FontView(String(localized: "Cancel"), .pretendardMedium, 16, .accentColor, 1)
                         }
                     }
                     
@@ -73,7 +73,7 @@ struct ModalView: View {
                             try? watchConnecter.session.updateApplicationContext(["update" : [settings.selectedStartHour, settings.selectedEndHour, settings.selectedFrequency.rawValue]])
                             
                         } label: {
-                            FontView("완료", .pretendardMedium, 16, .accentColor, 1)
+                            FontView(String(localized: "Confirm"), .pretendardMedium, 16, .accentColor, 1)
                         }
                         .disabled(!isCompleted)
                     }

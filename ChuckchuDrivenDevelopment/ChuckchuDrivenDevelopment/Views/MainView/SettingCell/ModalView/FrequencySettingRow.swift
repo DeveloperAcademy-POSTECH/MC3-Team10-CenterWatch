@@ -24,7 +24,7 @@ struct FrequencySettingRow: View {
             
             Picker(label, selection: $with) {
                 ForEach(notificationCycles, id: \.self) { interval in
-                    FontView("\(interval.rawValue / 60)시간", .pretendardBold, 18, .white, 1)
+                    FontView("\(interval.rawValue / 60)"+String(localized: "Hour"), .pretendardBold, 18, .white, 1)
                 }
             }
             .pickerStyle(MenuPickerStyle())

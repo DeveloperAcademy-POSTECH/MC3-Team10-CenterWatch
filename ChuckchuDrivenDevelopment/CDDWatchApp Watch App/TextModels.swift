@@ -8,15 +8,18 @@
 import SwiftUI
 
 public final class AppText {
+    
+    //Usage: String(localized: "Key")
+    
     //file name
     class ContentView {
         //method name
         class View {
-            let notSet = "Please complete the settings in the Ggood Ggood iOS app!"
-            let startLabel = "Start Time"
-            let endLabel = "End Time"
-            let notiLabel = "Notification Interval"
-            let unit = "Hour"
+            let notSet = LocalizedStringKey("Please complete the settings in the Ggood Ggood iOS app!")
+            let startLabel = LocalizedStringKey("Start Time")
+            let endLabel = LocalizedStringKey("End Time")
+            let notiLabel = LocalizedStringKey("Notification Interval")
+            let unit = LocalizedStringKey("Hour")
         }
     }
 }

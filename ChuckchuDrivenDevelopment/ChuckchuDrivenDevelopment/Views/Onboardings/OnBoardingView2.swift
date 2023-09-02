@@ -13,10 +13,10 @@ struct OnBoardingView2: View {
     
     var body: some View {
         VStack {
-            iconAndText(textLabel: "알림을 허용하면, 핀의 진심이 담긴 메세지를 받을 수 있어요.")
+            iconAndText(textLabel: String(localized: "If you allow notifications, you can receive heartfelt messages from Fynn."))
                 Spacer()
             
-            settingButton(label: "알림 설정")
+            settingButton(label: String(localized: "Go to notification settings"))
         }
         .background() {
             onboardingBackground(label: "onBoarding")

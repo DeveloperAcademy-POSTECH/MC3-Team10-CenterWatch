@@ -168,10 +168,10 @@ extension LocalNotificationManager {
     
     // MARK: - Notification Content (Method)
     private func makeNotificationContent(with bodyText: [String]) {
-        notificationContent.title = "꿋꿋"
-        notificationContent.body = bodyText.randomElement() ?? "허리피라우🐢"
+        notificationContent.title = String(localized: "GgoodGgood")
+        notificationContent.body = bodyText.randomElement() ?? String(localized: "Straighten your back🐢")
         notificationContent.categoryIdentifier = "alarm"
-        notificationContent.userInfo = ["허리핀": "핀"]
+        notificationContent.userInfo = [String(localized: "Straighten Fynn"): String(localized: "Fynn")]
         notificationContent.sound = UNNotificationSound.default
     }
 }
@@ -208,10 +208,10 @@ extension LocalNotificationManager {
         cancelNotification()
         
         /// 새로운 알림의 내용
-        notificationContent.title = "약속한 하루가 지났어요!"
-        notificationContent.body = "알림을 재설정하고 다시 핀의 메세지를 받아보세요 🐢"
+        notificationContent.title = String(localized: "The promised day has passed!")
+        notificationContent.body = String(localized: "Reset the notification and receive Fynn's message again.🐢")
         notificationContent.categoryIdentifier = "alarm"
-        notificationContent.userInfo = ["허리핀": "핀"]
+        notificationContent.userInfo = [String(localized: "Straighten Fynn"): String(localized: "Fynn")]
         notificationContent.sound = UNNotificationSound.default
         
         /// 알림이 24시간 뒤 보내지도록 예약

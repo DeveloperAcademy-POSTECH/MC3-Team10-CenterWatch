@@ -23,24 +23,24 @@ struct ContentView: View {
     var body: some View {
         ///iOS에서 값을 받지 못했다면
         if(watchConnecter.data[0] == -1) {
-            Text("꿋꿋 iOS앱에서 설정을 완료해주세요!")
+            Text(String(localized: "Please complete the settings in the Ggood Ggood iOS app!"))
         } else {
             List {
                 VStack(alignment: .leading) {
-                    Text("시작 시간")
+                    Text(String(localized: "Start Time"))
                     Text(String(format: "%02d", watchConnecter.data[0]) + ":00")
                         .font(.title).bold()
                         .foregroundColor(.blue)
                 }
                 VStack(alignment: .leading) {
-                    Text("종료 시간")
+                    Text(String(localized: "End Time"))
                     Text(String(format: "%02d", watchConnecter.data[1]) + ":00")
                         .font(.title).bold()
                         .foregroundColor(.blue)
                 }
                 VStack(alignment: .leading) {
-                    Text("알림 주기")
-                    Text(String("\(watchConnecter.data[2]/60)" + "시간"))
+                    Text(String(localized: "Notification Interval"))
+                    Text(String("\(watchConnecter.data[2]/60)" + String(localized: "Hour")))
                         .font(.title).bold()
                         .foregroundColor(.blue)
                 }

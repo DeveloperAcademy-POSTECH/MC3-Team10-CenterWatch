@@ -1,9 +1,112 @@
-/* 
-  Localizable.strings
-  ChuckchuDrivenDevelopment
+//LocalNotificationManager.swift
+"GgoodGgood" = "꿋꿋";
+"Straighten your back🐢" = "허리피라우🐢";
+"Straighten Fynn" = "허리핀";
+"Fynn" = "핀";
+"The promised day has passed!" = "약속한 하루가 지났어요!";
+"Reset the notification and receive Fynn's message again.🐢" = "알림을 재설정하고 다시 핀의 메세지를 받아보세요 🐢";
 
-  Created by 박상준 on 2023/09/02.
-  
-*/
+//NotificationTitle.swift
+"Another lively day today! I'll give you strength! 🐢" = "오늘도 활기찬 하루! 제가 힘을 실어드릴게요! 🐢";
+"Knock-knock, it's the spine fairy 🧚" = "똑똑, 척추요정 왔어요 🧚";
+"I'm naturally a turtle neck, but what about you… 🐢" = "저는 원래 거북목이지만 주인님은… 🐢";
+"Save on back surgery costs with just one stretch! 💸" = "스트레칭 한 번으로 허리 수술비 아끼기! 💸";
+"How about some stretching for your hardworking back? 💪" = "고생하는 허리를 위해 스트레칭 어때요? 💪";
+"Straighten that back! Stretch it out 🌈" = "허리 쭉쭉! 시원하게 기지개 한 번 🌈";
+"Find my notifications annoying? Wait until your back hurts... 🔥" = "제 알림이 귀찮다구요? 허리가 아파봐야…🔥";
+"A healthy spine leads to a healthy mind! 😌" = "건강한 척추에 건강한 정신이 깃든다! 😌";
+"Haha! Master, be careful not to hunch like me 🐢" = "하하! 주인님, 저처럼 굽지않게 조심하세요 🐢";
+"Keep both your back and spine strong! 🎋" = "허리도 척추도 꿋꿋하게! 🎋";
+"Stretch it out right from your seat! 🙌" = "앉은 자리에서 기지개 한번 쭉~ 🙌";
+"Give your shoulders a twist~ 💞" = "어깨 한 번 돌리고~ 💞";
+"More efficient work with a healthy spine! 💪🦋" = "척추 건강으로 더 효율적인 업무! 💪🦋";
+"Put some power into your back even during work! 👊" = "일과중에도 허리에 힘! 👊";
+"Good posture, a happy day! 🌟🧘‍♂️" = "바른 자세, 행복한 하루! 🌟🧘‍♂️";
+"Check your posture to prevent turtle neck! 🐢👀" = "거북목 예방을 위한 자세 체크! 🐢👀";
+"Turtle neck, the fate of developers? No! 👊" = "거북목은 개발자의 숙명? No! 👊";
+"Great ideas come from a healthy spine 💡" = "멋진 아이디어는 건강한 척추로부터 💡";
+"If your posture is hunched, dolphins might mistake you for a friend 🐬" = "주인님 굽은 자세 보고 돌고래가 친구먹재요 🐬";
+"Oh my, your neck might snap! 💥" = "아이고, 목 부러지겠어요! 💥";
+"Give your wrists a refreshing twist now and then ⚡️" = "손목도 한번씩 시원하게 돌려주세요⚡️";
+"Straighten your back firmly 🥢" = "허리를 꿋꿋!하게 세워주세요 🥢";
+"Oops! Straighten your spine before it screams in agony 😱" = "헉! 척추가 비명을 지르기전에 꿋꿋! 😱";
+"Fix your posture with a fresh heart 🌷" = "자세 가다듬고, 산뜻한 마음으로🌷";
+"My back... save me...! Good posture, stand firm! ⚰️" = "허리… 살려줘요..! 바른자세 꿋꿋! ⚰️";
+"Check your posture, ready, set, go! 🏃💨" = "자세 체크, 레디 셋 고! 🏃💨";
+"Fix your posture once and power up! 🔥" = "자세 한 번 가다듬고 파워 UP! 🔥";
+"Oh? You're hunched. Stretch right away! 🐬" = "어? 굽었다. 당장 스트레칭 고고! 🐬";
+"Stretch your arms and legs out! Preventing turtle neck is a must! 🐢💪" = "팔 다리 쭉~! 거북목 예방은 필수! 🐢💪";
+"They say 10 seconds of good posture can change 10 years 😘" = "10초의 바른자세가 10년을 바꾼대요 😘";
+"Good posture takes responsibility for spinal health! 💪" = "바른 자세가 척추건강을 책임져요! 💪";
+"Master, what if your posture is worse than mine 😥" = "주인님, 저보다 거북목이면 어떡해요 😥";
+"Well done! Let's meet with energy again tomorrow! 👋🏻" = "수고하셨어요! 내일도 기운차게 만나요! 👋🏻";
 
-"GgoodGgood"
+//OnBoardingView1.swift
+"Creating Good Posture with Pin" = "핀과 함께하는 바른 자세 만들기";
+"At your preferred intervals, receive notifications and easily achieve proper posture instantly." = "내가 원하는 주기에 알림을 받고, 즉각적인 바른자세를 쉽게 만드세요.";
+"Getting started" = "시작하기";
+
+//OnBoardingView2.swift
+"If you allow notifications, you can receive heartfelt messages from Fynn." = "알림을 허용하면, 핀의 진심이 담긴 메세지를 받을 수 있어요.";
+"Go to notification settings" = "알림 설정하기";
+
+//DailyNotiToggleRow.swift
+"Turn off notifications for a day" = "하루만 알림 끄기";
+
+//MainView.swift
+"Oh...! Fynn wants to send a message. Activation requires notification settings." = "앗...! 핀이 메세지를 보내고 싶대요. 활성화는 알림 설정이 꼭 필요해요.";
+"System Settings" = "시스템 설정";
+
+//SettingInformationCell.swift
+"Notification Settings" = "알림 설정";
+"Notification Interval" = "알림 주기";
+"Hour" = "시간";
+"Start Time" = "시작 시간";
+"End Time" = "종료 시간";
+"Day" = "요일";
+"Mon" = "월";
+"Tue" = "화";
+"Wed" = "수";
+"Thu" = "목";
+"Fri" = "금";
+
+//IfDailyNotiOffCell.swift
+"The notifications are currently turned off. Fynn will be back tomorrow." = "현재 알림이 꺼져 있어요. 다음 날, 핀이 다시 돌아올거에요.";
+
+//ModalView.swift
+"Interval Settings" = "주기 설정";
+"Day" = "요일";
+"Notification Settings" = "알림 설정";
+"Cancel" = "취소";
+"Confirm" = "완료";
+
+//FrequnecySettingRow.swift
+"Hour" = "시간";
+
+//TimePickerRow.swift
+"Start Time" = "시작 시간";
+"End Time" = "종료 시간";
+
+//DataModels.swift
+"Sun" = "일";
+"Mon" = "월";
+"Tue" = "화";
+"Wed" = "수";
+"Thu" = "목";
+"Fri" = "금";
+"Sat" = "토";
+
+//ChatacterAnimation.swift
+"Watching for a watch in the center of the world" =  "세상의 중심에서 시계를 와치다";
+"Guardy / SuHo Kim" = "Guardy / 김수호";
+"Theo(Park) / SangJun Park" = "Theo(Park) / 박상준";
+"Lianne / YeEun Choi" = "Lianne / 최예은";
+"Alex / DoHu Lee" = "Alex / 이도후";
+"Theo(Na) / GyeongBin Na" = "Theo(Na) / 나경빈";
+
+//WatchApp
+"Please complete the settings in the Ggood Ggood iOS app!" = "꿋꿋 iOS앱에서 설정을 완료해주세요!";
+"Start Time" = "시작 시간";
+"End Time" = "종료 시간";
+"Notification Interval" = "알림 주기";
+"Hour" = "시간";

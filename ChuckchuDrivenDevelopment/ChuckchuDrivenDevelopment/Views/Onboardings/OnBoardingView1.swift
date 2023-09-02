@@ -18,9 +18,9 @@ struct OnBoardingView1: View {
             
             CharacterAnimation(animationPaused: $animationPaused, grayscale: $grayscale)
                 
-            OnboardingText(title: "핀과 함께하는\n바른 자세 만들기", subTitle: "내가 원하는 주기에 알림을 받고,\n즉각적인 바른자세를 쉽게 만드세요.\n")
+            OnboardingText(title: String(localized: "Creating Good Posture with Pin"), subTitle: String(localized: "At your preferred intervals, receive notifications and easily achieve proper posture instantly."))
             
-            nextButton(label: "시작하기")
+            nextButton(label: String(localized: "Getting started"))
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color.init(hue: 0, saturation: 0, brightness: 0.08))

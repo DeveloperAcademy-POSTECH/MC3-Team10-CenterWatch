@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct SettingInfomationCell: View {
-    
     @State private var showModal = false
     @State private var textOpacity: Double = 1
     
@@ -24,7 +23,7 @@ struct SettingInfomationCell: View {
                 
                     Spacer()
 
-                settingModalButton(name: "알림 설정")
+                settingModalButton(name: String(localized: "Notification Settings"))
                 
             }
             .padding([.top, .leading, .trailing])
@@ -60,9 +59,9 @@ struct SettingInfomationCell: View {
     @ViewBuilder
     private func selectedFrequencyViewer(frequencyWith: NotiInterval) -> some View {
         VStack(alignment: .leading) {
-            FontView("알림 주기", .pretendardMedium, 16, .white, 0.7)
+            FontView(String(localized: "Notification Interval"), .pretendardMedium, 16, .white, 0.7)
             
-            FontView("\(frequencyWith.rawValue / 60)시간", .pretendardBold, 45, .white, Float(textOpacity))
+            FontView("\(frequencyWith.rawValue / 60)" + String(localized: "Hour"), .pretendardBold, 45, .white, Float(textOpacity))
                 .padding(.bottom, -1)
                 .padding(.top, -15)
                 .id("NotificationSettingsSelectedFrequencyTextView\(frequencyWith.rawValue)")
@@ -93,7 +92,7 @@ struct SettingInfomationCell: View {
     private func selectedHourViewer(startWith: Int, endWith: Int) -> some View {
         HStack {
             VStack(alignment: .leading) {
-                FontView("시작 시간", .pretendardMedium, 16, .white, 0.7)
+                FontView(String(localized: "Start Time"), .pretendardMedium, 16, .white, 0.7)
                 
                 FontView(String(format: "%02d", startWith) + ":00", .pretendardBold, 45, .white, Float(textOpacity))
                     .padding(.bottom, -1).padding(.top, -15)
@@ -104,7 +103,7 @@ struct SettingInfomationCell: View {
             Spacer()
             
             VStack(alignment: .leading) {
-                FontView("종료 시간", .pretendardMedium, 16, .white, 0.7)
+                FontView(String(localized: "End Time"), .pretendardMedium, 16, .white, 0.7)
                 
                 FontView(String(format: "%02d", endWith) + ":00", .pretendardBold, 45, .white, Float(textOpacity))
                     .padding(.bottom, -1).padding(.top, -15)
@@ -122,15 +121,15 @@ struct SettingInfomationCell: View {
     private func selectedDayViewer(dayWith: [SelectedDay]) -> some View {
         VStack {
             VStack(alignment: .leading) {
-                FontView("요일", .pretendardMedium, 16, .white, 0.7)
+                FontView(String(localized: "Day"), .pretendardMedium, 16, .white, 0.7)
                 
                 HStack(spacing: 16) {
     
-                    Text("월").opacity(dayWith[1].selected ? 1 : 0.3)
-                    Text("화").opacity(dayWith[2].selected ? 1 : 0.3)
-                    Text("수").opacity(dayWith[3].selected ? 1 : 0.3)
-                    Text("목").opacity(dayWith[4].selected ? 1 : 0.3)
-                    Text("금").opacity(dayWith[5].selected ? 1 : 0.3)
+                    Text(String(localized: "Mon")).opacity(dayWith[1].selected ? 1 : 0.3)
+                    Text(String(localized: "Tue")).opacity(dayWith[2].selected ? 1 : 0.3)
+                    Text(String(localized: "Wed")).opacity(dayWith[3].selected ? 1 : 0.3)
+                    Text(String(localized: "Thu")).opacity(dayWith[4].selected ? 1 : 0.3)
+                    Text(String(localized: "Fri")).opacity(dayWith[5].selected ? 1 : 0.3)
 
                 }
                 .opacity(textOpacity)

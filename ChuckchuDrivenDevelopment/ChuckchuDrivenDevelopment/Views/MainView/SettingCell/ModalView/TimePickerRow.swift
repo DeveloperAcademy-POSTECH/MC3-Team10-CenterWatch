@@ -15,7 +15,7 @@ struct TimePickerRow: View {
         HStack {
             VStack(alignment: .leading) {
                 
-                FontView("시작 시간", .pretendardBold, 18, .white, 1)
+                FontView(String(localized: "Start Time"), .pretendardBold, 18, .white, 1)
                     .padding(.leading, 10)
                 
                 HStack{
@@ -27,7 +27,7 @@ struct TimePickerRow: View {
             .padding(EdgeInsets(top: 10, leading: 16, bottom: 10, trailing: 10))
             
             VStack(alignment: .leading) {
-                FontView("종료 시간", .pretendardBold, 18, .white, 1)
+                FontView(String(localized: "End Time"), .pretendardBold, 18, .white, 1)
                     .padding(.leading, 10)
                 
                 HStack{

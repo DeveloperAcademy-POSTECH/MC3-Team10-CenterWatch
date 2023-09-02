@@ -14,13 +14,13 @@ struct SelectedDay: Equatable, Hashable {
 struct Setting {
     
     var selectedDays: [SelectedDay] = [
-        .init(day: "일", selected: false),
-        .init(day: "월", selected: true),
-        .init(day: "화", selected: true),
-        .init(day: "수", selected: true),
-        .init(day: "목", selected: true),
-        .init(day: "금", selected: true),
-        .init(day: "토", selected: false)
+        .init(day: String(localized: "Sun"), selected: false),
+        .init(day: String(localized: "Mon"), selected: true),
+        .init(day: String(localized: "Thu"), selected: true),
+        .init(day: String(localized: "Wed"), selected: true),
+        .init(day: String(localized: "Thu"), selected: true),
+        .init(day: String(localized: "Fri"), selected: true),
+        .init(day: String(localized: "Sat"), selected: false)
     ]
     
     var selectedStartHour: Int = 0

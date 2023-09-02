@@ -10,45 +10,46 @@ import Foundation
 struct NotificationTitle {
     
     let openingVariations: [String] = [
-        "오늘도 활기찬 하루!\n제가 힘을 실어드릴게요! 🐢"
+        String(localized: "Another lively day today! I'll give you strength! 🐢")
     ]
     
     let variations: [String] = [
-        "똑똑, 척추요정 왔어요 🧚",
-        "저는 원래 거북목이지만 주인님은… 🐢",
-        "스트레칭 한 번으로 허리 수술비 아끼기! 💸",
-        "고생하는 허리를 위해 스트레칭 어때요? 💪",
-        "허리 쭉쭉! 시원하게 기지개 한 번 🌈",
-        "제 알림이 귀찮다구요? 허리가 아파봐야…🔥",
-        "건강한 척추에 건강한 정신이 깃든다! 😌",
-        "하하! 주인님, 저처럼 굽지않게 조심하세요 🐢",
-        "허리도 척추도 꿋꿋하게! 🎋",
-        "앉은 자리에서 기지개 한번 쭉~ 🙌",
-        "어깨 한 번 돌리고~ 💞",
-        "척추 건강으로 더 효율적인 업무! 💪🦋",
-        "일과중에도 허리에 힘! 👊",
-        "바른 자세, 행복한 하루! 🌟🧘‍♂️",
-        "거북목 예방을 위한 자세 체크! 🐢👀",
-        "거북목은 개발자의 숙명? No! 👊",
-        "멋진 아이디어는 건강한 척추로부터 💡",
-        "주인님 굽은 자세 보고 돌고래가 친구먹재요 🐬",
-        "아이고, 목 부러지겠어요! 💥",
-        "손목도 한번씩 시원하게 돌려주세요⚡️",
-        "허리를 꿋꿋!하게 세워주세요 🥢",
-        "헉! 척추가 비명을 지르기전에 꿋꿋! 😱",
-        "자세 가다듬고, 산뜻한 마음으로🌷",
-        "허리… 살려줘요..! 바른자세 꿋꿋! ⚰️",
-        "자세 체크, 레디 셋 고! 🏃💨",
-        "자세 한 번 가다듬고 파워 UP! 🔥",
-        "어? 굽었다. 당장 스트레칭 고고! 🐬",
-        "팔 다리 쭉~! 거북목 예방은 필수! 🐢💪",
-        "10초의 바른자세가 10년을 바꾼대요 😘",
-        "바른 자세가 척추건강을 책임져요! 💪",
-        "주인님, 저보다 거북목이면 어떡해요 😥",
+        String(localized: "Knock-knock, it's the spine fairy 🧚"),
+        String(localized: "I'm naturally a turtle neck, but what about you… 🐢"),
+        String(localized: "Save on back surgery costs with just one stretch! 💸"),
+        String(localized: "How about some stretching for your hardworking back? 💪"),
+        String(localized: "Straighten that back! Stretch it out 🌈"),
+        String(localized: "Find my notifications annoying? Wait until your back hurts... 🔥"),
+        String(localized: "A healthy spine leads to a healthy mind! 😌"),
+        String(localized: "Haha! Master, be careful not to hunch like me 🐢"),
+        String(localized: "Keep both your back and spine strong! 🎋"),
+        String(localized: "Stretch it out right from your seat! 🙌"),
+        String(localized: "Give your shoulders a twist~ 💞"),
+        String(localized: "More efficient work with a healthy spine! 💪🦋"),
+        String(localized: "Put some power into your back even during work! 👊"),
+        String(localized: "Good posture, a happy day! 🌟🧘‍♂️"),
+        String(localized: "Check your posture to prevent turtle neck! 🐢👀"),
+        String(localized: "Turtle neck, the fate of developers? No! 👊"),
+        String(localized: "Great ideas come from a healthy spine 💡"),
+        String(localized: "If your posture is hunched, dolphins might mistake you for a friend 🐬"),
+        String(localized: "Oh my, your neck might snap! 💥"),
+        String(localized: "Give your wrists a refreshing twist now and then ⚡️"),
+        String(localized: "Straighten your back firmly 🥢"),
+        String(localized: "Oops! Straighten your spine before it screams in agony 😱"),
+        String(localized: "Fix your posture with a fresh heart 🌷"),
+        String(localized: "My back... save me...! Good posture, stand firm! ⚰️"),
+        String(localized: "Check your posture, ready, set, go! 🏃💨"),
+        String(localized: "Fix your posture once and power up! 🔥"),
+        String(localized: "Oh? You're hunched. Stretch right away! 🐬"),
+        String(localized: "Stretch your arms and legs out! Preventing turtle neck is a must! 🐢💪"),
+        String(localized: "They say 10 seconds of good posture can change 10 years 😘"),
+        String(localized: "Good posture takes responsibility for spinal health! 💪"),
+        String(localized: "Master, what if your posture is worse than mine 😥")
+        
     ]
     
     let closingVariations: [String] = [
-        "수고하셨어요!\n내일도 기운차게 만나요! 👋🏻"
+        String(localized: "Well done! Let's meet with energy again tomorrow! 👋🏻")
         
     ]
     

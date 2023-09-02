@@ -76,7 +76,7 @@ public final class AppText {
     
     class OnBoardingView1 {
         class OnboardingText {
-            let title = "Creating Good Posture\nwith Pin"
+            let title = "Creating Good Posture with Pin"
             let subTitle = "At your preferred intervals, receive notifications and easily achieve proper posture instantly."
         }
         class NextButton {

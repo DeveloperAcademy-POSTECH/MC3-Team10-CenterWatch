@@ -14,13 +14,22 @@ struct TimePickerRow: View {
     var body: some View {
         HStack {
             VStack(alignment: .leading) {
-                
                 FontView(String(localized: "Start Time"), .pretendardBold, 18, .white, 1)
                     .padding(.leading, 10)
                 
                 HStack{
-                    WheelPickerView(selectedHour: $selectedStartHour)
-                        Spacer()
+                    Picker("", selection: $selectedStartHour) {
+                        //시작시간이 23까지만 표시되도록
+                        ForEach(0..<24, id: \.self) { hour in
+                            Text(String(format: "%02d:00", hour))
+                                .font(.system(size: 20))
+                                .fontWeight(.semibold)
+                                .foregroundColor(.accentColor)
+                        }
+                    }
+                    .pickerStyle(WheelPickerStyle())
+                    .frame(width: 130, height: 120)
+                    Spacer()
                 }
             }
             .frame(maxWidth: .infinity, alignment: .leading)
@@ -31,18 +40,26 @@ struct TimePickerRow: View {
                     .padding(.leading, 10)
                 
                 HStack{
-                    
-                    WheelPickerView(selectedHour: $selectedEndHour, minHour: selectedStartHour + 1, maxHour: selectedStartHour + 10)
-                        Spacer()
+                    Picker("", selection: $selectedEndHour) {
+                        ForEach(selectedStartHour + 1...min(selectedStartHour + 10, 24), id: \.self) { hour in
+                            Text(String(format: "%02d:00", hour))
+                                .font(.system(size: 20))
+                                .fontWeight(.semibold)
+                                .foregroundColor(.accentColor)
+                        }
+                    }
+                    .pickerStyle(WheelPickerStyle())
+                    .frame(width: 130, height: 120)
+                    Spacer()
                 }
             }
         }
         .onChange(of: selectedStartHour) { newValue in
-            /*
-             selectedEndHour = max(selectedStartHour + 1,
-                                   min(selectedStartHour + 6, selectedEndHour)
-             )
-             */
+            //종료시간이 시작시간에 밀려도 종료시간이 설정되게
+            selectedEndHour = max(selectedStartHour + 1,
+                                  min(selectedStartHour + 10, selectedEndHour)
+            )
+            
         }
     }
 }

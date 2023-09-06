@@ -64,7 +64,7 @@ struct MainView: View {
             
             checkIfFirstInApp()
             
-            self.toggleState.toggleIsOn = UserDefaults.standard.bool(forKey: "dayOffToggleState")
+            self.toggleState.toggleIsOn = UserDefaults.standard.bool(forKey: "toggleIsOn")
 
              for weekday in settings.selectedDays {
                  let index = settings.selectedDays.firstIndex(of: weekday)

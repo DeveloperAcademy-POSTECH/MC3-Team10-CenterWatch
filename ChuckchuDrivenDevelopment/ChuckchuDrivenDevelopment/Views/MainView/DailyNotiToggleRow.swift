@@ -8,8 +8,9 @@
 import SwiftUI
 
 class ToggleStateModel: ObservableObject {
-    @Published var toggleIsOn: Bool = false {
+    @Published var toggleIsOn: Bool = UserDefaults.standard.bool(forKey: "toggleIsOn") {
         didSet {
+            UserDefaults.standard.set(self.toggleIsOn, forKey: "toggleIsOn")
             if toggleIsOn {
                 self.animationPaused = true
                 grayscaleValue = 1.0
@@ -32,7 +33,7 @@ class ToggleStateModel: ObservableObject {
 struct DailyNotiToggleRow: View {
     
     @Binding var toggleIsOn: Bool
-
+    
     var body: some View {
         HStack(spacing: 10){
             Toggle(isOn: $toggleIsOn, label: {

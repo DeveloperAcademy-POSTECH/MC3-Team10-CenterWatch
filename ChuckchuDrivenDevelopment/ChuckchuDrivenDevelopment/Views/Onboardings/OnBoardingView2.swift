@@ -19,7 +19,11 @@ struct OnBoardingView2: View {
             settingButton(label: String(localized: "Go to notification settings"))
         }
         .background() {
-            onboardingBackground(label: "onBoarding")
+            if(Locale.current.language.languageCode == "ko") {
+                onboardingBackground(label: "onBoarding-ko")
+            } else {
+                onboardingBackground(label: "onBoarding-en")
+            }
         }
     }
     

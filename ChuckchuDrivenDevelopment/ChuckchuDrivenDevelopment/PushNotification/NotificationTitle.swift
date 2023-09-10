@@ -10,10 +10,15 @@ import Foundation
 struct NotificationTitle {
     
     let openingVariations: [String] = [
+        String(localized: "Ta-da! Shall we start with good posture again today?"),
+        String(localized: "Let's start working on a brand new day with good posture! 🚀"),
+        String(localized: "Good morning! Let's start energetically. Maintain proper posture in front of the monitor! 💪"),
+        String(localized: "Start a wonderful day with a good posture 🌞"),
+        String(localized: "Shall we run through today with good posture? 🏃‍♂️🐢"),
         String(localized: "Another lively day today! I'll give you strength! 🐢")
     ]
     
-    let variations: [String] = [
+    let basicVariations: [String] = [
         String(localized: "Knock-knock, it's the spine fairy 🧚"),
         String(localized: "I'm naturally a turtle neck, but what about you… 🐢"),
         String(localized: "Save on back surgery costs with just one stretch! 💸"),
@@ -45,12 +50,13 @@ struct NotificationTitle {
         String(localized: "They say 10 seconds of good posture can change 10 years 😘"),
         String(localized: "Good posture takes responsibility for spinal health! 💪"),
         String(localized: "Master, what if your posture is worse than mine 😥")
-        
     ]
     
     let closingVariations: [String] = [
-        String(localized: "Well done! Let's meet with energy again tomorrow! 👋🏻")
-        
+        String(localized: "Well done! Let's meet with energy again tomorrow! 👋🏻"),
+        String(localized: "Healthy spine, energetic tomorrow! 🌞🌈"),
+        String(localized: "Stand tall and run towards tomorrow 🏃💨"),
+        String(localized: "Let's postpone the turtle neck to tomorrow 🐢🌙"),
+        String(localized: "Did you straighten your back? I'm going to bed now 🥱")
     ]
-    
 }

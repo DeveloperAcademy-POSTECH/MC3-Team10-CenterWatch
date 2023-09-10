@@ -7,6 +7,14 @@
 "Reset the notification and receive Fynn's message again.🐢" = "Reset the notification and receive Fynn's message again.🐢";
 
 //NotificationTitle.swift
+/// StartingTitles
+"Ta-da! Shall we start with good posture again today?" = "Ta-da! Shall we start with good posture again today?";
+"Let's start working on a brand new day with good posture! 🚀" = "Let's start working on a brand new day with good posture! 🚀";
+"Good morning! Let's start energetically. Maintain proper posture in front of the monitor! 💪" = "Good morning! Let's start energetically. Maintain proper posture in front of the monitor! 💪";
+"Start a wonderful day with a good posture 🌞" = "Start a wonderful day with a good posture 🌞";
+"Shall we run through today with good posture? 🏃‍♂️🐢" = "Shall we run through today with good posture? 🏃‍♂️🐢";
+"Another lively day today! I'll give you strength! 🐢" = "Another lively day today! I'll give you strength! 🐢";
+/// BasicTitles
 "Another lively day today! I'll give you strength! 🐢" = "Another lively day today! I'll give you strength! 🐢";
 "Knock-knock, it's the spine fairy 🧚" = "Knock-knock, it's the spine fairy 🧚";
 "I'm naturally a turtle neck, but what about you… 🐢" = "I'm naturally a turtle neck, but what about you… 🐢";
@@ -40,6 +48,12 @@
 "Good posture takes responsibility for spinal health! 💪" = "Good posture takes responsibility for spinal health! 💪";
 "Master, what if your posture is worse than mine 😥" = "Master, what if your posture is worse than mine 😥";
 "Well done! Let's meet with energy again tomorrow! 👋🏻" = "Well done! Let's meet with energy again tomorrow! 👋🏻";
+/// EndingTitles
+"Well done! Let's meet with energy again tomorrow! 👋🏻" = "Well done! Let's meet with energy again tomorrow! 👋🏻";
+"Healthy spine, energetic tomorrow! 🌞🌈" = "Healthy spine, energetic tomorrow! 🌞🌈";
+"Stand tall and run towards tomorrow 🏃💨" = "Stand tall and run towards tomorrow 🏃💨";
+"Let's postpone the turtle neck to tomorrow 🐢🌙" = "Let's postpone the turtle neck to tomorrow 🐢🌙";
+"Did you straighten your back? I'm going to bed now 🥱" = "Did you straighten your back? I'm going to bed now 🥱";
 
 //OnBoardingView1.swift
 "Creating Good Posture with Pin" = "Creating Good Posture with Pin";

@@ -125,11 +125,11 @@ struct SettingInfomationCell: View {
                 
                 HStack(spacing: 16) {
     
-                    Text(String(localized: "Mon")).opacity(dayWith[1].selected ? 1 : 0.3)
-                    Text(String(localized: "Tue")).opacity(dayWith[2].selected ? 1 : 0.3)
-                    Text(String(localized: "Wed")).opacity(dayWith[3].selected ? 1 : 0.3)
-                    Text(String(localized: "Thu")).opacity(dayWith[4].selected ? 1 : 0.3)
-                    Text(String(localized: "Fri")).opacity(dayWith[5].selected ? 1 : 0.3)
+                    Text("M").opacity(dayWith[1].selected ? 1 : 0.3)
+                    Text("T").opacity(dayWith[2].selected ? 1 : 0.3)
+                    Text("W").opacity(dayWith[3].selected ? 1 : 0.3)
+                    Text("T").opacity(dayWith[4].selected ? 1 : 0.3)
+                    Text("F").opacity(dayWith[5].selected ? 1 : 0.3)
 
                 }
                 .opacity(textOpacity)

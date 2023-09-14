@@ -68,7 +68,7 @@ private func switchAuthorizationStatus() {
     UNUserNotificationCenter.current().getNotificationSettings { (settings) in
      
         switch settings.authorizationStatus {
-     
+    
         case .notDetermined:
             print("Authorization not determined.")
             

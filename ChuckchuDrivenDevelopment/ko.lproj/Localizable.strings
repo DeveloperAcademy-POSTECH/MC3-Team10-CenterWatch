@@ -7,7 +7,14 @@
 "Reset the notification and receive Fynn's message again.🐢" = "알림을 재설정하고 다시 핀의 메세지를 받아보세요 🐢";
 
 //NotificationTitle.swift
+/// StartingTitles
+"Ta-da! Shall we start with good posture again today?" = "짜잔! 오늘도 바른자세 시작해볼까요?";
+"Let's start working on a brand new day with good posture! 🚀" = "새로운 하루! 바른 자세로 업무를 시작해봐요! 🚀";
+"Good morning! Let's start energetically. Maintain proper posture in front of the monitor! 💪" = "굿모닝! 힘차게 시작해봐요. 모니터 앞 바른자세! 💪";
+"Start a wonderful day with a good posture 🌞" = "바른 자세로 멋진 하루를 시작해봐요 🌞";
+"Shall we run through today with good posture? 🏃‍♂️🐢" = "오늘 하루도 바른자세로 달려볼까요? 🏃‍♂️🐢";
 "Another lively day today! I'll give you strength! 🐢" = "오늘도 활기찬 하루! 제가 힘을 실어드릴게요! 🐢";
+/// BasicTitles
 "Knock-knock, it's the spine fairy 🧚" = "똑똑, 척추요정 왔어요 🧚";
 "I'm naturally a turtle neck, but what about you… 🐢" = "저는 원래 거북목이지만 주인님은… 🐢";
 "Save on back surgery costs with just one stretch! 💸" = "스트레칭 한 번으로 허리 수술비 아끼기! 💸";
@@ -39,7 +46,12 @@
 "They say 10 seconds of good posture can change 10 years 😘" = "10초의 바른자세가 10년을 바꾼대요 😘";
 "Good posture takes responsibility for spinal health! 💪" = "바른 자세가 척추건강을 책임져요! 💪";
 "Master, what if your posture is worse than mine 😥" = "주인님, 저보다 거북목이면 어떡해요 😥";
+/// EndingTitles
 "Well done! Let's meet with energy again tomorrow! 👋🏻" = "수고하셨어요! 내일도 기운차게 만나요! 👋🏻";
+"Healthy spine, energetic tomorrow! 🌞🌈" = "건강한 척추, 활기찬 내일! 🌞🌈";
+"Stand tall and run towards tomorrow 🏃💨" = "어깨 펴고, 내일로 달려가요 🏃💨";
+"Let's postpone the turtle neck to tomorrow 🐢🌙" = "거북목은 내일로 미루자구요 🐢🌙";
+"Did you straighten your back? I'm going to bed now 🥱" = "허리 펴셨죠? 전 이제 자러갈게요 🥱";
 
 //OnBoardingView1.swift
 "Creating Good Posture with Pin" = "핀과 함께하는 바른 자세 만들기";

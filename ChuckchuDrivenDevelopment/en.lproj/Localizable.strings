@@ -78,11 +78,11 @@
 "Start Time" = "Start Time";
 "End Time" = "End Time";
 "Day" = "Day";
-"Mon" = "M";
-"Tue" = "T";
-"Wed" = "W";
-"Thu" = "T";
-"Fri" = "F";
+"Mon" = "Mon";
+"Tue" = "Tue";
+"Wed" = "Wed";
+"Thu" = "Thu";
+"Fri" = "Fri";
 
 //IfDailyNotiOffCell.swift
 "The notifications are currently turned off. Fynn will be back tomorrow." = "The notifications are currently turned off. Fynn will be back tomorrow.";
@@ -102,13 +102,13 @@
 "End Time" = "End Time";
 
 //DataModels.swift
-"Sun" = "S";
-"Mon" = "M";
-"Tue" = "T";
-"Wed" = "W";
-"Thu" = "T";
-"Fri" = "F";
-"Sat" = "S";
+"Sun" = "Sun";
+"Mon" = "Mon";
+"Tue" = "Tue";
+"Wed" = "Wed";
+"Thu" = "Thu";
+"Fri" = "Fri";
+"Sat" = "Sat";
 
 //ChatacterAnimation.swift
 "Watching for a watch in the center of the world" =  "Watching for a watch in the center of the world";

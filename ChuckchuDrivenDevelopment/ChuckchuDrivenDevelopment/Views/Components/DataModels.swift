@@ -16,7 +16,7 @@ struct Setting {
     var selectedDays: [SelectedDay] = [
         .init(day: String(localized: "Sun"), selected: false),
         .init(day: String(localized: "Mon"), selected: true),
-        .init(day: String(localized: "Thu"), selected: true),
+        .init(day: String(localized: "Tue"), selected: true),
         .init(day: String(localized: "Wed"), selected: true),
         .init(day: String(localized: "Thu"), selected: true),
         .init(day: String(localized: "Fri"), selected: true),

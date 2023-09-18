@@ -119,18 +119,22 @@ struct SettingInfomationCell: View {
     // MARK: 선택된 요일을 보여줍니다.
     @ViewBuilder
     private func selectedDayViewer(dayWith: [SelectedDay]) -> some View {
+        let monLetter = String(String(localized: "Mon").first ?? Character(""))
+        let tueLetter = String(String(localized: "Tue").first ?? Character(""))
+        let wedLetter = String(String(localized: "Wed").first ?? Character(""))
+        let thuLetter = String(String(localized: "Thu").first ?? Character(""))
+        let friLetter = String(String(localized: "Fri").first ?? Character(""))
+        
         VStack {
             VStack(alignment: .leading) {
                 FontView(String(localized: "Day"), .pretendardMedium, 16, .white, 0.7)
                 
                 HStack(spacing: 16) {
-    
-                    Text("M").opacity(dayWith[1].selected ? 1 : 0.3)
-                    Text("T").opacity(dayWith[2].selected ? 1 : 0.3)
-                    Text("W").opacity(dayWith[3].selected ? 1 : 0.3)
-                    Text("T").opacity(dayWith[4].selected ? 1 : 0.3)
-                    Text("F").opacity(dayWith[5].selected ? 1 : 0.3)
-
+                    Text("\(monLetter)").opacity(dayWith[1].selected ? 1 : 0.3)
+                    Text("\(tueLetter)").opacity(dayWith[2].selected ? 1 : 0.3)
+                    Text("\(wedLetter)").opacity(dayWith[3].selected ? 1 : 0.3)
+                    Text("\(thuLetter)").opacity(dayWith[4].selected ? 1 : 0.3)
+                    Text("\(friLetter)").opacity(dayWith[5].selected ? 1 : 0.3)
                 }
                 .opacity(textOpacity)
                 .foregroundColor(.white)
